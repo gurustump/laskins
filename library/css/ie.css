@@ -43,6 +43,74 @@ http://sachagreif.com/sass-color-variables/
 Site Name:
 Author:
 
+Stylesheet: Typography
+
+Need to import a font or set of icons for your site? Drop them in
+here or just use this to establish your typographical grid. Or not.
+Do whatever you want to...GOSH!
+
+Helpful Articles:
+http://trentwalton.com/2012/06/19/fluid-type/
+http://ia.net/blog/responsive-typography-the-basics/
+http://alistapart.com/column/responsive-typography-is-a-physical-discipline
+
+******************************************************************/
+/*********************
+FONT FACE (IN YOUR FACE)
+*********************/
+/*  To embed your own fonts, use this syntax
+  and place your fonts inside the
+  library/fonts folder. For more information
+  on embedding fonts, go to:
+  http://www.fontsquirrel.com/
+  Be sure to remove the comment brackets.
+*/
+/*  @font-face {
+      font-family: 'Font Name';
+      src: url('library/fonts/font-name.eot');
+      src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('library/fonts/font-name.woff') format('woff'),
+             url('library/fonts/font-name.ttf') format('truetype'),
+             url('library/fonts/font-name.svg#font-name') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+*/
+/*
+The following is based of Typebase:
+https://github.com/devinhunt/typebase.css
+I've edited it a bit, but it's a nice starting point.
+*/
+/*
+ i imported this one in the functions file so bones would look sweet.
+ don't forget to remove it for your site.
+*/
+/*
+some nice typographical defaults
+more here: http://www.newnet-soft.com/blog/csstypography
+*/
+/* line 65, ../scss/partials/_typography.scss */
+p {
+  -ms-word-wrap: break-word;
+  word-break: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  -webkit-hyphenate-before: 2;
+  -webkit-hyphenate-after: 3;
+  hyphenate-lines: 3;
+  -webkit-font-feature-settings: "liga", "dlig";
+  -moz-font-feature-settings: "liga=1, dlig=1";
+  -ms-font-feature-settings: "liga", "dlig";
+  -o-font-feature-settings: "liga", "dlig";
+  font-feature-settings: "liga", "dlig";
+}
+
+/******************************************************************
+Site Name:
+Author:
+
 Stylesheet: Mixins Stylesheet
 
 This is where you can take advantage of Sass' great features: Mixins.
@@ -117,46 +185,77 @@ You can't use @extend within media queries
 anymore, so just be aware that if you drop
 them in here, they won't work.
 */
+/* line 25, ../scss/breakpoints/_481up.scss */
+#container #content {
+  padding-top: 65px;
+}
+
+/* line 30, ../scss/breakpoints/_481up.scss */
+#logo a {
+  height: 65px;
+}
+
 /*********************
 NAVIGATION STYLES
 *********************/
 /* .menu is clearfixed inside mixins.scss */
+/* line 42, ../scss/breakpoints/_481up.scss */
 .menu {
-  /* end .menu ul */ }
-  .menu ul {
-    /* end .menu ul li */
-    /* highlight current page */
-    /* end current highlighters */ }
-    .menu ul li {
-      /*
-      plan your menus and drop-downs wisely.
-      */ }
-      .menu ul li a {
-        /*
-        you can use hover styles here even though this size
-        has the possibility of being a mobile device.
-        */ }
+  /* end .menu ul */
+}
+/* line 43, ../scss/breakpoints/_481up.scss */
+.menu ul {
+  /* end .menu ul li */
+  /* highlight current page */
+  /* end current highlighters */
+}
+/* line 44, ../scss/breakpoints/_481up.scss */
+.menu ul li {
+  /*
+  plan your menus and drop-downs wisely.
+  */
+}
+/* line 45, ../scss/breakpoints/_481up.scss */
+.menu ul li a {
+  /*
+  you can use hover styles here even though this size
+  has the possibility of being a mobile device.
+  */
+}
 
 /* end .menu */
+/* line 84, ../scss/breakpoints/_481up.scss */
+.trigger-nav {
+  padding: 17px;
+}
+
 /*********************
 POSTS & CONTENT STYLES
 *********************/
 /* entry content */
+/* line 93, ../scss/breakpoints/_481up.scss */
 .entry-content {
-  /* at this larger size, we can start to align images */ }
-  .entry-content .alignleft, .entry-content img.alignleft {
-    margin-right: 1.5em;
-    display: inline;
-    float: left; }
-  .entry-content .alignright, .entry-content img.alignright {
-    margin-left: 1.5em;
-    display: inline;
-    float: right; }
-  .entry-content .aligncenter, .entry-content img.aligncenter {
-    margin-right: auto;
-    margin-left: auto;
-    display: block;
-    clear: both; }
+  /* at this larger size, we can start to align images */
+}
+/* line 97, ../scss/breakpoints/_481up.scss */
+.entry-content .alignleft, .entry-content img.alignleft {
+  margin-right: 1.5em;
+  display: inline;
+  float: left;
+}
+/* line 102, ../scss/breakpoints/_481up.scss */
+.entry-content .alignright, .entry-content img.alignright {
+  margin-left: 1.5em;
+  display: inline;
+  float: right;
+}
+/* line 107, ../scss/breakpoints/_481up.scss */
+.entry-content .aligncenter, .entry-content img.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  clear: both;
+}
 
 /* end .entry-content */
 /*********************
@@ -183,93 +282,92 @@ come into play. Have fun!
 /*********************
 GENERAL STYLES
 *********************/
+/* line 22, ../scss/breakpoints/_768up.scss */
+#container #content {
+  padding-top: 74px;
+}
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
-.wrap {
-  width: 760px; }
-
 /*********************
 HEADER STYLES
 *********************/
 /*********************
 NAVIGATION STYLES
 *********************/
+/* line 46, ../scss/breakpoints/_768up.scss */
 .nav {
   border: 0;
   /* end .menu ul li */
   /* highlight current page */
-  /* end current highlighters */ }
-  .nav ul {
-    margin-top: 0; }
-  .nav li {
-    float: left;
-    position: relative;
-    /*
-    plan your menus and drop-downs wisely.
-    */
-    /* showing sub-menus */ }
-    .nav li a {
-      border-bottom: 0;
-      /*
-      you can use hover styles here even though this size
-      has the possibility of being a mobile device.
-      */ }
-      .nav li a:hover, .nav li a:focus {
-        color: white;
-        text-decoration: underline; }
-    .nav li ul.sub-menu,
-    .nav li ul.children {
-      margin-top: 0;
-      border: 1px solid #ccc;
-      border-top: 0;
-      position: absolute;
-      overflow: hidden;
-      visibility: hidden;
-      z-index: 8999;
-      /* highlight sub-menu current page */ }
-      .nav li ul.sub-menu li,
-      .nav li ul.children li {
-        /*
-        if you need to go deeper, go nuts
-        just remember deeper menus suck
-        for usability. k, bai.
-        */ }
-        .nav li ul.sub-menu li a,
-        .nav li ul.children li a {
-          padding-left: 10px;
-          border-right: 0;
-          display: block;
-          width: 180px;
-          border-bottom: 1px solid #ccc; }
-        .nav li ul.sub-menu li:last-child a,
-        .nav li ul.children li:last-child a {
-          border-bottom: 0; }
-    .nav li:hover ul {
-      top: auto;
-      overflow: visible;
-      visibility: visible; }
+  /* end current highlighters */
+}
+/* line 48, ../scss/breakpoints/_768up.scss */
+.nav ul {
+  background: black;
+  margin-top: 0;
+}
+/* line 52, ../scss/breakpoints/_768up.scss */
+.nav li {
+  /*
+  plan your menus and drop-downs wisely.
+  */
+  /* showing sub-menus */
+}
+/* line 54, ../scss/breakpoints/_768up.scss */
+.nav li a {
+  border-bottom: 0;
+  /*
+  you can use hover styles here even though this size
+  has the possibility of being a mobile device.
+  */
+}
+/* line 71, ../scss/breakpoints/_768up.scss */
+.nav li ul.sub-menu,
+.nav li ul.children {
+  /* highlight sub-menu current page */
+}
+/* line 74, ../scss/breakpoints/_768up.scss */
+.nav li ul.sub-menu li,
+.nav li ul.children li {
+  /*
+  if you need to go deeper, go nuts
+  just remember deeper menus suck
+  for usability. k, bai.
+  */
+}
 
 /* end .nav */
 /*********************
 SIDEBARS & ASIDES
 *********************/
+/* line 128, ../scss/breakpoints/_768up.scss */
 .sidebar {
-  margin-top: 2.2em; }
+  margin-top: 2.2em;
+}
 
+/* line 132, ../scss/breakpoints/_768up.scss */
 .widgettitle {
   border-bottom: 2px solid #444;
-  margin-bottom: 0.75em; }
+  margin-bottom: 0.75em;
+}
 
+/* line 137, ../scss/breakpoints/_768up.scss */
 .widget {
   padding: 0 10px;
-  margin: 2.2em 0; }
-  .widget ul li {
-    margin-bottom: 0.75em;
-    /* deep nesting */ }
-    .widget ul li ul {
-      margin-top: 0.75em;
-      padding-left: 1em; }
+  margin: 2.2em 0;
+}
+/* line 142, ../scss/breakpoints/_768up.scss */
+.widget ul li {
+  margin-bottom: 0.75em;
+  /* deep nesting */
+}
+/* line 150, ../scss/breakpoints/_768up.scss */
+.widget ul li ul {
+  margin-top: 0.75em;
+  padding-left: 1em;
+}
 
 /* links widget */
 /* meta widget */
@@ -290,12 +388,14 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
+/* line 258, ../scss/breakpoints/_768up.scss */
 .footer-links ul li {
   /*
   be careful with the depth of your menus.
   it's very rare to have multi-depth menus in
   the footer.
-  */ }
+  */
+}
 
 /* end .footer-links */
 /******************************************************************
@@ -308,8 +408,213 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop.
 
 ******************************************************************/
+/* line 12, ../scss/breakpoints/_1030up.scss */
 .wrap {
-  width: 1040px; }
+  margin: 0 80px;
+}
+
+/* line 16, ../scss/breakpoints/_1030up.scss */
+header.header {
+  background-color: #333333;
+  background-image: -webkit-gradient(linear,  top,  bottom, from(#111111), to(#333333));
+  background-image: -webkit-linear-gradient( top, #111111, #333333);
+  background-image: -moz-linear-gradient( top, #111111, #333333);
+  background-image: -o-linear-gradient( top, #111111, #333333);
+  background-image: linear-gradient(to  bottom, #111111, #333333);
+}
+
+/* line 19, ../scss/breakpoints/_1030up.scss */
+#logo {
+  position: absolute;
+  width: 461px;
+  height: 74px;
+}
+/* line 23, ../scss/breakpoints/_1030up.scss */
+#logo a {
+  margin: 0;
+  height: 100%;
+}
+
+/* line 28, ../scss/breakpoints/_1030up.scss */
+.nav {
+  border: 0;
+  /* end .menu ul li */
+  /* highlight current page */
+  /* end current highlighters */
+}
+/* line 30, ../scss/breakpoints/_1030up.scss */
+.nav ul {
+  background: black;
+  margin-top: 0;
+}
+/* line 34, ../scss/breakpoints/_1030up.scss */
+.nav li {
+  float: left;
+  position: relative;
+  /*
+  plan your menus and drop-downs wisely.
+  */
+  /* showing sub-menus */
+}
+/* line 38, ../scss/breakpoints/_1030up.scss */
+.nav li a {
+  border-bottom: 0;
+  /*
+  you can use hover styles here even though this size
+  has the possibility of being a mobile device.
+  */
+}
+/* line 55, ../scss/breakpoints/_1030up.scss */
+.nav li ul.sub-menu,
+.nav li ul.children {
+  margin-top: 0;
+  border: 1px solid #ccc;
+  border-top: 0;
+  position: absolute;
+  display: none;
+  z-index: 8999;
+  /* highlight sub-menu current page */
+}
+/* line 64, ../scss/breakpoints/_1030up.scss */
+.nav li ul.sub-menu li,
+.nav li ul.children li {
+  /*
+  if you need to go deeper, go nuts
+  just remember deeper menus suck
+  for usability. k, bai.
+  */
+}
+/* line 66, ../scss/breakpoints/_1030up.scss */
+.nav li ul.sub-menu li a,
+.nav li ul.children li a {
+  padding-left: 10px;
+  border-right: 0;
+  display: block;
+}
+/* line 81, ../scss/breakpoints/_1030up.scss */
+.nav li ul.sub-menu li:last-child a,
+.nav li ul.children li:last-child a {
+  border-bottom: 0;
+}
+/* line 91, ../scss/breakpoints/_1030up.scss */
+.nav li ul.sub-menu li ul,
+.nav li ul.children li ul {
+  top: 0;
+  left: 100%;
+}
+/* line 106, ../scss/breakpoints/_1030up.scss */
+.nav li:hover > ul {
+  top: auto;
+  display: block;
+}
+
+/* end .nav */
+/* line 120, ../scss/breakpoints/_1030up.scss */
+.main-nav {
+  float: right;
+  height: auto;
+  width: auto;
+  position: static;
+  background: transparent;
+}
+/* line 126, ../scss/breakpoints/_1030up.scss */
+.main-nav .top-nav {
+  position: static;
+  background: transparent;
+  overflow: visible;
+}
+/* line 131, ../scss/breakpoints/_1030up.scss */
+.main-nav .top-nav > li > a {
+  padding: 12px 8px;
+  font-size: 12px;
+  margin-top: 0;
+  border: 0;
+  height: 50px;
+  line-height: 50px;
+}
+/* line 140, ../scss/breakpoints/_1030up.scss */
+.main-nav .top-nav > li.menu-item-search > a, .main-nav .top-nav > li.menu-item-login > a, .main-nav .top-nav > li.menu-item-logout > a {
+  text-indent: -9999px;
+  width: 18px;
+  padding-left: 12px;
+}
+/* line 147, ../scss/breakpoints/_1030up.scss */
+.main-nav .top-nav > li.menu-item-search > a {
+  background-position: 50% -282px;
+}
+/* line 152, ../scss/breakpoints/_1030up.scss */
+.main-nav .top-nav > li.menu-item-login > a {
+  background-position: 50% -82px;
+}
+/* line 157, ../scss/breakpoints/_1030up.scss */
+.main-nav .top-nav > li.menu-item-logout > a {
+  background-position: 50% -182px;
+}
+/* line 161, ../scss/breakpoints/_1030up.scss */
+.main-nav .top-nav > li .sub-menu {
+  border: 0;
+}
+/* line 163, ../scss/breakpoints/_1030up.scss */
+.main-nav .top-nav > li .sub-menu > li {
+  float: none;
+}
+/* line 165, ../scss/breakpoints/_1030up.scss */
+.main-nav .top-nav > li .sub-menu > li a {
+  background: #333;
+  border-color: #3e3e3e;
+  border-top: 0;
+  margin-top: 0;
+  padding: 10px 25px;
+}
+/* line 172, ../scss/breakpoints/_1030up.scss */
+.main-nav .top-nav > li .sub-menu > li .sub-menu > li a {
+  background: #333;
+}
+/* line 178, ../scss/breakpoints/_1030up.scss */
+.main-nav .top-nav > li.mega-menu > .sub-menu {
+  text-align: center;
+  position: fixed;
+  top: 74px;
+  left: 0;
+  width: 100%;
+  padding: 0 80px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #333;
+}
+/* line 187, ../scss/breakpoints/_1030up.scss */
+.main-nav .top-nav > li.mega-menu > .sub-menu > li {
+  float: left;
+  width: 33%;
+}
+/* line 190, ../scss/breakpoints/_1030up.scss */
+.main-nav .top-nav > li.mega-menu > .sub-menu > li > a {
+  font-size: 13px;
+  border-bottom: 1px solid #3e3e3e;
+}
+/* line 194, ../scss/breakpoints/_1030up.scss */
+.main-nav .top-nav > li.mega-menu > .sub-menu > li .sub-menu {
+  display: block;
+  position: static;
+}
+/* line 197, ../scss/breakpoints/_1030up.scss */
+.main-nav .top-nav > li.mega-menu > .sub-menu > li .sub-menu a {
+  border: 0;
+}
+
+/* line 207, ../scss/breakpoints/_1030up.scss */
+.trigger-nav {
+  display: none;
+}
+
+/* line 211, ../scss/breakpoints/_1030up.scss */
+.footer #inner-footer {
+  height: 39px;
+  border-top: 1px solid #303030;
+}
 
 /*
 you can call the larger styles if you want, but there's really no need

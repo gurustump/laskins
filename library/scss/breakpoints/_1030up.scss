@@ -10,5 +10,206 @@ be seen on the Desktop.
 ******************************************************************/
 
 .wrap {
-  width: 1040px;
+	margin:0 80px;
+}
+
+header.header {
+	@include css-gradient($from: #111, $to: #333, $vstart:"top", $vend:"bottom");
+}
+#logo {
+	position:absolute;
+	width:461px;
+	height:74px;
+	a {
+		margin:0;
+		height:100%;
+	}
+}
+.nav {
+	border: 0;
+	ul {
+		background:$black;
+		margin-top:0;
+	}
+	li {
+		float: left;
+		position: relative;
+
+		a {
+			border-bottom: 0;
+
+			/*
+			you can use hover styles here even though this size
+			has the possibility of being a mobile device.
+			*/
+			&:hover, &:focus {
+			}
+		}
+
+		&:first-child {}
+		&:last-child {}
+
+		/*
+		plan your menus and drop-downs wisely.
+		*/
+		ul.sub-menu,
+		ul.children {
+			margin-top: 0;
+			border: 1px solid #ccc;
+			border-top: 0;
+			position: absolute;
+			display: none;
+			z-index: 8999;
+
+			li {
+
+				a {
+					padding-left: 10px;
+					border-right: 0;
+					display: block;
+
+					&:hover,
+					&:focus {}
+
+					&:link {}
+				}
+
+				&:first-child {}
+
+				&:last-child {
+
+					a {
+						border-bottom: 0;
+					}
+				}
+
+				/*
+				if you need to go deeper, go nuts
+				just remember deeper menus suck
+				for usability. k, bai.
+				*/
+				ul {
+					top:0;
+					left:100%;
+				}
+			}
+
+			/* highlight sub-menu current page */
+			li.current-menu-item,
+			li.current_page_item,
+			li.current_page_ancestor {
+				a {}
+			}
+		}
+
+		/* showing sub-menus */
+		&:hover > ul {
+			top: auto;
+			display:block;
+		}
+
+	} /* end .menu ul li */
+
+	/* highlight current page */
+	li.current-menu-item,
+	li.current_page_item,
+	li.current_page_ancestor {
+		a {}
+	}  /* end current highlighters */
+} /* end .nav */
+.main-nav {
+	float:right;
+	height:auto;
+	width:auto;
+	position:static;
+	background:transparent;
+	.top-nav {
+		position:static;
+		background:transparent;
+		overflow:visible;
+		& > li {
+			& > a {
+				padding:12px 8px;
+				font-size:12px;
+				margin-top:0;
+				border:0;
+				height:50px;
+				line-height:50px;
+			}
+			&.menu-item-search, &.menu-item-login, &.menu-item-logout {
+				& > a {
+					text-indent:-9999px;
+					width:18px;
+					padding-left:12px;
+				}
+			}
+			&.menu-item-search {
+				& > a {
+					background-position:50% -282px;
+				}
+			}
+			&.menu-item-login {
+				& > a {
+					background-position:50% -82px;
+				}
+			}
+			&.menu-item-logout {
+				& > a {
+					background-position:50% -182px;
+				}
+			}
+			.sub-menu {
+				border:0;
+				& > li {
+					float:none;
+					a {
+						background:#333;
+						border-color:#3e3e3e;
+						border-top:0;
+						margin-top:0;
+						padding:10px 25px;
+					}
+					.sub-menu > li a {
+						background:#333;
+					}
+				}
+			}
+			&.mega-menu {
+				& > .sub-menu {
+					text-align:center;
+					position:fixed;
+					top:74px;
+					left:0;
+					width:100%;
+					padding:0 80px;
+					@include box-sizing;
+					background:#333;
+					& > li {
+						float:left;
+						width:33%;
+						& > a {
+							font-size:13px;
+							border-bottom:1px solid #3e3e3e
+						}
+						.sub-menu {
+							display:block;
+							position:static;
+							a {
+								border:0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.trigger-nav {
+	display:none;
+}
+.footer {
+	#inner-footer {
+		height:39px;
+		border-top:1px solid #303030;
+	}
 }

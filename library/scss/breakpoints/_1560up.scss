@@ -8,38 +8,17 @@ You can add some advanced styles here if you like. This kicks in
 on larger screens.
 
 ******************************************************************/
-
-#container {
-	#content {
-		padding-top:84px;
-	}
-}
-.wrap {
-	margin:0 150px;
-}
 #logo {
-	height:84px;
-	a {
-		margin:0;
-		height:100%;
-	}
+	width:577px;
 }
 
-.main-nav {
-	.top-nav {
-		position:static;
+.nav {
+	&.top-nav {
 		& > li {
 			& > a {
-				padding:12px;
-				font-size:13px;
-				height:60px;
-				line-height:60px;
+				padding:12px 15px;
+				font-size:15px;
 			}
-			&.mega-menu {
-				& .sub-menu {
-					top:84px;
-				}
-			}
-		}
+		} 
 	}
 }

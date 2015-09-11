@@ -14,8 +14,27 @@ and will be used across all viewports.
 /*********************
 GENERAL STYLES
 *********************/
+html.laskinsfest {
+	height:100%;
+	margin-top:0 !important;
+	&.mobile-nav-active {
+		body {
+			overflow:hidden;
+			height:100%;
+			header.header, #inner-header {
+				height:100%;
+			}
+			#inner-header {
+				position:relative;
+				overflow-y:auto;
+				overflow-x:hidden;
+			}
+		}
+	}
+}
 
 body {
+	height:100%;
 	font-family: $lato;
 	font-size: 100%;
 	line-height: 1.5;
@@ -23,6 +42,17 @@ body {
 	background-color: $gray;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
+}
+#container {
+	height:100%;
+	#content {
+		min-height:100%;
+		margin-top:-56px;
+		margin-top:0;
+		margin-bottom:-40px;
+		padding:56px 0 40px;
+		@include box-sizing;
+	}
 }
 
 /********************
@@ -71,8 +101,10 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	width: 96%;
 	margin: 0 auto;
+}
+.full-wrap {
+	padding:0 10px;
 }
 
 /*********************
@@ -109,7 +141,7 @@ H1, H2, H3, H4, H5 STYLES
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-rendering: optimizelegibility;
-	font-weight: 500;
+	font-weight: 700;
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -152,17 +184,40 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 
-.header {
-	background-color: $black;
+header.header {
+	@include box-sizing;
+	width:100%;
+	position:fixed;
+	left:0;
+	top:0;
+	z-index:2;
 }
 
-	#logo {
-		margin: 0.75em 0;
-
-		a {
-			color: $white;
+#logo {
+	@include css-gradient($from: #111, $to: #333, $vstart:"top", $vend:"bottom");
+	margin:0;
+	padding:0 50px 0 2px;
+	a {
+		position:relative;
+		display:block;
+		height:55px;
+		/*@include v-center;
+		color: $white;
+		display:block;
+		background:url(../images/logo-outlined.png) no-repeat;
+		background-size:contain;*/
+		span {
+			text-indent:-9999px;
+			display:block;
+		}
+		img {
+			width:100%;
+			max-width:461px;
+			@include v-center;
+			position:absolute;
 		}
 	}
+}
 
 /*********************
 NAVIGATION STYLES
@@ -243,8 +298,148 @@ and more scalable.
 		a {}
 
 	}  /* end current highlighters */
-
 } /* end .nav */
+.main-nav {
+	position:absolute;
+	left:110%;
+	top:0;
+	width:100%;
+	background:$black;
+	height:100%;
+	@include transition(left .35s);
+	&.active {
+		left:0;
+	}
+	.top-nav {
+		overflow:auto;
+		z-index:9998;
+		background:#222;
+		text-transform:uppercase;
+		a {
+			white-space:nowrap;
+			border-top:1px solid #2a2a2a;
+			border-bottom:1px solid #2a2a2a;
+			margin-top:-1px;
+			@include transition(all 0.35s ease-in-out);
+			&:hover {
+				color:$skins-gray;
+				background-color:$orange !important; 
+				text-decoration:none;
+			}
+		}
+		& > li {
+			& > a {
+				outline:none;
+				font-size:13px;
+				padding:12px;
+				height:31px;
+				line-height:31px;
+			}
+			&.current-menu-item {
+				& > a {
+					background-color:rgba(255,255,255,.15);
+				}
+			}
+			&.inactive {
+				display:none;
+			}
+			&.menu-item-search, &.menu-item-login, &.menu-item-logout {
+				& > a {
+					background-image:url(../images/ic.png);
+					background-repeat:no-repeat;
+					padding-left:40px;
+				}
+			}
+			&.menu-item-search {
+				& > a {
+					background-position:0 -282px;
+				}
+			}
+			&.menu-item-login {
+				& > a {
+					background-position:0 -82px;
+				}
+			}
+			&.menu-item-logout {
+				& > a {
+					background-position:0 -182px;
+				}
+			}
+			.sub-menu {
+				margin:0;
+				a {
+					font-size:12px;
+					height:27px;
+					line-height:27px;
+				}
+				& > li {
+					a {
+						background:#191919;
+						padding-left:25px;
+					}
+					.sub-menu {
+						& > li a {
+							background:#111;
+							padding-left:35px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.trigger-nav {
+	color:$orange;
+	position:fixed;
+	padding:12px;
+	top:3px;
+	right:-10px;
+	font-size:17px;
+	z-index:9999;
+	outline:none !important;
+	@include transition(top .275ms);
+	&.active {
+		@include box-sizing;
+	}
+	& > span {
+		float:left;
+		height:24px;
+		line-height:24px;
+	}
+	.ic {
+		margin-right:10px;
+		@include box-sizing;
+		padding-top:5px;
+		@include transition(all 275ms);
+		& > span {
+			background:$orange;
+			@include border-radius(1px);
+			display:block;
+			height:3px;
+			margin-bottom:3px;
+			@include transition(all 275ms);
+			width:22px;
+		}
+	}
+	&.active {
+		.ic {
+			@include transform(rotate(-45deg));
+			& > span {
+				background:#aaa;
+				&.bar-1 {
+					@include transform(translateY(6px));
+				}
+				&.bar-2 {
+					opacity:0;
+				}
+				&.bar-3 {
+					@include transform(rotate(-90deg) translateX(5px));
+				}
+			}
+		}
+	}
+}
 
 
 /*********************
@@ -862,8 +1057,9 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	background-color: $black;
+	@include css-gradient($from: #333, $to: #111, $vstart:"top", $vend:"bottom");
 	color: $light-gray;
+	overflow:hidden;
 }
 
 	/*
@@ -887,3 +1083,49 @@ FOOTER STYLES
 
 
 	.copyright {}
+
+/******************************************
+ADMIN BAR CUSTOMIZATION
+******************************************/
+
+html body {
+	div#wpadminbar {
+		border-bottom:1px solid #444;
+		z-index:9999 !important;
+		& > .wpadminbar-activator {
+			display:block;
+			position:absolute;
+			left:0;
+			bottom:-15px;
+			height:15px;
+			width:30px;
+			text-indent:-9999px;
+			@include box-sizing;
+			@include css-gradient($from: #222, $to: #111, $vstart:"top", $vend:"bottom");
+			@include border-radius(0 0 5px 5px);
+			border:1px solid #444;
+			border-top:0;
+			cursor:pointer;
+			&:after {
+				content:"";
+				border-style:solid;
+				border-color:#444 transparent;
+				border-width:5px 5px 0;
+				position:absolute;
+				margin-left:-5px;
+				left:50%;
+				top:5px;
+			}
+		}
+		&.wpadminbar-shown {
+			& > .wpadminbar-activator {
+				display:none;
+			}
+		}
+	}
+	&.hide-admin-bar {
+		div#wpadminbar {
+			display:none;
+		}
+	}
+}
