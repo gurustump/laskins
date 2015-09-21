@@ -41,6 +41,12 @@ $prefixes: ("-webkit-", "-moz-", "-ms-", "-o-",  "");
 	}
 }
 
+@mixin transition-delay($transition-delay...) {
+	@each $prefix in $prefixes {
+		#{$prefix}transition-delay: $transition-delay;
+	}
+}
+
 @mixin transform($transform...) {
 	@each $prefix in $prefixes {
 		#{$prefix}transform: $transform;
@@ -48,9 +54,7 @@ $prefixes: ("-webkit-", "-moz-", "-ms-", "-o-",  "");
 }
 
 @mixin v-center {
-	@each $prefix in $prefixes {
-		@include transform(translateY(-50%));
-	}
+	@include transform(translateY(-50%));
 	position:relative;
 	top:50%;
 }
@@ -78,6 +82,15 @@ really slow down your CSS. Don't overdo it.
 	background:linear-gradient($startLoc, $color1 $loc1, $color2 $loc2, $color3 $loc3);
 	background-color:$color;
 	background-repeat:no-repeat;
+}
+@mixin css-gradient-plus-img($from: #dfdfdf, $to: #f8f8f8, $vstart:"", $vend:"", $hstart:"", $hend:"", $url:"") {
+	background-color: $to;
+	background-image: -webkit-gradient(linear, unquote($hstart) unquote($vstart), unquote($hstart) unquote($vend), from($from), to($to)), url($url);
+	background-image: -webkit-linear-gradient(unquote($hstart) unquote($vstart), $from, $to), url($url);
+	background-image: -moz-linear-gradient(unquote($hstart) unquote($vstart), $from, $to), url($url);
+	background-image: -o-linear-gradient(unquote($hstart) unquote($vstart), $from, $to), url($url);
+	background-image: linear-gradient(to unquote($hend) unquote($vend), $from, $to), url($url);
+	background-repeat:repeat repeat;
 }
 
 /*********************

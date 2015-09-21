@@ -23,13 +23,33 @@ them in here, they won't work.
 */
 #container {
 	#content {
-		padding-top:65px;
+		padding-top:80px;
 	}
 }
 #logo {
 	a {
-		height:65px;
+		height:80px;
 	}
+}
+
+h1, .h1 {
+	font-size:44px;
+}
+
+h2, .h2 {
+	font-size:32px;
+}
+
+h3, .h3 {
+	font-size:28px;
+}
+
+h4, .h4 {
+	font-size:24px;
+}
+
+h5, .h5 {
+	font-size:16px;
 }
 
 /*********************
@@ -38,51 +58,53 @@ NAVIGATION STYLES
 
 .nav {}
 
-	/* .menu is clearfixed inside mixins.scss */
-	.menu {
-		ul {
-			li {
-				a {
-
-					/*
-					you can use hover styles here even though this size
-					has the possibility of being a mobile device.
-					*/
-					&:hover, &:focus {
-
-					}
-				}
-
-				&:first-child {}
-				&:last-child {}
+/* .menu is clearfixed inside mixins.scss */
+.menu {
+	ul {
+		li {
+			a {
 
 				/*
-				plan your menus and drop-downs wisely.
+				you can use hover styles here even though this size
+				has the possibility of being a mobile device.
 				*/
-				ul.sub-menu,
-				ul.children {
-					li {
-						a {
-							&:hover,
-							&:focus {}
-							&:link {}
-						}
-						&:first-child {}
-						&:last-child {}
-					}
-				}
-			} /* end .menu ul li */
+				&:hover, &:focus {
 
-			/* highlight current page */
-			li.current-menu-item,
-			li.current_page_item,
-			li.current_page_ancestor {
-				a {}
-			}  /* end current highlighters */
-		} /* end .menu ul */
-	} /* end .menu */
+				}
+			}
+
+			&:first-child {}
+			&:last-child {}
+
+			/*
+			plan your menus and drop-downs wisely.
+			*/
+			ul.sub-menu,
+			ul.children {
+				li {
+					a {
+						&:hover,
+						&:focus {}
+						&:link {}
+					}
+					&:first-child {}
+					&:last-child {}
+				}
+			}
+		} /* end .menu ul li */
+
+		/* highlight current page */
+		li.current-menu-item,
+		li.current_page_item,
+		li.current_page_ancestor {
+			a {}
+		}  /* end current highlighters */
+	} /* end .menu ul */
+} /* end .menu */
+
 .trigger-nav {
 	padding:17px;
+	right:-12px;
 }
 
 /*********************
@@ -113,6 +135,49 @@ POSTS & CONTENT STYLES
 
 } /* end .entry-content */
 
+.thumb-index {
+	.thumb-index-inner {
+		h2 {
+			padding-top:6px;
+			padding-bottom:6px;
+		}
+	}
+}
+
+/******************************************************************
+CAROUSEL STYLES
+******************************************************************/
+.carousel {
+	& > ul {
+		& > li {
+			&.deactivating {
+				opacity:0;
+			}
+			.carousel-item-heading-mobile {
+				h2 {
+					font-size:36px;
+				}
+				h3 {
+					font-size:20px;
+				}
+				p {
+					font-size:14px;
+				}
+			}
+		}
+	}
+}
+
+.scroll-carousel {
+	& > ul {
+		& > li {
+			width:145px;
+			padding:25px;
+		}
+	}
+}
+
+
 /*********************
 FOOTER STYLES
 *********************/
@@ -126,4 +191,18 @@ do they need tweaking?
 		li {}
 	}
 } /* end .footer-links */
+
+/******************************************
+PAGE SPECIFIC
+******************************************/
+/******************************************
+HOME PAGE
+******************************************/
+body.home {
+	.home-banner {
+		p {
+			margin-bottom:3px;
+		}
+	}
+}
 

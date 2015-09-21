@@ -8,6 +8,9 @@ You can add some advanced styles here if you like. This kicks in
 on larger screens.
 
 ******************************************************************/
+.wrap {
+	margin:0 auto;
+}
 #logo {
 	width:577px;
 }
@@ -18,6 +21,20 @@ on larger screens.
 			& > a {
 				padding:12px 15px;
 				font-size:15px;
+			}
+			.sub-menu  a {
+				height:50px;
+				line-height:50px;
+			}
+			&.mega-menu {
+				& > .sub-menu {
+					& > li {
+						a {
+							height:60px;
+							line-height:60px;
+						}
+					}
+				}
 			}
 		} 
 	}

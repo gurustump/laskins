@@ -11,14 +11,15 @@ on larger screens.
 
 #container {
 	#content {
-		padding-top:84px;
+		padding-top:100px;
 	}
 }
 .wrap {
 	margin:0 150px;
+	max-width:1472px;
 }
 #logo {
-	height:84px;
+	height:100px;
 	a {
 		margin:0;
 		height:100%;
@@ -32,13 +33,70 @@ on larger screens.
 			& > a {
 				padding:12px;
 				font-size:13px;
-				height:60px;
-				line-height:60px;
+				height:76px;
+				line-height:76px;
+			}
+			.sub-menu  a {
+				height:40px;
+				line-height:40px;
 			}
 			&.mega-menu {
 				& .sub-menu {
-					top:84px;
+					top:100px;
 				}
+			}
+		}
+	}
+}
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+.thumb-index {
+	.thumb-index-inner {
+		h2 {
+			padding-top:15px;
+			padding-bottom:15px;
+		}
+		& > ul {
+			& > li {
+				width:24%;
+				margin:0 1% 1% 0;
+				&.hide-3col {
+					display:block;
+				}
+				.item-content {
+					padding:15px 0;
+					& > * {
+						&.item-head, &.item-body {
+							padding:0 20px;
+						}
+						&.item-head {
+							font-size:26px;
+						}
+						&.item-body {
+							font-size:16px;
+						}
+						&.btn {
+							margin:0 20px;
+							bottom:15px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/******************************************************************
+CAROUSEL STYLES
+******************************************************************/
+.carousel {
+	& > ul {
+		& > li {
+			.carousel-item-heading-desktop {
+				font-size:10px;
 			}
 		}
 	}

@@ -48,13 +48,15 @@
 
 				<div id="inner-header" class="wrap cf">
 
-					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-					<p id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
+					<?php
+						$logoTag = is_front_page() ? 'h1' : 'p';
+					?>
+					<<?php echo $logoTag; ?> id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
 						<a href="<?php echo home_url(); ?>" rel="nofollow">
 							<img src="<?php echo get_template_directory_uri(); ?>/library/images/logo-outlined.png" alt="<?php bloginfo('name'); ?>" />
 							<span><?php bloginfo('name'); ?></span>
 						</a>
-					</p>
+					</<?php echo $logoTag; ?>>
 					<a class="trigger-nav TRIGGER_NAV" href="#">
 						<span class="ic">
 							<span class="bar-1"></span>

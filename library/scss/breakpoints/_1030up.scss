@@ -9,17 +9,28 @@ be seen on the Desktop.
 
 ******************************************************************/
 
+#container {
+	#content {
+		padding-top:90px;
+	}
+}
 .wrap {
 	margin:0 80px;
 }
+.narrow-wrap {
+	max-width:1000px;
+	margin:0 auto;
+}
 
 header.header {
-	@include css-gradient($from: #111, $to: #333, $vstart:"top", $vend:"bottom");
+	@include css-gradient-plus-img($from: rgba($black, .8), $to: rgba($black, .1), $vstart:"top", $vend:"bottom", $url:"../images/skins-gray-light-grunge.jpg");
+	border-bottom:1px solid rgba($red, .15);
 }
 #logo {
 	position:absolute;
 	width:461px;
-	height:74px;
+	height:90px;
+	background:none;
 	a {
 		margin:0;
 		height:100%;
@@ -133,8 +144,8 @@ header.header {
 				font-size:12px;
 				margin-top:0;
 				border:0;
-				height:50px;
-				line-height:50px;
+				height:66px;
+				line-height:66px;
 			}
 			&.menu-item-search, &.menu-item-login, &.menu-item-logout {
 				& > a {
@@ -163,14 +174,21 @@ header.header {
 				& > li {
 					float:none;
 					a {
-						background:#333;
+						/*background:#333;
+						@include css-gradient-plus-img($from: rgba($black, .1), $to: rgba($black, 0), $vstart:"top", $vend:"bottom", $url:"../images/skins-gray-light-grunge.jpg");*/
+						background:transparent;
 						border-color:#3e3e3e;
 						border-top:0;
 						margin-top:0;
 						padding:10px 25px;
 					}
-					.sub-menu > li a {
-						background:#333;
+					.sub-menu {
+						background:transparent;
+						& > li a {
+							/*background:#333;
+							@include css-gradient-plus-img($from: rgba($black, .1), $to: rgba($black, 0), $vstart:"top", $vend:"bottom", $url:"../images/skins-gray-light-grunge.jpg");*/
+							background:transparent;
+						}
 					}
 				}
 			}
@@ -178,18 +196,24 @@ header.header {
 				& > .sub-menu {
 					text-align:center;
 					position:fixed;
-					top:74px;
+					top:90px;
 					left:0;
 					width:100%;
 					padding:0 80px;
 					@include box-sizing;
 					background:#333;
+					@include css-gradient-plus-img($from: rgba($black, .8), $to: rgba($black, .4), $vstart:"top", $vend:"bottom", $url:"../images/skins-gray-light-grunge.jpg");
 					& > li {
 						float:left;
 						width:33%;
+						a {
+							height:50px;
+							line-height:50px;
+						}
 						& > a {
 							font-size:13px;
-							border-bottom:1px solid #3e3e3e
+							border-bottom:1px solid rgba($white, .1);
+							background-color:rgba($white, .02);
 						}
 						.sub-menu {
 							display:block;
@@ -207,6 +231,79 @@ header.header {
 .trigger-nav {
 	display:none;
 }
+
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+.content-primary {
+	padding-right:20px;
+}
+.content-secondary {
+	padding-right:0;
+}
+
+/******************************************************************
+CAROUSEL STYLES
+******************************************************************/
+
+.carousel {
+	position:relative;
+	.carousel-nav {
+		position:static;
+		&:after {
+			@include clearfix;
+		}
+		a {
+			@include transform(translateY(-50%));
+			position:absolute;
+			top:50%;
+			text-indent:-9999px;
+			z-index:3;
+			background:rgba($black, .5);
+			padding:10px;
+			width:30px;
+			@include border-radius(50%);
+			opacity:0;
+			@include transition(opacity .35s);
+			&:after {
+				border-top-width:12px;
+				border-bottom-width:12px;
+				float:none;
+				margin:0;
+			}
+			&.active {
+				opacity:1;
+			}
+			&.prev {
+				left:10px;
+				&:after {
+					border-right-width:20px;
+					margin-left:2px;
+				}
+			}
+			&.next {
+				right:10px;
+				&:after {
+					border-left-width:20px;
+					margin-right:2px;
+				}
+			}
+		}
+	}
+}
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+.sidebar {
+	h4 {
+		margin-bottom:15px;
+	}
+}
+
 .footer {
 	#inner-footer {
 		height:39px;

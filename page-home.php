@@ -17,24 +17,196 @@
 
 			<div id="content">
 
-				<div id="inner-content" class="wrap cf">
+				<div id="inner-content">
 
-						<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+						<main id="main" class="cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+							<?php $homeCarousel = get_posts(array('post_type' => array('post','page','module','tribe_events','media_items'), 'numberposts' => -1, 'category_name' => 'home-carousel')); 
+							if (count($homeCarousel) > 0) { ?>
+							<div class="carousel CAROUSEL">
+								<ul class="PANES">
+									<?php foreach($homeCarousel as $key => $item) {
+									// print_r($item); 
+									$itemMeta = get_post_meta($item->ID); 
+									$itemPostImageArray = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'carousel');
+									$itemOverrideImageArray = wp_get_attachment_image_src( get_attachment_id_from_src($itemMeta['_laskins_carousel_override_image'][0]), 'carousel');
+									$itemPostImageMobileArray = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'carousel-mobile');
+									$itemOverrideImageMobileArray = wp_get_attachment_image_src( get_attachment_id_from_src($itemMeta['_laskins_carousel_override_image'][0]), 'carousel-mobile');
+									/*
+									echo '<pre>';
+									echo $key;
+									print_r($itemPostImageArray);
+									echo '</pre>';
+									*/
+									$itemImage = $itemMeta['_laskins_carousel_override_image'][0] ? $itemOverrideImageArray[0] :$itemPostImageArray[0];
+									$itemImageMobile = $itemMeta['_laskins_carousel_override_image'][0] ? $itemOverrideImageMobileArray[0] :$itemPostImageMobileArray[0];
+									/*
+									echo '<pre style="background:blue">';
+									print_r(get_attachment_id_from_src($itemMeta['_laskins_carousel_override_image'][0]));
+									print_r($itemMeta['_laskins_carousel_override_image'][0]);
+									echo '</pre>';
+									echo '<pre style="background:red">';
+									print_r($itemImage);
+									if ( !$itemImage ) {
+										echo 'FALSE';
+									} else {
+										echo 'TRUE';
+									}
+									echo '</pre>';
+									*/
+									if (!$itemImage) { continue; }
+									?>
+									<li id="carouselItem_<?php echo $key; ?>" class="carousel-item<?php if ($key==0) {echo ' active';} ?>"<?php /* echo $itemImage ? ' style="background-image:url('.$itemImage.');"' : ''; */ ?>>
+										<div class="carousel-item-heading-mobile">
+											<?php if ($itemMeta['_laskins_carousel_super_title'][0]) { ?>
+												<h3><?php echo $itemMeta['_laskins_carousel_super_title'][0]; ?></h3>
+											<?php } ?>
+											<h2><?php echo $item->post_title; ?></h2>
+											<?php if ($item->post_excerpt) { ?>
+												<p><?php echo $item->post_excerpt; ?></p>
+											<?php } ?>
+										</div>
+										<div class="carousel-item-heading-desktop"<?php echo ($itemMeta['_laskins_carousel_exceprt_text_color'][0] || $itemMeta['_laskins_carousel_exceprt_background_color'][0] || $itemMeta['_laskins_carousel_exceprt_position_left'][0] || $itemMeta['_laskins_carousel_exceprt_position_top'][0]) ? 'style="'.($itemMeta['_laskins_carousel_exceprt_text_color'][0] ? 'color:'.$itemMeta['_laskins_carousel_exceprt_text_color'][0].'; ' : '').($itemMeta['_laskins_carousel_exceprt_background_color'][0] ? 'background-color:'.$itemMeta['_laskins_carousel_exceprt_background_color'][0].'; ' : '').($itemMeta['_laskins_carousel_exceprt_position_left'][0] ? 'left:'.$itemMeta['_laskins_carousel_exceprt_position_left'][0].'%; ' : '').($itemMeta['_laskins_carousel_exceprt_position_top'][0] ? 'top:'.$itemMeta['_laskins_carousel_exceprt_position_top'][0].'%; ' : '').'"' : ''; ?>>
+											<?php if ($itemMeta['_laskins_carousel_super_title'][0]) { ?>
+												<h3<?php echo $itemMeta['_laskins_carousel_super_title_size'][0] ? ' style="font-size:'.($itemMeta['_laskins_carousel_super_title_size'][0]/10).'em"' : ''; ?>><?php echo $itemMeta['_laskins_carousel_super_title'][0]; ?></h3>
+											<?php } ?>
+											<h2<?php echo $itemMeta['_laskins_carousel_title_size'][0] ? ' style="font-size:'.($itemMeta['_laskins_carousel_title_size'][0]/10).'em"' : ''; ?>><?php echo $item->post_title; ?></h2>
+											<?php if ($item->post_excerpt) { ?>
+												<p<?php echo $itemMeta['_laskins_carousel_excerpt_size'][0] ? ' style="font-size:'.($itemMeta['_laskins_carousel_excerpt_size'][0]/10).'em"' : ''; ?>><?php echo $item->post_excerpt; ?></p>
+											<?php } ?>
+										</div>
+										<img class="bg-mobile" src="<?php echo $itemImageMobile; ?>" alt="<?php $item->post_title; ?>" />
+										<img class="bg" src="<?php echo $itemImage; ?>" alt="<?php $item->post_title; ?>" />
+										<?php /*
+										<pre>
+											<?php print_r($item); ?>
+										</pre>
+										<pre>
+											<?php print_r($itemMeta); ?>
+										</pre>
+										*/ ?>
+									</li>
+									<?php } ?>
+								</ul>
+								<div class="carousel-nav CAROUSEL_NAV">
+									<a class="prev PREV" href="#">Previous</a>
+									<a class="next NEXT" href="#">Next</a>
+								</div>
+							</div>
+							<?php } ?>
+							
+							<?php $homeBanners = get_posts(array('post_type' => 'module', 'numberposts' => -1, 'module_cat' => 'home-banner')); 
+							if (count($homeBanners) > 0) { ?>
+							<div class="home-banner">
+								<ul>
+									<?php global $post;
+									foreach($homeBanners as $key => $banner) { 
+										$post = $banner;
+										setup_postdata($post);
+									//print_r($banner); ?>
+									<li>
+										<?php the_content(); ?>
+									</li>
+									<?php } ?>
+								</ul>
+							</div>
+							<?php } ?>
+							
+							<?php $homeLatest = get_posts(array('post_type' => array('post','page','module','tribe_events','media_items'), 'numberposts' => 8, 'category_name' => 'latest')); 
+							if (count($homeLatest) > 0) { ?>
+							<div class="home-latest thumb-index skins-grunge BG_PARALLAX">
+								<div class="thumb-index-inner wrap">
+									<h2>Latest</h2>
+									<ul>
+									<?php global $post;
+									foreach($homeLatest as $key => $item) {
+										$post = $item;
+										setup_postdata($post);
+										$itemThumbArray = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'large-thumb');
+										// print_r($item); 
+										$colHide = '';
+										if ($key > 5) {
+											$colHide = 'hide-3col';
+										} else if ($key > 3) {
+											$colHide = 'hide-2col';
+										}
+										?>
+										<li<?php echo $key > 3 ? ' class="'.$colHide.'"' : ''; ?>>
+											<a href="<?php the_permalink(); ?>">
+												<img class="item-thumb" src="<?php echo $itemThumbArray[0]; ?>" />
+												<span class="item-content">
+													<span class="item-head"><?php the_title(); ?></span>
+													<span class="item-body"><?php echo string_limit_words(get_the_excerpt(), 30); ?></span>
+													<span class="btn btn-orange">Learn More</span>
+												</span>
+											</a>
+										</li>
+										<?php } ?>
+									</ul>
+								</div>
+							</div>
+							<?php } ?>
+							
+							<?php $homeGalleries = get_posts(array('post_type' => array('post','page','module','tribe_events','media_items'), 'numberposts' => 4, 'post_format' => 'post-format-gallery', 'category_name' => 'home-gallery')); 
+							if (count($homeGalleries) > 0) { ?>
+							<div class="home-galleries thumb-index white-grunge BG_PARALLAX">
+								<div class="thumb-index-inner wrap">
+									<h2>Galleries</h2>
+									<ul>
+									<?php global $post;
+									foreach($homeGalleries as $key => $item) {
+										$post = $item;
+										setup_postdata($post);
+										$itemThumbArray = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'large-thumb');
+										// print_r($item); 
+										$colHide = '';
+										if ($key > 5) {
+											$colHide = 'hide-3col';
+										} else if ($key > 3) {
+											$colHide = 'hide-2col';
+										}
+										?>
+										<li<?php echo $key > 3 ? ' class="'.$colHide.'"' : ''; ?>>
+											<a href="<?php the_permalink(); ?>">
+												<img class="item-thumb" src="<?php echo $itemThumbArray[0]; ?>" />
+												<span class="item-content">
+													<span class="item-head"><?php the_title(); ?></span>
+													<span class="item-body"><?php echo string_limit_words(get_the_excerpt(), 30); ?></span>
+													<span class="btn btn-orange">View Gallery</span>
+												</span>
+											</a>
+										</li>
+										<?php } ?>
+									</ul>
+								</div>
+							</div>
+							<?php } ?>
+							
+							<?php $homePartners = get_posts(array('post_type' => 'module', 'numberposts' => 1, 'module_cat' => 'home-partners')); 
+							if (count($homePartners) > 0) { ?>
+							<div class="home-partners skins-grunge">
+								<?php 
+								$partner_gallery = get_post_gallery($homePartners[0]->ID, false);
+								$partner_gallery_ids = explode(',',$partner_gallery['ids']);
+								//print_r($partner_gallery);
+								//print_r($partner_gallery_ids);
+								?>
+								<div class="scroll-carousel SCROLL_CAROUSEL">
+									<ul>
+										<?php foreach($partner_gallery['src'] as $key => $src) {
+										$alt = get_post_meta($partner_gallery_ids[$key], '_wp_attachment_image_alt', true); ?>
+										<li>
+											<img src="<?php echo $src; ?>" alt="<?php echo get_post_meta($partner_gallery_ids[$key], '_wp_attachment_image_alt', true); ?>" />
+										</li>
+										<?php } ?>
+									</ul>
+								</div>
+							</div>
+							<?php } ?>
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-								<header class="article-header">
-
-									<h1 class="page-title"><?php the_title(); ?></h1>
-
-									<p class="byline vcard">
-										<?php printf( __( 'Posted <time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time> by <span class="author">%3$s</span>', 'bonestheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
-									</p>
-
-
-								</header>
 
 								<section class="entry-content cf" itemprop="articleBody">
 									<?php
@@ -63,14 +235,6 @@
 								</section>
 
 
-								<footer class="article-footer">
-
-                  <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
-
-								</footer>
-
-								<?php comments_template(); ?>
-
 							</article>
 
 							<?php endwhile; else : ?>
@@ -90,8 +254,6 @@
 							<?php endif; ?>
 
 						</main>
-
-						<?php get_sidebar(); ?>
 
 				</div>
 

@@ -17,18 +17,35 @@ come into play. Have fun!
 GENERAL STYLES
 *********************/
 
-body {}
-#container {
-	#content {
-		padding-top:74px;
-	}
+body {
+	font-size:16px;
 }
 
+h1, .h1 {
+	font-size:48px;
+}
+
+h2, .h2 {
+	font-size:36px;
+}
+
+h3, .h3 {
+	font-size:32px;
+}
+
+h4, .h4 {
+	font-size:28px;
+}
+
+h5, .h5 {
+	font-size:18px;
+}
 /*********************
 LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
+	max-width:1104px;
 }
 
 /*********************
@@ -37,7 +54,9 @@ HEADER STYLES
 
 .header {}
 
-	#logo {}
+	#logo {
+		padding-left:20px;
+	}
 
 /*********************
 NAVIGATION STYLES
@@ -121,127 +140,228 @@ NAVIGATION STYLES
 
 } /* end .nav */
 
+.trigger-nav {
+	right:0;
+}
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+.content-primary {
+	float:left;
+	width:65%;
+	padding-right:20px;
+	@include box-sizing;
+}
+.content-secondary {
+	float:left;
+	float:left;
+	width:35%;
+	padding-right:20px;
+	@include box-sizing;
+}
+
+.thumb-index {
+	.thumb-index-inner {
+		h2 {
+			padding-top:10px;
+			padding-bottom:10px;
+		}
+		& > ul {
+			& > li {
+				width:32%;
+				margin:0 1% 1% 0;
+				&.hide-2col {
+					display:block;
+				}
+				.item-content {
+					& > * {
+						&.item-head, &.item-body {
+							padding:0 15px;
+						}
+						&.item-head {
+							font-size:22px;
+						}
+						&.item-body {
+							display:block;
+							font-size:14px;
+						}
+						&.btn {
+							margin:0 15px;
+							bottom:10px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/******************************************************************
+CAROUSEL STYLES
+******************************************************************/
+.carousel {
+	border:0;
+	& > ul {
+		& > li {
+			&.deactivating {
+				opacity:0;
+			}
+			.carousel-item-heading-mobile {
+				display:none;
+			}
+			.carousel-item-heading-desktop {
+				padding:10px 15px;
+				display:block;
+				font-size:5px;
+				position:absolute;
+				h2 {
+					font-size:5.6em;
+				}
+				h3 {
+					font-size:2.8em;
+				}
+				p {
+					font-size:2.4em;
+				}
+			}
+			img {
+				&.bg {
+					display:block;
+				}
+				&.bg-mobile {
+					display:none;
+				}
+			}
+		}
+	}
+}
+
 /*********************
 SIDEBARS & ASIDES
 *********************/
 
 .sidebar {
-	margin-top: 2.2em;
+	border:0;
+	margin-top:20px;
+	h4 {
+		margin-bottom:10px;
+	}
 }
 
-	.widgettitle {
-		border-bottom: 2px solid #444;
-		margin-bottom: 0.75em;
-	}
+.widgettitle {
+	border-bottom: 2px solid #444;
+	margin-bottom: 0.75em;
+}
 
-	.widget {
-		padding: 0 10px;
-		margin: 2.2em 0;
+.widget {
+	margin:0 0 20px;
 
-		ul {
-			li {
-				margin-bottom: 0.75em;
+	ul {
+		li {
+			margin-bottom: 0.75em;
 
-				&:first-child {}
-				&:last-child {}
-				a {}
-				/* deep nesting */
+			&:first-child {}
+			&:last-child {}
+			a {}
+			/* deep nesting */
 
-				ul {
-					margin-top: 0.75em;
-					padding-left: 1em;
-				}
+			ul {
+				margin-top: 0.75em;
+				padding-left: 1em;
 			}
 		}
 	}
+}
 
 
-	/* links widget */
-	.widget_links {}
-	.widget_links ul {}
-	.widget_links ul li {}
-	.widget_links ul li a {}
+/* links widget */
+.widget_links {}
+.widget_links ul {}
+.widget_links ul li {}
+.widget_links ul li a {}
 
-	/* meta widget */
-	.widget_meta {}
-	.widget_meta ul {}
-	.widget_meta ul li {}
-	.widget_meta ul li a {}
+/* meta widget */
+.widget_meta {}
+.widget_meta ul {}
+.widget_meta ul li {}
+.widget_meta ul li a {}
 
-	/* pages widget */
-	.widget_pages {}
-	.widget_pages ul {}
-	.widget_pages ul li {}
-	.widget_pages ul li a {}
+/* pages widget */
+.widget_pages {}
+.widget_pages ul {}
+.widget_pages ul li {}
+.widget_pages ul li a {}
 
-	/* recent-posts widget */
-	.widget_recent_entries {}
-	.widget_recent_entries ul {}
-	.widget_recent_entries ul li {}
-	.widget_recent_entries ul li a {}
+/* recent-posts widget */
+.widget_recent_entries {}
+.widget_recent_entries ul {}
+.widget_recent_entries ul li {}
+.widget_recent_entries ul li a {}
 
-	/* archives widget */
-	.widget_archive {}
-	.widget_archive ul {}
-	.widget_archive ul li {}
-	.widget_archive ul li a {}
-	.widget_archive select {}
-	.widget_archive option {}
+/* archives widget */
+.widget_archive {}
+.widget_archive ul {}
+.widget_archive ul li {}
+.widget_archive ul li a {}
+.widget_archive select {}
+.widget_archive option {}
 
-	/* tag-cloud widget */
-	.widget_links {}
-	.widget_links li:after {}
-	.widget_links li:before {}
-	.widget_tag_cloud {}
-	.widget_tag_cloud a {}
-	.widget_tag_cloud a:after {}
-	.widget_tag_cloud a:before {}
+/* tag-cloud widget */
+.widget_links {}
+.widget_links li:after {}
+.widget_links li:before {}
+.widget_tag_cloud {}
+.widget_tag_cloud a {}
+.widget_tag_cloud a:after {}
+.widget_tag_cloud a:before {}
 
-	/* calendar widget */
-	.widget_calendar {}
-	#calendar_wrap {}
-	#calendar_wrap th {}
-	#calendar_wrap td {}
-	#wp-calendar tr td {}
-	#wp-calendar caption {}
-	#wp-calendar a {}
-	#wp-calendar #today {}
-	#wp-calendar #prev {}
-	#wp-calendar #next {}
-	#wp-calendar #next a {}
-	#wp-calendar #prev a {}
+/* calendar widget */
+.widget_calendar {}
+#calendar_wrap {}
+#calendar_wrap th {}
+#calendar_wrap td {}
+#wp-calendar tr td {}
+#wp-calendar caption {}
+#wp-calendar a {}
+#wp-calendar #today {}
+#wp-calendar #prev {}
+#wp-calendar #next {}
+#wp-calendar #next a {}
+#wp-calendar #prev a {}
 
-	/* category widget */
-	.widget_categories {}
-	.widget_categories ul {}
-	.widget_categories ul li {}
-	.widget_categories ul ul.children {}
-	.widget_categories a {}
-	.widget_categories select{}
-	.widget_categories select#cat {}
-	.widget_categories select.postform {}
-	.widget_categories option {}
-	.widget_categories .level-0 {}
-	.widget_categories .level-1 {}
-	.widget_categories .level-2 {}
-	.widget_categories .level-3 {}
+/* category widget */
+.widget_categories {}
+.widget_categories ul {}
+.widget_categories ul li {}
+.widget_categories ul ul.children {}
+.widget_categories a {}
+.widget_categories select{}
+.widget_categories select#cat {}
+.widget_categories select.postform {}
+.widget_categories option {}
+.widget_categories .level-0 {}
+.widget_categories .level-1 {}
+.widget_categories .level-2 {}
+.widget_categories .level-3 {}
 
-	/* recent-comments widget */
-	.recentcomments {}
-	#recentcomments {}
-	#recentcomments li {}
-	#recentcomments li a {}
-	.widget_recent_comments {}
+/* recent-comments widget */
+.recentcomments {}
+#recentcomments {}
+#recentcomments li {}
+#recentcomments li a {}
+.widget_recent_comments {}
 
-	/* search widget */
-	#searchform {}
-	.widget_search {}
-	.screen-reader-text {}
+/* search widget */
+#searchform {}
+.widget_search {}
+.screen-reader-text {}
 
-	/* text widget */
-	.textwidget {}
-	.widget_text {}
-	.textwidget p {}
+/* text widget */
+.textwidget {}
+.widget_text {}
+.textwidget p {}
 
 
 /*********************

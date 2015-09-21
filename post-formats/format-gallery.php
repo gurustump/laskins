@@ -2,7 +2,7 @@
 
               <article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-                <header class="article-header">
+                <header class="article-header wrap">
 
                   <h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
 
@@ -20,7 +20,20 @@
                 <section class="entry-content cf" itemprop="articleBody">
                   <?php
                     // the content (pretty self explanatory huh)
-                    the_content();
+					$gallery = get_post_gallery();
+
+					$content = strip_shortcode_gallery( get_the_content() );                                        
+					$content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content ) ); 
+					?>
+					<div class="wrap">
+						<div class="narrow-wrap">
+							<?php echo $content; ?>
+						</div>
+					</div>
+					<?php
+                    //the_content();
+
+					echo $gallery;
 
                     /*
                      * Link Pages is used in case you have posts that are set to break into
@@ -43,7 +56,7 @@
                   ?>
                 </section> <?php // end article section ?>
 
-                <footer class="article-footer">
+                <footer class="article-footer wrap">
                   <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
 
                 </footer> <?php // end article footer ?>

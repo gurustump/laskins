@@ -74,7 +74,7 @@ function laskins_register_media_item_metabox() {
 	
 	$cmb_media_item_box = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
-		'title'         => __( 'Media Item Information - All fields are optional', 'cmb2' ),
+		'title'         => __( 'Movie Information - All fields are optional', 'cmb2' ),
 		'object_types'  => array( 'media_items', ), // Post type
 		'context'       => 'normal',
 		'priority'      => 'high',
@@ -134,73 +134,6 @@ function laskins_register_media_item_metabox() {
 		'type'		=> 'text_small',
 	) );
 
-	$cmb_media_item_box->add_field( array(
-		'name'		=> __( 'Excerpt Position - Left', 'cmb2' ),
-		'desc'       => __( 'Enter a percentage from 0-100. Controls the horizontal position of the text description on home/category pages', 'cmb2' ),
-		'id' 			=> $prefix . 'exceprt_position_left',
-		'type'		=> 'text_small',
-	) );
-
-	$cmb_media_item_box->add_field( array(
-		'name'		=> __( 'Excerpt Position - Top', 'cmb2' ),
-		'desc'       => __( 'Enter a percentage from 0-100. Controls the vertical position of the text description on home/category pages', 'cmb2' ),
-		'id' 			=> $prefix . 'exceprt_position_top',
-		'type'		=> 'text_small',
-	) );
-
-	$cmb_media_item_box->add_field( array(
-		'name'		=> __( 'Excerpt Text Color', 'cmb2' ),
-		'desc'       => __( 'Choose the color of the text that appears over the banner image. If left blank, defaults to white.', 'cmb2' ),
-		'id' 			=> $prefix . 'exceprt_text_color',
-		'type'		=> 'colorpicker',
-	) );
-
-	/*******************
-	rgba_colorpicker field type requires CMB2_RGBa_Picker to be installed in the plugins directory. It requires a javascript file that is also located in the plugins directory. The plugin has been modified slightly to rename the folder containing the javascript file.
-	
-	plugin comes from: https://github.com/JayWood/CMB2_RGBa_Picker
-	*/
-	$cmb_media_item_box->add_field( array(
-		'name'		=> __( 'Excerpt Backround Color', 'cmb2' ),
-		'desc'       => __( 'Choose the color of the background field behind the title and excerpt text on banners.', 'cmb2' ),
-		'id' 			=> $prefix . 'exceprt_background_color',
-		'type'		=> 'rgba_colorpicker',
-	) );
-
-	$cmb_media_item_box->add_field( array(
-		'name'		=> __( 'Supertitle', 'cmb2' ),
-		'desc'       => __( 'Puts text above the title and excerpt on the home and category pages.', 'cmb2' ),
-		'id' 			=> $prefix . 'super_title',
-		'type'		=> 'text',
-	) );
-
-	$cmb_media_item_box->add_field( array(
-		'name'		=> __( 'Title size', 'cmb2' ),
-		'desc'       => __( 'Enter the size for your title (an integer), defaults to 56px', 'cmb2' ),
-		'id' 			=> $prefix . 'title_size',
-		'type'		=> 'text_small',
-	) );
-
-	$cmb_media_item_box->add_field( array(
-		'name'		=> __( 'Supertitle size', 'cmb2' ),
-		'desc'       => __( 'Enter the size for your supertitle (an integer), defaults to 28px', 'cmb2' ),
-		'id' 			=> $prefix . 'super_title_size',
-		'type'		=> 'text_small',
-	) );
-
-	$cmb_media_item_box->add_field( array(
-		'name'		=> __( 'Excerpt size', 'cmb2' ),
-		'desc'       => __( 'Enter the size for excerpt (an integer), defaults to 24px', 'cmb2' ),
-		'id' 			=> $prefix . 'excerpt_size',
-		'type'		=> 'text_small',
-	) );
-
-	$cmb_media_item_box->add_field( array(
-		'name' => __( 'Override Image', 'cmb2' ),
-		'desc' => __( 'Upload/Select an image or enter a URL -- used for home/category page main slider', 'cmb2' ),
-		'id'   => $prefix . 'override_image',
-		'type' => 'file',
-	) );
 }
 
 add_action( 'cmb2_init', 'laskins_register_ad_space_metabox' );
@@ -266,6 +199,116 @@ function laskins_register_ad_space_metabox() {
 		'type'        => 'text_url',
 	) );
 
+}
+
+add_action( 'cmb2_init', 'laskins_register_events_metabox' );
+
+function laskins_register_events_metabox() {
+	$prefix = '_laskins_events_';
+	
+	$cmb_ad_space_box = new_cmb2_box( array(
+		'id'            => $prefix . 'metabox',
+		'title'         => __( 'Additional Event Information', 'cmb2' ),
+		'object_types'  => array( 'tribe_events', ), // Post type
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true, // Show field names on the left
+		// 'cmb_styles' => false, // false to disable the CMB stylesheet
+		// 'closed'     => true, // true to keep the metabox closed by default
+	) );
+
+	$cmb_ad_space_box->add_field( array(
+		'name'		=> __( 'Media Item Slug', 'cmb2' ),
+		'desc'       => __( 'Enter the slug of the Media Item associated with this Event.', 'cmb2' ),
+		'id' 			=> $prefix . 'media_item',
+		'type'		=> 'text',
+	) );
+
+}
+
+add_action( 'cmb2_init', 'laskins_register_carousel_metabox' );
+
+function laskins_register_carousel_metabox() {
+	$prefix = '_laskins_carousel_';
+	
+	$cmb_media_item_box = new_cmb2_box( array(
+		'id'            => $prefix . 'metabox',
+		'title'         => __( 'Carousel Data - All fields are optional', 'cmb2' ),
+		'object_types'  => array( 'module', 'media_items', 'tribe_events', 'page', ), // Post type
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true, // Show field names on the left
+		// 'cmb_styles' => false, // false to disable the CMB stylesheet
+		// 'closed'     => true, // true to keep the metabox closed by default
+	) );
+
+	$cmb_media_item_box->add_field( array(
+		'name'		=> __( 'Title Box Position - Left', 'cmb2' ),
+		'desc'       => __( 'Enter a percentage from 0-100. Controls the horizontal position of the text description on home/category pages. To hide title completely, set to 100.', 'cmb2' ),
+		'id' 			=> $prefix . 'exceprt_position_left',
+		'type'		=> 'text_small',
+	) );
+
+	$cmb_media_item_box->add_field( array(
+		'name'		=> __( 'Title Box Position - Top', 'cmb2' ),
+		'desc'       => __( 'Enter a percentage from 0-100. Controls the vertical position of the text description on home/category pages.', 'cmb2' ),
+		'id' 			=> $prefix . 'exceprt_position_top',
+		'type'		=> 'text_small',
+	) );
+
+	$cmb_media_item_box->add_field( array(
+		'name'		=> __( 'Title Box Text Color', 'cmb2' ),
+		'desc'       => __( 'Choose the color of the text that appears over the banner image. If left blank, defaults to white.', 'cmb2' ),
+		'id' 			=> $prefix . 'exceprt_text_color',
+		'type'		=> 'colorpicker',
+	) );
+
+	/*******************
+	rgba_colorpicker field type requires CMB2_RGBa_Picker to be installed in the plugins directory. It requires a javascript file that is also located in the plugins directory. The plugin has been modified slightly to rename the folder containing the javascript file.
+	
+	plugin comes from: https://github.com/JayWood/CMB2_RGBa_Picker
+	*/
+	$cmb_media_item_box->add_field( array(
+		'name'		=> __( 'Title Box Backround Color', 'cmb2' ),
+		'desc'       => __( 'Choose the color of the background field behind the title and excerpt text on banners.', 'cmb2' ),
+		'id' 			=> $prefix . 'exceprt_background_color',
+		'type'		=> 'rgba_colorpicker',
+	) );
+
+	$cmb_media_item_box->add_field( array(
+		'name'		=> __( 'Supertitle', 'cmb2' ),
+		'desc'       => __( 'Puts text above the title and excerpt on the home and category pages.', 'cmb2' ),
+		'id' 			=> $prefix . 'super_title',
+		'type'		=> 'text',
+	) );
+
+	$cmb_media_item_box->add_field( array(
+		'name'		=> __( 'Title size', 'cmb2' ),
+		'desc'       => __( 'Enter the size for your title (an integer), defaults to 56px', 'cmb2' ),
+		'id' 			=> $prefix . 'title_size',
+		'type'		=> 'text_small',
+	) );
+
+	$cmb_media_item_box->add_field( array(
+		'name'		=> __( 'Supertitle size', 'cmb2' ),
+		'desc'       => __( 'Enter the size for your supertitle (an integer), defaults to 28px', 'cmb2' ),
+		'id' 			=> $prefix . 'super_title_size',
+		'type'		=> 'text_small',
+	) );
+
+	$cmb_media_item_box->add_field( array(
+		'name'		=> __( 'Excerpt size', 'cmb2' ),
+		'desc'       => __( 'Enter the size for excerpt (an integer), defaults to 24px', 'cmb2' ),
+		'id' 			=> $prefix . 'excerpt_size',
+		'type'		=> 'text_small',
+	) );
+
+	$cmb_media_item_box->add_field( array(
+		'name' => __( 'Override Image', 'cmb2' ),
+		'desc' => __( 'Upload/Select an image or enter a URL -- used for home/category page main slider', 'cmb2' ),
+		'id'   => $prefix . 'override_image',
+		'type' => 'file',
+	) );
 }
 
 

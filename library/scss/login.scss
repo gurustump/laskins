@@ -14,7 +14,19 @@ http://codex.wordpress.org/Creating_Admin_Themes
 ******************************************************************/
 
 
-body.login {}
+// Sass variables
+@import "partials/variables";
+
+// typography
+@import "partials/typography";
+
+// import mixins
+@import "partials/mixins";
+
+body.login {
+	font-family:$standard;
+	@include css-gradient-plus-img($from: rgba($black, .8), $to: rgba($black, .1), $vstart:"top", $vend:"bottom", $url:"../images/skins-gray-light-grunge.jpg");
+}
 
 
 #login {} /* the form box */
@@ -25,13 +37,14 @@ You'll have to load your own images and mess
 with the width and height.
 */
 .login h1 a {
-	background: url(../images/login-logo.png) no-repeat top center; /* make sure to replace this! */
-	width: 326px;
-	height: 67px;
+	background: url(../images/logo-outlined.png) no-repeat top center; /* make sure to replace this! */
+	width: 319px;
+	height: 40px;
 	text-indent: -9999px;
 	overflow: hidden;
 	padding-bottom: 15px;
 	display: block;
+	background-size:contain;
 }
 
 form {

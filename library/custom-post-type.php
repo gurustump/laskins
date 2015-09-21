@@ -22,27 +22,27 @@ function bones_flush_rewrite_rules() {
 	flush_rewrite_rules();
 }
 
-// Media Item custom post type
+// Film custom post type
 function media_item_custom_type() { 
 	// creating (registering) the custom type 
 	register_post_type( 'media_items', // (http://codex.wordpress.org/Function_Reference/register_post_type) 
 		// let's now add all the options for this post type
 		array( 'labels' => array(
-			'name' => __( 'Media Items', 'bonestheme' ), 
-			'singular_name' => __( 'Media Item', 'bonestheme' ), 
-			'all_items' => __( 'All Media Items', 'bonestheme' ),
+			'name' => __( 'Films', 'bonestheme' ), 
+			'singular_name' => __( 'Film', 'bonestheme' ), 
+			'all_items' => __( 'All Films', 'bonestheme' ),
 			'add_new' => __( 'Add New', 'bonestheme' ),
-			'add_new_item' => __( 'Add New Media Item', 'bonestheme' ),
+			'add_new_item' => __( 'Add New Film', 'bonestheme' ),
 			'edit' => __( 'Edit', 'bonestheme' ),
-			'edit_item' => __( 'Edit Media Item', 'bonestheme' ),
-			'new_item' => __( 'New Media Item', 'bonestheme' ),
-			'view_item' => __( 'View Media Item', 'bonestheme' ),
-			'search_items' => __( 'Search Media Item', 'bonestheme' ),
+			'edit_item' => __( 'Edit Film', 'bonestheme' ),
+			'new_item' => __( 'New Film', 'bonestheme' ),
+			'view_item' => __( 'View Film', 'bonestheme' ),
+			'search_items' => __( 'Search Film', 'bonestheme' ),
 			'not_found' =>  __( 'Nothing found in the Database.', 'bonestheme' ),
 			'not_found_in_trash' => __( 'Nothing found in Trash', 'bonestheme' ),
 			'parent_item_colon' => ''
 			),
-			'description' => __( 'This includes all Skinsplex media items: movies, documentaries, previews, series, etc.', 'bonestheme' ),
+			'description' => __( 'This includes all LA Skins Fest films: movies, documentaries, etc.', 'bonestheme' ),
 			'public' => true,
 			'publicly_queryable' => true,
 			'exclude_from_search' => false,
@@ -61,9 +61,9 @@ function media_item_custom_type() {
 	); // end of register post type 
 	
 	// this adds your post categories to your custom post type
-	//register_taxonomy_for_object_type( 'category', 'media_item' );
+	register_taxonomy_for_object_type( 'category', 'media_items' );
 	// this adds your post tags to your custom post type
-	//register_taxonomy_for_object_type( 'post_tag', 'media_item' );
+	register_taxonomy_for_object_type( 'post_tag', 'media_items' );
 	
 }
 
@@ -74,16 +74,16 @@ register_taxonomy( 'media_item_cat',
 	array('media_items'),
 	array('hierarchical' => true,
 		'labels' => array(
-			'name' => __( 'Media Item Categories', 'bonestheme' ),
-			'singular_name' => __( 'Media Item Category', 'bonestheme' ),
-			'search_items' =>  __( 'Search Media Item Categories', 'bonestheme' ),
-			'all_items' => __( 'All Media Item Categories', 'bonestheme' ),
-			'parent_item' => __( 'Parent Media Item Category', 'bonestheme' ),
-			'parent_item_colon' => __( 'Parent Media Item Category:', 'bonestheme' ),
-			'edit_item' => __( 'Edit Media Item Category', 'bonestheme' ),
-			'update_item' => __( 'Update Media Item Category', 'bonestheme' ),
-			'add_new_item' => __( 'Add New Media Item Category', 'bonestheme' ),
-			'new_item_name' => __( 'New Media Item Category Name', 'bonestheme' )
+			'name' => __( 'Film Categories', 'bonestheme' ),
+			'singular_name' => __( 'Film Category', 'bonestheme' ),
+			'search_items' =>  __( 'Search Film Categories', 'bonestheme' ),
+			'all_items' => __( 'All Film Categories', 'bonestheme' ),
+			'parent_item' => __( 'Parent Film Category', 'bonestheme' ),
+			'parent_item_colon' => __( 'Parent Film Category:', 'bonestheme' ),
+			'edit_item' => __( 'Edit Film Category', 'bonestheme' ),
+			'update_item' => __( 'Update Film Category', 'bonestheme' ),
+			'add_new_item' => __( 'Add New Film Category', 'bonestheme' ),
+			'new_item_name' => __( 'New Film Category Name', 'bonestheme' )
 		),
 		'show_admin_column' => true, 
 		'show_ui' => true,
@@ -97,16 +97,16 @@ register_taxonomy( 'media_item_tag',
 	array('media_items'), // if you change the name of register_post_type( 'media_item', then you have to change this 
 	array('hierarchical' => false,    // if this is false, it acts like tags 
 		'labels' => array(
-			'name' => __( 'Media Item Tags', 'bonestheme' ),
-			'singular_name' => __( 'Media Item Tag', 'bonestheme' ),
-			'search_items' =>  __( 'Search Media Item Tags', 'bonestheme' ),
-			'all_items' => __( 'All Media Item Tags', 'bonestheme' ),
-			'parent_item' => __( 'Parent Media Item Tag', 'bonestheme' ),
-			'parent_item_colon' => __( 'Parent Media Item Tag:', 'bonestheme' ),
-			'edit_item' => __( 'Edit Media Item Tag', 'bonestheme' ),
-			'update_item' => __( 'Update Media Item Tag', 'bonestheme' ),
-			'add_new_item' => __( 'Add New Media Item Tag', 'bonestheme' ),
-			'new_item_name' => __( 'New Media Item Tag Name', 'bonestheme' )
+			'name' => __( 'Film Tags', 'bonestheme' ),
+			'singular_name' => __( 'Film Tag', 'bonestheme' ),
+			'search_items' =>  __( 'Search Film Tags', 'bonestheme' ),
+			'all_items' => __( 'All Film Tags', 'bonestheme' ),
+			'parent_item' => __( 'Parent Film Tag', 'bonestheme' ),
+			'parent_item_colon' => __( 'Parent Film Tag:', 'bonestheme' ),
+			'edit_item' => __( 'Edit Film Tag', 'bonestheme' ),
+			'update_item' => __( 'Update Film Tag', 'bonestheme' ),
+			'add_new_item' => __( 'Add New Film Tag', 'bonestheme' ),
+			'new_item_name' => __( 'New Film Tag Name', 'bonestheme' )
 		),
 		'show_admin_column' => true,
 		'show_ui' => true,

@@ -30,6 +30,7 @@ $gray:              #eaedf2;
 $text-color:        #5c6b80;
 $meta-gray:         #9fa6b4;
 $orange:			#f8931d;
+$dark-orange:	darken($orange, 10%);
 $red:				#f81b2d;
 $skins-gray:		#242021;
 
@@ -40,7 +41,8 @@ $green:             #7dd667;
 $bones-pink:        #f01d4f;
 $blue:              #2980b9;
 
-$link-color:        $bones-pink;
+$text-color:        lighten($skins-gray, 25%);
+$link-color:        $orange;
 $link-hover:        darken($link-color, 9%);
 
 $border-color:      #ccc;

@@ -6,10 +6,61 @@ Stylesheet: Tablet Landscape Stylsheet
 ******************************************************************/
 
 
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+.content-primary {
+	width:72%;
+	padding-right:20px;
+	@include box-sizing;
+}
+.content-secondary {
+	width:28%;
+}
+
+.thumb-index {
+	.thumb-index-inner {
+		& > ul {
+			& > li {
+				.item-content {
+					& > * {
+						&.btn {
+							display:inline-block;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/******************************************************************
+CAROUSEL STYLES
+******************************************************************/
+.carousel {
+	& > ul {
+		& > li {
+			.carousel-item-heading-desktop {
+				font-size:6px;
+				h2 {
+					font-size:5.6em;
+				}
+			}
+		}
+	}
+}
 
 /*********************
-OVERLAY & VIDEO STYLES
+OV STYLES & VIDEO STYLES
 *********************/
+
+.ov-wrap {
+	&.video-ov-wrap {
+		padding:30px;
+	}
+}
+
 .vjs-skinsplex-skin {
 	font-size:11px;
 }
