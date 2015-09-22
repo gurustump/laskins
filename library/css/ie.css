@@ -553,34 +553,44 @@ CAROUSEL STYLES
 }
 
 /*********************
+OV STYLES
+*********************/
+/* line 247, ../scss/breakpoints/_768up.scss */
+.ov-wrap .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon {
+  background-position: 50% 10px;
+  width: 38px;
+  height: 38px;
+}
+
+/*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 245, ../scss/breakpoints/_768up.scss */
+/* line 260, ../scss/breakpoints/_768up.scss */
 .sidebar {
   border: 0;
   margin-top: 20px;
 }
-/* line 248, ../scss/breakpoints/_768up.scss */
+/* line 263, ../scss/breakpoints/_768up.scss */
 .sidebar h4 {
   margin-bottom: 10px;
 }
 
-/* line 253, ../scss/breakpoints/_768up.scss */
+/* line 268, ../scss/breakpoints/_768up.scss */
 .widgettitle {
   border-bottom: 2px solid #444;
   margin-bottom: 0.75em;
 }
 
-/* line 258, ../scss/breakpoints/_768up.scss */
+/* line 273, ../scss/breakpoints/_768up.scss */
 .widget {
   margin: 0 0 20px;
 }
-/* line 262, ../scss/breakpoints/_768up.scss */
+/* line 277, ../scss/breakpoints/_768up.scss */
 .widget ul li {
   margin-bottom: 0.75em;
   /* deep nesting */
 }
-/* line 270, ../scss/breakpoints/_768up.scss */
+/* line 285, ../scss/breakpoints/_768up.scss */
 .widget ul li ul {
   margin-top: 0.75em;
   padding-left: 1em;
@@ -605,7 +615,7 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
-/* line 378, ../scss/breakpoints/_768up.scss */
+/* line 393, ../scss/breakpoints/_768up.scss */
 .footer-links ul li {
   /*
   be careful with the depth of your menus.
@@ -615,6 +625,17 @@ mobile. Make sure to double check these!
 }
 
 /* end .footer-links */
+/******************************************
+PAGE SPECIFIC
+******************************************/
+/******************************************
+FILMS PAGE
+******************************************/
+/* line 418, ../scss/breakpoints/_768up.scss */
+body.single-media_items .article-header .media-item-info {
+  margin-bottom: 20px;
+}
+
 /******************************************************************
 Site Name:
 Author:

@@ -39,3 +39,47 @@ on larger screens.
 		} 
 	}
 }
+.content-primary {
+	width:78%;
+}
+.content-secondary {
+	width:22%;
+}
+
+
+
+/******************************************
+PAGE SPECIFIC
+******************************************/
+/******************************************
+EVENTS PAGE
+******************************************/
+body.tribe-events-style-full {
+	.content-primary {
+		float:left;
+		width:78%;
+	}
+	.content-secondary {
+		float:left;
+		width:22%;
+	}
+}
+
+/******************************************
+FILMS PAGE
+******************************************/
+body.single-media_items {
+	.article-header {
+		margin-bottom:20px;
+		&:after {
+			@include clearfix;
+		}
+		.image-container {
+			float:left;
+			margin-right:20px;
+		}
+	}
+	.cast-crew {
+		clear:left;
+	}
+}

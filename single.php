@@ -7,7 +7,6 @@
 					<main id="main" class="cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
 							<?php
 								/*
 								 * Ah, post formats. Nature's greatest mystery (aside from the sloth).
@@ -22,7 +21,11 @@
 								 * If you want to remove post formats, just delete the post-formats folder and
 								 * replace the function below with the contents of the "format.php" file.
 								*/
-								get_template_part( 'post-formats/format', get_post_format() );
+								if (get_post_type() == 'media_items') {
+									get_template_part( 'post-formats/format-media_items');
+								} else {
+									get_template_part( 'post-formats/format', get_post_format() );
+								}
 							?>
 
 						<?php endwhile; ?>

@@ -88,6 +88,7 @@ add_image_size( 'carousel', 1280, 384, true );
 add_image_size( 'carousel-mobile', 1024, 512, true );
 add_image_size( 'large-thumb', 360, 360, true );
 add_image_size( 'small', 145, 90, true );
+add_image_size( 'med-wide', 540, 360, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -117,6 +118,7 @@ function bones_custom_image_sizes( $sizes ) {
         'carousel-mobile' => __('home carousel mobile - 1024 x 512'),
         'large-thumb' => __('large thumb - 360 x 360'),
         'small' => __('small - 145 x 90'),
+        'med-wide' => __('Medium Wide - 540 x 360'),
     ) );
 }
 
@@ -444,7 +446,8 @@ function skins_gallery_shortcode( $attr ) {
 			$image_output
 			<input class='IMG_SRC' type='hidden' value='{$large_image[0]}' />
 			<input class='IMG_WIDTH' type='hidden' value='{$large_image[1]}' />
-			<input class='IMG_HEIGHT' type='hidden' value='{$large_image[2]}' />";
+			<input class='IMG_HEIGHT' type='hidden' value='{$large_image[2]}' />
+			<span class='item-content'><span class='view-item'>View Image</span></span>";
 		if ( $captiontag && trim($attachment->post_excerpt) ) {
 			$output .= "
 				<{$captiontag} class='wp-caption-text gallery-caption'>

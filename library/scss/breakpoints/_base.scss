@@ -454,6 +454,9 @@ POSTS & CONTENT STYLES
 
 #content {
 }
+.content-primary {
+	padding:0 20px;
+}
 
 .hentry {
 	background-color: $white;
@@ -510,10 +513,9 @@ POSTS & CONTENT STYLES
 
 /* entry content */
 .entry-content {
-	padding: 1.5em 1.5em 0;
 
 	p {
-		margin: 0 0 1.5em;
+		margin: 0 0 1.4em;
 	}
 
 
@@ -767,9 +769,20 @@ POSTS & CONTENT STYLES
 							bottom:5px;
 							margin:0 10px;
 						}
+						&.view-item {
+							color:$white;
+							text-transform:uppercase;
+							display:block;
+							font-size:12px;
+							width:100%;
+							text-align:center;
+							@include v-center;
+							background:url(../images/ic.png) no-repeat 50% -50px;
+							padding-bottom:45px;
+						}
 					}
 				}
-				a:hover {
+				&:hover {
 					.item-content {
 						background-color:rgba($black, .8);
 						& > * {
@@ -966,7 +979,7 @@ OV STYLES
 			}
 			.ui-icon {
 				box-shadow:0 0 4px 2px rgba(0,0,0,.5);
-				background:rgba(0,0,0,.5) url(../images/ic.png) no-repeat;
+				background:rgba(0,0,0,.5) url(../images/ic.png) no-repeat 50% 0;
 				width:18px;
 				height:18px;
 				position:absolute;
@@ -1498,5 +1511,68 @@ body.home {
 		}
 	}
 	.home-partners {
+	}
+}
+
+/******************************************
+EVENTS PAGE
+******************************************/
+body.tribe-events-style-full {
+	.content-primary, .content-secondary, .entry-content {
+		width:auto;
+		float:none;
+	}
+}
+
+/******************************************
+FILMS PAGE
+******************************************/
+body.single-media_items {
+	.article-header {
+		padding-left:0;
+		padding-right:0;
+		img {
+			max-width:100%;
+		}
+		.media-item-info {
+			font-size:12px;
+			padding:5px 0;
+			border:solid #eee;
+			border-width:1px 0;
+			margin-bottom:10px;
+			td {
+				padding:0 10px 0 0 ;
+			}
+		}
+		.description {
+			& > *:last-child {
+				margin:0;
+			}
+		}
+	}
+	.cast-crew {
+		table {
+			border:0;
+			tr {
+				border:0;
+				background:transparent;
+			}
+			td {
+				border:0;
+				&:first-child {
+					border-right:1px solid #eee;
+				}
+				&:last-child {
+					font-weight:bold;
+				}
+			}
+			.subheading {
+				background:#eee;
+				td {
+					font-weight:normal;
+					border:0;
+				}
+			}
+		}
 	}
 }

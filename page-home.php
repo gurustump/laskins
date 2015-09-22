@@ -136,7 +136,7 @@
 												<span class="item-content">
 													<span class="item-head"><?php the_title(); ?></span>
 													<span class="item-body"><?php echo string_limit_words(get_the_excerpt(), 30); ?></span>
-													<span class="btn btn-orange">Learn More</span>
+													<span class="btn btn-orange">Read More</span>
 												</span>
 											</a>
 										</li>

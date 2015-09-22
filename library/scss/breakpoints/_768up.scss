@@ -239,6 +239,21 @@ CAROUSEL STYLES
 }
 
 /*********************
+OV STYLES
+*********************/
+.ov-wrap {
+	.ui-dialog-titlebar {
+		.ui-dialog-titlebar-close {
+			.ui-icon {
+				background-position:50% 10px;
+				width:38px;
+				height:38px;
+			}
+		}
+	}
+}
+
+/*********************
 SIDEBARS & ASIDES
 *********************/
 
@@ -389,3 +404,19 @@ mobile. Make sure to double check these!
 	}
 } /* end .footer-links */
 
+
+
+/******************************************
+PAGE SPECIFIC
+******************************************/
+
+/******************************************
+FILMS PAGE
+******************************************/
+body.single-media_items {
+	.article-header {
+		.media-item-info {
+			margin-bottom:20px;
+		}
+	}
+}

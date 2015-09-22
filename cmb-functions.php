@@ -114,6 +114,52 @@ function laskins_register_media_item_metabox() {
 		'id' 			=> $prefix . 'cast',
 		'type'		=> 'textarea_small',
 	) );
+	
+	$cast_group_field_id = $cmb_media_item_box->add_field( array(
+		'id'          => $prefix . 'cast',
+		'type'        => 'group',
+		'description' => __( 'Add cast members', 'cmb2' ),
+		'options'     => array(
+			'group_title'   => __( 'Cast Member {#}', 'cmb2' ), // {#} gets replaced by row number
+			'add_button'    => __( 'Add Another Cast Member', 'cmb2' ),
+			'remove_button' => __( 'Remove Cast Member', 'cmb2' ),
+			'sortable'      => true, // beta
+		),
+	) );
+	$cmb_media_item_box->add_group_field( $cast_group_field_id, array(
+		'name'       => __( 'Character', 'cmb2' ),
+		'id'         => 'character',
+		'type'       => 'text',
+	) );
+	$cmb_media_item_box->add_group_field( $cast_group_field_id, array(
+		'name'       => __( 'Castmember Name', 'cmb2' ),
+		'id'         => 'name',
+		'type'       => 'text',
+		//'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+	) );
+	
+	$crew_group_field_id = $cmb_media_item_box->add_field( array(
+		'id'          => $prefix . 'other_crew',
+		'type'        => 'group',
+		'description' => __( 'Add other crew positions', 'cmb2' ),
+		'options'     => array(
+			'group_title'   => __( 'Crew Position {#}', 'cmb2' ), // {#} gets replaced by row number
+			'add_button'    => __( 'Add Another Crew Member', 'cmb2' ),
+			'remove_button' => __( 'Remove Crew Member', 'cmb2' ),
+			'sortable'      => true, // beta
+		),
+	) );
+	$cmb_media_item_box->add_group_field( $crew_group_field_id, array(
+		'name'       => __( 'Crew Position Title', 'cmb2' ),
+		'id'         => 'title',
+		'type'       => 'text',
+	) );
+	$cmb_media_item_box->add_group_field( $crew_group_field_id, array(
+		'name'       => __( 'Crewmember Name', 'cmb2' ),
+		'id'         => 'name',
+		'type'       => 'text',
+		'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+	) );
 
 	$cmb_media_item_box->add_field( array(
 		'name'		=> __( 'Duration', 'cmb2' ),
