@@ -205,7 +205,7 @@ header.header {
 					@include css-gradient-plus-img($from: rgba($black, .8), $to: rgba($black, .4), $vstart:"top", $vend:"bottom", $url:"../images/skins-gray-light-grunge.jpg");
 					& > li {
 						float:left;
-						width:33%;
+						width:25%;
 						a {
 							height:50px;
 							line-height:50px;

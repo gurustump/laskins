@@ -910,7 +910,7 @@ header.header {
 /* line 206, ../scss/breakpoints/_1030up.scss */
 .main-nav .top-nav > li.mega-menu > .sub-menu > li {
   float: left;
-  width: 33%;
+  width: 25%;
 }
 /* line 209, ../scss/breakpoints/_1030up.scss */
 .main-nav .top-nav > li.mega-menu > .sub-menu > li a {
