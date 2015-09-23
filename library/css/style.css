@@ -3647,22 +3647,27 @@ you can add resource intensive styles.
     position: absolute;
   }
   /* line 219, ../scss/breakpoints/_768up.scss */
+  .carousel > ul > li .carousel-item-heading-desktop h2, .carousel > ul > li .carousel-item-heading-desktop h3, .carousel > ul > li .carousel-item-heading-desktop p {
+    line-height: 1em;
+    margin-bottom: .3em;
+  }
+  /* line 223, ../scss/breakpoints/_768up.scss */
   .carousel > ul > li .carousel-item-heading-desktop h2 {
     font-size: 5.6em;
   }
-  /* line 222, ../scss/breakpoints/_768up.scss */
+  /* line 226, ../scss/breakpoints/_768up.scss */
   .carousel > ul > li .carousel-item-heading-desktop h3 {
     font-size: 2.8em;
   }
-  /* line 225, ../scss/breakpoints/_768up.scss */
+  /* line 229, ../scss/breakpoints/_768up.scss */
   .carousel > ul > li .carousel-item-heading-desktop p {
     font-size: 2.4em;
   }
-  /* line 230, ../scss/breakpoints/_768up.scss */
+  /* line 234, ../scss/breakpoints/_768up.scss */
   .carousel > ul > li img.bg {
     display: block;
   }
-  /* line 233, ../scss/breakpoints/_768up.scss */
+  /* line 237, ../scss/breakpoints/_768up.scss */
   .carousel > ul > li img.bg-mobile {
     display: none;
   }
@@ -3670,7 +3675,7 @@ you can add resource intensive styles.
   /*********************
   OV STYLES
   *********************/
-  /* line 247, ../scss/breakpoints/_768up.scss */
+  /* line 251, ../scss/breakpoints/_768up.scss */
   .ov-wrap .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon {
     background-position: 50% 10px;
     width: 38px;
@@ -3680,46 +3685,46 @@ you can add resource intensive styles.
   /*********************
   SIDEBARS & ASIDES
   *********************/
-  /* line 260, ../scss/breakpoints/_768up.scss */
+  /* line 264, ../scss/breakpoints/_768up.scss */
   .sidebar {
     border: 0;
   }
-  /* line 262, ../scss/breakpoints/_768up.scss */
+  /* line 266, ../scss/breakpoints/_768up.scss */
   .sidebar h4 {
     margin-bottom: 10px;
   }
 
-  /* line 267, ../scss/breakpoints/_768up.scss */
+  /* line 271, ../scss/breakpoints/_768up.scss */
   .widgettitle {
     border-bottom: 2px solid #444;
     margin-bottom: 0.75em;
   }
 
-  /* line 272, ../scss/breakpoints/_768up.scss */
+  /* line 276, ../scss/breakpoints/_768up.scss */
   .widget {
     margin: 0 0 20px;
   }
-  /* line 276, ../scss/breakpoints/_768up.scss */
+  /* line 280, ../scss/breakpoints/_768up.scss */
   .widget ul li {
     margin-bottom: 0.75em;
     /* deep nesting */
   }
-  /* line 284, ../scss/breakpoints/_768up.scss */
+  /* line 288, ../scss/breakpoints/_768up.scss */
   .widget ul li ul {
     margin-top: 0.75em;
     padding-left: 1em;
   }
 
-  /* line 292, ../scss/breakpoints/_768up.scss */
+  /* line 296, ../scss/breakpoints/_768up.scss */
   .tribe-events-list-widget ol {
     padding: 0 0 15px;
   }
-  /* line 294, ../scss/breakpoints/_768up.scss */
+  /* line 298, ../scss/breakpoints/_768up.scss */
   .tribe-events-list-widget ol li {
     padding-bottom: 15px;
     margin-bottom: 15x;
   }
-  /* line 298, ../scss/breakpoints/_768up.scss */
+  /* line 302, ../scss/breakpoints/_768up.scss */
   .tribe-events-list-widget ol h4 {
     font-size: 20px;
   }
@@ -3743,7 +3748,7 @@ you can add resource intensive styles.
   of overriding here if you styled them for
   mobile. Make sure to double check these!
   */
-  /* line 404, ../scss/breakpoints/_768up.scss */
+  /* line 408, ../scss/breakpoints/_768up.scss */
   .footer-links ul li {
     /*
     be careful with the depth of your menus.
@@ -3759,7 +3764,7 @@ you can add resource intensive styles.
   /******************************************
   FILMS PAGE
   ******************************************/
-  /* line 429, ../scss/breakpoints/_768up.scss */
+  /* line 433, ../scss/breakpoints/_768up.scss */
   body.single-media_items .article-header .media-item-info {
     margin-bottom: 20px;
   }

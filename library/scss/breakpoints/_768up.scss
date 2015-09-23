@@ -216,6 +216,10 @@ CAROUSEL STYLES
 				display:block;
 				font-size:5px;
 				position:absolute;
+				h2, h3, p {
+					line-height:1em;
+					margin-bottom:.3em;
+				}
 				h2 {
 					font-size:5.6em;
 				}
