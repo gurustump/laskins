@@ -29,6 +29,48 @@ contains variables that way our files don't get all messy.
 No one likes a mess.
 
 ******************************************************************/
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Mixins Stylesheet
+
+This is where you can take advantage of Sass' great features: Mixins.
+I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques gradients.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+Helpful:
+http://sachagreif.com/useful-sass-mixins/
+http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
+http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
+
+******************************************************************/
+/*********************
+TRANSITION
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdo it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+BOX SIZING
+*********************/
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
 /*********************
 COLORS
 Need help w/ choosing your colors? Try this site out:
@@ -568,32 +610,45 @@ SIDEBARS & ASIDES
 /* line 260, ../scss/breakpoints/_768up.scss */
 .sidebar {
   border: 0;
-  margin-top: 20px;
 }
-/* line 263, ../scss/breakpoints/_768up.scss */
+/* line 262, ../scss/breakpoints/_768up.scss */
 .sidebar h4 {
   margin-bottom: 10px;
 }
 
-/* line 268, ../scss/breakpoints/_768up.scss */
+/* line 267, ../scss/breakpoints/_768up.scss */
 .widgettitle {
   border-bottom: 2px solid #444;
   margin-bottom: 0.75em;
 }
 
-/* line 273, ../scss/breakpoints/_768up.scss */
+/* line 272, ../scss/breakpoints/_768up.scss */
 .widget {
   margin: 0 0 20px;
 }
-/* line 277, ../scss/breakpoints/_768up.scss */
+/* line 276, ../scss/breakpoints/_768up.scss */
 .widget ul li {
   margin-bottom: 0.75em;
   /* deep nesting */
 }
-/* line 285, ../scss/breakpoints/_768up.scss */
+/* line 284, ../scss/breakpoints/_768up.scss */
 .widget ul li ul {
   margin-top: 0.75em;
   padding-left: 1em;
+}
+
+/* line 292, ../scss/breakpoints/_768up.scss */
+.tribe-events-list-widget ol {
+  padding: 0 0 15px;
+}
+/* line 294, ../scss/breakpoints/_768up.scss */
+.tribe-events-list-widget ol li {
+  padding-bottom: 15px;
+  margin-bottom: 15x;
+}
+/* line 298, ../scss/breakpoints/_768up.scss */
+.tribe-events-list-widget ol h4 {
+  font-size: 20px;
 }
 
 /* links widget */
@@ -615,7 +670,7 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
-/* line 393, ../scss/breakpoints/_768up.scss */
+/* line 404, ../scss/breakpoints/_768up.scss */
 .footer-links ul li {
   /*
   be careful with the depth of your menus.
@@ -631,7 +686,7 @@ PAGE SPECIFIC
 /******************************************
 FILMS PAGE
 ******************************************/
-/* line 418, ../scss/breakpoints/_768up.scss */
+/* line 429, ../scss/breakpoints/_768up.scss */
 body.single-media_items .article-header .media-item-info {
   margin-bottom: 20px;
 }
@@ -891,23 +946,18 @@ POSTS & CONTENT STYLES
   padding-right: 20px;
 }
 
-/* line 243, ../scss/breakpoints/_1030up.scss */
-.content-secondary {
-  padding-right: 0;
-}
-
 /******************************************************************
 CAROUSEL STYLES
 ******************************************************************/
-/* line 251, ../scss/breakpoints/_1030up.scss */
+/* line 248, ../scss/breakpoints/_1030up.scss */
 .carousel {
   position: relative;
 }
-/* line 253, ../scss/breakpoints/_1030up.scss */
+/* line 250, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav {
   position: static;
 }
-/* line 255, ../scss/breakpoints/_1030up.scss */
+/* line 252, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav:after {
   content: ".";
   height: 0;
@@ -915,7 +965,7 @@ CAROUSEL STYLES
   visibility: hidden;
   clear: both;
 }
-/* line 258, ../scss/breakpoints/_1030up.scss */
+/* line 255, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a {
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -941,31 +991,31 @@ CAROUSEL STYLES
   -o-transition: opacity 0.35s;
   transition: opacity 0.35s;
 }
-/* line 270, ../scss/breakpoints/_1030up.scss */
+/* line 267, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a:after {
   border-top-width: 12px;
   border-bottom-width: 12px;
   float: none;
   margin: 0;
 }
-/* line 276, ../scss/breakpoints/_1030up.scss */
+/* line 273, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a.active {
   opacity: 1;
 }
-/* line 279, ../scss/breakpoints/_1030up.scss */
+/* line 276, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a.prev {
   left: 10px;
 }
-/* line 281, ../scss/breakpoints/_1030up.scss */
+/* line 278, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a.prev:after {
   border-right-width: 20px;
   margin-left: 2px;
 }
-/* line 286, ../scss/breakpoints/_1030up.scss */
+/* line 283, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a.next {
   right: 10px;
 }
-/* line 288, ../scss/breakpoints/_1030up.scss */
+/* line 285, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a.next:after {
   border-left-width: 20px;
   margin-right: 2px;
@@ -974,12 +1024,12 @@ CAROUSEL STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 302, ../scss/breakpoints/_1030up.scss */
+/* line 299, ../scss/breakpoints/_1030up.scss */
 .sidebar h4 {
   margin-bottom: 15px;
 }
 
-/* line 308, ../scss/breakpoints/_1030up.scss */
+/* line 305, ../scss/breakpoints/_1030up.scss */
 .footer #inner-footer {
   height: 39px;
   border-top: 1px solid #303030;

@@ -264,10 +264,11 @@ function laskins_register_events_metabox() {
 	) );
 
 	$cmb_ad_space_box->add_field( array(
-		'name'		=> __( 'Media Item Slug', 'cmb2' ),
-		'desc'       => __( 'Enter the slug of the Media Item associated with this Event.', 'cmb2' ),
-		'id' 			=> $prefix . 'media_item',
-		'type'		=> 'text',
+		'name'		=> __( 'Film ID', 'cmb2' ),
+		'desc'       => __( 'If this event is a screening, enter the ID of the Film associated with this Event, or click the search button to find it.', 'cmb2' ),
+		'id' 			=> $prefix . 'film',
+		'type'		=> 'post_search_text',
+		'post_type'=> 'media_items'
 	) );
 
 }

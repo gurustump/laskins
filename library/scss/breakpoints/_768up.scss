@@ -259,7 +259,6 @@ SIDEBARS & ASIDES
 
 .sidebar {
 	border:0;
-	margin-top:20px;
 	h4 {
 		margin-bottom:10px;
 	}
@@ -286,6 +285,18 @@ SIDEBARS & ASIDES
 				margin-top: 0.75em;
 				padding-left: 1em;
 			}
+		}
+	}
+}
+.tribe-events-list-widget {
+	ol {
+		padding:0 0 15px;
+		li {
+			padding-bottom:15px;
+			margin-bottom:15x;
+		}
+		h4 {
+			font-size:20px;
 		}
 	}
 }

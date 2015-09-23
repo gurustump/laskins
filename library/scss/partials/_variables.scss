@@ -11,6 +11,9 @@ No one likes a mess.
 
 ******************************************************************/
 
+// import mixins
+@import "partials/mixins";
+
 /*********************
 COLORS
 Need help w/ choosing your colors? Try this site out:
@@ -25,14 +28,14 @@ $alert-blue:        #d5edf8;
 $black:             #000;
 $white:             #fff;
 
-$light-gray:        #f8f9fa;
-$gray:              #eaedf2;
+$light-gray:        #faf9f8;
+$gray:              #eee;
 $text-color:        #5c6b80;
-$meta-gray:         #9fa6b4;
 $orange:			#f8931d;
 $dark-orange:	darken($orange, 10%);
 $red:				#f81b2d;
 $skins-gray:		#242021;
+$meta-gray:        lighten($skins-gray, 50%);
 
 $tan:               #eceee5;
 
@@ -45,8 +48,28 @@ $text-color:        lighten($skins-gray, 25%);
 $link-color:        $orange;
 $link-hover:        darken($link-color, 9%);
 
-$border-color:      #ccc;
+$border-color:      $gray;
+$border-lighter:		#f5f5f5;
 $disabled-gray:     #cfcfcf;
+
+
+
+%skins-grunge {
+	background:$black url(../images/skins-gray-light-grunge.jpg); // lighten($skins-gray, 50%);
+	@include css-gradient-plus-img($from: rgba($black, .9), $to: rgba($black, .3), $vstart:"top", $vend:"bottom", $url:"../images/skins-gray-light-grunge.jpg");
+}
+%white-grunge {
+	background:$white url(../images/white-dark-grunge.jpg); // lighten($skins-gray, 50%);
+	@include css-gradient-plus-img($from: rgba($white, .8), $to: rgba($white, .05), $vstart:"top", $vend:"bottom", $url:"../images/white-dark-grunge.jpg");
+}
+%light-gray-grunge {
+	background:$light-gray url(../images/white-dark-grunge.jpg);
+	@include css-gradient-plus-img($from: rgba($light-gray, .8), $to: rgba($light-gray, .05), $vstart:"top", $vend:"bottom", $url:"../images/white-dark-grunge.jpg");
+}
+%gray-grunge {
+	background:$gray url(../images/white-dark-grunge.jpg);
+	@include css-gradient-plus-img($from: rgba($gray, .8), $to: rgba($gray, .05), $vstart:"top", $vend:"bottom", $url:"../images/white-dark-grunge.jpg");
+} 
 
 
 /*

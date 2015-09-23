@@ -90,3 +90,34 @@ and it will create a button dependant on those variables.
 	} // end hover
 
 } // end blue button
+
+
+// triangles
+%tri-side {
+	&:after {
+		content:"";
+		width:0;
+		height:0;
+		border-top:5px solid transparent;
+		border-bottom:5px solid transparent;
+		@include v-center;
+	}
+}
+%tri-prev {
+	@extend %tri-side;
+	float:left;
+	&:after {
+		border-right:5px solid $orange;
+		float:left;
+		margin-right:3px;
+	}
+}
+%tri-next {
+	@extend %tri-side;
+	float:right;
+	&:after {
+		border-left:5px solid $orange;
+		float:right;
+		margin-left:3px;
+	}
+}
