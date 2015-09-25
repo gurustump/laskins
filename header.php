@@ -7,11 +7,12 @@
 
 	<head>
 		<meta charset="utf-8">
-
+		
+		<?php $isFilmFestPage = tribe_event_in_category('film-festival') && is_single(); ?>
 		<?php // force Internet Explorer to use the latest rendering engine available ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-		<title><?php wp_title(''); ?></title>
+		<?php // hacked the title here for just film-festival pages so it won't say "Upcoming Events" before the festival's name ?>
+		<title><?php $isFilmFestPage ? the_title() :  wp_title(' | '); ?></title>
 
 		<?php // mobile meta (hooray!) ?>
 		<meta name="HandheldFriendly" content="True">
@@ -39,8 +40,7 @@
 		<?php // end analytics ?>
 
 	</head>
-
-	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+	<body <?php body_class($isFilmFestPage ? 'film-festival-page' : ''); ?> itemscope itemtype="http://schema.org/WebPage">
 
 		<div id="container">
 
@@ -89,3 +89,9 @@
 				</div>
 
 			</header>
+			
+<?php /*
+<pre style="padding-top:120px;background:orange;">
+<?php print_r( wp_title(' | ', false)); ?>
+</pre>
+*/ ?>

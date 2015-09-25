@@ -37,6 +37,18 @@
 									<td><?php echo $itemMeta['_laskins_media_item_country'][0]; ?></td>
 								<tr>
 								<?php } ?>
+								<?php if ($itemMeta['_laskins_media_item_imdb_url'][0]) { ?>
+								<tr>
+									<td>IMDb Page</td>
+									<td><a href="<?php echo $itemMeta['_laskins_media_item_imdb_url'][0]; ?>" target="_blank"><?php echo $itemMeta['_laskins_media_item_imdb_url'][0]; ?></a></td>
+								<tr>
+								<?php } ?>
+								<?php if ($itemMeta['_laskins_media_item_view_url'][0]) { ?>
+								<tr>
+									<td>Watch this film</td>
+									<td><a href="<?php echo $itemMeta['_laskins_media_item_view_url'][0]; ?>" target="_blank"><?php echo $itemMeta['_laskins_media_item_view_url'][0]; ?></a></td>
+								<tr>
+								<?php } ?>
 							</table>
 						</div>
 						<?php } ?>

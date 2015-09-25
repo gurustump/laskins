@@ -521,6 +521,9 @@ function get_attachment_id_from_src($image_src) {
 	return $id;
 }
 
+// add excerpts to pages
+add_post_type_support( 'page', 'excerpt' );
+
 // limit the number of words in a thing...useful for excerpts
 function string_limit_words($string, $word_limit) {
 	$words = explode(' ', $string, ($word_limit + 1));
@@ -545,6 +548,19 @@ function stylesheet_path_shortcode() {
 }
 add_shortcode('stylesheet_path', 'stylesheet_path_shortcode');
 
+// modifying the title that events calendar (tribe events) puts in the <title> tag of the document
+function change_tribe_title( $title, $sep, $seplocation ) {
+	if (tribe_event_in_category('screening')  && is_single()) {
+		//print '<pre style="background:red;height:400px;">'.$title.'</pre>';
+		$title = str_replace('Upcoming Events', 'Screening', $title);
+		return $title;
+	} else {
+		return $title;
+	}
+}
+add_filter( 'wp_title', 'change_tribe_title', 11, 3 );
+
+// this crap doesn't work
 @ini_set( 'upload_max_size' , '64M' );
 @ini_set( 'post_max_size', '64M');
 @ini_set( 'max_execution_time', '300' );

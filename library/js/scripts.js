@@ -112,6 +112,7 @@ jQuery(document).ready(function($) {
 
 	// Check what page we're on
 	if (typeof isHome === "undefined") var isHome = $('body').hasClass('home');
+	if (typeof isFilmFestPage === "undefined") var isFilmFestPage = $('body').hasClass('film-festival-page');
 
 	/*
 	* Let's fire off the gravatar function
@@ -119,12 +120,17 @@ jQuery(document).ready(function($) {
 	*/
 	loadGravatars();
 	
-	win.resize(function () {
+	win.resize(function() {
 		waitForFinalEvent( function() {
 			adminBarMove = $('#wpadminbar').outerHeight()-1;
 			mobileDeviceBodyClass();
 			setGalleryOvSize();
+			headerHeight();
 		}, timeToWaitForLast, 'resizeWindow');
+	});
+	
+	win.scroll(function() {
+		headerHeight();
 	});
 	
 	function mobileDeviceType() {
@@ -146,6 +152,14 @@ jQuery(document).ready(function($) {
 		}
 	}
 	mobileDeviceBodyClass();
+	
+	function headerHeight() {
+		if (win.scrollTop() > 100) {
+			$('body').addClass('scrolled');
+		} else {
+			$('body').removeClass('scrolled');
+		}
+	}
 	
 	/************************
 	// CAROUSEL
@@ -365,6 +379,21 @@ jQuery(document).ready(function($) {
 	
 	if (isHome) {
 		scrollCarousel($('.SCROLL_CAROUSEL'), 3000, true);
+	}
+	
+	if (isFilmFestPage) {
+		var screeningList = $('.SCREENING_LISTS')
+		var screeningListHeight = screeningList.outerHeight();
+		$('.FILMS_LIST:first > li').each(function() {
+			screeningListHeight += $(this).outerHeight();
+		});
+		console.log(screeningListHeight);
+		$('.SCREENING_LISTS').height(screeningListHeight);
+		// animates toggling from screening films list by schedule to alphabetical
+		$('.TABS > li').click(function() {
+			if ($(this).hasClass('active')) { return; }
+			$(this).add($(this).siblings()).add('.FILMS_LIST').toggleClass('active');
+		});
 	}
 	
 	// Hide wp admin bar

@@ -827,7 +827,7 @@ CAROUSEL STYLES
 				position:absolute;
 			}
 			.carousel-item-heading-mobile {
-				background:$black; 
+				background:$black;
 				color:$orange;
 				padding:10px;
 				* {
@@ -1611,6 +1611,134 @@ body.single-media_items {
 				td {
 					font-weight:normal;
 					border:0;
+				}
+			}
+		}
+	}
+}
+
+/******************************************
+FILM FESTIVAL TEMPLATE PAGE
+******************************************/
+body.film-festival-page {
+	.entry-header {
+		display:block;
+		border-top:3px solid darken($red, 35%);
+		border-bottom:3px solid darken($red, 35%);
+		background:$black;
+		position:relative;
+		img {
+			display:block;
+			width:100%;
+			&.bg {
+				display:none;
+			}
+		}
+		.heading-desktop {
+			display:none;
+			position:absolute;
+		}
+		h2, h3, p {
+			margin-bottom:0;
+		}
+		.heading-mobile {
+			background:$black;
+			color:$orange;
+			padding:10px;
+			* {
+				line-height:1.2em;
+			}
+			h2 {
+				font-size:24px;
+			}
+			h3 {
+				font-weight:300;
+				text-transform:uppercase;
+				font-size:18px;
+			}
+			p {
+				font-size:13px;
+			}
+		}
+	}
+	.content-primary {
+		.overview {
+			margin-top:20px;
+		}
+		.screening-lists {
+			overflow:hidden;
+			position:relative;
+			margin:0 -20px;
+			.tabs {
+				border:solid $orange;
+				border-width:3px 0;
+				height:46px;
+				position:relative;
+				li {
+					white-space:nowrap;
+					position:absolute;
+					padding:12px 0;
+					font-family:$heading;
+					left:100%;
+					color:$orange;
+					font-size:16px;
+					height:46px;
+					line-height:46px;
+					@include transform(translateX(-100%));
+					@include transition(all, .35s);
+					@include tri(right, 5px, 5px, $orange, 0 0 19px 4px);
+					cursor:pointer;
+					padding:0 8px 0 0;
+					&.active {
+						font-weight:bold;
+						left:0;
+						@include transform(translateX(0));
+						z-index:1;
+						cursor:default;
+						padding:0 0 0 8px;
+						&:after {
+							opacity:0;
+						}
+					}
+				}
+			}
+			.films-list {
+				width:100%;
+				position:absolute;
+				top:52px;
+				left:0;
+				@include transform(translateX(100%));
+				@include transition(all .35s);
+				&.active {
+					@include transform(translateX(0));
+				}
+				li {
+					clear:left;
+				}
+				a {
+					display:block;
+					text-decoration:none;
+					&:after {
+						@include clearfix;
+					}
+				}
+				img {
+					float:left;
+					margin:0 10px 5px 0;
+					width:80px
+				}
+				.item-sched {
+					text-transform:uppercase;
+					font-size:11px;
+					display:block;
+					border:solid $light-gray;
+					border-width:1px 0;
+					&.mobile-hide {
+						display:none;
+					}
+				}
+				.item-body, .btn {
+					display:none;
 				}
 			}
 		}

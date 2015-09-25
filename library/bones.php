@@ -77,7 +77,7 @@ function rw_title( $title, $sep, $seplocation ) {
   if ( $paged >= 2 || $page >= 2 ) {
     $title .= " {$sep} " . sprintf( __( 'Page %s', 'dbt' ), max( $paged, $page ) );
   }
-
+  
   return $title;
 
 } // end better title

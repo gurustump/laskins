@@ -43,9 +43,6 @@ CAROUSEL STYLES
 		& > li {
 			.carousel-item-heading-desktop {
 				font-size:6px;
-				h2 {
-					font-size:5.6em;
-				}
 			}
 		}
 	}
@@ -176,7 +173,9 @@ body.page-template-page-custom-index {
 	}
 }
 
-/* Single Media Item Page */
+/******************************************
+FILM PAGE
+******************************************/
 body.single-media_items {
 	.hentry {
 		&.advactive {
@@ -184,6 +183,38 @@ body.single-media_items {
 		}
 		.entry-content {
 			padding-right:0;
+		}
+	}
+}
+
+/******************************************
+FILM FESTIVAL TEMPLATE PAGE
+******************************************/
+body.film-festival-page {
+	.entry-header {
+		.heading-desktop {
+			font-size:6px;
+		}
+	}
+	.content-primary {
+		.screening-lists {
+			.tabs {
+				height:52px;
+				li {
+					height:52px;
+					line-height:52px;
+					font-size:22px;
+					&:after {
+						margin-bottom:24px;
+					}
+				}
+			}
+			.films-list {
+				top:58px;
+				img {
+					width:120px
+				}
+			}
 		}
 	}
 }

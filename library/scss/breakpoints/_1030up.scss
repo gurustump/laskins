@@ -12,6 +12,7 @@ be seen on the Desktop.
 #container {
 	#content {
 		padding-top:90px;
+		@include transition(padding .35s);
 	}
 }
 .wrap {
@@ -28,12 +29,32 @@ header.header {
 }
 #logo {
 	position:absolute;
-	width:461px;
+	width:420px;
 	height:90px;
 	background:none;
+	@include transition(height .35s);
 	a {
 		margin:0;
 		height:100%;
+	}
+}
+body.scrolled {
+	#container #content {
+		padding-top:70px;
+	}
+	#logo {
+		height:70px;
+	}
+	.main-nav .top-nav > li {
+		& > a {
+			height:70px;
+			line-height:70px;
+		}
+		&.mega-menu {
+			& > .sub-menu {
+				top:70px;
+			}
+		}
 	}
 }
 .nav {
@@ -140,12 +161,14 @@ header.header {
 		overflow:visible;
 		& > li {
 			& > a {
-				padding:12px 8px;
+				padding:0 8px;
 				font-size:12px;
 				margin-top:0;
 				border:0;
-				height:66px;
-				line-height:66px;
+				height:90px;
+				line-height:90px;
+				@include box-sizing;
+				@include transition(height .35s, line-height .35s);
 			}
 			&.menu-item-search, &.menu-item-login, &.menu-item-logout {
 				& > a {
@@ -203,6 +226,7 @@ header.header {
 					@include box-sizing;
 					background:#333;
 					@include css-gradient-plus-img($from: rgba($black, .8), $to: rgba($black, .4), $vstart:"top", $vend:"bottom", $url:"../images/skins-gray-light-grunge.jpg");
+					@include transition(top .35s);
 					& > li {
 						float:left;
 						width:25%;

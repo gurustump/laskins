@@ -1,14 +1,12 @@
 <?php get_header(); ?>
 
 			<div id="content">
-				<?php $isSingleEvent = in_array('single-tribe_events', get_body_class()); ?>
 				<div id="inner-content" class="wrap cf">
 						<main id="main" class="cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'content-primary cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-								<?php if (!$isSingleEvent) { ?>
 								<header class="article-header">
 
 									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
@@ -20,7 +18,6 @@
 									*/ ?>
 
 								</header> <?php // end article header ?>
-								<?php } ?>
 								
 								<section class="entry-content cf" itemprop="articleBody">
 									<?php

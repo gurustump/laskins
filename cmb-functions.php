@@ -50,20 +50,28 @@ function laskins_before_row_if_2( $field_args, $field ) {
 	}
 }
 
-// add_action( 'cmb2_init', 'laskins_register_media_item_metabox' );
+add_action( 'cmb2_init', 'laskins_register_festival_page_metabox' );
 
-function laskins_register_custom_index_metabox() {
-	$prefix = '_laskins_custom_index_';
+function laskins_register_festival_page_metabox() {
+	$prefix = '_laskins_festival_page_';
 	
-	$cmb_custom_index_box = new_cmb2_box( array(
+	$cmb_festival_page_box = new_cmb2_box( array(
 		'id'            => $prefix . 'custom_index_metabox',
-		'title'         => __( 'Custom Index Page Options', 'cmb2' ),
+		'title'         => __( 'Festival Page Options', 'cmb2' ),
 		'object_types'  => array( 'page', ), // Post type
 		'context'       => 'normal',
 		'priority'      => 'high',
 		'show_names'    => true, // Show field names on the left
 		// 'cmb_styles' => false, // false to disable the CMB stylesheet
 		// 'closed'     => true, // true to keep the metabox closed by default
+	) );
+
+	$cmb_festival_page_box->add_field( array(
+		'name' => __( 'Festival Year', 'cmb2' ),
+		'desc' => __( "Enter the year this festival is taking place.", 'cmb2' ),
+		'id'   => $prefix . 'year',
+		'type' => 'text_small',
+		// 'repeatable' => true,
 	) );
 }
 
@@ -178,6 +186,22 @@ function laskins_register_media_item_metabox() {
 		'name'		=> __( 'Age Restriction', 'cmb2' ),
 		'id' 			=> $prefix . 'age_restriction',
 		'type'		=> 'text_small',
+	) );
+
+	$cmb_media_item_box->add_field( array(
+		'name' => __( 'IMDb URL', 'cmb2' ),
+		'desc' => __( 'Enter the URL of the IMDb page for this film', 'cmb2' ),
+		'id'   => $prefix . 'imdb_url',
+		'type' => 'text_url',
+		'protocols' => array('http', 'https'), // Array of allowed protocols
+	) );
+
+	$cmb_media_item_box->add_field( array(
+		'name' => __( 'Link to film on the web', 'cmb2' ),
+		'desc' => __( 'Enter the URL of where the movie can be viewed on the internet', 'cmb2' ),
+		'id'   => $prefix . 'view_url',
+		'type' => 'text_url',
+		'protocols' => array('http', 'https'), // Array of allowed protocols
 	) );
 
 }

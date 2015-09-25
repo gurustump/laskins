@@ -1180,7 +1180,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
 /* line 27, ../scss/modules/_buttons.scss */
-.btn, .btn-blue, .comment-reply-link, #submit, .btn-orange {
+.btn, .btn-blue, .comment-reply-link, #submit, .btn-orange, #container .tribe-events-button {
   display: inline-block;
   position: relative;
   font-family: "Oswald", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1204,7 +1204,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   transition: background-color 0.35s ease-in-out;
 }
 /* line 47, ../scss/modules/_buttons.scss */
-.btn:hover, .btn-blue:hover, .comment-reply-link:hover, #submit:hover, .btn-orange:hover {
+.btn:hover, .btn-blue:hover, .comment-reply-link:hover, #submit:hover, .btn-orange:hover, #container .tribe-events-button:hover {
   color: white;
   outline: none;
 }
@@ -1229,11 +1229,11 @@ and it will create a button dependant on those variables.
 }
 /* line 75, ../scss/modules/_buttons.scss */
 .btn-blue:hover, .comment-reply-link:hover, #submit:hover {
-  background-color: #2574a8;
+  background-color: #226998;
 }
 /* line 79, ../scss/modules/_buttons.scss */
 .btn-blue:active, .comment-reply-link:active, #submit:active {
-  background-color: #2472a4;
+  background-color: #226998;
 }
 
 /* line 84, ../scss/modules/_buttons.scss */
@@ -1243,6 +1243,15 @@ and it will create a button dependant on those variables.
 /* line 88, ../scss/modules/_buttons.scss */
 .btn-orange:hover {
   background-color: #aa5e05;
+}
+
+/* line 94, ../scss/modules/_buttons.scss */
+#container .tribe-events-button {
+  background-color: #2980b9;
+}
+/* line 98, ../scss/modules/_buttons.scss */
+#container .tribe-events-button:hover {
+  background-color: #226998;
 }
 
 /******************************************************************
@@ -3264,6 +3273,201 @@ body.single-media_items .cast-crew table .subheading td {
   border: 0;
 }
 
+/******************************************
+FILM FESTIVAL TEMPLATE PAGE
+******************************************/
+/* line 1624, ../scss/breakpoints/_base.scss */
+body.film-festival-page .entry-header {
+  display: block;
+  border-top: 3px solid #5e030a;
+  border-bottom: 3px solid #5e030a;
+  background: black;
+  position: relative;
+}
+/* line 1630, ../scss/breakpoints/_base.scss */
+body.film-festival-page .entry-header img {
+  display: block;
+  width: 100%;
+}
+/* line 1633, ../scss/breakpoints/_base.scss */
+body.film-festival-page .entry-header img.bg {
+  display: none;
+}
+/* line 1637, ../scss/breakpoints/_base.scss */
+body.film-festival-page .entry-header .heading-desktop {
+  display: none;
+  position: absolute;
+}
+/* line 1641, ../scss/breakpoints/_base.scss */
+body.film-festival-page .entry-header h2, body.film-festival-page .entry-header h3, body.film-festival-page .entry-header p {
+  margin-bottom: 0;
+}
+/* line 1644, ../scss/breakpoints/_base.scss */
+body.film-festival-page .entry-header .heading-mobile {
+  background: black;
+  color: #f8931d;
+  padding: 10px;
+}
+/* line 1648, ../scss/breakpoints/_base.scss */
+body.film-festival-page .entry-header .heading-mobile * {
+  line-height: 1.2em;
+}
+/* line 1651, ../scss/breakpoints/_base.scss */
+body.film-festival-page .entry-header .heading-mobile h2 {
+  font-size: 24px;
+}
+/* line 1654, ../scss/breakpoints/_base.scss */
+body.film-festival-page .entry-header .heading-mobile h3 {
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+/* line 1659, ../scss/breakpoints/_base.scss */
+body.film-festival-page .entry-header .heading-mobile p {
+  font-size: 13px;
+}
+/* line 1665, ../scss/breakpoints/_base.scss */
+body.film-festival-page .content-primary .overview {
+  margin-top: 20px;
+}
+/* line 1668, ../scss/breakpoints/_base.scss */
+body.film-festival-page .content-primary .screening-lists {
+  overflow: hidden;
+  position: relative;
+  margin: 0 -20px;
+}
+/* line 1672, ../scss/breakpoints/_base.scss */
+body.film-festival-page .content-primary .screening-lists .tabs {
+  border: solid #f8931d;
+  border-width: 3px 0;
+  height: 46px;
+  position: relative;
+}
+/* line 1677, ../scss/breakpoints/_base.scss */
+body.film-festival-page .content-primary .screening-lists .tabs li {
+  white-space: nowrap;
+  position: absolute;
+  padding: 12px 0;
+  font-family: "Oswald", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  left: 100%;
+  color: #f8931d;
+  font-size: 16px;
+  height: 46px;
+  line-height: 46px;
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: all, 0.35s;
+  -moz-transition: all, 0.35s;
+  -ms-transition: all, 0.35s;
+  -o-transition: all, 0.35s;
+  transition: all, 0.35s;
+  cursor: pointer;
+  padding: 0 8px 0 0;
+}
+/* line 138, ../scss/partials/_mixins.scss */
+body.film-festival-page .content-primary .screening-lists .tabs li:after {
+  content: "";
+  width: 0;
+  height: 0;
+  display: inline-block;
+  float: none;
+  margin: 0 0 19px 4px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+  border-left: 5px solid #f8931d;
+}
+/* line 1692, ../scss/breakpoints/_base.scss */
+body.film-festival-page .content-primary .screening-lists .tabs li.active {
+  font-weight: bold;
+  left: 0;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+  z-index: 1;
+  cursor: default;
+  padding: 0 0 0 8px;
+}
+/* line 1699, ../scss/breakpoints/_base.scss */
+body.film-festival-page .content-primary .screening-lists .tabs li.active:after {
+  opacity: 0;
+}
+/* line 1705, ../scss/breakpoints/_base.scss */
+body.film-festival-page .content-primary .screening-lists .films-list {
+  width: 100%;
+  position: absolute;
+  top: 52px;
+  left: 0;
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  -ms-transition: all 0.35s;
+  -o-transition: all 0.35s;
+  transition: all 0.35s;
+}
+/* line 1712, ../scss/breakpoints/_base.scss */
+body.film-festival-page .content-primary .screening-lists .films-list.active {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+}
+/* line 1715, ../scss/breakpoints/_base.scss */
+body.film-festival-page .content-primary .screening-lists .films-list li {
+  clear: left;
+}
+/* line 1718, ../scss/breakpoints/_base.scss */
+body.film-festival-page .content-primary .screening-lists .films-list a {
+  display: block;
+  text-decoration: none;
+}
+/* line 1721, ../scss/breakpoints/_base.scss */
+body.film-festival-page .content-primary .screening-lists .films-list a:after {
+  content: ".";
+  height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+/* line 1725, ../scss/breakpoints/_base.scss */
+body.film-festival-page .content-primary .screening-lists .films-list img {
+  float: left;
+  margin: 0 10px 5px 0;
+  width: 80px;
+}
+/* line 1730, ../scss/breakpoints/_base.scss */
+body.film-festival-page .content-primary .screening-lists .films-list .item-sched {
+  text-transform: uppercase;
+  font-size: 11px;
+  display: block;
+  border: solid #faf9f8;
+  border-width: 1px 0;
+}
+/* line 1736, ../scss/breakpoints/_base.scss */
+body.film-festival-page .content-primary .screening-lists .films-list .item-sched.mobile-hide {
+  display: none;
+}
+/* line 1740, ../scss/breakpoints/_base.scss */
+body.film-festival-page .content-primary .screening-lists .films-list .item-body, body.film-festival-page .content-primary .screening-lists .films-list .btn {
+  display: none;
+}
+
 /*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
@@ -3441,6 +3645,22 @@ tweeners.
   /* line 203, ../scss/breakpoints/_481up.scss */
   body.home .home-banner p {
     margin-bottom: 3px;
+  }
+
+  /******************************************
+  FILM FESTIVAL TEMPLATE PAGE
+  ******************************************/
+  /* line 215, ../scss/breakpoints/_481up.scss */
+  body.film-festival-page .entry-header .heading-mobile h2 {
+    font-size: 36px;
+  }
+  /* line 218, ../scss/breakpoints/_481up.scss */
+  body.film-festival-page .entry-header .heading-mobile h3 {
+    font-size: 20px;
+  }
+  /* line 221, ../scss/breakpoints/_481up.scss */
+  body.film-festival-page .entry-header .heading-mobile p {
+    font-size: 14px;
   }
 }
 /*********************
@@ -3768,6 +3988,98 @@ you can add resource intensive styles.
   body.single-media_items .article-header .media-item-info {
     margin-bottom: 20px;
   }
+
+  /******************************************
+  FILM FESTIVAL TEMPLATE PAGE
+  ******************************************/
+  /* line 443, ../scss/breakpoints/_768up.scss */
+  body.film-festival-page .entry-header {
+    border: 0;
+  }
+  /* line 445, ../scss/breakpoints/_768up.scss */
+  body.film-festival-page .entry-header .heading-mobile {
+    display: none;
+  }
+  /* line 448, ../scss/breakpoints/_768up.scss */
+  body.film-festival-page .entry-header .heading-desktop {
+    padding: 10px 15px;
+    display: block;
+    font-size: 5px;
+    position: absolute;
+  }
+  /* line 453, ../scss/breakpoints/_768up.scss */
+  body.film-festival-page .entry-header .heading-desktop h2, body.film-festival-page .entry-header .heading-desktop h3, body.film-festival-page .entry-header .heading-desktop p {
+    line-height: 1em;
+    margin-bottom: .3em;
+  }
+  /* line 457, ../scss/breakpoints/_768up.scss */
+  body.film-festival-page .entry-header .heading-desktop h2 {
+    font-size: 5.6em;
+  }
+  /* line 460, ../scss/breakpoints/_768up.scss */
+  body.film-festival-page .entry-header .heading-desktop h3 {
+    font-size: 2.8em;
+  }
+  /* line 463, ../scss/breakpoints/_768up.scss */
+  body.film-festival-page .entry-header .heading-desktop p {
+    font-size: 2.4em;
+  }
+  /* line 468, ../scss/breakpoints/_768up.scss */
+  body.film-festival-page .entry-header img.bg {
+    display: block;
+  }
+  /* line 471, ../scss/breakpoints/_768up.scss */
+  body.film-festival-page .entry-header img.bg-mobile {
+    display: none;
+  }
+  /* line 476, ../scss/breakpoints/_768up.scss */
+  body.film-festival-page .content-primary {
+    padding-right: 0;
+  }
+  /* line 478, ../scss/breakpoints/_768up.scss */
+  body.film-festival-page .content-primary:after {
+    content: ".";
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+  }
+  /* line 481, ../scss/breakpoints/_768up.scss */
+  body.film-festival-page .content-primary .overview, body.film-festival-page .content-primary .screening-lists {
+    float: left;
+    width: 50%;
+  }
+  /* line 485, ../scss/breakpoints/_768up.scss */
+  body.film-festival-page .content-primary .screening-lists {
+    margin: 0;
+  }
+  /* line 487, ../scss/breakpoints/_768up.scss */
+  body.film-festival-page .content-primary .screening-lists .tabs {
+    height: 48px;
+  }
+  /* line 489, ../scss/breakpoints/_768up.scss */
+  body.film-festival-page .content-primary .screening-lists .tabs li {
+    height: 48px;
+    line-height: 48px;
+    font-size: 18px;
+    padding: 0 10px 0 0;
+  }
+  /* line 494, ../scss/breakpoints/_768up.scss */
+  body.film-festival-page .content-primary .screening-lists .tabs li.active {
+    padding: 0 0 0 10px;
+  }
+  /* line 497, ../scss/breakpoints/_768up.scss */
+  body.film-festival-page .content-primary .screening-lists .tabs li:after {
+    margin-bottom: 20px;
+  }
+  /* line 502, ../scss/breakpoints/_768up.scss */
+  body.film-festival-page .content-primary .screening-lists .films-list {
+    top: 54px;
+  }
+  /* line 504, ../scss/breakpoints/_768up.scss */
+  body.film-festival-page .content-primary .screening-lists .films-list img {
+    width: 100px;
+  }
 }
 @media only screen and (min-width: 1024px) {
   /******************************************************************
@@ -3807,20 +4119,16 @@ you can add resource intensive styles.
   .carousel > ul > li .carousel-item-heading-desktop {
     font-size: 6px;
   }
-  /* line 46, ../scss/breakpoints/_1024up.scss */
-  .carousel > ul > li .carousel-item-heading-desktop h2 {
-    font-size: 5.6em;
-  }
 
   /*********************
   OV STYLES & VIDEO STYLES
   *********************/
-  /* line 59, ../scss/breakpoints/_1024up.scss */
+  /* line 56, ../scss/breakpoints/_1024up.scss */
   .ov-wrap.video-ov-wrap {
     padding: 30px;
   }
 
-  /* line 64, ../scss/breakpoints/_1024up.scss */
+  /* line 61, ../scss/breakpoints/_1024up.scss */
   .vjs-skinsplex-skin {
     font-size: 11px;
   }
@@ -3828,7 +4136,7 @@ you can add resource intensive styles.
   /*********************
   AD SPACE STYLES
   *********************/
-  /* line 72, ../scss/breakpoints/_1024up.scss */
+  /* line 69, ../scss/breakpoints/_1024up.scss */
   .advspcnt.r-160x600 {
     display: block;
     float: right;
@@ -3836,7 +4144,7 @@ you can add resource intensive styles.
     width: 160px;
     height: 600px;
   }
-  /* line 79, ../scss/breakpoints/_1024up.scss */
+  /* line 76, ../scss/breakpoints/_1024up.scss */
   .advspcnt.r-300x100 {
     display: none;
   }
@@ -3845,24 +4153,24 @@ you can add resource intensive styles.
   PAGE SPECIFIC STYLES
   ******************************************/
   /* Home/Category index pages */
-  /* line 90, ../scss/breakpoints/_1024up.scss */
+  /* line 87, ../scss/breakpoints/_1024up.scss */
   body.page-template-page-custom-index .banner-gallery .banner-heading {
     padding: 20px 30px;
     font-size: 10px;
   }
-  /* line 93, ../scss/breakpoints/_1024up.scss */
+  /* line 90, ../scss/breakpoints/_1024up.scss */
   body.page-template-page-custom-index .banner-gallery .banner-heading h3 {
     font-size: 2.8em;
   }
-  /* line 96, ../scss/breakpoints/_1024up.scss */
+  /* line 93, ../scss/breakpoints/_1024up.scss */
   body.page-template-page-custom-index .banner-gallery .banner-heading h2 {
     font-size: 5.6em;
   }
-  /* line 99, ../scss/breakpoints/_1024up.scss */
+  /* line 96, ../scss/breakpoints/_1024up.scss */
   body.page-template-page-custom-index .banner-gallery .banner-heading p {
     font-size: 2.4em;
   }
-  /* line 104, ../scss/breakpoints/_1024up.scss */
+  /* line 101, ../scss/breakpoints/_1024up.scss */
   body.page-template-page-custom-index .banner-gallery .navigation > a {
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
@@ -3887,11 +4195,11 @@ you can add resource intensive styles.
     width: 50px;
     height: 50px;
   }
-  /* line 113, ../scss/breakpoints/_1024up.scss */
+  /* line 110, ../scss/breakpoints/_1024up.scss */
   body.page-template-page-custom-index .banner-gallery .navigation > a:hover {
     background-color: rgba(255, 255, 255, 0.3);
   }
-  /* line 116, ../scss/breakpoints/_1024up.scss */
+  /* line 113, ../scss/breakpoints/_1024up.scss */
   body.page-template-page-custom-index .banner-gallery .navigation > a:after {
     content: "";
     display: block;
@@ -3902,25 +4210,25 @@ you can add resource intensive styles.
     position: absolute;
     top: 13px;
   }
-  /* line 126, ../scss/breakpoints/_1024up.scss */
+  /* line 123, ../scss/breakpoints/_1024up.scss */
   body.page-template-page-custom-index .banner-gallery .navigation > a.prev {
     left: 20px;
   }
-  /* line 128, ../scss/breakpoints/_1024up.scss */
+  /* line 125, ../scss/breakpoints/_1024up.scss */
   body.page-template-page-custom-index .banner-gallery .navigation > a.prev:after {
     border-right: 24px solid rgba(255, 255, 255, 0.8);
     left: 10px;
   }
-  /* line 133, ../scss/breakpoints/_1024up.scss */
+  /* line 130, ../scss/breakpoints/_1024up.scss */
   body.page-template-page-custom-index .banner-gallery .navigation > a.next {
     right: 20px;
   }
-  /* line 135, ../scss/breakpoints/_1024up.scss */
+  /* line 132, ../scss/breakpoints/_1024up.scss */
   body.page-template-page-custom-index .banner-gallery .navigation > a.next:after {
     border-left: 24px solid rgba(255, 255, 255, 0.8);
     right: 10px;
   }
-  /* line 141, ../scss/breakpoints/_1024up.scss */
+  /* line 138, ../scss/breakpoints/_1024up.scss */
   body.page-template-page-custom-index .banner-gallery .navigation .hit-zone {
     opacity: 0;
     -webkit-transition: opacity 0.275s ease-in-out;
@@ -3929,44 +4237,76 @@ you can add resource intensive styles.
     -o-transition: opacity 0.275s ease-in-out;
     transition: opacity 0.275s ease-in-out;
   }
-  /* line 145, ../scss/breakpoints/_1024up.scss */
+  /* line 142, ../scss/breakpoints/_1024up.scss */
   body.page-template-page-custom-index .banner-gallery .navigation.hit-zone-active, body.page-template-page-custom-index .banner-gallery .navigation.banner-active {
     background: rgba(0, 0, 0, 0.5);
   }
-  /* line 147, ../scss/breakpoints/_1024up.scss */
+  /* line 144, ../scss/breakpoints/_1024up.scss */
   body.page-template-page-custom-index .banner-gallery .navigation.hit-zone-active .hit-zone, body.page-template-page-custom-index .banner-gallery .navigation.banner-active .hit-zone {
     opacity: 1;
   }
-  /* line 153, ../scss/breakpoints/_1024up.scss */
+  /* line 150, ../scss/breakpoints/_1024up.scss */
   body.page-template-page-custom-index .banner-gallery:hover .navigation {
     opacity: 1;
   }
-  /* line 155, ../scss/breakpoints/_1024up.scss */
+  /* line 152, ../scss/breakpoints/_1024up.scss */
   body.page-template-page-custom-index .banner-gallery:hover .navigation a {
     display: inline-block;
   }
-  /* line 162, ../scss/breakpoints/_1024up.scss */
+  /* line 159, ../scss/breakpoints/_1024up.scss */
   body.page-template-page-custom-index .thumbnail-gallery .owl-nav {
     margin-left: 90px;
     margin-right: 90px;
   }
-  /* line 168, ../scss/breakpoints/_1024up.scss */
+  /* line 165, ../scss/breakpoints/_1024up.scss */
   body.page-template-page-custom-index .thumbnail-gallery .thumbnail-item a:hover, body.page-template-page-custom-index .thumbnail-gallery .thumbnail-item a:focus {
     color: white;
   }
-  /* line 171, ../scss/breakpoints/_1024up.scss */
+  /* line 168, ../scss/breakpoints/_1024up.scss */
   body.page-template-page-custom-index .thumbnail-gallery .thumbnail-item a:hover {
     background-color: rgba(255, 0, 0, 0.3);
   }
 
-  /* Single Media Item Page */
-  /* line 182, ../scss/breakpoints/_1024up.scss */
+  /******************************************
+  FILM PAGE
+  ******************************************/
+  /* line 181, ../scss/breakpoints/_1024up.scss */
   body.single-media_items .hentry.advactive {
     padding-right: 180px;
   }
-  /* line 185, ../scss/breakpoints/_1024up.scss */
+  /* line 184, ../scss/breakpoints/_1024up.scss */
   body.single-media_items .hentry .entry-content {
     padding-right: 0;
+  }
+
+  /******************************************
+  FILM FESTIVAL TEMPLATE PAGE
+  ******************************************/
+  /* line 195, ../scss/breakpoints/_1024up.scss */
+  body.film-festival-page .entry-header .heading-desktop {
+    font-size: 6px;
+  }
+  /* line 201, ../scss/breakpoints/_1024up.scss */
+  body.film-festival-page .content-primary .screening-lists .tabs {
+    height: 52px;
+  }
+  /* line 203, ../scss/breakpoints/_1024up.scss */
+  body.film-festival-page .content-primary .screening-lists .tabs li {
+    height: 52px;
+    line-height: 52px;
+    font-size: 22px;
+  }
+  /* line 207, ../scss/breakpoints/_1024up.scss */
+  body.film-festival-page .content-primary .screening-lists .tabs li:after {
+    margin-bottom: 24px;
+  }
+  /* line 212, ../scss/breakpoints/_1024up.scss */
+  body.film-festival-page .content-primary .screening-lists .films-list {
+    top: 58px;
+  }
+  /* line 214, ../scss/breakpoints/_1024up.scss */
+  body.film-festival-page .content-primary .screening-lists .films-list img {
+    width: 120px;
   }
 }
 /*********************
@@ -3989,20 +4329,25 @@ you can add resource intensive styles.
   /* line 13, ../scss/breakpoints/_1030up.scss */
   #container #content {
     padding-top: 90px;
+    -webkit-transition: padding 0.35s;
+    -moz-transition: padding 0.35s;
+    -ms-transition: padding 0.35s;
+    -o-transition: padding 0.35s;
+    transition: padding 0.35s;
   }
 
-  /* line 17, ../scss/breakpoints/_1030up.scss */
+  /* line 18, ../scss/breakpoints/_1030up.scss */
   .wrap {
     margin: 0 80px;
   }
 
-  /* line 20, ../scss/breakpoints/_1030up.scss */
+  /* line 21, ../scss/breakpoints/_1030up.scss */
   .narrow-wrap {
     max-width: 1000px;
     margin: 0 auto;
   }
 
-  /* line 25, ../scss/breakpoints/_1030up.scss */
+  /* line 26, ../scss/breakpoints/_1030up.scss */
   header.header {
     background-color: rgba(0, 0, 0, 0.1);
     background-image: -webkit-gradient(linear,  top,  bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.1))), url("../images/skins-gray-light-grunge.jpg");
@@ -4014,32 +4359,55 @@ you can add resource intensive styles.
     border-bottom: 1px solid rgba(248, 27, 45, 0.15);
   }
 
-  /* line 29, ../scss/breakpoints/_1030up.scss */
+  /* line 30, ../scss/breakpoints/_1030up.scss */
   #logo {
     position: absolute;
-    width: 461px;
+    width: 420px;
     height: 90px;
     background: none;
+    -webkit-transition: height 0.35s;
+    -moz-transition: height 0.35s;
+    -ms-transition: height 0.35s;
+    -o-transition: height 0.35s;
+    transition: height 0.35s;
   }
-  /* line 34, ../scss/breakpoints/_1030up.scss */
+  /* line 36, ../scss/breakpoints/_1030up.scss */
   #logo a {
     margin: 0;
     height: 100%;
   }
 
-  /* line 39, ../scss/breakpoints/_1030up.scss */
+  /* line 42, ../scss/breakpoints/_1030up.scss */
+  body.scrolled #container #content {
+    padding-top: 70px;
+  }
+  /* line 45, ../scss/breakpoints/_1030up.scss */
+  body.scrolled #logo {
+    height: 70px;
+  }
+  /* line 49, ../scss/breakpoints/_1030up.scss */
+  body.scrolled .main-nav .top-nav > li > a {
+    height: 70px;
+    line-height: 70px;
+  }
+  /* line 54, ../scss/breakpoints/_1030up.scss */
+  body.scrolled .main-nav .top-nav > li.mega-menu > .sub-menu {
+    top: 70px;
+  }
+
+  /* line 60, ../scss/breakpoints/_1030up.scss */
   .nav {
     border: 0;
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */
   }
-  /* line 41, ../scss/breakpoints/_1030up.scss */
+  /* line 62, ../scss/breakpoints/_1030up.scss */
   .nav ul {
     background: black;
     margin-top: 0;
   }
-  /* line 45, ../scss/breakpoints/_1030up.scss */
+  /* line 66, ../scss/breakpoints/_1030up.scss */
   .nav li {
     float: left;
     position: relative;
@@ -4048,7 +4416,7 @@ you can add resource intensive styles.
     */
     /* showing sub-menus */
   }
-  /* line 49, ../scss/breakpoints/_1030up.scss */
+  /* line 70, ../scss/breakpoints/_1030up.scss */
   .nav li a {
     border-bottom: 0;
     /*
@@ -4056,7 +4424,7 @@ you can add resource intensive styles.
     has the possibility of being a mobile device.
     */
   }
-  /* line 66, ../scss/breakpoints/_1030up.scss */
+  /* line 87, ../scss/breakpoints/_1030up.scss */
   .nav li ul.sub-menu,
   .nav li ul.children {
     margin-top: 0;
@@ -4067,7 +4435,7 @@ you can add resource intensive styles.
     z-index: 8999;
     /* highlight sub-menu current page */
   }
-  /* line 75, ../scss/breakpoints/_1030up.scss */
+  /* line 96, ../scss/breakpoints/_1030up.scss */
   .nav li ul.sub-menu li,
   .nav li ul.children li {
     /*
@@ -4076,32 +4444,32 @@ you can add resource intensive styles.
     for usability. k, bai.
     */
   }
-  /* line 77, ../scss/breakpoints/_1030up.scss */
+  /* line 98, ../scss/breakpoints/_1030up.scss */
   .nav li ul.sub-menu li a,
   .nav li ul.children li a {
     padding-left: 10px;
     border-right: 0;
     display: block;
   }
-  /* line 92, ../scss/breakpoints/_1030up.scss */
+  /* line 113, ../scss/breakpoints/_1030up.scss */
   .nav li ul.sub-menu li:last-child a,
   .nav li ul.children li:last-child a {
     border-bottom: 0;
   }
-  /* line 102, ../scss/breakpoints/_1030up.scss */
+  /* line 123, ../scss/breakpoints/_1030up.scss */
   .nav li ul.sub-menu li ul,
   .nav li ul.children li ul {
     top: 0;
     left: 100%;
   }
-  /* line 117, ../scss/breakpoints/_1030up.scss */
+  /* line 138, ../scss/breakpoints/_1030up.scss */
   .nav li:hover > ul {
     top: auto;
     display: block;
   }
 
   /* end .nav */
-  /* line 131, ../scss/breakpoints/_1030up.scss */
+  /* line 152, ../scss/breakpoints/_1030up.scss */
   .main-nav {
     float: right;
     height: auto;
@@ -4109,48 +4477,58 @@ you can add resource intensive styles.
     position: static;
     background: transparent;
   }
-  /* line 137, ../scss/breakpoints/_1030up.scss */
+  /* line 158, ../scss/breakpoints/_1030up.scss */
   .main-nav .top-nav {
     position: static;
     background: transparent;
     overflow: visible;
   }
-  /* line 142, ../scss/breakpoints/_1030up.scss */
+  /* line 163, ../scss/breakpoints/_1030up.scss */
   .main-nav .top-nav > li > a {
-    padding: 12px 8px;
+    padding: 0 8px;
     font-size: 12px;
     margin-top: 0;
     border: 0;
-    height: 66px;
-    line-height: 66px;
+    height: 90px;
+    line-height: 90px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: height 0.35s, line-height 0.35s;
+    -moz-transition: height 0.35s, line-height 0.35s;
+    -ms-transition: height 0.35s, line-height 0.35s;
+    -o-transition: height 0.35s, line-height 0.35s;
+    transition: height 0.35s, line-height 0.35s;
   }
-  /* line 151, ../scss/breakpoints/_1030up.scss */
+  /* line 174, ../scss/breakpoints/_1030up.scss */
   .main-nav .top-nav > li.menu-item-search > a, .main-nav .top-nav > li.menu-item-login > a, .main-nav .top-nav > li.menu-item-logout > a {
     text-indent: -9999px;
     width: 18px;
     padding-left: 12px;
   }
-  /* line 158, ../scss/breakpoints/_1030up.scss */
+  /* line 181, ../scss/breakpoints/_1030up.scss */
   .main-nav .top-nav > li.menu-item-search > a {
     background-position: 50% -282px;
   }
-  /* line 163, ../scss/breakpoints/_1030up.scss */
+  /* line 186, ../scss/breakpoints/_1030up.scss */
   .main-nav .top-nav > li.menu-item-login > a {
     background-position: 50% -82px;
   }
-  /* line 168, ../scss/breakpoints/_1030up.scss */
+  /* line 191, ../scss/breakpoints/_1030up.scss */
   .main-nav .top-nav > li.menu-item-logout > a {
     background-position: 50% -182px;
   }
-  /* line 172, ../scss/breakpoints/_1030up.scss */
+  /* line 195, ../scss/breakpoints/_1030up.scss */
   .main-nav .top-nav > li .sub-menu {
     border: 0;
   }
-  /* line 174, ../scss/breakpoints/_1030up.scss */
+  /* line 197, ../scss/breakpoints/_1030up.scss */
   .main-nav .top-nav > li .sub-menu > li {
     float: none;
   }
-  /* line 176, ../scss/breakpoints/_1030up.scss */
+  /* line 199, ../scss/breakpoints/_1030up.scss */
   .main-nav .top-nav > li .sub-menu > li a {
     /*background:#333;
     @include css-gradient-plus-img($from: rgba($black, .1), $to: rgba($black, 0), $vstart:"top", $vend:"bottom", $url:"../images/skins-gray-light-grunge.jpg");*/
@@ -4160,17 +4538,17 @@ you can add resource intensive styles.
     margin-top: 0;
     padding: 10px 25px;
   }
-  /* line 185, ../scss/breakpoints/_1030up.scss */
+  /* line 208, ../scss/breakpoints/_1030up.scss */
   .main-nav .top-nav > li .sub-menu > li .sub-menu {
     background: transparent;
   }
-  /* line 187, ../scss/breakpoints/_1030up.scss */
+  /* line 210, ../scss/breakpoints/_1030up.scss */
   .main-nav .top-nav > li .sub-menu > li .sub-menu > li a {
     /*background:#333;
     @include css-gradient-plus-img($from: rgba($black, .1), $to: rgba($black, 0), $vstart:"top", $vend:"bottom", $url:"../images/skins-gray-light-grunge.jpg");*/
     background: transparent;
   }
-  /* line 196, ../scss/breakpoints/_1030up.scss */
+  /* line 219, ../scss/breakpoints/_1030up.scss */
   .main-nav .top-nav > li.mega-menu > .sub-menu {
     text-align: center;
     position: fixed;
@@ -4191,34 +4569,39 @@ you can add resource intensive styles.
     background-image: -o-linear-gradient( top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url("../images/skins-gray-light-grunge.jpg");
     background-image: linear-gradient(to  bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url("../images/skins-gray-light-grunge.jpg");
     background-repeat: repeat repeat;
+    -webkit-transition: top 0.35s;
+    -moz-transition: top 0.35s;
+    -ms-transition: top 0.35s;
+    -o-transition: top 0.35s;
+    transition: top 0.35s;
   }
-  /* line 206, ../scss/breakpoints/_1030up.scss */
+  /* line 230, ../scss/breakpoints/_1030up.scss */
   .main-nav .top-nav > li.mega-menu > .sub-menu > li {
     float: left;
     width: 25%;
   }
-  /* line 209, ../scss/breakpoints/_1030up.scss */
+  /* line 233, ../scss/breakpoints/_1030up.scss */
   .main-nav .top-nav > li.mega-menu > .sub-menu > li a {
     height: 50px;
     line-height: 50px;
   }
-  /* line 213, ../scss/breakpoints/_1030up.scss */
+  /* line 237, ../scss/breakpoints/_1030up.scss */
   .main-nav .top-nav > li.mega-menu > .sub-menu > li > a {
     font-size: 13px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     background-color: rgba(255, 255, 255, 0.02);
   }
-  /* line 218, ../scss/breakpoints/_1030up.scss */
+  /* line 242, ../scss/breakpoints/_1030up.scss */
   .main-nav .top-nav > li.mega-menu > .sub-menu > li .sub-menu {
     display: block;
     position: static;
   }
-  /* line 221, ../scss/breakpoints/_1030up.scss */
+  /* line 245, ../scss/breakpoints/_1030up.scss */
   .main-nav .top-nav > li.mega-menu > .sub-menu > li .sub-menu a {
     border: 0;
   }
 
-  /* line 231, ../scss/breakpoints/_1030up.scss */
+  /* line 255, ../scss/breakpoints/_1030up.scss */
   .trigger-nav {
     display: none;
   }
@@ -4226,7 +4609,7 @@ you can add resource intensive styles.
   /*********************
   POSTS & CONTENT STYLES
   *********************/
-  /* line 240, ../scss/breakpoints/_1030up.scss */
+  /* line 264, ../scss/breakpoints/_1030up.scss */
   .content-primary {
     padding-right: 20px;
   }
@@ -4234,15 +4617,15 @@ you can add resource intensive styles.
   /******************************************************************
   CAROUSEL STYLES
   ******************************************************************/
-  /* line 248, ../scss/breakpoints/_1030up.scss */
+  /* line 272, ../scss/breakpoints/_1030up.scss */
   .carousel {
     position: relative;
   }
-  /* line 250, ../scss/breakpoints/_1030up.scss */
+  /* line 274, ../scss/breakpoints/_1030up.scss */
   .carousel .carousel-nav {
     position: static;
   }
-  /* line 252, ../scss/breakpoints/_1030up.scss */
+  /* line 276, ../scss/breakpoints/_1030up.scss */
   .carousel .carousel-nav:after {
     content: ".";
     height: 0;
@@ -4250,7 +4633,7 @@ you can add resource intensive styles.
     visibility: hidden;
     clear: both;
   }
-  /* line 255, ../scss/breakpoints/_1030up.scss */
+  /* line 279, ../scss/breakpoints/_1030up.scss */
   .carousel .carousel-nav a {
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
@@ -4276,31 +4659,31 @@ you can add resource intensive styles.
     -o-transition: opacity 0.35s;
     transition: opacity 0.35s;
   }
-  /* line 267, ../scss/breakpoints/_1030up.scss */
+  /* line 291, ../scss/breakpoints/_1030up.scss */
   .carousel .carousel-nav a:after {
     border-top-width: 12px;
     border-bottom-width: 12px;
     float: none;
     margin: 0;
   }
-  /* line 273, ../scss/breakpoints/_1030up.scss */
+  /* line 297, ../scss/breakpoints/_1030up.scss */
   .carousel .carousel-nav a.active {
     opacity: 1;
   }
-  /* line 276, ../scss/breakpoints/_1030up.scss */
+  /* line 300, ../scss/breakpoints/_1030up.scss */
   .carousel .carousel-nav a.prev {
     left: 10px;
   }
-  /* line 278, ../scss/breakpoints/_1030up.scss */
+  /* line 302, ../scss/breakpoints/_1030up.scss */
   .carousel .carousel-nav a.prev:after {
     border-right-width: 20px;
     margin-left: 2px;
   }
-  /* line 283, ../scss/breakpoints/_1030up.scss */
+  /* line 307, ../scss/breakpoints/_1030up.scss */
   .carousel .carousel-nav a.next {
     right: 10px;
   }
-  /* line 285, ../scss/breakpoints/_1030up.scss */
+  /* line 309, ../scss/breakpoints/_1030up.scss */
   .carousel .carousel-nav a.next:after {
     border-left-width: 20px;
     margin-right: 2px;
@@ -4309,12 +4692,12 @@ you can add resource intensive styles.
   /*********************
   SIDEBARS & ASIDES
   *********************/
-  /* line 299, ../scss/breakpoints/_1030up.scss */
+  /* line 323, ../scss/breakpoints/_1030up.scss */
   .sidebar h4 {
     margin-bottom: 15px;
   }
 
-  /* line 305, ../scss/breakpoints/_1030up.scss */
+  /* line 329, ../scss/breakpoints/_1030up.scss */
   .footer #inner-footer {
     height: 39px;
     border-top: 1px solid #303030;
@@ -4349,30 +4732,31 @@ This is for the larger monitors and possibly full screen viewers.
   /* line 21, ../scss/breakpoints/_1240up.scss */
   #logo {
     height: 100px;
+    width: 461px;
   }
-  /* line 23, ../scss/breakpoints/_1240up.scss */
+  /* line 24, ../scss/breakpoints/_1240up.scss */
   #logo a {
     margin: 0;
     height: 100%;
   }
 
-  /* line 30, ../scss/breakpoints/_1240up.scss */
+  /* line 31, ../scss/breakpoints/_1240up.scss */
   .main-nav .top-nav {
     position: static;
   }
-  /* line 33, ../scss/breakpoints/_1240up.scss */
+  /* line 34, ../scss/breakpoints/_1240up.scss */
   .main-nav .top-nav > li > a {
-    padding: 12px;
+    padding: 0 12px;
     font-size: 13px;
-    height: 76px;
-    line-height: 76px;
+    height: 100px;
+    line-height: 100px;
   }
-  /* line 39, ../scss/breakpoints/_1240up.scss */
+  /* line 40, ../scss/breakpoints/_1240up.scss */
   .main-nav .top-nav > li .sub-menu a {
     height: 40px;
     line-height: 40px;
   }
-  /* line 44, ../scss/breakpoints/_1240up.scss */
+  /* line 45, ../scss/breakpoints/_1240up.scss */
   .main-nav .top-nav > li.mega-menu .sub-menu {
     top: 100px;
   }
@@ -4380,37 +4764,37 @@ This is for the larger monitors and possibly full screen viewers.
   /*********************
   POSTS & CONTENT STYLES
   *********************/
-  /* line 58, ../scss/breakpoints/_1240up.scss */
+  /* line 59, ../scss/breakpoints/_1240up.scss */
   .thumb-index .thumb-index-inner h2 {
     padding-top: 15px;
     padding-bottom: 15px;
   }
-  /* line 63, ../scss/breakpoints/_1240up.scss */
+  /* line 64, ../scss/breakpoints/_1240up.scss */
   .thumb-index .thumb-index-inner > ul > li {
     width: 24%;
     margin: 0 1% 1% 0;
   }
-  /* line 66, ../scss/breakpoints/_1240up.scss */
+  /* line 67, ../scss/breakpoints/_1240up.scss */
   .thumb-index .thumb-index-inner > ul > li.hide-3col {
     display: block;
   }
-  /* line 69, ../scss/breakpoints/_1240up.scss */
+  /* line 70, ../scss/breakpoints/_1240up.scss */
   .thumb-index .thumb-index-inner > ul > li .item-content {
     padding: 15px 0;
   }
-  /* line 72, ../scss/breakpoints/_1240up.scss */
+  /* line 73, ../scss/breakpoints/_1240up.scss */
   .thumb-index .thumb-index-inner > ul > li .item-content > *.item-head, .thumb-index .thumb-index-inner > ul > li .item-content > *.item-body {
     padding: 0 20px;
   }
-  /* line 75, ../scss/breakpoints/_1240up.scss */
+  /* line 76, ../scss/breakpoints/_1240up.scss */
   .thumb-index .thumb-index-inner > ul > li .item-content > *.item-head {
     font-size: 26px;
   }
-  /* line 78, ../scss/breakpoints/_1240up.scss */
+  /* line 79, ../scss/breakpoints/_1240up.scss */
   .thumb-index .thumb-index-inner > ul > li .item-content > *.item-body {
     font-size: 16px;
   }
-  /* line 81, ../scss/breakpoints/_1240up.scss */
+  /* line 82, ../scss/breakpoints/_1240up.scss */
   .thumb-index .thumb-index-inner > ul > li .item-content > *.btn {
     margin: 0 20px;
     bottom: 15px;
@@ -4419,7 +4803,7 @@ This is for the larger monitors and possibly full screen viewers.
   /******************************************************************
   CAROUSEL STYLES
   ******************************************************************/
-  /* line 98, ../scss/breakpoints/_1240up.scss */
+  /* line 99, ../scss/breakpoints/_1240up.scss */
   .carousel > ul > li .carousel-item-heading-desktop {
     font-size: 10px;
   }
@@ -4427,10 +4811,40 @@ This is for the larger monitors and possibly full screen viewers.
   /*********************
   SIDEBARS & ASIDES
   *********************/
-  /* line 110, ../scss/breakpoints/_1240up.scss */
+  /* line 111, ../scss/breakpoints/_1240up.scss */
   .tribe-events-list-widget ol li {
     padding-bottom: 20px;
     margin-bottom: 20x;
+  }
+
+  /******************************************
+  FILM FESTIVAL TEMPLATE PAGE
+  ******************************************/
+  /* line 123, ../scss/breakpoints/_1240up.scss */
+  body.film-festival-page .entry-header .heading-desktop {
+    font-size: 10px;
+  }
+  /* line 129, ../scss/breakpoints/_1240up.scss */
+  body.film-festival-page .content-primary .screening-lists .tabs {
+    height: 54px;
+  }
+  /* line 131, ../scss/breakpoints/_1240up.scss */
+  body.film-festival-page .content-primary .screening-lists .tabs li {
+    height: 54px;
+    line-height: 54px;
+    font-size: 24px;
+  }
+  /* line 135, ../scss/breakpoints/_1240up.scss */
+  body.film-festival-page .content-primary .screening-lists .tabs li:after {
+    margin-bottom: 26px;
+  }
+  /* line 140, ../scss/breakpoints/_1240up.scss */
+  body.film-festival-page .content-primary .screening-lists .films-list {
+    top: 60px;
+  }
+  /* line 142, ../scss/breakpoints/_1240up.scss */
+  body.film-festival-page .content-primary .screening-lists .films-list img {
+    width: 145px;
   }
 }
 @media only screen and (min-width: 1560px) {
@@ -4456,7 +4870,7 @@ This is for the larger monitors and possibly full screen viewers.
 
   /* line 21, ../scss/breakpoints/_1560up.scss */
   .nav.top-nav > li > a {
-    padding: 12px 15px;
+    padding: 0 15px;
     font-size: 15px;
   }
   /* line 25, ../scss/breakpoints/_1560up.scss */

@@ -206,3 +206,21 @@ body.home {
 	}
 }
 
+/******************************************
+FILM FESTIVAL TEMPLATE PAGE
+******************************************/
+body.film-festival-page {
+	.entry-header {
+		.heading-mobile {
+			h2 {
+				font-size:36px;
+			}
+			h3 {
+				font-size:20px;
+			}
+			p {
+				font-size:14px;
+			}
+		}
+	}
+}
