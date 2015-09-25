@@ -478,6 +478,10 @@ body.film-festival-page {
 		&:after {
 			@include clearfix;
 		}
+		.overview {
+			padding-right:20px;
+			@include box-sizing;
+		}
 		.overview, .screening-lists {
 			float:left;
 			width:50%;

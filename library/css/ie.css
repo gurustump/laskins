@@ -768,38 +768,47 @@ body.film-festival-page .content-primary:after {
   clear: both;
 }
 /* line 481, ../scss/breakpoints/_768up.scss */
+body.film-festival-page .content-primary .overview {
+  padding-right: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 485, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .content-primary .overview, body.film-festival-page .content-primary .screening-lists {
   float: left;
   width: 50%;
 }
-/* line 485, ../scss/breakpoints/_768up.scss */
+/* line 489, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .content-primary .screening-lists {
   margin: 0;
 }
-/* line 487, ../scss/breakpoints/_768up.scss */
+/* line 491, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .content-primary .screening-lists .tabs {
   height: 48px;
 }
-/* line 489, ../scss/breakpoints/_768up.scss */
+/* line 493, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .content-primary .screening-lists .tabs li {
   height: 48px;
   line-height: 48px;
   font-size: 18px;
   padding: 0 10px 0 0;
 }
-/* line 494, ../scss/breakpoints/_768up.scss */
+/* line 498, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .content-primary .screening-lists .tabs li.active {
   padding: 0 0 0 10px;
 }
-/* line 497, ../scss/breakpoints/_768up.scss */
+/* line 501, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .content-primary .screening-lists .tabs li:after {
   margin-bottom: 20px;
 }
-/* line 502, ../scss/breakpoints/_768up.scss */
+/* line 506, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .content-primary .screening-lists .films-list {
   top: 54px;
 }
-/* line 504, ../scss/breakpoints/_768up.scss */
+/* line 508, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .content-primary .screening-lists .films-list img {
   width: 100px;
 }
