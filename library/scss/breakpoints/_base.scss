@@ -837,6 +837,12 @@ TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN
 				margin-bottom:0;
 			}
 		}
+		.tribe-events-meta-group-venue {
+			dt, dd {
+				display:block;
+				float:none;
+			}
+		}
 		.tribe-events-venue-map {
 			width:auto;
 			float:none;
