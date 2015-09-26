@@ -843,11 +843,14 @@ TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN
 				float:none;
 			}
 		}
+		.tribe-events-meta-group-gmap {
+			padding:0;
+		}
 		.tribe-events-venue-map {
 			width:auto;
 			float:none;
 			display:block;
-			margin:20px 4% 2%;
+			margin:20px 4% 0;
 		}
 	}
 }
