@@ -713,9 +713,7 @@ POSTS & CONTENT STYLES
 		}
 		& > ul {
 			margin-right:-2%;
-			&:after {
-				@include clearfix;
-			}
+			@include clearfix;
 			& > li {
 				float:left;
 				position:relative;
@@ -799,6 +797,56 @@ POSTS & CONTENT STYLES
 }
 
 /******************************************************************
+TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN
+******************************************************************/
+.single-tribe_events {
+	.tribe-events-event-meta {
+		@extend %gray-grunge;
+		margin:15px 0 20px;
+		padding:4% 0;
+		h3 {
+			font-weight:normal;
+			text-transform:uppercase;
+			font-size:16px;
+			margin-top:0;
+		}
+		dl {
+			@include clearfix;
+			dt {
+				float:left;
+				clear:left;
+				margin-right:5px;
+			}
+			dd {
+				float:left;
+				.dtstart, .dtend {
+					font-weight:bold;
+				}
+			}
+		}
+		abbr {
+			border:0;
+			text-decoration:none;
+		}
+		.tribe-events-meta-group {
+			float:none;
+			width:auto;
+			display:block;
+			margin-bottom:15px;
+			&:last-child {
+				margin-bottom:0;
+			}
+		}
+		.tribe-events-venue-map {
+			width:auto;
+			float:none;
+			display:block;
+			margin:20px 4% 2%;
+		}
+	}
+}
+
+/******************************************************************
 CAROUSEL STYLES
 ******************************************************************/
 .carousel {
@@ -863,9 +911,7 @@ CAROUSEL STYLES
 	.carousel-nav {
 		position:relative;
 		z-index:3;
-		&:after {
-			@include clearfix;
-		}
+		@include clearfix;
 		a {
 			outline:none;
 			font-size:11px;
@@ -907,9 +953,7 @@ CAROUSEL STYLES
 .scroll-carousel {
 	& > ul {
 		position:relative;
-		&:after {
-			@include clearfix;
-		}
+		@include clearfix;
 		& > li {
 			width:125px;
 			padding:15px;
@@ -1718,9 +1762,7 @@ body.film-festival-page {
 				a {
 					display:block;
 					text-decoration:none;
-					&:after {
-						@include clearfix;
-					}
+					@include clearfix;
 				}
 				img {
 					float:left;

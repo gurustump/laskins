@@ -126,6 +126,9 @@ jQuery(document).ready(function($) {
 			mobileDeviceBodyClass();
 			setGalleryOvSize();
 			headerHeight();
+			if (isFilmFestPage) {
+				setScreeningListHeight();
+			}
 		}, timeToWaitForLast, 'resizeWindow');
 	});
 	
@@ -376,19 +379,21 @@ jQuery(document).ready(function($) {
 			carousel.css('left',0);
 		});
 	}
+	function setScreeningListHeight() {
+		var screeningList = $('.SCREENING_LISTS')
+		var screeningListHeight = screeningList.outerHeight();
+		$('.FILMS_LIST:first > li').each(function() {
+			screeningListHeight += $(this).outerHeight();
+		});
+		$('.SCREENING_LISTS').height(screeningListHeight);
+	}
 	
 	if (isHome) {
 		scrollCarousel($('.SCROLL_CAROUSEL'), 3000, true);
 	}
 	
 	if (isFilmFestPage) {
-		var screeningList = $('.SCREENING_LISTS')
-		var screeningListHeight = screeningList.outerHeight();
-		$('.FILMS_LIST:first > li').each(function() {
-			screeningListHeight += $(this).outerHeight();
-		});
-		console.log(screeningListHeight);
-		$('.SCREENING_LISTS').height(screeningListHeight);
+		setScreeningListHeight();
 		// animates toggling from screening films list by schedule to alphabetical
 		$('.TABS > li').click(function() {
 			if ($(this).hasClass('active')) { return; }

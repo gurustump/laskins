@@ -142,6 +142,11 @@ FALSE
 											<?php do_action( 'tribe_events_single_event_before_the_content' ); ?>
 											<?php the_content(); ?>
 											<?php do_action( 'tribe_events_single_event_after_the_content' ); ?>
+
+											<!-- Event meta -->
+											<?php do_action( 'tribe_events_single_event_before_the_meta' ) ?>
+											<?php tribe_get_template_part( 'modules/meta' ); ?>
+											<?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
 										</div>
 										<?php endwhile; ?>
 										<?php if (count($festivalFilmsByTitle) > 0) { ?>

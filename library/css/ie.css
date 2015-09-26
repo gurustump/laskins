@@ -568,49 +568,62 @@ POSTS & CONTENT STYLES
 }
 
 /******************************************************************
+TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN
+******************************************************************/
+/* line 206, ../scss/breakpoints/_768up.scss */
+.single-tribe_events .tribe-events-event-meta h3 {
+  font-size: 16px;
+}
+/* line 209, ../scss/breakpoints/_768up.scss */
+.single-tribe_events .tribe-events-event-meta .tribe-events-meta-group {
+  float: none;
+  width: auto;
+}
+
+/******************************************************************
 CAROUSEL STYLES
 ******************************************************************/
-/* line 204, ../scss/breakpoints/_768up.scss */
+/* line 219, ../scss/breakpoints/_768up.scss */
 .carousel {
   border: 0;
 }
-/* line 208, ../scss/breakpoints/_768up.scss */
+/* line 223, ../scss/breakpoints/_768up.scss */
 .carousel > ul > li.deactivating {
   opacity: 0;
 }
-/* line 211, ../scss/breakpoints/_768up.scss */
+/* line 226, ../scss/breakpoints/_768up.scss */
 .carousel > ul > li .carousel-item-heading-mobile {
   display: none;
 }
-/* line 214, ../scss/breakpoints/_768up.scss */
+/* line 229, ../scss/breakpoints/_768up.scss */
 .carousel > ul > li .carousel-item-heading-desktop {
   padding: 10px 15px;
   display: block;
   font-size: 5px;
   position: absolute;
 }
-/* line 219, ../scss/breakpoints/_768up.scss */
+/* line 234, ../scss/breakpoints/_768up.scss */
 .carousel > ul > li .carousel-item-heading-desktop h2, .carousel > ul > li .carousel-item-heading-desktop h3, .carousel > ul > li .carousel-item-heading-desktop p {
   line-height: 1em;
   margin-bottom: .3em;
 }
-/* line 223, ../scss/breakpoints/_768up.scss */
+/* line 238, ../scss/breakpoints/_768up.scss */
 .carousel > ul > li .carousel-item-heading-desktop h2 {
   font-size: 5.6em;
 }
-/* line 226, ../scss/breakpoints/_768up.scss */
+/* line 241, ../scss/breakpoints/_768up.scss */
 .carousel > ul > li .carousel-item-heading-desktop h3 {
   font-size: 2.8em;
 }
-/* line 229, ../scss/breakpoints/_768up.scss */
+/* line 244, ../scss/breakpoints/_768up.scss */
 .carousel > ul > li .carousel-item-heading-desktop p {
   font-size: 2.4em;
 }
-/* line 234, ../scss/breakpoints/_768up.scss */
+/* line 249, ../scss/breakpoints/_768up.scss */
 .carousel > ul > li img.bg {
   display: block;
 }
-/* line 237, ../scss/breakpoints/_768up.scss */
+/* line 252, ../scss/breakpoints/_768up.scss */
 .carousel > ul > li img.bg-mobile {
   display: none;
 }
@@ -618,7 +631,7 @@ CAROUSEL STYLES
 /*********************
 OV STYLES
 *********************/
-/* line 251, ../scss/breakpoints/_768up.scss */
+/* line 266, ../scss/breakpoints/_768up.scss */
 .ov-wrap .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon {
   background-position: 50% 10px;
   width: 38px;
@@ -628,46 +641,46 @@ OV STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 264, ../scss/breakpoints/_768up.scss */
+/* line 279, ../scss/breakpoints/_768up.scss */
 .sidebar {
   border: 0;
 }
-/* line 266, ../scss/breakpoints/_768up.scss */
+/* line 281, ../scss/breakpoints/_768up.scss */
 .sidebar h4 {
   margin-bottom: 10px;
 }
 
-/* line 271, ../scss/breakpoints/_768up.scss */
+/* line 286, ../scss/breakpoints/_768up.scss */
 .widgettitle {
   border-bottom: 2px solid #444;
   margin-bottom: 0.75em;
 }
 
-/* line 276, ../scss/breakpoints/_768up.scss */
+/* line 291, ../scss/breakpoints/_768up.scss */
 .widget {
   margin: 0 0 20px;
 }
-/* line 280, ../scss/breakpoints/_768up.scss */
+/* line 295, ../scss/breakpoints/_768up.scss */
 .widget ul li {
   margin-bottom: 0.75em;
   /* deep nesting */
 }
-/* line 288, ../scss/breakpoints/_768up.scss */
+/* line 303, ../scss/breakpoints/_768up.scss */
 .widget ul li ul {
   margin-top: 0.75em;
   padding-left: 1em;
 }
 
-/* line 296, ../scss/breakpoints/_768up.scss */
+/* line 311, ../scss/breakpoints/_768up.scss */
 .tribe-events-list-widget ol {
   padding: 0 0 15px;
 }
-/* line 298, ../scss/breakpoints/_768up.scss */
+/* line 313, ../scss/breakpoints/_768up.scss */
 .tribe-events-list-widget ol li {
   padding-bottom: 15px;
   margin-bottom: 15x;
 }
-/* line 302, ../scss/breakpoints/_768up.scss */
+/* line 317, ../scss/breakpoints/_768up.scss */
 .tribe-events-list-widget ol h4 {
   font-size: 20px;
 }
@@ -691,7 +704,7 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
-/* line 408, ../scss/breakpoints/_768up.scss */
+/* line 423, ../scss/breakpoints/_768up.scss */
 .footer-links ul li {
   /*
   be careful with the depth of your menus.
@@ -707,7 +720,7 @@ PAGE SPECIFIC
 /******************************************
 FILMS PAGE
 ******************************************/
-/* line 433, ../scss/breakpoints/_768up.scss */
+/* line 448, ../scss/breakpoints/_768up.scss */
 body.single-media_items .article-header .media-item-info {
   margin-bottom: 20px;
 }
@@ -715,51 +728,51 @@ body.single-media_items .article-header .media-item-info {
 /******************************************
 FILM FESTIVAL TEMPLATE PAGE
 ******************************************/
-/* line 443, ../scss/breakpoints/_768up.scss */
+/* line 458, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .entry-header {
   border: 0;
 }
-/* line 445, ../scss/breakpoints/_768up.scss */
+/* line 460, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .entry-header .heading-mobile {
   display: none;
 }
-/* line 448, ../scss/breakpoints/_768up.scss */
+/* line 463, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .entry-header .heading-desktop {
   padding: 10px 15px;
   display: block;
   font-size: 5px;
   position: absolute;
 }
-/* line 453, ../scss/breakpoints/_768up.scss */
+/* line 468, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .entry-header .heading-desktop h2, body.film-festival-page .entry-header .heading-desktop h3, body.film-festival-page .entry-header .heading-desktop p {
   line-height: 1em;
   margin-bottom: .3em;
 }
-/* line 457, ../scss/breakpoints/_768up.scss */
+/* line 472, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .entry-header .heading-desktop h2 {
   font-size: 5.6em;
 }
-/* line 460, ../scss/breakpoints/_768up.scss */
+/* line 475, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .entry-header .heading-desktop h3 {
   font-size: 2.8em;
 }
-/* line 463, ../scss/breakpoints/_768up.scss */
+/* line 478, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .entry-header .heading-desktop p {
   font-size: 2.4em;
 }
-/* line 468, ../scss/breakpoints/_768up.scss */
+/* line 483, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .entry-header img.bg {
   display: block;
 }
-/* line 471, ../scss/breakpoints/_768up.scss */
+/* line 486, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .entry-header img.bg-mobile {
   display: none;
 }
-/* line 476, ../scss/breakpoints/_768up.scss */
+/* line 491, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .content-primary {
   padding-right: 0;
 }
-/* line 478, ../scss/breakpoints/_768up.scss */
+/* line 128, ../scss/partials/_mixins.scss */
 body.film-festival-page .content-primary:after {
   content: ".";
   height: 0;
@@ -767,7 +780,7 @@ body.film-festival-page .content-primary:after {
   visibility: hidden;
   clear: both;
 }
-/* line 481, ../scss/breakpoints/_768up.scss */
+/* line 494, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .content-primary .overview {
   padding-right: 20px;
   -webkit-box-sizing: border-box;
@@ -776,39 +789,39 @@ body.film-festival-page .content-primary .overview {
   -o-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 485, ../scss/breakpoints/_768up.scss */
+/* line 498, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .content-primary .overview, body.film-festival-page .content-primary .screening-lists {
   float: left;
   width: 50%;
 }
-/* line 489, ../scss/breakpoints/_768up.scss */
+/* line 502, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .content-primary .screening-lists {
   margin: 0;
 }
-/* line 491, ../scss/breakpoints/_768up.scss */
+/* line 504, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .content-primary .screening-lists .tabs {
   height: 48px;
 }
-/* line 493, ../scss/breakpoints/_768up.scss */
+/* line 506, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .content-primary .screening-lists .tabs li {
   height: 48px;
   line-height: 48px;
   font-size: 18px;
   padding: 0 10px 0 0;
 }
-/* line 498, ../scss/breakpoints/_768up.scss */
+/* line 511, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .content-primary .screening-lists .tabs li.active {
   padding: 0 0 0 10px;
 }
-/* line 501, ../scss/breakpoints/_768up.scss */
+/* line 514, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .content-primary .screening-lists .tabs li:after {
   margin-bottom: 20px;
 }
-/* line 506, ../scss/breakpoints/_768up.scss */
+/* line 519, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .content-primary .screening-lists .films-list {
   top: 54px;
 }
-/* line 508, ../scss/breakpoints/_768up.scss */
+/* line 521, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .content-primary .screening-lists .films-list img {
   width: 100px;
 }
@@ -1123,14 +1136,6 @@ CAROUSEL STYLES
   position: static;
 }
 /* line 276, ../scss/breakpoints/_1030up.scss */
-.carousel .carousel-nav:after {
-  content: ".";
-  height: 0;
-  display: block;
-  visibility: hidden;
-  clear: both;
-}
-/* line 279, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a {
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -1156,31 +1161,31 @@ CAROUSEL STYLES
   -o-transition: opacity 0.35s;
   transition: opacity 0.35s;
 }
-/* line 291, ../scss/breakpoints/_1030up.scss */
+/* line 288, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a:after {
   border-top-width: 12px;
   border-bottom-width: 12px;
   float: none;
   margin: 0;
 }
-/* line 297, ../scss/breakpoints/_1030up.scss */
+/* line 294, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a.active {
   opacity: 1;
 }
-/* line 300, ../scss/breakpoints/_1030up.scss */
+/* line 297, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a.prev {
   left: 10px;
 }
-/* line 302, ../scss/breakpoints/_1030up.scss */
+/* line 299, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a.prev:after {
   border-right-width: 20px;
   margin-left: 2px;
 }
-/* line 307, ../scss/breakpoints/_1030up.scss */
+/* line 304, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a.next {
   right: 10px;
 }
-/* line 309, ../scss/breakpoints/_1030up.scss */
+/* line 306, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a.next:after {
   border-left-width: 20px;
   margin-right: 2px;
@@ -1189,12 +1194,12 @@ CAROUSEL STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 323, ../scss/breakpoints/_1030up.scss */
+/* line 320, ../scss/breakpoints/_1030up.scss */
 .sidebar h4 {
   margin-bottom: 15px;
 }
 
-/* line 329, ../scss/breakpoints/_1030up.scss */
+/* line 326, ../scss/breakpoints/_1030up.scss */
 .footer #inner-footer {
   height: 39px;
   border-top: 1px solid #303030;

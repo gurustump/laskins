@@ -199,6 +199,21 @@ POSTS & CONTENT STYLES
 }
 
 /******************************************************************
+TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN
+******************************************************************/
+.single-tribe_events {
+	.tribe-events-event-meta {
+		h3 {
+			font-size:16px;
+		}
+		.tribe-events-meta-group {
+			float:none;
+			width:auto;
+		}
+	}
+}
+
+/******************************************************************
 CAROUSEL STYLES
 ******************************************************************/
 .carousel {
@@ -475,9 +490,7 @@ body.film-festival-page {
 	}
 	.content-primary {
 		padding-right:0;
-		&:after {
-			@include clearfix;
-		}
+		@include clearfix;
 		.overview {
 			padding-right:20px;
 			@include box-sizing;

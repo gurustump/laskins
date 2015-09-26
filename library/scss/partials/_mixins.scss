@@ -125,11 +125,13 @@ probably best not to use it. I mean, were you going to anyway? */
 }
 
 @mixin clearfix {
-	content:".";
-	height:0;
-	display:block;
-	visibility:hidden;
-	clear:both;
+	&:after {
+		content:".";
+		height:0;
+		display:block;
+		visibility:hidden;
+		clear:both;
+	}
 }
 
 

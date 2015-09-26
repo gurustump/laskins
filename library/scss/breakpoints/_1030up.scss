@@ -273,9 +273,6 @@ CAROUSEL STYLES
 	position:relative;
 	.carousel-nav {
 		position:static;
-		&:after {
-			@include clearfix;
-		}
 		a {
 			@include transform(translateY(-50%));
 			position:absolute;

@@ -71,9 +71,7 @@ FILMS PAGE
 body.single-media_items {
 	.article-header {
 		margin-bottom:20px;
-		&:after {
-			@include clearfix;
-		}
+		@include clearfix;
 		.image-container {
 			float:left;
 			margin-right:20px;
