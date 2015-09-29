@@ -1456,11 +1456,16 @@ SIDEBARS & ASIDES
 		input[type=search] {
 			background:$white;
 			padding-right:50px;
+			border:1px solid transparent;
+			@include transition(border-color, .5s);
 			@include border-radius(40px);
 			@include placeholder {
 				text-transform:uppercase;
 				color:$orange;
 				font-size:13px;
+			}
+			&:hover, &:focus {
+				border-color:$orange;
 			}
 		}
 		button[type=submit] {
