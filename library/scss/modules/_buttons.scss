@@ -37,7 +37,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 	font-weight:300;
 	letter-spacing:1px;
 	padding:0 24px;
-	border-radius:20px;
+	@include border-radius(20px);
 	border:0;
 	cursor:pointer;
 	outline:none;
@@ -84,12 +84,42 @@ and it will create a button dependant on those variables.
 .btn-orange {
 	@extend %btn; // here we load the btn defaults
 	background-color:darken($orange, 10%);
+	// background-color:$orange;
 
 	&:hover {
 		background-color:darken($orange, 20%);
 	} // end hover
 
-} 
+}
+.btn-large {
+	@extend %btn;
+	font-size:24px;
+	height:auto;
+	line-height:1.2em;
+	@include border-radius(128px);
+	padding:12px 30px;
+}
+.btn-download {
+	@extend %btn;
+	position:relative;
+	padding-right:40px;
+	&:after {
+		content:"";
+		position:absolute;
+		top:50%;
+		@include transform(translateY(-50%));
+		right:0;
+		width:40px;
+		height:40px;
+		background:url(../images/ic.png) no-repeat center -165px;
+	}
+	&.btn-large {
+		padding-right:55px;
+		&:after {
+			right:10px;
+		}
+	}
+}
 
 #container .tribe-events-button {
 	@extend %btn;

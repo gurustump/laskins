@@ -124,6 +124,13 @@ probably best not to use it. I mean, were you going to anyway? */
 	}
 }
 
+@mixin placeholder {
+	&::-webkit-input-placeholder	{@content}
+	&:-moz-placeholder				{@content}
+	&::-moz-placeholder			{@content}
+	&:-ms-input-placeholder		{@content}  
+}
+
 @mixin clearfix {
 	&:after {
 		content:".";

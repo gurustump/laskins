@@ -1449,6 +1449,34 @@ SIDEBARS & ASIDES
 	}
 
 }
+.searchform {
+	.searchform-inner {
+		max-width:400px;
+		position:relative;
+		input[type=search] {
+			background:$white;
+			padding-right:50px;
+			@include border-radius(40px);
+			@include placeholder {
+				text-transform:uppercase;
+				color:$orange;
+				font-size:13px;
+			}
+		}
+		button[type=submit] {
+			background:$orange url(../images/ic.png) no-repeat center -261px;
+			border:0;
+			@include border-radius(0 40px 40px 0);
+			height:40px;
+			line-height:40px;
+			position:absolute;
+			right:0;
+			top:0;
+			text-indent:-9999px;
+			width:45px;
+		}
+	}
+}
 .tribe-events-list-widget {
 	h4 {
 		border-bottom:1px solid $border-color;

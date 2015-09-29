@@ -772,7 +772,7 @@ body.film-festival-page .entry-header img.bg-mobile {
 body.film-festival-page .content-primary {
   padding-right: 0;
 }
-/* line 128, ../scss/partials/_mixins.scss */
+/* line 135, ../scss/partials/_mixins.scss */
 body.film-festival-page .content-primary:after {
   content: ".";
   height: 0;
