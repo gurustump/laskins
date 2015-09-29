@@ -56,34 +56,40 @@
 									if (!$itemImage) { continue; }
 									?>
 									<li id="carouselItem_<?php echo $key; ?>" class="carousel-item<?php if ($key==0) {echo ' active';} ?>"<?php /* echo $itemImage ? ' style="background-image:url('.$itemImage.');"' : ''; */ ?>>
-										<div class="carousel-item-heading-mobile">
-											<?php if ($itemMeta['_laskins_carousel_super_title'][0]) { ?>
-												<h3><?php echo $itemMeta['_laskins_carousel_super_title'][0]; ?></h3>
-											<?php } ?>
-											<h2><?php echo $item->post_title; ?></h2>
-											<?php if ($item->post_excerpt) { ?>
-												<p><?php echo $item->post_excerpt; ?></p>
-											<?php } ?>
-										</div>
-										<div class="carousel-item-heading-desktop"<?php echo ($itemMeta['_laskins_carousel_exceprt_text_color'][0] || $itemMeta['_laskins_carousel_exceprt_background_color'][0] || $itemMeta['_laskins_carousel_exceprt_position_left'][0] || $itemMeta['_laskins_carousel_exceprt_position_top'][0]) ? 'style="'.($itemMeta['_laskins_carousel_exceprt_text_color'][0] ? 'color:'.$itemMeta['_laskins_carousel_exceprt_text_color'][0].'; ' : '').($itemMeta['_laskins_carousel_exceprt_background_color'][0] ? 'background-color:'.$itemMeta['_laskins_carousel_exceprt_background_color'][0].'; ' : '').($itemMeta['_laskins_carousel_exceprt_position_left'][0] ? 'left:'.$itemMeta['_laskins_carousel_exceprt_position_left'][0].'%; ' : '').($itemMeta['_laskins_carousel_exceprt_position_top'][0] ? 'top:'.$itemMeta['_laskins_carousel_exceprt_position_top'][0].'%; ' : '').'"' : ''; ?>>
-											<?php if ($itemMeta['_laskins_carousel_super_title'][0]) { ?>
-												<h3<?php echo $itemMeta['_laskins_carousel_super_title_size'][0] ? ' style="font-size:'.($itemMeta['_laskins_carousel_super_title_size'][0]/10).'em"' : ''; ?>><?php echo $itemMeta['_laskins_carousel_super_title'][0]; ?></h3>
-											<?php } ?>
-											<h2<?php echo $itemMeta['_laskins_carousel_title_size'][0] ? ' style="font-size:'.($itemMeta['_laskins_carousel_title_size'][0]/10).'em"' : ''; ?>><?php echo $item->post_title; ?></h2>
-											<?php if ($item->post_excerpt) { ?>
-												<p<?php echo $itemMeta['_laskins_carousel_excerpt_size'][0] ? ' style="font-size:'.($itemMeta['_laskins_carousel_excerpt_size'][0]/10).'em"' : ''; ?>><?php echo $item->post_excerpt; ?></p>
-											<?php } ?>
-										</div>
-										<img class="bg-mobile" src="<?php echo $itemImageMobile; ?>" alt="<?php $item->post_title; ?>" />
-										<img class="bg" src="<?php echo $itemImage; ?>" alt="<?php $item->post_title; ?>" />
-										<?php /*
-										<pre>
-											<?php print_r($item); ?>
-										</pre>
-										<pre>
-											<?php print_r($itemMeta); ?>
-										</pre>
-										*/ ?>
+										<?php if (get_post_type($item->ID) != 'module') { ?>
+										<a href="<?php echo get_permalink($item->ID); ?>">
+										<?php } ?>
+											<span class="carousel-item-heading-mobile">
+												<?php if ($itemMeta['_laskins_carousel_super_title'][0]) { ?>
+													<span class="h3"><?php echo $itemMeta['_laskins_carousel_super_title'][0]; ?></span>
+												<?php } ?>
+												<span class="h2"><?php echo $item->post_title; ?></span>
+												<?php if ($item->post_excerpt) { ?>
+													<span class="excerpt"><?php echo $item->post_excerpt; ?></span>
+												<?php } ?>
+											</span>
+											<span class="carousel-item-heading-desktop"<?php echo ($itemMeta['_laskins_carousel_exceprt_text_color'][0] || $itemMeta['_laskins_carousel_exceprt_background_color'][0] || $itemMeta['_laskins_carousel_exceprt_position_left'][0] || $itemMeta['_laskins_carousel_exceprt_position_top'][0]) ? 'style="'.($itemMeta['_laskins_carousel_exceprt_text_color'][0] ? 'color:'.$itemMeta['_laskins_carousel_exceprt_text_color'][0].'; ' : '').($itemMeta['_laskins_carousel_exceprt_background_color'][0] ? 'background-color:'.$itemMeta['_laskins_carousel_exceprt_background_color'][0].'; ' : '').($itemMeta['_laskins_carousel_exceprt_position_left'][0] ? 'left:'.$itemMeta['_laskins_carousel_exceprt_position_left'][0].'%; ' : '').($itemMeta['_laskins_carousel_exceprt_position_top'][0] ? 'top:'.$itemMeta['_laskins_carousel_exceprt_position_top'][0].'%; ' : '').'"' : ''; ?>>
+												<?php if ($itemMeta['_laskins_carousel_super_title'][0]) { ?>
+													<span class="h3"<?php echo $itemMeta['_laskins_carousel_super_title_size'][0] ? ' style="font-size:'.($itemMeta['_laskins_carousel_super_title_size'][0]/10).'em"' : ''; ?>><?php echo $itemMeta['_laskins_carousel_super_title'][0]; ?></span>
+												<?php } ?>
+												<span class="h2"<?php echo $itemMeta['_laskins_carousel_title_size'][0] ? ' style="font-size:'.($itemMeta['_laskins_carousel_title_size'][0]/10).'em"' : ''; ?>><?php echo $item->post_title; ?></span>
+												<?php if ($item->post_excerpt) { ?>
+													<span class="excerpt"<?php echo $itemMeta['_laskins_carousel_excerpt_size'][0] ? ' style="font-size:'.($itemMeta['_laskins_carousel_excerpt_size'][0]/10).'em"' : ''; ?>><?php echo $item->post_excerpt; ?></span>
+												<?php } ?>
+											</span>
+											<img class="bg-mobile" src="<?php echo $itemImageMobile; ?>" alt="<?php $item->post_title; ?>" />
+											<img class="bg" src="<?php echo $itemImage; ?>" alt="<?php $item->post_title; ?>" />
+											<?php /*
+											<pre>
+												<?php print_r($item); ?>
+											</pre>
+											<pre>
+												<?php print_r($itemMeta); ?>
+											</pre>
+											*/ ?>
+										<?php if (get_post_type($item->ID) != 'module') { ?>
+										</a>
+										<?php } ?>
 									</li>
 									<?php } ?>
 								</ul>

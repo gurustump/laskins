@@ -340,15 +340,15 @@ CAROUSEL STYLES
   opacity: 0;
 }
 /* line 157, ../scss/breakpoints/_481up.scss */
-.carousel > ul > li .carousel-item-heading-mobile h2 {
+.carousel > ul > li .carousel-item-heading-mobile .h2 {
   font-size: 36px;
 }
 /* line 160, ../scss/breakpoints/_481up.scss */
-.carousel > ul > li .carousel-item-heading-mobile h3 {
+.carousel > ul > li .carousel-item-heading-mobile .h3 {
   font-size: 20px;
 }
 /* line 163, ../scss/breakpoints/_481up.scss */
-.carousel > ul > li .carousel-item-heading-mobile p {
+.carousel > ul > li .carousel-item-heading-mobile .excerpt {
   font-size: 14px;
 }
 
@@ -603,20 +603,20 @@ CAROUSEL STYLES
   position: absolute;
 }
 /* line 234, ../scss/breakpoints/_768up.scss */
-.carousel > ul > li .carousel-item-heading-desktop h2, .carousel > ul > li .carousel-item-heading-desktop h3, .carousel > ul > li .carousel-item-heading-desktop p {
+.carousel > ul > li .carousel-item-heading-desktop span {
   line-height: 1em;
   margin-bottom: .3em;
 }
 /* line 238, ../scss/breakpoints/_768up.scss */
-.carousel > ul > li .carousel-item-heading-desktop h2 {
+.carousel > ul > li .carousel-item-heading-desktop .h2 {
   font-size: 5.6em;
 }
 /* line 241, ../scss/breakpoints/_768up.scss */
-.carousel > ul > li .carousel-item-heading-desktop h3 {
+.carousel > ul > li .carousel-item-heading-desktop .h3 {
   font-size: 2.8em;
 }
 /* line 244, ../scss/breakpoints/_768up.scss */
-.carousel > ul > li .carousel-item-heading-desktop p {
+.carousel > ul > li .carousel-item-heading-desktop .excerpt {
   font-size: 2.4em;
 }
 /* line 249, ../scss/breakpoints/_768up.scss */
