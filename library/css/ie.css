@@ -297,27 +297,33 @@ NAVIGATION STYLES
   right: -12px;
 }
 
+/* line 110, ../scss/breakpoints/_481up.scss */
+.social-follow > a {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
 /*********************
 POSTS & CONTENT STYLES
 *********************/
 /* entry content */
-/* line 115, ../scss/breakpoints/_481up.scss */
+/* line 121, ../scss/breakpoints/_481up.scss */
 .entry-content {
   /* at this larger size, we can start to align images */
 }
-/* line 119, ../scss/breakpoints/_481up.scss */
+/* line 125, ../scss/breakpoints/_481up.scss */
 .entry-content .alignleft, .entry-content img.alignleft {
   margin-right: 1.5em;
   display: inline;
   float: left;
 }
-/* line 124, ../scss/breakpoints/_481up.scss */
+/* line 130, ../scss/breakpoints/_481up.scss */
 .entry-content .alignright, .entry-content img.alignright {
   margin-left: 1.5em;
   display: inline;
   float: right;
 }
-/* line 129, ../scss/breakpoints/_481up.scss */
+/* line 135, ../scss/breakpoints/_481up.scss */
 .entry-content .aligncenter, .entry-content img.aligncenter {
   margin-right: auto;
   margin-left: auto;
@@ -326,7 +332,7 @@ POSTS & CONTENT STYLES
 }
 
 /* end .entry-content */
-/* line 140, ../scss/breakpoints/_481up.scss */
+/* line 146, ../scss/breakpoints/_481up.scss */
 .thumb-index .thumb-index-inner h2 {
   padding-top: 6px;
   padding-bottom: 6px;
@@ -335,24 +341,24 @@ POSTS & CONTENT STYLES
 /******************************************************************
 CAROUSEL STYLES
 ******************************************************************/
-/* line 153, ../scss/breakpoints/_481up.scss */
+/* line 159, ../scss/breakpoints/_481up.scss */
 .carousel > ul > li.deactivating {
   opacity: 0;
 }
-/* line 157, ../scss/breakpoints/_481up.scss */
+/* line 163, ../scss/breakpoints/_481up.scss */
 .carousel > ul > li .carousel-item-heading-mobile .h2 {
   font-size: 36px;
 }
-/* line 160, ../scss/breakpoints/_481up.scss */
+/* line 166, ../scss/breakpoints/_481up.scss */
 .carousel > ul > li .carousel-item-heading-mobile .h3 {
   font-size: 20px;
 }
-/* line 163, ../scss/breakpoints/_481up.scss */
+/* line 169, ../scss/breakpoints/_481up.scss */
 .carousel > ul > li .carousel-item-heading-mobile .excerpt {
   font-size: 14px;
 }
 
-/* line 173, ../scss/breakpoints/_481up.scss */
+/* line 179, ../scss/breakpoints/_481up.scss */
 .scroll-carousel > ul > li {
   width: 145px;
   padding: 25px;
@@ -372,7 +378,7 @@ PAGE SPECIFIC
 /******************************************
 HOME PAGE
 ******************************************/
-/* line 203, ../scss/breakpoints/_481up.scss */
+/* line 209, ../scss/breakpoints/_481up.scss */
 body.home .home-banner p {
   margin-bottom: 3px;
 }
@@ -380,15 +386,15 @@ body.home .home-banner p {
 /******************************************
 FILM FESTIVAL TEMPLATE PAGE
 ******************************************/
-/* line 215, ../scss/breakpoints/_481up.scss */
+/* line 221, ../scss/breakpoints/_481up.scss */
 body.film-festival-page .entry-header .heading-mobile h2 {
   font-size: 36px;
 }
-/* line 218, ../scss/breakpoints/_481up.scss */
+/* line 224, ../scss/breakpoints/_481up.scss */
 body.film-festival-page .entry-header .heading-mobile h3 {
   font-size: 20px;
 }
-/* line 221, ../scss/breakpoints/_481up.scss */
+/* line 227, ../scss/breakpoints/_481up.scss */
 body.film-festival-page .entry-header .heading-mobile p {
   font-size: 14px;
 }
@@ -1032,8 +1038,9 @@ body.scrolled .main-nav .top-nav > li.mega-menu > .sub-menu {
   position: static;
   background: transparent;
   overflow: visible;
+  float: left;
 }
-/* line 163, ../scss/breakpoints/_1030up.scss */
+/* line 164, ../scss/breakpoints/_1030up.scss */
 .main-nav .top-nav > li > a {
   padding: 0 8px;
   font-size: 12px;
@@ -1046,39 +1053,39 @@ body.scrolled .main-nav .top-nav > li.mega-menu > .sub-menu {
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: height 0.35s, line-height 0.35s;
-  -moz-transition: height 0.35s, line-height 0.35s;
-  -ms-transition: height 0.35s, line-height 0.35s;
-  -o-transition: height 0.35s, line-height 0.35s;
-  transition: height 0.35s, line-height 0.35s;
+  -webkit-transition: height 0.35s, line-height 0.35s, color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+  -moz-transition: height 0.35s, line-height 0.35s, color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+  -ms-transition: height 0.35s, line-height 0.35s, color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+  -o-transition: height 0.35s, line-height 0.35s, color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+  transition: height 0.35s, line-height 0.35s, color 0.35s ease-in-out, background-color 0.35s ease-in-out;
 }
-/* line 174, ../scss/breakpoints/_1030up.scss */
+/* line 175, ../scss/breakpoints/_1030up.scss */
 .main-nav .top-nav > li.menu-item-search > a, .main-nav .top-nav > li.menu-item-login > a, .main-nav .top-nav > li.menu-item-logout > a {
   text-indent: -9999px;
   width: 18px;
   padding-left: 12px;
 }
-/* line 181, ../scss/breakpoints/_1030up.scss */
+/* line 182, ../scss/breakpoints/_1030up.scss */
 .main-nav .top-nav > li.menu-item-search > a {
   background-position: 50% -282px;
 }
-/* line 186, ../scss/breakpoints/_1030up.scss */
+/* line 187, ../scss/breakpoints/_1030up.scss */
 .main-nav .top-nav > li.menu-item-login > a {
   background-position: 50% -82px;
 }
-/* line 191, ../scss/breakpoints/_1030up.scss */
+/* line 192, ../scss/breakpoints/_1030up.scss */
 .main-nav .top-nav > li.menu-item-logout > a {
   background-position: 50% -182px;
 }
-/* line 195, ../scss/breakpoints/_1030up.scss */
+/* line 196, ../scss/breakpoints/_1030up.scss */
 .main-nav .top-nav > li .sub-menu {
   border: 0;
 }
-/* line 197, ../scss/breakpoints/_1030up.scss */
+/* line 198, ../scss/breakpoints/_1030up.scss */
 .main-nav .top-nav > li .sub-menu > li {
   float: none;
 }
-/* line 199, ../scss/breakpoints/_1030up.scss */
+/* line 200, ../scss/breakpoints/_1030up.scss */
 .main-nav .top-nav > li .sub-menu > li a {
   /*background:#333;
   @include css-gradient-plus-img($from: rgba($black, .1), $to: rgba($black, 0), $vstart:"top", $vend:"bottom", $url:"../images/skins-gray-light-grunge.jpg");*/
@@ -1088,17 +1095,17 @@ body.scrolled .main-nav .top-nav > li.mega-menu > .sub-menu {
   margin-top: 0;
   padding: 10px 25px;
 }
-/* line 208, ../scss/breakpoints/_1030up.scss */
+/* line 209, ../scss/breakpoints/_1030up.scss */
 .main-nav .top-nav > li .sub-menu > li .sub-menu {
   background: transparent;
 }
-/* line 210, ../scss/breakpoints/_1030up.scss */
+/* line 211, ../scss/breakpoints/_1030up.scss */
 .main-nav .top-nav > li .sub-menu > li .sub-menu > li a {
   /*background:#333;
   @include css-gradient-plus-img($from: rgba($black, .1), $to: rgba($black, 0), $vstart:"top", $vend:"bottom", $url:"../images/skins-gray-light-grunge.jpg");*/
   background: transparent;
 }
-/* line 219, ../scss/breakpoints/_1030up.scss */
+/* line 220, ../scss/breakpoints/_1030up.scss */
 .main-nav .top-nav > li.mega-menu > .sub-menu {
   text-align: center;
   position: fixed;
@@ -1125,41 +1132,99 @@ body.scrolled .main-nav .top-nav > li.mega-menu > .sub-menu {
   -o-transition: top 0.35s;
   transition: top 0.35s;
 }
-/* line 230, ../scss/breakpoints/_1030up.scss */
+/* line 231, ../scss/breakpoints/_1030up.scss */
 .main-nav .top-nav > li.mega-menu > .sub-menu > li {
   float: left;
   width: 25%;
 }
-/* line 233, ../scss/breakpoints/_1030up.scss */
+/* line 234, ../scss/breakpoints/_1030up.scss */
 .main-nav .top-nav > li.mega-menu > .sub-menu > li a {
   height: 50px;
   line-height: 50px;
 }
-/* line 237, ../scss/breakpoints/_1030up.scss */
+/* line 238, ../scss/breakpoints/_1030up.scss */
 .main-nav .top-nav > li.mega-menu > .sub-menu > li > a {
   font-size: 13px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   background-color: rgba(255, 255, 255, 0.02);
 }
-/* line 242, ../scss/breakpoints/_1030up.scss */
+/* line 243, ../scss/breakpoints/_1030up.scss */
 .main-nav .top-nav > li.mega-menu > .sub-menu > li .sub-menu {
   display: block;
   position: static;
 }
-/* line 245, ../scss/breakpoints/_1030up.scss */
+/* line 246, ../scss/breakpoints/_1030up.scss */
 .main-nav .top-nav > li.mega-menu > .sub-menu > li .sub-menu a {
   border: 0;
 }
 
-/* line 255, ../scss/breakpoints/_1030up.scss */
+/* line 256, ../scss/breakpoints/_1030up.scss */
 .trigger-nav {
   display: none;
+}
+
+/* line 259, ../scss/breakpoints/_1030up.scss */
+.social-follow {
+  float: right;
+  padding: 28px 0;
+  width: auto;
+  -webkit-transition: padding 0.35s;
+  -moz-transition: padding 0.35s;
+  -ms-transition: padding 0.35s;
+  -o-transition: padding 0.35s;
+  transition: padding 0.35s;
+}
+/* line 264, ../scss/breakpoints/_1030up.scss */
+.social-follow > a {
+  width: 28px;
+  height: 28px;
+  float: left;
+  opacity: .8;
+  padding: 3px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transition: background-color 0.35s, opacity 0.35s;
+  -moz-transition: background-color 0.35s, opacity 0.35s;
+  -ms-transition: background-color 0.35s, opacity 0.35s;
+  -o-transition: background-color 0.35s, opacity 0.35s;
+  transition: background-color 0.35s, opacity 0.35s;
+}
+/* line 272, ../scss/breakpoints/_1030up.scss */
+.social-follow > a:hover {
+  opacity: 1;
+  background-color: #f8931d;
+}
+/* line 276, ../scss/breakpoints/_1030up.scss */
+.social-follow > a.fb:hover {
+  background-color: #3b579d;
+}
+/* line 279, ../scss/breakpoints/_1030up.scss */
+.social-follow > a.tw:hover {
+  background-color: #55acee;
+}
+/* line 282, ../scss/breakpoints/_1030up.scss */
+.social-follow > a.youtube:hover {
+  background-color: #e32a29;
+}
+/* line 285, ../scss/breakpoints/_1030up.scss */
+.social-follow > a > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 293, ../scss/breakpoints/_1030up.scss */
+body.scrolled .social-follow {
+  padding: 18px 0;
 }
 
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-/* line 265, ../scss/breakpoints/_1030up.scss */
+/* line 304, ../scss/breakpoints/_1030up.scss */
 .format-standard .thumb-index .thumb-index-inner, .tribe_events .thumb-index .thumb-index-inner {
   margin: 0 auto;
 }
@@ -1167,15 +1232,15 @@ POSTS & CONTENT STYLES
 /******************************************************************
 CAROUSEL STYLES
 ******************************************************************/
-/* line 275, ../scss/breakpoints/_1030up.scss */
+/* line 314, ../scss/breakpoints/_1030up.scss */
 .carousel {
   position: relative;
 }
-/* line 277, ../scss/breakpoints/_1030up.scss */
+/* line 316, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav {
   position: static;
 }
-/* line 279, ../scss/breakpoints/_1030up.scss */
+/* line 318, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a {
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -1201,31 +1266,31 @@ CAROUSEL STYLES
   -o-transition: opacity 0.35s;
   transition: opacity 0.35s;
 }
-/* line 291, ../scss/breakpoints/_1030up.scss */
+/* line 330, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a:after {
   border-top-width: 12px;
   border-bottom-width: 12px;
   float: none;
   margin: 0;
 }
-/* line 297, ../scss/breakpoints/_1030up.scss */
+/* line 336, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a.active {
   opacity: 1;
 }
-/* line 300, ../scss/breakpoints/_1030up.scss */
+/* line 339, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a.prev {
   left: 10px;
 }
-/* line 302, ../scss/breakpoints/_1030up.scss */
+/* line 341, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a.prev:after {
   border-right-width: 20px;
   margin-left: 2px;
 }
-/* line 307, ../scss/breakpoints/_1030up.scss */
+/* line 346, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a.next {
   right: 10px;
 }
-/* line 309, ../scss/breakpoints/_1030up.scss */
+/* line 348, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a.next:after {
   border-left-width: 20px;
   margin-right: 2px;
@@ -1234,15 +1299,23 @@ CAROUSEL STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 323, ../scss/breakpoints/_1030up.scss */
+/* line 362, ../scss/breakpoints/_1030up.scss */
 .sidebar h4 {
   margin-bottom: 15px;
 }
 
-/* line 329, ../scss/breakpoints/_1030up.scss */
+/* line 368, ../scss/breakpoints/_1030up.scss */
 .footer #inner-footer {
   height: 39px;
   border-top: 1px solid #303030;
+}
+/* line 371, ../scss/breakpoints/_1030up.scss */
+.footer #inner-footer nav {
+  float: right;
+}
+/* line 373, ../scss/breakpoints/_1030up.scss */
+.footer #inner-footer nav a:hover {
+  color: #e07c07;
 }
 
 /******************************************
@@ -1251,7 +1324,7 @@ PAGE SPECIFIC STYLES
 /******************************************
 FILM FESTIVAL TEMPLATE PAGE
 ******************************************/
-/* line 347, ../scss/breakpoints/_1030up.scss */
+/* line 392, ../scss/breakpoints/_1030up.scss */
 body.film-festival-page .content-primary .screening-lists .tabs li:after {
   margin-bottom: 16px;
   border-width: 10px 0 10px 10px;

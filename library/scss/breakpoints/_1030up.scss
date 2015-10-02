@@ -159,6 +159,7 @@ body.scrolled {
 		position:static;
 		background:transparent;
 		overflow:visible;
+		float:left;
 		& > li {
 			& > a {
 				padding:0 8px;
@@ -168,7 +169,7 @@ body.scrolled {
 				height:90px;
 				line-height:90px;
 				@include box-sizing;
-				@include transition(height .35s, line-height .35s);
+				@include transition(height .35s, line-height .35s, color 0.35s ease-in-out, background-color 0.35s ease-in-out);
 			}
 			&.menu-item-search, &.menu-item-login, &.menu-item-logout {
 				& > a {
@@ -255,6 +256,44 @@ body.scrolled {
 .trigger-nav {
 	display:none;
 }
+.social-follow {
+	float:right;
+	padding:28px 0;
+	width:auto;
+	@include transition(padding .35s);
+	& > a {
+		width:28px;
+		height:28px;
+		float:left;
+		opacity:.8;
+		padding:3px;
+		@include border-radius(50%);
+		@include transition(background-color .35s, opacity .35s);
+		&:hover {
+			opacity:1;
+			background-color:$orange;
+		}
+		&.fb:hover {
+			background-color:$fb-blue;
+		}
+		&.tw:hover {
+			background-color:$tw-blue;
+		}
+		&.youtube:hover {
+			background-color:$youtube-red;
+		}
+		& > img {
+			display:block;
+			width:100%;
+			height:100%;
+		}
+	}
+}
+body.scrolled {
+	.social-follow {
+		padding:18px 0;
+	}
+}
 
 
 /*********************
@@ -329,6 +368,12 @@ SIDEBARS & ASIDES
 	#inner-footer {
 		height:39px;
 		border-top:1px solid #303030;
+		nav {
+			float:right;
+			a:hover {
+				color:$link-hover;
+			}
+		}
 	}
 }
 

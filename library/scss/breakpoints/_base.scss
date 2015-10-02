@@ -446,6 +446,23 @@ and more scalable.
 		}
 	}
 }
+.social-follow {
+	width:162px;
+	margin:0 auto;
+	@include clearfix;
+	& > a {
+		width:38px;
+		height:38px;
+		float:left;
+		padding:15px 8px;
+		outline:none;
+		& > img {
+			display:block;
+			width:100%;
+			height:100%;
+		}
+	}
+}
 
 
 /*********************
@@ -894,6 +911,7 @@ CAROUSEL STYLES
 	border-top:3px solid darken($red, 35%);
 	border-bottom:3px solid darken($red, 35%);
 	background:$black;
+	overflow:hidden;
 	& > ul {
 		position:relative;
 		& > li {
@@ -993,6 +1011,7 @@ CAROUSEL STYLES
 }
 
 .scroll-carousel {
+	overflow:hidden;
 	& > ul {
 		position:relative;
 		@include clearfix;
@@ -1528,6 +1547,10 @@ SIDEBARS & ASIDES
 			top:0;
 			text-indent:-9999px;
 			width:45px;
+			@include transition(background-color, .35s);
+			&:hover {
+				background-color:$dark-orange;
+			}
 		}
 	}
 }
@@ -1582,6 +1605,15 @@ FOOTER STYLES
 	@include css-gradient-plus-img($from: rgba($black, .1), $to: rgba($black, .8), $vstart:"top", $vend:"bottom", $url:"../images/skins-gray-light-grunge.jpg");
 	color: $dark-orange;
 	overflow:hidden;
+	#inner-footer {
+		nav {
+			a {
+				font-size:12px;
+				color:$link-color;
+				text-transform:uppercase;
+			}
+		}
+	}
 }
 .inner-footer {
 	margin:0 10px;

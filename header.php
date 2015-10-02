@@ -72,8 +72,14 @@
 					<?php // if you'd like to use the site description you can un-comment it below ?>
 					<?php // bloginfo('description'); ?>
 
-
 					<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" class="MAIN_NAV main-nav">
+
+						<?php $socialFollow = get_posts(array('post_type' => 'module', 'numberposts' => 1, 'module_cat' => 'social-follow')); 
+						if (count($socialFollow) > 0) { ?>
+						<div class="social-follow">
+							<?php echo $socialFollow[0]->post_content; ?>
+						</div>
+						<?php } ?>
 						<?php wp_nav_menu(array(
     					         'container' => false,                           // remove nav container
     					         'container_class' => 'menu',                 // class of container (should you choose to use it)

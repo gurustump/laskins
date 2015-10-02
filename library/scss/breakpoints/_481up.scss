@@ -106,6 +106,12 @@ NAVIGATION STYLES
 	padding:17px;
 	right:-12px;
 }
+.social-follow {
+	& > a {
+		padding-top:18px;
+		padding-bottom:18px;
+	}
+}
 
 /*********************
 POSTS & CONTENT STYLES
