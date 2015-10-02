@@ -455,7 +455,7 @@ POSTS & CONTENT STYLES
 #content {
 }
 .content-primary {
-	padding:0 20px;
+	padding:0 15px;
 }
 .content-secondary {
 	@extend %gray-grunge;
@@ -505,15 +505,44 @@ POSTS & CONTENT STYLES
 .tag-slug {}        /* style by tag (i.e. tag-news) */
 
 /* post meta */
+.subhead {
+	border:solid $border-color;
+	border-width:1px 0;
+	height:34px;
+	@include clearfix;
+	&.tribe-events-schedule {
+		border-width:1px 0;
+		background:none;
+		margin:0;
+		padding:0;
+	}
+	.widget_ssba_widget {
+		float:right;
+		margin:0 -1px 0 0;
+		position:relative;
+		z-index:1;
+		a {
+			display:inline-block;
+		}
+	}
+	h3 {
+		@include v-center;
+		font-weight:normal;
+		text-transform:uppercase;
+	}
+}
 .byline {
 	color: $meta-gray;
 	text-transform:uppercase;
 	font-size:12px;
 	margin: 0;
-	border:solid $border-color;
-	border-width:1px 0;
-
-	time {}
+	time {
+		display:inline;
+	}
+	span {
+		display:none;
+	}
+	@include v-center;
 }
 
 /* entry content */
@@ -703,6 +732,8 @@ POSTS & CONTENT STYLES
 .thumb-index {
 	padding-bottom:10px;
 	margin-bottom:20px;
+	margin-left:-15px;
+	margin-right:-15px;
 	.thumb-index-inner {
 		h2 {
 			text-transform:uppercase;
@@ -797,7 +828,7 @@ POSTS & CONTENT STYLES
 }
 
 /******************************************************************
-TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN
+TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN)
 ******************************************************************/
 .single-tribe_events {
 	.tribe-events-event-meta {
@@ -851,6 +882,7 @@ TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN
 			float:none;
 			display:block;
 			margin:20px 4% 0;
+			max-width:800px;
 		}
 	}
 }
@@ -988,14 +1020,18 @@ OV STYLES
 	width:100%;
 	height:100%;
 	z-index:9999;
+	opacity:1;
 }
 .ov {
 	display:none;
 }
 .ov-wrap {
-	//background:#000;
 	position:fixed !important;
 	z-index:9999;
+	padding:0;
+	border:0;
+	background:none;
+	@include border-radius(0);
 	&.gallery-item-ov-wrap {
 		left:50% !important;
 		top:50% !important;
@@ -1021,6 +1057,13 @@ OV STYLES
 		position:absolute;
 		top:0;
 		right:0;
+		background:none;
+		border:0;
+		padding:0;
+		@include border-radius(0);
+		.ui-dialog-title {
+			display:none;
+		}
 		.ui-dialog-titlebar-close {
 			background:none;
 			border:none;
@@ -1031,6 +1074,7 @@ OV STYLES
 			right:0;
 			top:0;
 			z-index:1;
+			margin:0;
 			.ui-button-text {
 				display:none;
 			}
@@ -1042,12 +1086,16 @@ OV STYLES
 				position:absolute;
 				right:0;
 				top:0;
+				left:auto;
 			}
 		}
 	}
 	.gallery-item-ov {
 		opacity:0;
 		position:relative;
+		background:none;
+		padding:0;
+		overflow:visible;
 		@include transition(opacity .5s);
 		&.ready {
 			opacity:1;
@@ -1355,59 +1403,73 @@ COMMENT FORM STYLES
 	border-top: 1px solid $light-gray;
 }
 
-	#reply-title {
-		margin: 0;
+#reply-title {
+	margin: 0;
+}
+
+.logged-in-as {
+	color: $meta-gray;
+	font-style: italic;
+	margin: 0;
+
+	a {
+		color: $text-color;
 	}
+}
 
-	.logged-in-as {
-		color: $meta-gray;
-		font-style: italic;
-		margin: 0;
+.comment-form-comment {
+	margin: 1.5em 0 0.75em;
+}
 
-		a {
-			color: $text-color;
-		}
+.form-allowed-tags {
+	padding: 1.5em;
+	background-color: $light-gray;
+	font-size: 0.9em;
+}
+
+/* comment submit button */
+#submit {
+	@extend .btn-blue;
+	float: right;
+	font-size: 1em;
+}
+
+/* comment form title */
+#comment-form-title {
+	margin: 0 0 1.1em;
+}
+
+/* cancel comment reply link */
+#cancel-comment-reply {
+	a {}
+}
+
+/* logged in comments */
+.comments-logged-in-as {}
+
+/* allowed tags */
+#allowed_tags {
+	margin: 1.5em 10px 0.7335em 0;
+}
+
+/* no comments */
+.nocomments {
+	margin: 0 20px 1.1em;
+}
+
+/*********************
+CONTACT FORM STYLES
+*********************/
+.wpcf7-form {
+	@extend %orange-grunge;
+	padding:20px;
+	br {
+		display:none;
 	}
-
-	.comment-form-comment {
-		margin: 1.5em 0 0.75em;
+	input[type=submit] {
+		margin-top:5px;
 	}
-
-	.form-allowed-tags {
-		padding: 1.5em;
-		background-color: $light-gray;
-		font-size: 0.9em;
-	}
-
-	/* comment submit button */
-	#submit {
-		@extend .btn-blue;
-		float: right;
-		font-size: 1em;
-	}
-
-	/* comment form title */
-	#comment-form-title {
-		margin: 0 0 1.1em;
-	}
-
-	/* cancel comment reply link */
-	#cancel-comment-reply {
-		a {}
-	}
-
-	/* logged in comments */
-	.comments-logged-in-as {}
-
-	/* allowed tags */
-	#allowed_tags {
-		margin: 1.5em 10px 0.7335em 0;
-	}
-
-	/* no comments */
-	.nocomments {
-		margin: 0 20px 1.1em;
-	}
+}
 
 /*********************
 SIDEBARS & ASIDES
@@ -1447,26 +1509,13 @@ SIDEBARS & ASIDES
 		}
 
 	}
-
 }
 .searchform {
 	.searchform-inner {
 		max-width:400px;
 		position:relative;
 		input[type=search] {
-			background:$white;
 			padding-right:50px;
-			border:1px solid transparent;
-			@include transition(border-color, .5s);
-			@include border-radius(40px);
-			@include placeholder {
-				text-transform:uppercase;
-				color:$orange;
-				font-size:13px;
-			}
-			&:hover, &:focus {
-				border-color:$orange;
-			}
 		}
 		button[type=submit] {
 			background:$orange url(../images/ic.png) no-repeat center -261px;
@@ -1749,6 +1798,7 @@ body.film-festival-page {
 		}
 	}
 	.content-primary {
+		padding-top:0;
 		.overview {
 			margin-top:20px;
 		}
@@ -1756,6 +1806,10 @@ body.film-festival-page {
 			overflow:hidden;
 			position:relative;
 			margin:0 -20px;
+			padding:20px;
+			//background:lighten($orange, 35%);
+			@extend %light-orange-grunge;
+			@include box-sizing;
 			.tabs {
 				border:solid $orange;
 				border-width:3px 0;
@@ -1792,8 +1846,10 @@ body.film-festival-page {
 			.films-list {
 				width:100%;
 				position:absolute;
-				top:52px;
-				left:0;
+				top:72px;
+				left:20px;
+				padding-right:40px;
+				@include box-sizing;
 				@include transform(translateX(100%));
 				@include transition(all .35s);
 				&.active {
@@ -1801,6 +1857,8 @@ body.film-festival-page {
 				}
 				li {
 					clear:left;
+					background:rgba($white, .7);
+					margin-bottom:5px;
 				}
 				a {
 					display:block;
@@ -1809,15 +1867,17 @@ body.film-festival-page {
 				}
 				img {
 					float:left;
-					margin:0 10px 5px 0;
+					margin:0 15px 5px 0;
 					width:80px
+				}
+				.item-content {
+					display:block;
+					padding-top:10px;
 				}
 				.item-sched {
 					text-transform:uppercase;
 					font-size:11px;
 					display:block;
-					border:solid $light-gray;
-					border-width:1px 0;
 					&.mobile-hide {
 						display:none;
 					}

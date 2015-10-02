@@ -58,18 +58,25 @@ $disabled-gray:     #cfcfcf;
 	background:$black url(../images/skins-gray-light-grunge.jpg); // lighten($skins-gray, 50%);
 	@include css-gradient-plus-img($from: rgba($black, .9), $to: rgba($black, .3), $vstart:"top", $vend:"bottom", $url:"../images/skins-gray-light-grunge.jpg");
 }
+@mixin grunge($color) {
+	background:$color url(../images/white-dark-grunge.jpg);
+	@include css-gradient-plus-img($from: rgba($color, .8), $to: rgba($color, .05), $vstart:"top", $vend:"bottom", $url:"../images/white-dark-grunge.jpg");
+}
 %white-grunge {
-	background:$white url(../images/white-dark-grunge.jpg); // lighten($skins-gray, 50%);
-	@include css-gradient-plus-img($from: rgba($white, .8), $to: rgba($white, .05), $vstart:"top", $vend:"bottom", $url:"../images/white-dark-grunge.jpg");
+	@include grunge($white);
 }
 %light-gray-grunge {
-	background:$light-gray url(../images/white-dark-grunge.jpg);
-	@include css-gradient-plus-img($from: rgba($light-gray, .8), $to: rgba($light-gray, .05), $vstart:"top", $vend:"bottom", $url:"../images/white-dark-grunge.jpg");
+	@include grunge($light-gray);
 }
 %gray-grunge {
-	background:$gray url(../images/white-dark-grunge.jpg);
-	@include css-gradient-plus-img($from: rgba($gray, .8), $to: rgba($gray, .05), $vstart:"top", $vend:"bottom", $url:"../images/white-dark-grunge.jpg");
-} 
+	@include grunge($gray);
+}
+%orange-grunge {
+	@include grunge($orange);
+}
+%light-orange-grunge {
+	@include grunge(lighten($orange, 30%));
+}
 
 
 /*

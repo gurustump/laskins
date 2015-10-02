@@ -260,9 +260,12 @@ body.scrolled {
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-
-.content-primary {
-	padding-right:20px;
+.format-standard, .tribe_events {
+	.thumb-index { 
+		.thumb-index-inner {
+			margin:0 auto;
+		}
+	}
 }
 
 /******************************************************************
@@ -326,5 +329,27 @@ SIDEBARS & ASIDES
 	#inner-footer {
 		height:39px;
 		border-top:1px solid #303030;
+	}
+}
+
+/******************************************
+PAGE SPECIFIC STYLES
+******************************************/
+
+/******************************************
+FILM FESTIVAL TEMPLATE PAGE
+******************************************/
+body.film-festival-page {
+	.content-primary {
+		.screening-lists {
+			.tabs {
+				li {
+					&:after {
+						margin-bottom:16px;
+						border-width:10px 0 10px 10px;
+					}
+				}
+			}
+		}
 	}
 }

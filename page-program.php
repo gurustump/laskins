@@ -50,6 +50,22 @@
 											'link_before' => '<span>',
 											'link_after'  => '</span>',
 										) );
+										$now = new DateTime();
+										$nowFormatted = $now->format( 'Y-m-d H:i');
+										$upcomingEvents = tribe_get_events(array('numberposts' => -1, 'tribe_events_cat' => $post->post_name, 'start_date' => $nowFormatted)); 
+										$pastEvents = tribe_get_events(array('numberposts' => -1, 'tribe_events_cat' => $post->post_name, 'end_date' => $nowFormatted)); 
+										if (count($upcomingEvents) > 0) { ?>
+											<pre>
+											<?php print_r($upcomingEvents); ?>
+											</pre>
+										
+										<?php }
+										if (count($pastEvents) > 0) { ?>
+											<pre style="background:orange">
+											<?php print_r($pastEvents); ?>
+											</pre>
+										
+										<?php }
 									?>
 								</section> <?php // end article section ?>
 

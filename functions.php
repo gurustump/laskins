@@ -78,7 +78,7 @@ add_action( 'after_setup_theme', 'bones_ahoy' );
 /************* OEMBED SIZE OPTIONS *************/
 
 if ( ! isset( $content_width ) ) {
-	$content_width = 680;
+	$content_width = 2000;
 }
 
 /************* THUMBNAIL SIZE OPTIONS *************/
@@ -175,6 +175,16 @@ function bones_register_sidebars() {
 		'id' => 'sidebar1',
 		'name' => __( 'Sidebar 1', 'bonestheme' ),
 		'description' => __( 'The first (primary) sidebar.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+	
+	register_sidebar(array(
+		'id' => 'socialshare',
+		'name' => __( 'Social Sharing', 'bonestheme' ),
+		'description' => __( 'Social Sharing icons.', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -435,7 +445,7 @@ function skins_gallery_shortcode( $attr ) {
 			$image_output = wp_get_attachment_link( $id, $size, true, false );
 
 		$image_meta  = wp_get_attachment_metadata( $id );
-		$large_image = wp_get_attachment_image_src($id,'bones-gallery');
+		$large_image = wp_get_attachment_image_src($id,'large');
 
 		$orientation = '';
 		if ( isset( $image_meta['height'], $image_meta['width'] ) )
@@ -447,6 +457,7 @@ function skins_gallery_shortcode( $attr ) {
 			<input class='IMG_SRC' type='hidden' value='{$large_image[0]}' />
 			<input class='IMG_WIDTH' type='hidden' value='{$large_image[1]}' />
 			<input class='IMG_HEIGHT' type='hidden' value='{$large_image[2]}' />
+			<input class='IMG_RESIZED' type='hidden' value='{$large_image[3]}' />
 			<span class='item-content'><span class='view-item'>View Image</span></span>";
 		if ( $captiontag && trim($attachment->post_excerpt) ) {
 			$output .= "

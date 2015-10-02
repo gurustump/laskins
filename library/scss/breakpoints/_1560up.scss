@@ -42,6 +42,12 @@ on larger screens.
 .content-primary {
 	width:78%;
 }
+.single-format-gallery {
+	.content-primary {
+		max-width:1472px;
+		margin:0 auto;
+	}
+}
 .content-secondary {
 	width:22%;
 }

@@ -151,8 +151,14 @@ POSTS & CONTENT STYLES
 .content-primary {
 	float:left;
 	width:65%;
-	padding-right:20px;
+	padding:20px;
 	@include box-sizing;
+}
+.single-format-gallery {
+	.content-primary {
+		width:auto;
+		float:none;
+	}
 }
 .content-secondary {
 	float:left;
@@ -161,8 +167,15 @@ POSTS & CONTENT STYLES
 	padding-right:20px;
 	@include box-sizing;
 }
+.byline {
+	span {
+		display:inline;
+	}
+}
 
-.thumb-index {
+.thumb-index { 
+	margin-left:0;
+	margin-right:0;
 	.thumb-index-inner {
 		h2 {
 			padding-top:10px;
@@ -199,7 +212,7 @@ POSTS & CONTENT STYLES
 }
 
 /******************************************************************
-TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN
+TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN)
 ******************************************************************/
 .single-tribe_events {
 	.tribe-events-event-meta {
@@ -209,6 +222,27 @@ TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN
 		.tribe-events-meta-group {
 			float:none;
 			width:auto;
+		}
+	}
+}
+body.music-festival-page {
+	.tribe-events-event-meta {
+		padding:20px 0;
+		position:relative;
+		min-height:362px;
+		.tribe-events-meta-group {
+			padding:0 25px;
+			width:33%;
+		}
+		.tribe-events-meta-group-gmap {
+			position:absolute;
+			top:20px;
+			right:0;
+			width:66%;
+			height:362px;
+			.tribe-events-venue-map {
+				margin:0;
+			}
 		}
 	}
 }
@@ -517,7 +551,7 @@ body.film-festival-page {
 				}
 			}
 			.films-list {
-				top:54px;
+				top:74px;
 				img {
 					width:100px
 				}

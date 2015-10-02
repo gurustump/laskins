@@ -9,6 +9,7 @@
 		<meta charset="utf-8">
 		
 		<?php $isFilmFestPage = tribe_event_in_category('film-festival') && is_single(); ?>
+		<?php $isMusicFestPage = tribe_event_in_category('music-festival') && is_single(); ?>
 		<?php // force Internet Explorer to use the latest rendering engine available ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<?php // hacked the title here for just film-festival pages so it won't say "Upcoming Events" before the festival's name ?>
@@ -40,7 +41,10 @@
 		<?php // end analytics ?>
 
 	</head>
-	<body <?php body_class($isFilmFestPage ? 'film-festival-page' : ''); ?> itemscope itemtype="http://schema.org/WebPage">
+	<?php $bodyClass = '';
+	if ($isFilmFestPage) { $bodyClass .= 'film-festival-page'; }
+	if ($isMusicFestPage) { $bodyClass .= 'music-festival-page'; } ?>
+	<body <?php body_class($bodyClass); ?> itemscope itemtype="http://schema.org/WebPage">
 
 		<div id="container">
 

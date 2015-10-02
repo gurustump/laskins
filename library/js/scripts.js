@@ -266,7 +266,7 @@ jQuery(document).ready(function($) {
 		} else if ($(this).hasClass('NEXT')) {
 			$('#gallery_item_ov').data('current').next().click();
 		}
-		setGalleryOvSize();
+		//setGalleryOvSize();
 	});
 	$('.GALLERY').on('click', '.gallery-item', function(e) {
 		e.preventDefault();
@@ -275,8 +275,7 @@ jQuery(document).ready(function($) {
 		readyCount = 0;
 		var thisItem = $(this);
 		var imgSrc = thisItem.find('.IMG_SRC').val();
-		console.log(imgSrc);
-		$.imgpreload(imgSrc, function() {
+		$.imgpreload(imgSrc, function() {			
 			showImageWhenReady(galOv);
 		});
 		/*$.imgpreload([thisItem.prev().find('.IMG_SRC').val(), thisItem.next().find('.IMG_SRC').val()], function() {
@@ -308,11 +307,11 @@ jQuery(document).ready(function($) {
 	function showImageWhenReady(galOv) {
 		readyCount ++;
 		if (readyCount > 1) {
+			setGalleryOvSize();
 			galOv.addClass('ready');
 		}
 	}
 	$('body').keyup(function(e) {
-		console.log(e.keyCode);
 		var galleryItemOv = $('#gallery_item_ov');
 		if (galleryItemOv.dialog('isOpen')) {
 			if (e.keyCode == 37 || e.which == 37) {

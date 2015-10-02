@@ -31,7 +31,10 @@ $filmMeta = get_post_meta($event_id, '_laskins_events_film', true);
 
 	<?php the_title( '<h1 class="tribe-events-single-event-title summary entry-title">', '</h1>' ); ?>
 
-	<div class="tribe-events-schedule updated published tribe-clearfix">
+	<div class="tribe-events-schedule updated published tribe-clearfix subhead">
+		<?php if (is_active_sidebar('socialshare')) { ?>
+			<?php dynamic_sidebar('socialshare'); ?>
+		<?php } ?>
 		<?php echo tribe_events_event_schedule_details( $event_id, '<h3>', '</h3>' ); ?>
 		<?php if ( tribe_get_cost() ) : ?>
 			<span class="tribe-events-divider">|</span>
