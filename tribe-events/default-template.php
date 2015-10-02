@@ -139,6 +139,18 @@ FALSE
 									<div class="content-primary">
 										<?php while ( have_posts() ) :  the_post(); ?>
 										<div class="overview">
+
+											<div class="tribe-events-schedule updated published tribe-clearfix subhead">
+												<?php if (is_active_sidebar('socialshare')) { ?>
+													<?php dynamic_sidebar('socialshare'); ?>
+												<?php } ?>
+												<?php echo tribe_events_event_schedule_details( $event_id, '<h3>', '</h3>' ); ?>
+												<?php if ( tribe_get_cost() ) : ?>
+													<span class="tribe-events-divider">|</span>
+													<span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
+												<?php endif; ?>
+											</div>
+											
 											<?php do_action( 'tribe_events_single_event_before_the_content' ); ?>
 											<?php the_content(); ?>
 											<?php do_action( 'tribe_events_single_event_after_the_content' ); ?>

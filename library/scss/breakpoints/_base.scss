@@ -548,6 +548,13 @@ POSTS & CONTENT STYLES
 		text-transform:uppercase;
 	}
 }
+.film-festival-page {
+	.subhead {
+		&.tribe-events-schedule {
+			margin-bottom:20px;
+		}
+	}
+}
 .byline {
 	color: $meta-gray;
 	text-transform:uppercase;
