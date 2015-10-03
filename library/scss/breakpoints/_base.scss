@@ -997,6 +997,17 @@ TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN)
 			max-width:800px;
 		}
 	}
+	.tribe-events-notices {
+		border:dotted $orange;
+		border-width:1px 0;
+		padding:0 10px;
+		font-size:12px;
+		color:$orange;
+		text-transform:uppercase;
+		background:rgba($orange, .1);
+		@include border-radius(0);
+		text-shadow:none;
+	}
 }
 
 /******************************************************************
