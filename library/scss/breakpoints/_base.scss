@@ -851,6 +851,94 @@ POSTS & CONTENT STYLES
 	}
 }
 
+.screening-lists, .events-lists {
+	overflow:hidden;
+	position:relative;
+	margin:0 -20px;
+	padding:20px;
+	//background:lighten($orange, 35%);
+	@extend %light-orange-grunge;
+	@include box-sizing;
+	.tabs {
+		border:solid $orange;
+		border-width:3px 0;
+		height:46px;
+		position:relative;
+		li {
+			white-space:nowrap;
+			position:absolute;
+			padding:12px 0;
+			font-family:$heading;
+			left:100%;
+			color:$orange;
+			font-size:16px;
+			height:46px;
+			line-height:46px;
+			@include transform(translateX(-100%));
+			@include transition(all, .35s);
+			@include tri(right, 5px, 5px, $orange, 0 0 19px 4px);
+			cursor:pointer;
+			padding:0 8px 0 0;
+			&.active {
+				font-weight:bold;
+				left:0;
+				@include transform(translateX(0));
+				z-index:1;
+				cursor:default;
+				padding:0 0 0 8px;
+				&:after {
+					opacity:0;
+				}
+			}
+		}
+	}
+	.films-list, .events-list {
+		width:100%;
+		position:absolute;
+		top:72px;
+		left:20px;
+		padding-right:40px;
+		@include box-sizing;
+		@include transform(translateX(100%));
+		@include transition(all .35s);
+		&.active {
+			@include transform(translateX(0));
+		}
+		li {
+			clear:left;
+			background:rgba($white, .7);
+			margin-bottom:5px;
+		}
+		a {
+			display:block;
+			text-decoration:none;
+			@include clearfix;
+			height:50px;
+		}
+		img {
+			float:left;
+			margin:0 15px 0 0;
+			width:80px
+		}
+		.item-content {
+			margin-left:15px;
+			display:block;
+			padding-top:6px;
+		}
+		.item-sched {
+			text-transform:uppercase;
+			font-size:11px;
+			display:block;
+			&.mobile-hide {
+				display:none;
+			}
+		}
+		.item-body, .btn {
+			display:none;
+		}
+	}
+}
+
 /******************************************************************
 TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN)
 ******************************************************************/
@@ -1841,90 +1929,14 @@ body.film-festival-page {
 		.overview {
 			margin-top:20px;
 		}
-		.screening-lists {
-			overflow:hidden;
-			position:relative;
-			margin:0 -20px;
-			padding:20px;
-			//background:lighten($orange, 35%);
-			@extend %light-orange-grunge;
-			@include box-sizing;
-			.tabs {
-				border:solid $orange;
-				border-width:3px 0;
-				height:46px;
-				position:relative;
-				li {
-					white-space:nowrap;
-					position:absolute;
-					padding:12px 0;
-					font-family:$heading;
-					left:100%;
-					color:$orange;
-					font-size:16px;
-					height:46px;
-					line-height:46px;
-					@include transform(translateX(-100%));
-					@include transition(all, .35s);
-					@include tri(right, 5px, 5px, $orange, 0 0 19px 4px);
-					cursor:pointer;
-					padding:0 8px 0 0;
-					&.active {
-						font-weight:bold;
-						left:0;
-						@include transform(translateX(0));
-						z-index:1;
-						cursor:default;
-						padding:0 0 0 8px;
-						&:after {
-							opacity:0;
-						}
-					}
-				}
-			}
-			.films-list {
-				width:100%;
-				position:absolute;
-				top:72px;
-				left:20px;
-				padding-right:40px;
-				@include box-sizing;
-				@include transform(translateX(100%));
-				@include transition(all .35s);
-				&.active {
-					@include transform(translateX(0));
-				}
-				li {
-					clear:left;
-					background:rgba($white, .7);
-					margin-bottom:5px;
-				}
-				a {
-					display:block;
-					text-decoration:none;
-					@include clearfix;
-				}
-				img {
-					float:left;
-					margin:0 15px 5px 0;
-					width:80px
-				}
-				.item-content {
-					display:block;
-					padding-top:10px;
-				}
-				.item-sched {
-					text-transform:uppercase;
-					font-size:11px;
-					display:block;
-					&.mobile-hide {
-						display:none;
-					}
-				}
-				.item-body, .btn {
-					display:none;
-				}
-			}
-		}
+	}
+}
+
+/******************************************
+PROGRAMS TEMPLATE PAGE
+******************************************/
+body.page-template-page-program {
+	.article-header h1 {
+		border-bottom:3px double $orange;
 	}
 }

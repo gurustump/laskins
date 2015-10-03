@@ -113,6 +113,7 @@ jQuery(document).ready(function($) {
 	// Check what page we're on
 	if (typeof isHome === "undefined") var isHome = $('body').hasClass('home');
 	if (typeof isFilmFestPage === "undefined") var isFilmFestPage = $('body').hasClass('film-festival-page');
+	if (typeof isProgramPage === "undefined") var isProgramPage = $('body').hasClass('page-template-page-program');
 
 	/*
 	* Let's fire off the gravatar function
@@ -379,24 +380,25 @@ jQuery(document).ready(function($) {
 		});
 	}
 	function setScreeningListHeight() {
-		var screeningList = $('.SCREENING_LISTS')
+		var screeningList = $('.SWITCH_LISTS')
 		var screeningListHeight = screeningList.outerHeight();
-		$('.FILMS_LIST:first > li').each(function() {
+		$('.SWITCH_LIST:first > li').each(function() {
 			screeningListHeight += $(this).outerHeight();
 		});
-		$('.SCREENING_LISTS').height(screeningListHeight);
+		$('.SWITCH_LISTS').height(screeningListHeight);
 	}
 	
 	if (isHome) {
 		scrollCarousel($('.SCROLL_CAROUSEL'), 3000, true);
 	}
 	
-	if (isFilmFestPage) {
+	if (isFilmFestPage || isProgramPage) {
+		console.log('WORKED');
 		setScreeningListHeight();
 		// animates toggling from screening films list by schedule to alphabetical
 		$('.TABS > li').click(function() {
 			if ($(this).hasClass('active')) { return; }
-			$(this).add($(this).siblings()).add('.FILMS_LIST').toggleClass('active');
+			$(this).add($(this).siblings()).add('.SWITCH_LIST').toggleClass('active');
 		});
 	}
 	

@@ -93,6 +93,28 @@ POSTS & CONTENT STYLES
 		}
 	}
 }
+.screening-lists, .events-lists {
+	.tabs {
+		height:54px;
+		li {
+			height:54px;
+			line-height:54px;
+			font-size:24px;
+			&:after {
+				margin-bottom:17px;
+			}
+		}
+	}
+	.films-list, .events-list {
+		top:80px;
+		a {
+			height:90px;
+		}
+		img {
+			width:145px;
+		}
+	}
+}
 
 /******************************************************************
 CAROUSEL STYLES
@@ -126,27 +148,6 @@ body.film-festival-page {
 	.entry-header {
 		.heading-desktop {
 			font-size:10px;
-		}
-	}
-	.content-primary {
-		.screening-lists {
-			.tabs {
-				height:54px;
-				li {
-					height:54px;
-					line-height:54px;
-					font-size:24px;
-					&:after {
-						margin-bottom:17px;
-					}
-				}
-			}
-			.films-list {
-				top:80px;
-				img {
-					width:145px
-				}
-			}
 		}
 	}
 }

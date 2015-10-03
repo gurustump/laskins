@@ -306,6 +306,16 @@ POSTS & CONTENT STYLES
 		}
 	}
 }
+.screening-lists, .events-lists {
+	.tabs {
+		li {
+			&:after {
+				margin-bottom:16px;
+				border-width:10px 0 10px 10px;
+			}
+		}
+	}
+}
 
 /******************************************************************
 CAROUSEL STYLES
@@ -380,21 +390,3 @@ SIDEBARS & ASIDES
 /******************************************
 PAGE SPECIFIC STYLES
 ******************************************/
-
-/******************************************
-FILM FESTIVAL TEMPLATE PAGE
-******************************************/
-body.film-festival-page {
-	.content-primary {
-		.screening-lists {
-			.tabs {
-				li {
-					&:after {
-						margin-bottom:16px;
-						border-width:10px 0 10px 10px;
-					}
-				}
-			}
-		}
-	}
-}

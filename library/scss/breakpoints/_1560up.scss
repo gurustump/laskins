@@ -87,3 +87,23 @@ body.single-media_items {
 		clear:left;
 	}
 }
+
+/******************************************
+PROGRAMS TEMPLATE PAGE
+******************************************/
+body.page-template-page-program {
+	.content-primary {
+		float:left;
+		width:70%;
+		padding-right:0;
+		@include clearfix;
+		.overview {
+			padding-right:20px;
+			@include box-sizing;
+		}
+	}
+	.content-secondary {
+		float:left;
+		width:30%;
+	}
+}

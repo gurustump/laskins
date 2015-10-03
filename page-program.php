@@ -28,6 +28,7 @@
 								</header> <?php // end article header ?>
 								
 								<section class="entry-content cf" itemprop="articleBody">
+									<div class="overview">
 									<?php
 										// the content (pretty self explanatory huh)
 										the_content();
@@ -54,7 +55,7 @@
 										$nowFormatted = $now->format( 'Y-m-d H:i');
 										$upcomingEvents = tribe_get_events(array('numberposts' => -1, 'tribe_events_cat' => $post->post_name, 'start_date' => $nowFormatted)); 
 										$pastEvents = tribe_get_events(array('numberposts' => -1, 'tribe_events_cat' => $post->post_name, 'end_date' => $nowFormatted)); 
-										if (count($upcomingEvents) > 0) { ?>
+										/* if (count($upcomingEvents) > 0) { ?>
 											<pre>
 											<?php print_r($upcomingEvents); ?>
 											</pre>
@@ -65,15 +66,56 @@
 											<?php print_r($pastEvents); ?>
 											</pre>
 										
-										<?php }
+										<?php } */
 									?>
+									</div>
+									
+									<?php if (count($upcomingEvents) > 0 || count($pastEvents) > 0) { ?>
+									<div class="events-lists SWITCH_LISTS">
+										<ul class="tabs TABS">
+										<?php foreach (array($upcomingEvents,$pastEvents) as $key => $tab) { 
+											$tabClass = $tab == $upcomingEvents ? 'UPCOMING' : 'PAST'; ?>
+											<li class="FILMS_LIST_<?php echo $tabClass; echo $key == 0 ? ' active' : ''; ?>"><?php echo $tabClass == 'UPCOMING' ? 'Upcoming' : 'Past'; ?></li>
+										<?php } ?>
+										</ul>
+										<?php foreach (array($upcomingEvents,$pastEvents) as $k => $list) { 
+											$listClass = $list == $upcomingEvents ? 'upcoming' : 'past'; ?>
+											<ul class="events-list events-list-<?php echo $listClass; echo $k == 0 ? ' active' : ''; ?> SWITCH_LIST">
+												<?php global $post;
+												foreach($list as $key => $item) {
+												$post = $item;
+												setup_postdata($post);
+												$itemThumbArray = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'small');
+												// print_r($item); 
+												?>
+												<li>
+													<a href="<?php the_permalink(); ?>">
+														<?php if ($itemThumbArray) { ?>
+														<img class="item-thumb" src="<?php echo $itemThumbArray[0]; ?>" />
+														<?php } ?>
+														<span class="item-content">
+															
+															<span class="item-head"><?php the_title(); ?></span>
+															<span class="item-sched mobile-hide"><?php echo tribe_events_event_schedule_details($item->ID); ?></span>
+															<span class="item-sched desktop-hide"><?php echo tribe_get_start_date($item->ID, true, 'M j @ g:i a'); ?></span>
+															<span class="item-body"><?php echo string_limit_words(get_the_excerpt(), 30); ?></span>
+															<span class="btn btn-orange">Film Details</span>
+														</span>
+													</a>
+												</li>
+												<?php } ?>
+											</ul>
+										<?php } ?>
+									</div>
+									<?php } ?>
+										
 								</section> <?php // end article section ?>
 
 								<footer class="article-footer cf">
 
 								</footer>
 
-								<?php comments_template(); ?>
+								<?php /* comments_template(); */ ?>
 
 							</article>
 

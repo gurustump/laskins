@@ -210,6 +210,36 @@ POSTS & CONTENT STYLES
 		}
 	}
 }
+.screening-lists, .events-lists {
+	margin:0;
+	.tabs {
+		height:48px;
+		li {
+			height:48px;
+			line-height:48px;
+			font-size:18px;
+			padding:0 10px 0 0;
+			&.active {
+				padding:0 0 0 10px;
+			}
+			&:after {
+				margin-bottom:20px;
+			}
+		}
+	}
+	.films-list, .events-list {
+		top:74px;
+		a {
+			height:62px;
+		}
+		img {
+			width:100px;
+		}
+		.item-content {
+			padding-top:8px;
+		}
+	}
+}
 
 /******************************************************************
 TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN)
@@ -533,29 +563,29 @@ body.film-festival-page {
 			float:left;
 			width:50%;
 		}
-		.screening-lists {
-			margin:0;
-			.tabs {
-				height:48px;
-				li {
-					height:48px;
-					line-height:48px;
-					font-size:18px;
-					padding:0 10px 0 0;
-					&.active {
-						padding:0 0 0 10px;
-					}
-					&:after {
-						margin-bottom:20px;
-					}
-				}
-			}
-			.films-list {
-				top:74px;
-				img {
-					width:100px
-				}
-			}
+	}
+}
+
+/******************************************
+PROGRAMS TEMPLATE PAGE
+******************************************/
+body.page-template-page-program {
+	.content-primary {
+		float:none;
+		width:auto;
+		padding-right:0;
+		@include clearfix;
+		.overview {
+			padding-right:20px;
+			@include box-sizing;
 		}
+		.overview, .events-lists {
+			float:left;
+			width:50%;
+		}
+	}
+	.content-secondary {
+		float:none;
+		width:auto;
 	}
 }

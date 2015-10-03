@@ -162,7 +162,7 @@ FALSE
 										</div>
 										<?php endwhile; ?>
 										<?php if (count($festivalFilmsByTitle) > 0) { ?>
-										<div class="screening-lists SCREENING_LISTS">
+										<div class="screening-lists SWITCH_LISTS">
 											<ul class="tabs TABS">
 											<?php foreach (array($festivalFilmsByTime,$festivalFilmsByTitle) as $key => $tab) { 
 												$tabClass = $tab == $festivalFilmsByTime ? 'TIME' : 'TITLE'; ?>
@@ -171,7 +171,7 @@ FALSE
 											</ul>
 											<?php foreach (array($festivalFilmsByTime,$festivalFilmsByTitle) as $k => $list) { 
 												$listClass = $list == $festivalFilmsByTime ? 'time' : 'title'; ?>
-												<ul class="films-list films-list-<?php echo $listClass; echo $k == 0 ? ' active' : ''; ?> FILMS_LIST">
+												<ul class="films-list films-list-<?php echo $listClass; echo $k == 0 ? ' active' : ''; ?> SWITCH_LIST">
 													<?php global $post;
 													foreach($list as $key => $item) {
 													$post = $item;
