@@ -32,6 +32,13 @@
 									$itemPostImageMobileArray = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'carousel-mobile');
 									$itemOverrideImageMobileArray = wp_get_attachment_image_src( get_attachment_id_from_src($itemMeta['_laskins_carousel_override_image'][0]), 'carousel-mobile');
 									/*
+									echo '<!--';
+									echo $key;
+									echo '<br>';
+									print_r($item);
+									echo '-->';
+									*/
+									/*
 									echo '<pre>';
 									echo $key;
 									print_r($itemPostImageArray);
@@ -68,7 +75,7 @@
 													<span class="excerpt"><?php echo $item->post_excerpt; ?></span>
 												<?php } ?>
 											</span>
-											<span class="carousel-item-heading-desktop"<?php echo ($itemMeta['_laskins_carousel_exceprt_text_color'][0] || $itemMeta['_laskins_carousel_exceprt_background_color'][0] || $itemMeta['_laskins_carousel_exceprt_position_left'][0] || $itemMeta['_laskins_carousel_exceprt_position_top'][0]) ? 'style="'.($itemMeta['_laskins_carousel_exceprt_text_color'][0] ? 'color:'.$itemMeta['_laskins_carousel_exceprt_text_color'][0].'; ' : '').($itemMeta['_laskins_carousel_exceprt_background_color'][0] ? 'background-color:'.$itemMeta['_laskins_carousel_exceprt_background_color'][0].'; ' : '').($itemMeta['_laskins_carousel_exceprt_position_left'][0] ? 'left:'.$itemMeta['_laskins_carousel_exceprt_position_left'][0].'%; ' : '').($itemMeta['_laskins_carousel_exceprt_position_top'][0] ? 'top:'.$itemMeta['_laskins_carousel_exceprt_position_top'][0].'%; ' : '').'"' : ''; ?>>
+											<span class="carousel-item-heading-desktop"<?php echo ($itemMeta['_laskins_carousel_exceprt_text_color'][0] || $itemMeta['_laskins_carousel_exceprt_background_color'][0] || $itemMeta['_laskins_carousel_exceprt_position_left'][0] || $itemMeta['_laskins_carousel_exceprt_position_top'][0] || $itemMeta['_laskins_carousel_exceprt_position_right'][0] === '0' || $itemMeta['_laskins_carousel_exceprt_position_right'][0] || $itemMeta['_laskins_carousel_exceprt_position_bottom'][0] || $itemMeta['_laskins_carousel_exceprt_position_bottom'][0] === '0') ? 'style="'.($itemMeta['_laskins_carousel_exceprt_text_color'][0] ? 'color:'.$itemMeta['_laskins_carousel_exceprt_text_color'][0].'; ' : '').($itemMeta['_laskins_carousel_exceprt_background_color'][0] ? 'background-color:'.$itemMeta['_laskins_carousel_exceprt_background_color'][0].'; ' : '').($itemMeta['_laskins_carousel_exceprt_position_left'][0] && !$itemMeta['_laskins_carousel_exceprt_position_right'][0] ? 'left:'.$itemMeta['_laskins_carousel_exceprt_position_left'][0].'%; ' : '').($itemMeta['_laskins_carousel_exceprt_position_top'][0] && !$itemMeta['_laskins_carousel_exceprt_position_bottom'][0] ? 'top:'.$itemMeta['_laskins_carousel_exceprt_position_top'][0].'%; ' : '').($itemMeta['_laskins_carousel_exceprt_position_right'][0] || $itemMeta['_laskins_carousel_exceprt_position_right'][0] === '0' ? 'left:auto;right:'.$itemMeta['_laskins_carousel_exceprt_position_right'][0].'%; ' : '').($itemMeta['_laskins_carousel_exceprt_position_bottom'][0] || $itemMeta['_laskins_carousel_exceprt_position_bottom'][0] === '0' ? 'top:auto;bottom:'.$itemMeta['_laskins_carousel_exceprt_position_bottom'][0].'%; ' : '').'"' : ''; ?>>
 												<?php if ($itemMeta['_laskins_carousel_super_title'][0]) { ?>
 													<span class="h3"<?php echo $itemMeta['_laskins_carousel_super_title_size'][0] ? ' style="font-size:'.($itemMeta['_laskins_carousel_super_title_size'][0]/10).'em"' : ''; ?>><?php echo $itemMeta['_laskins_carousel_super_title'][0]; ?></span>
 												<?php } ?>

@@ -53,7 +53,7 @@
 				<div id="inner-header" class="wrap cf">
 
 					<?php
-						$logoTag = is_front_page() ? 'h1' : 'p';
+						$logoTag = is_front_page() || is_home() ? 'h1' : 'p';
 					?>
 					<<?php echo $logoTag; ?> id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
 						<a href="<?php echo home_url(); ?>" rel="nofollow">

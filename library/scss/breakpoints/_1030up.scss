@@ -230,7 +230,7 @@ body.scrolled {
 					@include transition(top .35s);
 					& > li {
 						float:left;
-						width:25%;
+						width:50%;
 						a {
 							height:50px;
 							line-height:50px;
@@ -246,6 +246,27 @@ body.scrolled {
 							a {
 								border:0;
 							}
+						}
+					}
+				}
+				&.items-3 {
+					& > .sub-menu {
+						& > li {
+							width:33.3%;
+						}
+					}
+				}
+				&.items-4 {
+					& > .sub-menu {
+						& > li {
+							width:25%;
+						}
+					}
+				}
+				&.items-5 {
+					& > .sub-menu {
+						& > li {
+							width:20%;
 						}
 					}
 				}
@@ -303,6 +324,21 @@ POSTS & CONTENT STYLES
 	.thumb-index { 
 		.thumb-index-inner {
 			margin:0 auto;
+		}
+	}
+}
+.row-index {
+	.row-index-inner {
+		& > ul {
+			& > li {
+				& > a {
+				}
+				img {
+					float:left;
+					margin-bottom:5px;
+					max-width:300px;
+				}
+			}
 		}
 	}
 }

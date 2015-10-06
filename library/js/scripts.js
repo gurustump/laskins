@@ -171,6 +171,10 @@ jQuery(document).ready(function($) {
 	var carouselInterval;
 	var carouselNavTimeout;
 	function carouselInit(container) {
+		// just in case the first item has no picture and was removed from the panes in the php
+		if (container.find('.PANES > li.active').length < 1) {
+			container.find('.PANES > li:first').addClass('active');
+		}
 		carouselAutoSwitch(container);
 		container.find('.CAROUSEL_NAV a').click(function(e) {
 			e.preventDefault();
@@ -380,12 +384,16 @@ jQuery(document).ready(function($) {
 		});
 	}
 	function setScreeningListHeight() {
-		var screeningList = $('.SWITCH_LISTS')
+		var screeningList = $('.SWITCH_LISTS');
+		screeningList.removeAttr('style');
 		var screeningListHeight = screeningList.outerHeight();
-		$('.SWITCH_LIST:first > li').each(function() {
-			screeningListHeight += $(this).outerHeight();
+		console.log('initial height: '+screeningListHeight);
+		$('.SWITCH_LIST.active > li').each(function() {
+			console.log($(this).outerHeight());
+			screeningListHeight += $(this).outerHeight(true);
+			console.log('current height: '+screeningListHeight);
 		});
-		$('.SWITCH_LISTS').height(screeningListHeight);
+		$('.SWITCH_LISTS').css('height', screeningListHeight); // have to use .css('height') here instead of .height() to avoid problems with the box-sizing property
 	}
 	
 	if (isHome) {
@@ -393,12 +401,12 @@ jQuery(document).ready(function($) {
 	}
 	
 	if (isFilmFestPage || isProgramPage) {
-		console.log('WORKED');
 		setScreeningListHeight();
 		// animates toggling from screening films list by schedule to alphabetical
 		$('.TABS > li').click(function() {
 			if ($(this).hasClass('active')) { return; }
 			$(this).add($(this).siblings()).add('.SWITCH_LIST').toggleClass('active');
+			setScreeningListHeight();
 		});
 	}
 	

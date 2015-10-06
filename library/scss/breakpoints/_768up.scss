@@ -210,6 +210,24 @@ POSTS & CONTENT STYLES
 		}
 	}
 }
+.row-index {
+	.row-index-inner {
+		& > ul {
+			& > li {
+				& > a {
+				}
+				img {
+					float:none;
+				}
+				.item-content {
+					.item-head {
+						font-size:24px;
+					}
+				}
+			}
+		}
+	}
+}
 .screening-lists, .events-lists {
 	margin:0;
 	.tabs {

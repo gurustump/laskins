@@ -458,13 +458,14 @@ function skins_gallery_shortcode( $attr ) {
 			<input class='IMG_WIDTH' type='hidden' value='{$large_image[1]}' />
 			<input class='IMG_HEIGHT' type='hidden' value='{$large_image[2]}' />
 			<input class='IMG_RESIZED' type='hidden' value='{$large_image[3]}' />
-			<span class='item-content'><span class='view-item'>View Image</span></span>";
-		if ( $captiontag && trim($attachment->post_excerpt) ) {
-			$output .= "
-				<{$captiontag} class='wp-caption-text gallery-caption'>
-				" . wptexturize($attachment->post_excerpt) . "
-				</{$captiontag}>";
-		}
+			<span class='item-content'><span class='view-item'>View Image</span>";
+				if ( $captiontag && trim($attachment->post_excerpt) ) {
+					$output .= "
+						<{$captiontag} class='wp-caption-text gallery-caption'>
+						" . wptexturize($attachment->post_excerpt) . "
+						</{$captiontag}>";
+				}
+			$output .= "</span>"; // end item-content
 		$output .= "</{$itemtag}>";
 		if ( ! $html5 && $columns > 0 && ++$i % $columns == 0 ) {
 			$output .= '<br style="clear: both" />';

@@ -16,7 +16,7 @@ jQuery(document).ready(function($) {
 function toggleMetaboxes($) {
 	console.log('changed')
 	var pageTemplate = $('#page_template').val()
-	if (pageTemplate == 'page-film-festival.php') {
+	if (pageTemplate == 'page-film-guide.php' || pageTemplate == 'page-venues.php') {
 		$('#_laskins_festival_page_custom_index_metabox').show();
 	} else {
 		$('#_laskins_festival_page_custom_index_metabox').hide();

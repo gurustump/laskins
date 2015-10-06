@@ -68,7 +68,7 @@ function laskins_register_festival_page_metabox() {
 
 	$cmb_festival_page_box->add_field( array(
 		'name' => __( 'Festival Year', 'cmb2' ),
-		'desc' => __( "Enter the year this festival is taking place.", 'cmb2' ),
+		'desc' => __( "Enter the year the associated festival is taking place.", 'cmb2' ),
 		'id'   => $prefix . 'year',
 		'type' => 'text_small',
 		// 'repeatable' => true,
@@ -324,6 +324,20 @@ function laskins_register_carousel_metabox() {
 		'name'		=> __( 'Title Box Position - Top', 'cmb2' ),
 		'desc'       => __( 'Enter a percentage from 0-100. Controls the vertical position of the text description on home/category pages.', 'cmb2' ),
 		'id' 			=> $prefix . 'exceprt_position_top',
+		'type'		=> 'text_small',
+	) );
+
+	$cmb_media_item_box->add_field( array(
+		'name'		=> __( 'Title Box Position - Right', 'cmb2' ),
+		'desc'       => __( 'Enter a percentage from 0-100. Controls the horizontal position of the text description on home/category pages. If used, this will override the "Left" setting.', 'cmb2' ),
+		'id' 			=> $prefix . 'exceprt_position_right',
+		'type'		=> 'text_small',
+	) );
+
+	$cmb_media_item_box->add_field( array(
+		'name'		=> __( 'Title Box Position - Bottom', 'cmb2' ),
+		'desc'       => __( 'Enter a percentage from 0-100. Controls the vertical position of the text description on home/category pages. If used, this will override the "Top" setting.', 'cmb2' ),
+		'id' 			=> $prefix . 'exceprt_position_bottom',
 		'type'		=> 'text_small',
 	) );
 

@@ -93,6 +93,24 @@ POSTS & CONTENT STYLES
 		}
 	}
 }
+.row-index {
+	.row-index-inner {
+		& > ul {
+			& > li {
+				& > a {
+				}
+				img {
+					max-width:none;
+				}
+				.item-content {
+					.item-head {
+						font-size:28px;
+					}
+				}
+			}
+		}
+	}
+}
 .screening-lists, .events-lists {
 	.tabs {
 		height:54px;

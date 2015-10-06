@@ -1,6 +1,6 @@
 <?php
 /*
- Template Name: Program Page
+ Template Name: Film Guide Page
  *
  * For more info: http://codex.wordpress.org/Page_Templates
 */
@@ -51,63 +51,48 @@
 											'link_before' => '<span>',
 											'link_after'  => '</span>',
 										) );
-										$now = new DateTime();
-										$nowFormatted = $now->format( 'Y-m-d H:i');
-										$upcomingEvents = tribe_get_events(array('numberposts' => -1, 'tribe_events_cat' => $post->post_name, 'start_date' => $nowFormatted)); 
-										$pastEvents = tribe_get_events(array('numberposts' => -1, 'tribe_events_cat' => $post->post_name, 'end_date' => $nowFormatted)); 
-										/* if (count($upcomingEvents) > 0) { ?>
-											<pre>
-											<?php print_r($upcomingEvents); ?>
-											</pre>
-										
-										<?php }
-										if (count($pastEvents) > 0) { ?>
-											<pre style="background:orange">
-											<?php print_r($pastEvents); ?>
-											</pre>
-										
-										<?php } */
-									?>
-									</div>
-									
-									<?php if (count($upcomingEvents) > 0 || count($pastEvents) > 0) { ?>
-									<div class="events-lists SWITCH_LISTS">
-										<ul class="tabs TABS">
-										<?php foreach (array($upcomingEvents,$pastEvents) as $key => $tab) { 
-											$tabClass = $tab == $upcomingEvents ? 'UPCOMING' : 'PAST'; ?>
-											<li class="SWITCH_LIST_<?php echo $tabClass; echo $key == 0 ? ' active' : ''; ?>"><?php echo $tabClass == 'UPCOMING' ? 'Upcoming' : 'Past'; ?></li>
-										<?php } ?>
-										</ul>
-										<?php foreach (array($upcomingEvents,$pastEvents) as $k => $list) { 
-											$listClass = $list == $upcomingEvents ? 'upcoming' : 'past'; ?>
-											<ul class="events-list events-list-<?php echo $listClass; echo $k == 0 ? ' active' : ''; ?> SWITCH_LIST">
-												<?php global $post;
-												foreach($list as $key => $item) {
+										$guideYear = get_post_meta(get_the_ID(), '_laskins_festival_page_year', true);
+										$films = get_posts(array('post_type' => 'media_items', 'media_item_cat' => $guideYear, 'numberposts' => -1, 'orderby' => 'title', 'order' => 'ASC')); 
+										if (count($films) > 0) { ?>
+										<div class="film-list thumb-index">
+											<div class="thumb-index-inner wrap">
+											<?php global $post;
+											$currentLetter = '';
+											foreach($films as $key => $item) {
 												$post = $item;
 												setup_postdata($post);
-												$itemThumbArray = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'small');
+												$itemThumbArray = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'large-thumb');
+												$firstLetter = substr(get_the_title(), 0, 1);
 												// print_r($item); 
 												?>
-												<li>
-													<a href="<?php the_permalink(); ?>">
-														<?php if ($itemThumbArray) { ?>
-														<img class="item-thumb" src="<?php echo $itemThumbArray[0]; ?>" />
-														<?php } ?>
-														<span class="item-content">
-															
-															<span class="item-head"><?php the_title(); ?></span>
-															<span class="item-sched mobile-hide"><?php echo tribe_events_event_schedule_details($item->ID); ?></span>
-															<span class="item-sched desktop-hide"><?php echo tribe_get_start_date($item->ID, true, 'M j @ g:i a'); ?></span>
-															<span class="item-body"><?php echo string_limit_words(get_the_excerpt(), 30); ?></span>
-															<span class="btn btn-orange">Film Details</span>
-														</span>
-													</a>
-												</li>
-												<?php } ?>
-											</ul>
+												<?php echo $key == 0 ? '<ul>' : '' ?>
+												<?php if (!is_numeric($firstLetter) && $firstLetter != $currentLetter) { ?>
+													</ul>
+													<ul>
+													<?php if (!is_numeric($firstLetter)) { ?>
+														<h2><?php echo $firstLetter; ?></h2>
+													<?php }
+													$currentLetter = $firstLetter;
+												} ?>
+													<li>
+														<a href="<?php the_permalink(); ?>">
+															<img class="item-thumb" src="<?php echo $itemThumbArray[0]; ?>" />
+															<span class="item-content">
+																<span class="item-head"><?php the_title(); ?></span>
+																<span class="item-body"><?php echo string_limit_words(get_the_excerpt(), 30); ?></span>
+																<span class="btn btn-orange">See Details</span>
+															</span>
+														</a>
+													</li>
+												<?php echo $key == count($films) - 1 ? '</ul>' : '' ?>
+											<?php } ?>
+											</div>
+										</div>
+										
 										<?php } ?>
+									
 									</div>
-									<?php } ?>
+									
 										
 								</section> <?php // end article section ?>
 
