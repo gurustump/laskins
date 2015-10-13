@@ -8,6 +8,7 @@
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
+							<?php // if (get_post_type() != 'tribe_events' || !in_category('latest')) { ?>
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
 
 								<header class="article-header">
@@ -17,7 +18,7 @@
                        								/* the time the post was published */
                        								'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
                        								/* the author of the post */
-                       								'<span class="by">'.__( 'by', 'bonestheme').'</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
+                       								'<!--<span class="by">'.__( 'by', 'bonestheme').'</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>-->' 
                     							); ?>
 									</p>
 
@@ -43,6 +44,7 @@
 
 							</article>
 
+							<?php // } ?>
 							<?php endwhile; ?>
 
 									<?php bones_page_navi(); ?>
@@ -60,7 +62,6 @@
 												<?php /*<p><?php _e( 'This is the error message in the index.php template.', 'bonestheme' ); ?></p> */ ?>
 										</footer>
 									</article>
-
 							<?php endif; ?>
 
 

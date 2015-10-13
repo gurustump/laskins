@@ -49,6 +49,31 @@
 									<td><a href="<?php echo $itemMeta['_laskins_media_item_view_url'][0]; ?>" target="_blank"><?php echo $itemMeta['_laskins_media_item_view_url'][0]; ?></a></td>
 								<tr>
 								<?php } ?>
+								<?php $screenings = get_posts(array(
+									'numberposts' => -1,
+									'post_type' => 'tribe_events',
+									'tax_query' => array(array(
+										'taxonomy' => 'tribe_events_cat',
+										'field' => 'slug',
+										'terms' => 'screening'
+									)),
+									'meta_query' => array(array(
+										'key' => '_laskins_events_film',
+										'value' => get_the_ID(),
+										'compare' => 'IN'
+									))
+								)); 
+								if ($screenings) { 
+									foreach($screenings as $key => $screening) { ?>
+									<tr>
+										<td>Screenings</td>
+										<td>
+											<a href="<?php echo get_permalink($screening->ID); ?>">
+												<?php echo tribe_get_start_time($screening->ID, 'M j, Y g:i a'); ?>
+											</a>
+										</td>
+									</tr>
+								<?php }} ?>
 							</table>
 						</div>
 						<?php } ?>
@@ -118,9 +143,9 @@
 
 					<footer class="article-footer">
 
-					  <?php printf( __( 'filed under', 'bonestheme' ).': %1$s', get_the_category_list(', ') ); ?>
+					  <?php /* printf( __( 'filed under', 'bonestheme' ).': %1$s', get_the_category_list(', ') ); ?>
 
-					  <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
+					  <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); */ ?>
 
 					</footer> <?php // end article footer ?>
 

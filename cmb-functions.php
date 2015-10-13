@@ -276,7 +276,7 @@ add_action( 'cmb2_init', 'laskins_register_events_metabox' );
 function laskins_register_events_metabox() {
 	$prefix = '_laskins_events_';
 	
-	$cmb_ad_space_box = new_cmb2_box( array(
+	$cmb_events_box = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
 		'title'         => __( 'Additional Event Information', 'cmb2' ),
 		'object_types'  => array( 'tribe_events', ), // Post type
@@ -287,7 +287,7 @@ function laskins_register_events_metabox() {
 		// 'closed'     => true, // true to keep the metabox closed by default
 	) );
 
-	$cmb_ad_space_box->add_field( array(
+	$cmb_events_box->add_field( array(
 		'name'		=> __( 'Film ID', 'cmb2' ),
 		'desc'       => __( 'If this event is a screening, enter the ID of the Film associated with this Event, or click the search button to find it.', 'cmb2' ),
 		'id' 			=> $prefix . 'film',

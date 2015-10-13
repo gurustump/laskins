@@ -206,9 +206,14 @@
 								<div class="scroll-carousel SCROLL_CAROUSEL">
 									<ul>
 										<?php foreach($partner_gallery['src'] as $key => $src) {
-										$alt = get_post_meta($partner_gallery_ids[$key], '_wp_attachment_image_alt', true); ?>
+										$alt = get_post_meta($partner_gallery_ids[$key], '_wp_attachment_image_alt', true);
+										$link = get_post_meta($partner_gallery_ids[$key], '_gallery_link_url', true);
+										$target = get_post_meta($partner_gallery_ids[$key], '_gallery_link_target', true);
+										$cssclass = get_post_meta($partner_gallery_ids[$key], '_gallery_link_additional_css_classes', true); ?>
 										<li>
+											<?php echo $link ? '<a '.($cssclass ? 'class="'.$cssclass.'" ' : '').'href="'.$link.'" target="'.$target.'">' : ''; ?>
 											<img src="<?php echo $src; ?>" alt="<?php echo get_post_meta($partner_gallery_ids[$key], '_wp_attachment_image_alt', true); ?>" />
+											<?php echo $link ? '</a>' : ''; ?>
 										</li>
 										<?php } ?>
 									</ul>

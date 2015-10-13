@@ -230,3 +230,15 @@ body.film-festival-page {
 		}
 	}
 }
+
+/******************************************
+BLOG PAGE (index of blog posts)
+******************************************/
+body.blog {
+	.entry-content {
+		img {
+			margin:0 20px 15px 0;
+			float:left;
+		}
+	}
+}

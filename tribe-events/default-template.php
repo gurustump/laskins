@@ -134,6 +134,8 @@ FALSE
 									'orderby' => 'title',
 									'order' => 'ASC'
 								));
+								// resort this to remove articles
+								usort($festivalFilmsByTitle, 'sort_by_title');
 								?>
 								<div class="wrap">
 									<div class="content-primary">
@@ -183,7 +185,6 @@ FALSE
 														<a href="<?php the_permalink(); ?>">
 															<img class="item-thumb" src="<?php echo $itemThumbArray[0]; ?>" />
 															<span class="item-content">
-																
 																<span class="item-head"><?php the_title(); ?></span>
 																<span class="item-sched mobile-hide"><?php echo tribe_events_event_schedule_details($item->ID); ?></span>
 																<span class="item-sched desktop-hide"><?php echo tribe_get_start_date($item->ID, true, 'M j @ g:i a'); ?></span>

@@ -51,6 +51,23 @@ on larger screens.
 .content-secondary {
 	width:22%;
 }
+.thumb-index {
+	.thumb-index-inner {
+		& > ul {
+			&.sponsor-gallery {
+				margin-right:-3px;
+				& > li {
+					width:25%;
+					.item-content {
+						.gallery-caption, .item-link {
+							font-size:14px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 
 

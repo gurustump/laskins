@@ -59,11 +59,11 @@ body.scrolled {
 }
 .nav {
 	border: 0;
-	ul {
+	& > ul {
 		background:$black;
 		margin-top:0;
 	}
-	li {
+	& > li {
 		float: left;
 		position: relative;
 
@@ -84,15 +84,17 @@ body.scrolled {
 		/*
 		plan your menus and drop-downs wisely.
 		*/
-		ul.sub-menu,
+		& > ul.sub-menu,
 		ul.children {
 			margin-top: 0;
 			border: 1px solid #ccc;
 			border-top: 0;
 			position: absolute;
-			display: none;
+			opacity:0;
+			visibility:hidden;
+			overflow:hidden;
 			z-index: 8999;
-
+			@include transition(opacity .35s);
 			li {
 
 				a {
@@ -137,7 +139,9 @@ body.scrolled {
 		/* showing sub-menus */
 		&:hover > ul {
 			top: auto;
-			display:block;
+			opacity:1;
+			visibility:visible;
+			overflow:visible;
 		}
 
 	} /* end .menu ul li */
@@ -227,7 +231,7 @@ body.scrolled {
 					@include box-sizing;
 					background:#333;
 					@include css-gradient-plus-img($from: rgba($black, .8), $to: rgba($black, .4), $vstart:"top", $vend:"bottom", $url:"../images/skins-gray-light-grunge.jpg");
-					@include transition(top .35s);
+					@include transition(top .35s, opacity .35s);
 					& > li {
 						float:left;
 						width:50%;
@@ -241,7 +245,6 @@ body.scrolled {
 							background-color:rgba($white, .02);
 						}
 						.sub-menu {
-							display:block;
 							position:static;
 							a {
 								border:0;
@@ -320,10 +323,38 @@ body.scrolled {
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-.format-standard, .tribe_events {
+.format-standard, .tribe_events, .page-template_default {
 	.thumb-index { 
 		.thumb-index-inner {
 			margin:0 auto;
+		}
+	}
+}
+
+.thumb-index {
+	.thumb-index-inner {
+		& > ul {
+			& > li {
+				.item-content {
+					& > * {
+						&.btn {
+							display:inline-block;
+						}
+					}
+				}
+			}
+			&.sponsor-gallery {
+				margin-right:-2px;
+				border-top:4px solid $border-color;
+				& > li {
+					width:33.3%;
+					.item-content {
+						.gallery-caption, .item-link {
+							font-size:13px;
+						}
+					}
+				}
+			}
 		}
 	}
 }

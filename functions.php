@@ -342,7 +342,8 @@ function skins_gallery_shortcode( $attr ) {
 		'size'       => 'thumbnail',
 		'include'    => '',
 		'exclude'    => '',
-		'link'       => ''
+		'link'       => '',
+		'galtype'  => ''
 	), $attr, 'gallery'));
 
 	$id = intval($id);
@@ -423,7 +424,7 @@ function skins_gallery_shortcode( $attr ) {
 	}
 
 	$size_class = sanitize_html_class( $size );
-	$gallery_div = "<div class='thumb-index'>\n\t<div class='thumb-index-inner wrap'>\n\t\t<ul id='$selector' class='gallery GALLERY galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
+	$gallery_div = "<div class='thumb-index'>\n\t<div class='thumb-index-inner wrap'>\n\t\t<ul id='$selector' class='gallery".($galtype == 'sponsor' ? " sponsor-gallery SPONSOR_GALLERY" : " GALLERY")." galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
 
 	/**
 	 * Filter the default gallery shortcode CSS styles.
@@ -457,15 +458,24 @@ function skins_gallery_shortcode( $attr ) {
 			<input class='IMG_SRC' type='hidden' value='{$large_image[0]}' />
 			<input class='IMG_WIDTH' type='hidden' value='{$large_image[1]}' />
 			<input class='IMG_HEIGHT' type='hidden' value='{$large_image[2]}' />
-			<input class='IMG_RESIZED' type='hidden' value='{$large_image[3]}' />
-			<span class='item-content'><span class='view-item'>View Image</span>";
+			<input class='IMG_RESIZED' type='hidden' value='{$large_image[3]}' />";
+			$itemContent = "<span class='item-content'><span class='view-item'>View Image</span>";
 				if ( $captiontag && trim($attachment->post_excerpt) ) {
-					$output .= "
+					$itemContent .= "
 						<{$captiontag} class='wp-caption-text gallery-caption'>
 						" . wptexturize($attachment->post_excerpt) . "
 						</{$captiontag}>";
 				}
-			$output .= "</span>"; // end item-content
+				if ( $galtype == 'sponsor') {
+					$itemLink = get_post_meta($id, '_gallery_link_url', true);
+					$itemContent .="<span class='item-link'>".$itemLink."</span>";
+				}
+			$itemContent .= "</span>"; // end item-content
+			if ($galtype == 'sponsor') {
+				$output .= wp_get_attachment_link( $id, $size, false, false, $itemContent);
+			} else {
+				$output .= $itemContent;
+			}
 		$output .= "</{$itemtag}>";
 		if ( ! $html5 && $columns > 0 && ++$i % $columns == 0 ) {
 			$output .= '<br style="clear: both" />';
@@ -572,7 +582,42 @@ function change_tribe_title( $title, $sep, $seplocation ) {
 }
 add_filter( 'wp_title', 'change_tribe_title', 11, 3 );
 
-// this crap doesn't work
+// this modifies the main query on the blog page to include post types besides just "post"
+add_filter( 'pre_get_posts', 'get_multiple_post_types' );
+function get_multiple_post_types( $query ) {
+	if ( is_home() && $query->is_main_query() && !is_admin()) {
+		//$terms = get_terms('tribe_events_cat', array( 'fields' => 'slug'
+		$query->set( 'post_type', array( 'post', 'tribe_events' ) );
+		$query->set('tax_query', array(array(
+				'taxonomy' => 'tribe_events_cat',
+				'field' => 'slug',
+				'terms' => 'screening',
+				'operator' => 'NOT IN',
+			))
+		);
+		return $query;
+	}
+}
+
+// sorts get_posts object by title, ignoring articles like "the" or "a" at the beginning
+function sort_by_title($a, $b) {
+	$aTitle = removeArticle($a->post_title);
+	$bTitle = removeArticle($b->post_title);
+	return strcasecmp($aTitle, $bTitle);
+}
+function removeArticle($string) {
+	$stringArray = explode(' ',trim($string));
+	$firstWord = $stringArray[0];
+	if (in_array(strtolower($firstWord), array('the','a','an'))) {
+		array_shift($stringArray);
+		return implode(' ', $stringArray);
+	} else {
+		return $string;
+	}
+}
+
+
+// this crap doesn't work -- trying to increase the max upload limit
 @ini_set( 'upload_max_size' , '64M' );
 @ini_set( 'post_max_size', '64M');
 @ini_set( 'max_execution_time', '300' );

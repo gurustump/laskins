@@ -52,7 +52,9 @@
 											'link_after'  => '</span>',
 										) );
 										$guideYear = get_post_meta(get_the_ID(), '_laskins_festival_page_year', true);
-										$films = get_posts(array('post_type' => 'media_items', 'media_item_cat' => $guideYear, 'numberposts' => -1, 'orderby' => 'title', 'order' => 'ASC')); 
+										$films = get_posts(array('post_type' => 'media_items', 'media_item_cat' => $guideYear, 'numberposts' => -1, 'orderby' => 'title', 'order' => 'ASC'));
+										// resort this to remove articles
+										usort($films, 'sort_by_title');
 										if (count($films) > 0) { ?>
 										<div class="film-list thumb-index">
 											<div class="thumb-index-inner wrap">
@@ -62,7 +64,7 @@
 												$post = $item;
 												setup_postdata($post);
 												$itemThumbArray = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'large-thumb');
-												$firstLetter = substr(get_the_title(), 0, 1);
+												$firstLetter = substr(removeArticle(get_the_title()), 0, 1);
 												// print_r($item); 
 												?>
 												<?php echo $key == 0 ? '<ul>' : '' ?>
