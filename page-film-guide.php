@@ -81,7 +81,7 @@
 															<img class="item-thumb" src="<?php echo $itemThumbArray[0]; ?>" />
 															<span class="item-content">
 																<span class="item-head"><?php the_title(); ?></span>
-																<span class="item-body"><?php echo string_limit_words(get_the_excerpt(), 30); ?></span>
+																<span class="item-body"><?php echo string_limit_words(get_the_excerpt(), 27); ?></span>
 																<span class="btn btn-orange">See Details</span>
 															</span>
 														</a>
