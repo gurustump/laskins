@@ -56,24 +56,24 @@
 										// resort this to remove articles
 										usort($films, 'sort_by_title');
 										if (count($films) > 0) { ?>
-										<div class="film-list thumb-index">
-											<div class="thumb-index-inner wrap">
+										<div class="films-list row-index">
+											<div class="row-index-inner wrap">
 											<?php global $post;
 											$currentLetter = '';
 											foreach($films as $key => $item) {
 												$post = $item;
 												setup_postdata($post);
-												$itemThumbArray = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'large-thumb');
+												$itemThumbArray = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'medium');
 												$firstLetter = substr(removeArticle(get_the_title()), 0, 1);
 												// print_r($item); 
 												?>
 												<?php echo $key == 0 ? '<ul>' : '' ?>
-												<?php if (!is_numeric($firstLetter) && $firstLetter != $currentLetter) { ?>
-													</ul>
-													<ul>
-													<?php if (!is_numeric($firstLetter)) { ?>
-														<h2><?php echo $firstLetter; ?></h2>
+												<?php if (!is_numeric($firstLetter) && $firstLetter != $currentLetter) {
+													echo $currentLetter != '' ? '</ul>' : '';
+													if (!is_numeric($firstLetter)) { ?>
+														<h2 class="index-section-head"><?php echo $firstLetter; ?></h2>
 													<?php }
+													echo $currentLetter != '' ? '<ul>' : '';
 													$currentLetter = $firstLetter;
 												} ?>
 													<li>
@@ -81,7 +81,7 @@
 															<img class="item-thumb" src="<?php echo $itemThumbArray[0]; ?>" />
 															<span class="item-content">
 																<span class="item-head"><?php the_title(); ?></span>
-																<span class="item-body"><?php echo string_limit_words(get_the_excerpt(), 27); ?></span>
+																<span class="item-body"><?php echo string_limit_words(get_the_excerpt(), 45); ?></span>
 																<span class="btn btn-orange">See Details</span>
 															</span>
 														</a>

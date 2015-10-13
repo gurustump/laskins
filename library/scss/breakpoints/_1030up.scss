@@ -330,6 +330,13 @@ POSTS & CONTENT STYLES
 		}
 	}
 }
+.page-template-page-film-guide {
+	.row-index {
+		.row-index-inner {
+			margin:0 auto;
+		}
+	}
+}
 
 .thumb-index {
 	.thumb-index-inner {
@@ -360,6 +367,9 @@ POSTS & CONTENT STYLES
 }
 .row-index {
 	.row-index-inner {
+		.index-section-head {
+			font-size:20px;
+		}
 		& > ul {
 			& > li {
 				& > a {

@@ -918,6 +918,12 @@ POSTS & CONTENT STYLES
 }
 .row-index {
 	.row-index-inner {
+		.index-section-head {
+			background:$orange;
+			color:$white;
+			font-size:16px;
+			padding:2px 10px;
+		}
 		& > ul {
 			& > li {
 				border-bottom:1px solid $orange;

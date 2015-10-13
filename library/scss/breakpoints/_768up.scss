@@ -212,6 +212,11 @@ POSTS & CONTENT STYLES
 }
 .row-index {
 	.row-index-inner {
+		.index-section-head {
+			font-size:18px;
+			padding-left:15px;
+			padding-right:15px;
+		}
 		& > ul {
 			& > li {
 				& > a {
