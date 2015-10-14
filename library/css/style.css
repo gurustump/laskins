@@ -1832,8 +1832,8 @@ body.height-locked {
 /* line 54, ../scss/breakpoints/_base.scss */
 #container #content {
   min-height: 100%;
-  margin-bottom: -40px;
-  padding: 70px 0 40px;
+  margin-bottom: -70px;
+  padding: 70px 0 70px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -4006,8 +4006,8 @@ view.
   margin: 0;
   font-size: 10px;
   color: rgba(248, 147, 29, 0.5);
-  height: 40px;
-  line-height: 40px;
+  height: 69px;
+  line-height: 69px;
 }
 
 /******************************************
@@ -5801,7 +5801,7 @@ you can add resource intensive styles.
 
   /* line 460, ../scss/breakpoints/_1030up.scss */
   .footer #inner-footer {
-    height: 39px;
+    height: 69px;
     border-top: 1px solid #303030;
   }
   /* line 463, ../scss/breakpoints/_1030up.scss */
@@ -5809,6 +5809,13 @@ you can add resource intensive styles.
     float: right;
   }
   /* line 465, ../scss/breakpoints/_1030up.scss */
+  .footer #inner-footer nav a {
+    height: 69px;
+    line-height: 69px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  /* line 470, ../scss/breakpoints/_1030up.scss */
   .footer #inner-footer nav a:hover {
     color: #e07c07;
   }

@@ -1457,7 +1457,7 @@ SIDEBARS & ASIDES
 
 /* line 460, ../scss/breakpoints/_1030up.scss */
 .footer #inner-footer {
-  height: 39px;
+  height: 69px;
   border-top: 1px solid #303030;
 }
 /* line 463, ../scss/breakpoints/_1030up.scss */
@@ -1465,6 +1465,13 @@ SIDEBARS & ASIDES
   float: right;
 }
 /* line 465, ../scss/breakpoints/_1030up.scss */
+.footer #inner-footer nav a {
+  height: 69px;
+  line-height: 69px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+/* line 470, ../scss/breakpoints/_1030up.scss */
 .footer #inner-footer nav a:hover {
   color: #e07c07;
 }

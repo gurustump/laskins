@@ -458,12 +458,18 @@ SIDEBARS & ASIDES
 
 .footer {
 	#inner-footer {
-		height:39px;
+		height:69px;
 		border-top:1px solid #303030;
 		nav {
 			float:right;
-			a:hover {
-				color:$link-hover;
+			a {
+				height:69px;
+				line-height:69px;
+				padding-top:0;
+				padding-bottom:0;
+				&:hover {
+					color:$link-hover;
+				}
 			}
 		}
 	}
