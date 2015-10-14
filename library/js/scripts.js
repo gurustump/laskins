@@ -283,9 +283,14 @@ jQuery(document).ready(function($) {
 		$.imgpreload(imgSrc, function() {			
 			showImageWhenReady(galOv);
 		});
-		/*$.imgpreload([thisItem.prev().find('.IMG_SRC').val(), thisItem.next().find('.IMG_SRC').val()], function() {
-			console.log('loaded');
-		});*/
+		var imgPreloadArray = [];
+		if (thisItem.prev().length > 0) {
+			imgPreloadArray.push(thisItem.prev().find('.IMG_SRC').val());
+		}
+		if (thisItem.next().length > 0) {
+			imgPreloadArray.push(thisItem.next().find('.IMG_SRC').val());
+		}
+		$.imgpreload(imgPreloadArray);
 		setTimeout(function() {
 			galOv.find('img').attr({
 				'src':imgSrc,
