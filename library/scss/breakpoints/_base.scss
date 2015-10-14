@@ -1074,6 +1074,19 @@ POSTS & CONTENT STYLES
 TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN)
 ******************************************************************/
 .single-tribe_events {
+	.entry-content {
+		margin-top:1.25em;
+	}
+	.tribe-events-schedule {
+		h3 {
+			font-size:12px;
+		}
+	}
+	.tribe-events-event-image {
+		img {
+			margin:0;
+		}
+	}
 	.tribe-events-event-meta {
 		@extend %gray-grunge;
 		margin:15px 0 20px;
@@ -1093,6 +1106,8 @@ TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN)
 			}
 			dd {
 				float:left;
+				line-height:1 !important;
+				font-size:1em;
 				.dtstart, .dtend {
 					font-weight:bold;
 				}
@@ -1797,6 +1812,13 @@ SIDEBARS & ASIDES
 
 		}
 
+	}
+}
+/* social media widget block */
+.ssba {
+	img {
+		margin:0;
+		display:block;
 	}
 }
 .searchform {

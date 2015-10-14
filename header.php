@@ -13,7 +13,7 @@
 		<?php // force Internet Explorer to use the latest rendering engine available ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<?php // hacked the title here for just film-festival pages so it won't say "Upcoming Events" before the festival's name ?>
-		<title><?php $isFilmFestPage ? the_title() :  wp_title(' | '); ?></title>
+		<title><?php $isFilmFestPage || $isMusicFestPage ? the_title() :  wp_title(' | '); ?></title>
 
 		<?php // mobile meta (hooray!) ?>
 		<meta name="HandheldFriendly" content="True">
