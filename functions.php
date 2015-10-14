@@ -616,6 +616,17 @@ function removeArticle($string) {
 	}
 }
 
+// modifies the "tribe_venue" post type so that its pages can be viewed on the website
+function modifyTribeVenuePostType($post_type, $args) {
+	if ($post_type != 'tribe_venue') { return; }
+	$args->public = true;
+	$args->exclude_from_search = true;
+	$args->publicly_queryable = true;
+	
+	$wp_post_type[$post_type] = $args;
+}
+add_action('registered_post_type', modifyTribeVenuePostType, 10, 2);
+
 
 // this crap doesn't work -- trying to increase the max upload limit
 @ini_set( 'upload_max_size' , '64M' );

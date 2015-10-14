@@ -2116,13 +2116,29 @@ body.film-festival-page {
 }
 
 /******************************************
-PROGRAMS TEMPLATE PAGE
+VENUES PAGE
 ******************************************/
-/*body.page-template-page-program {
-	.article-header h1 {
-		border-bottom:3px double $orange;
+body.page-template-page-venues {
+	.venue-list {
+		.venue-list-inner {
+			& > ul {
+				& > li {
+					border-bottom:1px solid $border-color;
+					margin-bottom:1.4em;
+					&:last-child {
+						border-bottom:0;
+					}
+				}
+			}
+		}
 	}
-}*/
+}
+body.single-tribe_venue {
+	.item-map {
+		@extend %gray-grunge;
+		padding:20px;
+	}
+}
 
 /******************************************
 BLOG PAGE (index of blog posts)

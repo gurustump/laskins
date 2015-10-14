@@ -1328,36 +1328,41 @@ POSTS & CONTENT STYLES
   margin: 0 auto;
 }
 
-/* line 347, ../scss/breakpoints/_1030up.scss */
+/* line 341, ../scss/breakpoints/_1030up.scss */
+.venue-list .venue-list-inner {
+  margin: 0 auto;
+}
+
+/* line 352, ../scss/breakpoints/_1030up.scss */
 .thumb-index .thumb-index-inner > ul > li .item-content > *.btn {
   display: inline-block;
 }
-/* line 353, ../scss/breakpoints/_1030up.scss */
+/* line 358, ../scss/breakpoints/_1030up.scss */
 .thumb-index .thumb-index-inner > ul.sponsor-gallery {
   margin-right: -2px;
   border-top: 4px solid #eeeeee;
 }
-/* line 356, ../scss/breakpoints/_1030up.scss */
+/* line 361, ../scss/breakpoints/_1030up.scss */
 .thumb-index .thumb-index-inner > ul.sponsor-gallery > li {
   width: 33.3%;
 }
-/* line 359, ../scss/breakpoints/_1030up.scss */
+/* line 364, ../scss/breakpoints/_1030up.scss */
 .thumb-index .thumb-index-inner > ul.sponsor-gallery > li .item-content .gallery-caption, .thumb-index .thumb-index-inner > ul.sponsor-gallery > li .item-content .item-link {
   font-size: 13px;
 }
 
-/* line 370, ../scss/breakpoints/_1030up.scss */
+/* line 375, ../scss/breakpoints/_1030up.scss */
 .row-index .row-index-inner .index-section-head {
   font-size: 20px;
 }
-/* line 377, ../scss/breakpoints/_1030up.scss */
+/* line 382, ../scss/breakpoints/_1030up.scss */
 .row-index .row-index-inner > ul > li img {
   float: left;
   margin-bottom: 5px;
   max-width: 300px;
 }
 
-/* line 389, ../scss/breakpoints/_1030up.scss */
+/* line 394, ../scss/breakpoints/_1030up.scss */
 .screening-lists .tabs li:after, .events-lists .tabs li:after {
   margin-bottom: 16px;
   border-width: 10px 0 10px 10px;
@@ -1366,15 +1371,15 @@ POSTS & CONTENT STYLES
 /******************************************************************
 CAROUSEL STYLES
 ******************************************************************/
-/* line 401, ../scss/breakpoints/_1030up.scss */
+/* line 406, ../scss/breakpoints/_1030up.scss */
 .carousel {
   position: relative;
 }
-/* line 403, ../scss/breakpoints/_1030up.scss */
+/* line 408, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav {
   position: static;
 }
-/* line 405, ../scss/breakpoints/_1030up.scss */
+/* line 410, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a {
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -1400,31 +1405,31 @@ CAROUSEL STYLES
   -o-transition: opacity 0.35s;
   transition: opacity 0.35s;
 }
-/* line 417, ../scss/breakpoints/_1030up.scss */
+/* line 422, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a:after {
   border-top-width: 12px;
   border-bottom-width: 12px;
   float: none;
   margin: 0;
 }
-/* line 423, ../scss/breakpoints/_1030up.scss */
+/* line 428, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a.active {
   opacity: 1;
 }
-/* line 426, ../scss/breakpoints/_1030up.scss */
+/* line 431, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a.prev {
   left: 10px;
 }
-/* line 428, ../scss/breakpoints/_1030up.scss */
+/* line 433, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a.prev:after {
   border-right-width: 20px;
   margin-left: 2px;
 }
-/* line 433, ../scss/breakpoints/_1030up.scss */
+/* line 438, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a.next {
   right: 10px;
 }
-/* line 435, ../scss/breakpoints/_1030up.scss */
+/* line 440, ../scss/breakpoints/_1030up.scss */
 .carousel .carousel-nav a.next:after {
   border-left-width: 20px;
   margin-right: 2px;
@@ -1433,21 +1438,21 @@ CAROUSEL STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 449, ../scss/breakpoints/_1030up.scss */
+/* line 454, ../scss/breakpoints/_1030up.scss */
 .sidebar h4 {
   margin-bottom: 15px;
 }
 
-/* line 455, ../scss/breakpoints/_1030up.scss */
+/* line 460, ../scss/breakpoints/_1030up.scss */
 .footer #inner-footer {
   height: 39px;
   border-top: 1px solid #303030;
 }
-/* line 458, ../scss/breakpoints/_1030up.scss */
+/* line 463, ../scss/breakpoints/_1030up.scss */
 .footer #inner-footer nav {
   float: right;
 }
-/* line 460, ../scss/breakpoints/_1030up.scss */
+/* line 465, ../scss/breakpoints/_1030up.scss */
 .footer #inner-footer nav a:hover {
   color: #e07c07;
 }

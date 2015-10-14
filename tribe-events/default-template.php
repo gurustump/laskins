@@ -17,6 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 
 $wrap_off = tribe_event_in_category('film-festival') && is_single();
+$is_venue = tribe_is_venue() && is_single();
 ?>
 <?php /* $isSingleEvent = in_array('single-tribe_events', get_body_class()); ?>
 <pre>
@@ -40,10 +41,9 @@ FALSE
 			<div id="content"<?php echo $wrap_off ? ' class="festival-event-page"':''; ?>>
 				<div id="inner-content" class="<?php echo $wrap_off ? '' : 'wrap '; ?>cf">
 						<main id="main" class="cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-						
 							
 							<?php // TEMPLATE FOR MOST EVENTS
-							if (!$wrap_off) { ?>
+							if (!$wrap_off && !$is_venue) { ?>
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'content-primary cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 								<?php /* if (1 == 2) { ?>
 								<header class="article-header">
@@ -70,9 +70,41 @@ FALSE
 								</footer>
 
 							</article>
-
-
 							<?php get_sidebar(); ?>
+							
+							<?php // template for venues ?>
+							<?php } else if ($is_venue) { 
+							
+								$phone   = tribe_get_phone();
+								$website = tribe_get_venue_website_link();
+							?>
+							<article id="post-<?php the_ID(); ?>" <?php post_class( 'content-primary cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+								<h2><?php echo tribe_get_venue(); ?></h2>
+								<p>
+								<?php echo tribe_get_full_address(); ?>
+								<?php if ( tribe_show_google_map_link() ) : ?>
+									<?php echo tribe_get_map_link_html(); ?>
+								<?php endif; ?>
+								</p>
+								<?php if ( ! empty( $phone ) ): ?>
+								<p>
+									<span> <?php esc_html_e( 'Phone:', 'the-events-calendar' ) ?> </span>
+									<span class="tel"> <?php echo $phone ?> </span>
+								</p>
+								<?php endif ?>
+
+								<?php if ( ! empty( $website ) ): ?>
+								<p>
+									<span class="title"><?php esc_html_e( 'Website:', 'the-events-calendar' ) ?></span>
+									<span class="url"> <?php echo $website ?> </span>
+								</p>
+								<?php endif ?>
+								<div class="item-map" style="max-width:500px">
+									<?php echo tribe_get_embedded_map(get_the_ID(), 500); ?>
+								</div>
+							</article>
+							<?php get_sidebar(); ?>
+							
 							<?php } else {
 								
 							// TEMPLATE FOR FILM FESTIVAL EVENTS
