@@ -57,16 +57,28 @@ $filmMeta = get_post_meta($event_id, '_laskins_events_film', true);
 	<?php while ( have_posts() ) :  the_post(); ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<!-- Event featured image, but exclude link -->
-			<?php if ($filmMeta) {
-				echo tribe_event_featured_image( $filmMeta, 'carousel', false );
-			} else {
+			<?php 
+			if (tribe_event_featured_image( $event_id, 'carousel', false )) {
 				echo tribe_event_featured_image( $event_id, 'carousel', false );
+			} else if ($filmMeta) {
+				echo tribe_event_featured_image( $filmMeta, 'carousel', false );
 			} ?>
 
 			<!-- Event content -->
 			<?php do_action( 'tribe_events_single_event_before_the_content' ) ?>
 			<div class="tribe-events-single-event-description tribe-events-content entry-content description">
-				<?php the_content(); ?>
+				<?php if (get_the_content()) {
+					the_content();
+				} else if ($filmMeta) {
+					$content_post = get_post($filmMeta);
+					$content = $content_post->post_content;
+					$content = apply_filters('the_content', $content);
+					$content = str_replace(']]>', ']]&gt;', $content);
+					echo $content;
+				} ?>
+				<?php if ($filmMeta) { ?>
+					<a class="btn-orange more-link" href="<?php echo get_permalink($filmMeta); ?>">Read More about this Film</a>
+				<?php } ?>
 			</div>
 			<!-- .tribe-events-single-event-description -->
 			<?php do_action( 'tribe_events_single_event_after_the_content' ) ?>

@@ -1234,7 +1234,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   transition: background-color 0.35s ease-in-out;
 }
 /* line 47, ../scss/modules/_buttons.scss */
-.btn:hover, .btn-blue:hover, .comment-reply-link:hover, #submit:hover, .btn-orange:hover, .btn-large:hover, .btn-download:hover, #container .tribe-events-button:hover {
+.btn:hover, .btn-blue:hover, .comment-reply-link:hover, #submit:hover, .btn-orange:hover, .btn-large:hover, .btn-download:hover, #container .tribe-events-button:hover, .btn:visited, .btn-blue:visited, .comment-reply-link:visited, #submit:visited, .btn-orange:visited, .btn-large:visited, .btn-download:visited, #container .tribe-events-button:visited, .btn:active, .btn-blue:active, .comment-reply-link:active, #submit:active, .btn-orange:active, .btn-large:active, .btn-download:active, #container .tribe-events-button:active, .btn:hover:visited, .btn-blue:hover:visited, .comment-reply-link:hover:visited, #submit:hover:visited, .btn-orange:hover:visited, .btn-large:hover:visited, .btn-download:hover:visited, #container .tribe-events-button:hover:visited {
   color: white;
   outline: none;
 }

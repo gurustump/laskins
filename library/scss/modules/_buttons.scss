@@ -44,7 +44,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 	@include transition(background-color 0.35s ease-in-out);
 
 	// hovering on the btn
-	&:hover {
+	&:hover, &:visited, &:active, &:hover:visited {
 		color:$white;
 		outline:none;
 	} // end hover

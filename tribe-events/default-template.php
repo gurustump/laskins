@@ -211,11 +211,19 @@ FALSE
 													$post = $item;
 													setup_postdata($post);
 													$itemThumbArray = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'small');
+													$itemThumbSrc = $itemThumbArray[0];
+													$filmMeta = get_post_meta($item->ID, '_laskins_events_film', true);
+													$filmThumbArray =  wp_get_attachment_image_src( get_post_thumbnail_id($filmMeta), 'small');
+													if (!$itemThumbSrc) {
+														$itemThumbSrc = $filmThumbArray[0];
+													}
 													// print_r($item); 
 													?>
 													<li>
 														<a href="<?php the_permalink(); ?>">
-															<img class="item-thumb" src="<?php echo $itemThumbArray[0]; ?>" />
+															<?php if ($itemThumbSrc) { ?>
+															<img class="item-thumb" src="<?php echo $itemThumbSrc; ?>" />
+															<?php } ?>
 															<span class="item-content">
 																<span class="item-head"><?php the_title(); ?></span>
 																<span class="item-sched mobile-hide"><?php echo tribe_events_event_schedule_details($item->ID); ?></span>

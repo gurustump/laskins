@@ -16,7 +16,23 @@
 
 						<h1 class="entry-title single-title" itemprop="headline" rel="bookmark"><?php the_title(); ?></h1>
 						
-						<?php if ($itemMeta['_laskins_media_item_duration'][0] || $itemMeta['_laskins_media_item_age_restriction'][0] || $itemMeta['_laskins_media_item_country'][0]) { ?>
+						<?php  
+						$screenings = get_posts(array(
+							'numberposts' => -1,
+							'post_type' => 'tribe_events',
+							'tax_query' => array(array(
+								'taxonomy' => 'tribe_events_cat',
+								'field' => 'slug',
+								'terms' => 'screening'
+							)),
+							'meta_query' => array(array(
+								'key' => '_laskins_events_film',
+								'value' => get_the_ID(),
+								'compare' => 'IN'
+							))
+						)); 
+						
+						if ($itemMeta['_laskins_media_item_duration'][0] || $itemMeta['_laskins_media_item_age_restriction'][0] || $itemMeta['_laskins_media_item_country'][0] || $itemMeta['_laskins_media_item_imdb_url'][0] || $itemMeta['_laskins_media_item_view_url'][0] || $screenings) { ?>
 						<div class="media-item-info">
 							<table>
 								<?php if ($itemMeta['_laskins_media_item_duration'][0]) { ?>
@@ -49,20 +65,7 @@
 									<td><a href="<?php echo $itemMeta['_laskins_media_item_view_url'][0]; ?>" target="_blank"><?php echo $itemMeta['_laskins_media_item_view_url'][0]; ?></a></td>
 								<tr>
 								<?php } ?>
-								<?php $screenings = get_posts(array(
-									'numberposts' => -1,
-									'post_type' => 'tribe_events',
-									'tax_query' => array(array(
-										'taxonomy' => 'tribe_events_cat',
-										'field' => 'slug',
-										'terms' => 'screening'
-									)),
-									'meta_query' => array(array(
-										'key' => '_laskins_events_film',
-										'value' => get_the_ID(),
-										'compare' => 'IN'
-									))
-								)); 
+								<?php
 								if ($screenings) { 
 									foreach($screenings as $key => $screening) { ?>
 									<tr>
