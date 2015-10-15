@@ -2154,6 +2154,9 @@ body.page-template-page-film-guide {
 FESTIVAL SCHEDULE PAGE
 ******************************************/
 body.page-template-page-festival-schedule {
+	.article-header {
+		padding-top:0;
+	}
 	h1 {
 		font-size:28px;
 	}
@@ -2175,6 +2178,7 @@ body.page-template-page-festival-schedule {
 				}
 				.item-head {
 					font-family:$heading;
+					line-height:1.2em;
 				}
 				.subhead {
 					display:block;

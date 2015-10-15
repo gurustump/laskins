@@ -4251,10 +4251,14 @@ body.page-template-page-film-guide .films-list .row-index-inner > ul > li img {
 FESTIVAL SCHEDULE PAGE
 ******************************************/
 /* line 2157, ../scss/breakpoints/_base.scss */
+body.page-template-page-festival-schedule .article-header {
+  padding-top: 0;
+}
+/* line 2160, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule h1 {
   font-size: 28px;
 }
-/* line 2161, ../scss/breakpoints/_base.scss */
+/* line 2164, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li {
   position: relative;
 }
@@ -4266,25 +4270,26 @@ body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li
   visibility: hidden;
   clear: both;
 }
-/* line 2164, ../scss/breakpoints/_base.scss */
+/* line 2167, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .img-link {
   margin: 0 15px 5px 0;
 }
-/* line 2166, ../scss/breakpoints/_base.scss */
+/* line 2169, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .img-link img {
   display: block;
   float: none;
   margin: 0;
 }
-/* line 2173, ../scss/breakpoints/_base.scss */
+/* line 2176, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content a {
   text-decoration: none;
 }
-/* line 2176, ../scss/breakpoints/_base.scss */
+/* line 2179, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .item-head {
   font-family: "Oswald", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.2em;
 }
-/* line 2179, ../scss/breakpoints/_base.scss */
+/* line 2183, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .subhead {
   display: block;
   height: auto;
@@ -4293,22 +4298,22 @@ body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li
   font-size: .8em;
   line-height: 1.3em;
 }
-/* line 2187, ../scss/breakpoints/_base.scss */
+/* line 2191, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .item-venue {
   display: block;
   font-size: .8em;
   line-height: 1.3em;
   margin-bottom: .5em;
 }
-/* line 2192, ../scss/breakpoints/_base.scss */
+/* line 2196, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .item-venue .item-venue-title {
   display: block;
 }
-/* line 2195, ../scss/breakpoints/_base.scss */
+/* line 2199, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .item-venue .adr {
   display: block;
 }
-/* line 2199, ../scss/breakpoints/_base.scss */
+/* line 2203, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .btn {
   bottom: 15px;
 }
@@ -4316,17 +4321,17 @@ body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li
 /******************************************
 VENUES PAGE
 ******************************************/
-/* line 2214, ../scss/breakpoints/_base.scss */
+/* line 2218, ../scss/breakpoints/_base.scss */
 body.page-template-page-venues .venue-list .venue-list-inner > ul > li {
   border-bottom: 1px solid #eeeeee;
   margin-bottom: 1.4em;
 }
-/* line 2217, ../scss/breakpoints/_base.scss */
+/* line 2221, ../scss/breakpoints/_base.scss */
 body.page-template-page-venues .venue-list .venue-list-inner > ul > li:last-child {
   border-bottom: 0;
 }
 
-/* line 2226, ../scss/breakpoints/_base.scss */
+/* line 2230, ../scss/breakpoints/_base.scss */
 body.single-tribe_venue .item-map {
   padding: 20px;
 }
@@ -4334,16 +4339,16 @@ body.single-tribe_venue .item-map {
 /******************************************
 BLOG PAGE (index of blog posts)
 ******************************************/
-/* line 2236, ../scss/breakpoints/_base.scss */
+/* line 2240, ../scss/breakpoints/_base.scss */
 body.blog .hentry header {
   padding-bottom: 15px;
 }
-/* line 2240, ../scss/breakpoints/_base.scss */
+/* line 2244, ../scss/breakpoints/_base.scss */
 body.blog .entry-content img {
   margin: 0 0 15px 0;
   float: none;
 }
-/* line 2244, ../scss/breakpoints/_base.scss */
+/* line 2248, ../scss/breakpoints/_base.scss */
 body.blog .entry-content *:last-child {
   margin-bottom: 0;
 }
@@ -4351,15 +4356,15 @@ body.blog .entry-content *:last-child {
 /******************************************
 404 PAGE
 ******************************************/
-/* line 2255, ../scss/breakpoints/_base.scss */
+/* line 2259, ../scss/breakpoints/_base.scss */
 body.error404 #searchform .searchform-inner {
   padding: 20px;
 }
-/* line 2258, ../scss/breakpoints/_base.scss */
+/* line 2262, ../scss/breakpoints/_base.scss */
 body.error404 #searchform .searchform-inner input {
   margin-bottom: 0;
 }
-/* line 2261, ../scss/breakpoints/_base.scss */
+/* line 2265, ../scss/breakpoints/_base.scss */
 body.error404 #searchform .searchform-inner #searchsubmit {
   top: 20px;
   right: 20px;
