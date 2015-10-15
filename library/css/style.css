@@ -4240,19 +4240,93 @@ body.film-festival-page .content-primary .overview {
 }
 
 /******************************************
+FILM GUIDE PAGE
+******************************************/
+/* line 2146, ../scss/breakpoints/_base.scss */
+body.page-template-page-film-guide .films-list .row-index-inner > ul > li img {
+  float: none;
+}
+
+/******************************************
+FESTIVAL SCHEDULE PAGE
+******************************************/
+/* line 2157, ../scss/breakpoints/_base.scss */
+body.page-template-page-festival-schedule h1 {
+  font-size: 28px;
+}
+/* line 2161, ../scss/breakpoints/_base.scss */
+body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li {
+  position: relative;
+}
+/* line 135, ../scss/partials/_mixins.scss */
+body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li:after {
+  content: ".";
+  height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+/* line 2164, ../scss/breakpoints/_base.scss */
+body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .img-link {
+  margin: 0 15px 5px 0;
+}
+/* line 2166, ../scss/breakpoints/_base.scss */
+body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .img-link img {
+  display: block;
+  float: none;
+  margin: 0;
+}
+/* line 2173, ../scss/breakpoints/_base.scss */
+body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content a {
+  text-decoration: none;
+}
+/* line 2176, ../scss/breakpoints/_base.scss */
+body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .item-head {
+  font-family: "Oswald", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* line 2179, ../scss/breakpoints/_base.scss */
+body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .subhead {
+  display: block;
+  height: auto;
+  margin-bottom: .5em;
+  text-transform: uppercase;
+  font-size: .8em;
+  line-height: 1.3em;
+}
+/* line 2187, ../scss/breakpoints/_base.scss */
+body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .item-venue {
+  display: block;
+  font-size: .8em;
+  line-height: 1.3em;
+  margin-bottom: .5em;
+}
+/* line 2192, ../scss/breakpoints/_base.scss */
+body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .item-venue .item-venue-title {
+  display: block;
+}
+/* line 2195, ../scss/breakpoints/_base.scss */
+body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .item-venue .adr {
+  display: block;
+}
+/* line 2199, ../scss/breakpoints/_base.scss */
+body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .btn {
+  bottom: 15px;
+}
+
+/******************************************
 VENUES PAGE
 ******************************************/
-/* line 2147, ../scss/breakpoints/_base.scss */
+/* line 2214, ../scss/breakpoints/_base.scss */
 body.page-template-page-venues .venue-list .venue-list-inner > ul > li {
   border-bottom: 1px solid #eeeeee;
   margin-bottom: 1.4em;
 }
-/* line 2150, ../scss/breakpoints/_base.scss */
+/* line 2217, ../scss/breakpoints/_base.scss */
 body.page-template-page-venues .venue-list .venue-list-inner > ul > li:last-child {
   border-bottom: 0;
 }
 
-/* line 2159, ../scss/breakpoints/_base.scss */
+/* line 2226, ../scss/breakpoints/_base.scss */
 body.single-tribe_venue .item-map {
   padding: 20px;
 }
@@ -4260,16 +4334,16 @@ body.single-tribe_venue .item-map {
 /******************************************
 BLOG PAGE (index of blog posts)
 ******************************************/
-/* line 2169, ../scss/breakpoints/_base.scss */
+/* line 2236, ../scss/breakpoints/_base.scss */
 body.blog .hentry header {
   padding-bottom: 15px;
 }
-/* line 2173, ../scss/breakpoints/_base.scss */
+/* line 2240, ../scss/breakpoints/_base.scss */
 body.blog .entry-content img {
   margin: 0 0 15px 0;
   float: none;
 }
-/* line 2177, ../scss/breakpoints/_base.scss */
+/* line 2244, ../scss/breakpoints/_base.scss */
 body.blog .entry-content *:last-child {
   margin-bottom: 0;
 }
@@ -4277,15 +4351,15 @@ body.blog .entry-content *:last-child {
 /******************************************
 404 PAGE
 ******************************************/
-/* line 2188, ../scss/breakpoints/_base.scss */
+/* line 2255, ../scss/breakpoints/_base.scss */
 body.error404 #searchform .searchform-inner {
   padding: 20px;
 }
-/* line 2191, ../scss/breakpoints/_base.scss */
+/* line 2258, ../scss/breakpoints/_base.scss */
 body.error404 #searchform .searchform-inner input {
   margin-bottom: 0;
 }
-/* line 2194, ../scss/breakpoints/_base.scss */
+/* line 2261, ../scss/breakpoints/_base.scss */
 body.error404 #searchform .searchform-inner #searchsubmit {
   top: 20px;
   right: 20px;
@@ -4501,11 +4575,63 @@ tweeners.
   }
 
   /******************************************
+  FESTIVAL SCHEDULE PAGE
+  ******************************************/
+  /* line 251, ../scss/breakpoints/_481up.scss */
+  body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .img-link {
+    float: left;
+  }
+  /* line 253, ../scss/breakpoints/_481up.scss */
+  body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .img-link img {
+    max-width: 200px;
+  }
+  /* line 258, ../scss/breakpoints/_481up.scss */
+  body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .subhead {
+    float: right;
+    width: 100%;
+    padding-left: 215px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: -100%;
+  }
+  /* line 265, ../scss/breakpoints/_481up.scss */
+  body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .item-venue {
+    clear: right;
+  }
+  /* line 268, ../scss/breakpoints/_481up.scss */
+  body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .item-body {
+    clear: left;
+  }
+  /* line 271, ../scss/breakpoints/_481up.scss */
+  body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .btn {
+    bottom: 15px;
+  }
+
+  /******************************************
   BLOG PAGE (index of blog posts)
   ******************************************/
-  /* line 250, ../scss/breakpoints/_481up.scss */
+  /* line 284, ../scss/breakpoints/_481up.scss */
   body.blog .entry-content img {
     margin: 0 20px 15px 0;
+    float: left;
+  }
+}
+@media only screen and (min-width: 540px) {
+  /******************************************************************
+  Site Name:
+  Author:
+  
+  Stylesheet: 540px and up
+  
+  ******************************************************************/
+  /******************************************
+  FILM GUIDE PAGE
+  ******************************************/
+  /* line 15, ../scss/breakpoints/_540up.scss */
+  body.page-template-page-film-guide .films-list .row-index-inner > ul > li img {
     float: left;
   }
 }
@@ -5022,9 +5148,17 @@ you can add resource intensive styles.
   }
 
   /******************************************
+  FILM GUIDE PAGE
+  ******************************************/
+  /* line 606, ../scss/breakpoints/_768up.scss */
+  body.page-template-page-film-guide .films-list .row-index-inner > ul > li img {
+    float: none;
+  }
+
+  /******************************************
   PROGRAMS TEMPLATE PAGE
   ******************************************/
-  /* line 604, ../scss/breakpoints/_768up.scss */
+  /* line 617, ../scss/breakpoints/_768up.scss */
   body.page-template-page-program .content-primary {
     float: none;
     width: auto;
@@ -5038,7 +5172,7 @@ you can add resource intensive styles.
     visibility: hidden;
     clear: both;
   }
-  /* line 609, ../scss/breakpoints/_768up.scss */
+  /* line 622, ../scss/breakpoints/_768up.scss */
   body.page-template-page-program .content-primary .overview {
     padding-right: 20px;
     -webkit-box-sizing: border-box;
@@ -5047,15 +5181,31 @@ you can add resource intensive styles.
     -o-box-sizing: border-box;
     box-sizing: border-box;
   }
-  /* line 613, ../scss/breakpoints/_768up.scss */
+  /* line 626, ../scss/breakpoints/_768up.scss */
   body.page-template-page-program .content-primary .overview, body.page-template-page-program .content-primary .events-lists {
     float: left;
     width: 50%;
   }
-  /* line 618, ../scss/breakpoints/_768up.scss */
+  /* line 631, ../scss/breakpoints/_768up.scss */
   body.page-template-page-program .content-secondary {
     float: none;
     width: auto;
+  }
+}
+@media only screen and (min-width: 840px) {
+  /******************************************************************
+  Site Name:
+  Author:
+  
+  Stylesheet: 540px and up
+  
+  ******************************************************************/
+  /******************************************
+  FILM GUIDE PAGE
+  ******************************************/
+  /* line 15, ../scss/breakpoints/_840up.scss */
+  body.page-template-page-film-guide .films-list .row-index-inner > ul > li img {
+    float: left;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -5293,6 +5443,14 @@ you can add resource intensive styles.
   /* line 220, ../scss/breakpoints/_1024up.scss */
   body.film-festival-page .entry-header .heading-desktop {
     font-size: 6px;
+  }
+
+  /******************************************
+  FILM GUIDE PAGE
+  ******************************************/
+  /* line 234, ../scss/breakpoints/_1024up.scss */
+  body.page-template-page-film-guide .films-list .row-index-inner > ul > li img {
+    float: left;
   }
 }
 /*********************
@@ -5680,7 +5838,7 @@ you can add resource intensive styles.
   }
 
   /* line 335, ../scss/breakpoints/_1030up.scss */
-  .page-template-page-film-guide .row-index .row-index-inner {
+  .page-template-page-film-guide .row-index .row-index-inner, .page-template-page-festival-schedule .row-index .row-index-inner {
     margin: 0 auto;
   }
 
@@ -5823,6 +5981,17 @@ you can add resource intensive styles.
   /******************************************
   PAGE SPECIFIC STYLES
   ******************************************/
+  /******************************************
+  FESTIVAL SCHEDULE PAGE
+  ******************************************/
+  /* line 486, ../scss/breakpoints/_1030up.scss */
+  body.page-template-page-festival-schedule h1 {
+    font-size: 36px;
+  }
+  /* line 492, ../scss/breakpoints/_1030up.scss */
+  body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .item-body {
+    clear: none;
+  }
 }
 /*********************
 LARGE VIEWING SIZE
@@ -5990,6 +6159,52 @@ This is for the larger monitors and possibly full screen viewers.
   body.film-festival-page .entry-header .heading-desktop {
     font-size: 10px;
   }
+
+  /******************************************
+  FESTIVAL SCHEDULE PAGE
+  ******************************************/
+  /* line 177, ../scss/breakpoints/_1240up.scss */
+  body.page-template-page-festival-schedule h1 {
+    font-size: 40px;
+  }
+  /* line 182, ../scss/breakpoints/_1240up.scss */
+  body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .img-link {
+    padding-bottom: 40px;
+  }
+  /* line 185, ../scss/breakpoints/_1240up.scss */
+  body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content {
+    padding-bottom: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    float: right;
+    margin-left: -100%;
+    padding-left: 225px;
+    width: 100%;
+  }
+  /* line 192, ../scss/breakpoints/_1240up.scss */
+  body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .subhead {
+    float: none;
+    margin-left: 0;
+    padding-left: 0;
+    width: auto;
+  }
+  /* line 198, ../scss/breakpoints/_1240up.scss */
+  body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .item-body {
+    margin-bottom: 0;
+  }
+  /* line 201, ../scss/breakpoints/_1240up.scss */
+  body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .btn {
+    right: auto;
+    left: 100px;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
 }
 @media only screen and (min-width: 1560px) {
   /******************************************************************
@@ -6100,9 +6315,17 @@ This is for the larger monitors and possibly full screen viewers.
   }
 
   /******************************************
-  PROGRAMS TEMPLATE PAGE
+  FESTIVAL SCHEDULE PAGE
   ******************************************/
   /* line 112, ../scss/breakpoints/_1560up.scss */
+  body.page-template-page-festival-schedule h1 {
+    font-size: 48px;
+  }
+
+  /******************************************
+  PROGRAMS TEMPLATE PAGE
+  ******************************************/
+  /* line 121, ../scss/breakpoints/_1560up.scss */
   body.page-template-page-program .content-primary {
     float: left;
     width: 70%;
@@ -6116,7 +6339,7 @@ This is for the larger monitors and possibly full screen viewers.
     visibility: hidden;
     clear: both;
   }
-  /* line 117, ../scss/breakpoints/_1560up.scss */
+  /* line 126, ../scss/breakpoints/_1560up.scss */
   body.page-template-page-program .content-primary .overview {
     padding-right: 20px;
     -webkit-box-sizing: border-box;
@@ -6125,7 +6348,7 @@ This is for the larger monitors and possibly full screen viewers.
     -o-box-sizing: border-box;
     box-sizing: border-box;
   }
-  /* line 122, ../scss/breakpoints/_1560up.scss */
+  /* line 131, ../scss/breakpoints/_1560up.scss */
   body.page-template-page-program .content-secondary {
     float: left;
     width: 30%;

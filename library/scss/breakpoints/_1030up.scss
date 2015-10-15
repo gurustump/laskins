@@ -330,7 +330,7 @@ POSTS & CONTENT STYLES
 		}
 	}
 }
-.page-template-page-film-guide {
+.page-template-page-film-guide, .page-template-page-festival-schedule {
 	.row-index {
 		.row-index-inner {
 			margin:0 auto;
@@ -478,3 +478,21 @@ SIDEBARS & ASIDES
 /******************************************
 PAGE SPECIFIC STYLES
 ******************************************/
+
+/******************************************
+FESTIVAL SCHEDULE PAGE
+******************************************/
+body.page-template-page-festival-schedule {
+	h1 {
+		font-size:36px;
+	}
+	.films-list {
+		.row-index-inner > ul > li {
+			.item-content {
+				.item-body {
+					clear:none;
+				}
+			}
+		}
+	}
+}

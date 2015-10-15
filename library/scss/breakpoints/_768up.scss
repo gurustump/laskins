@@ -598,6 +598,19 @@ body.film-festival-page {
 }
 
 /******************************************
+FILM GUIDE PAGE
+******************************************/
+body.page-template-page-film-guide {
+	.films-list {
+		.row-index-inner > ul > li {
+			img {
+				float:none;
+			}
+		}
+	}
+}
+
+/******************************************
 PROGRAMS TEMPLATE PAGE
 ******************************************/
 body.page-template-page-program {

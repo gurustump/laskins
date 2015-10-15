@@ -169,3 +169,41 @@ body.film-festival-page {
 		}
 	}
 }
+
+/******************************************
+FESTIVAL SCHEDULE PAGE
+******************************************/
+body.page-template-page-festival-schedule {
+	h1 {
+		font-size:40px;
+	}
+	.films-list {
+		.row-index-inner > ul > li {
+			.img-link {
+				padding-bottom:40px;
+			}
+			.item-content {
+				padding-bottom:0;
+				@include box-sizing;
+				float:right;
+				margin-left:-100%;
+				padding-left:225px;
+				width:100%;
+				.subhead {
+					float:none;
+					margin-left:0;
+					padding-left:0;
+					width:auto;
+				}
+				.item-body {
+					margin-bottom:0;
+				}
+				.btn {
+					right:auto;
+					left:100px;
+					@include transform(translateX(-50%));
+				}
+			}
+		}
+	}
+}

@@ -408,9 +408,45 @@ body.film-festival-page .entry-header .heading-mobile p {
 }
 
 /******************************************
+FESTIVAL SCHEDULE PAGE
+******************************************/
+/* line 251, ../scss/breakpoints/_481up.scss */
+body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .img-link {
+  float: left;
+}
+/* line 253, ../scss/breakpoints/_481up.scss */
+body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .img-link img {
+  max-width: 200px;
+}
+/* line 258, ../scss/breakpoints/_481up.scss */
+body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .subhead {
+  float: right;
+  width: 100%;
+  padding-left: 215px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-left: -100%;
+}
+/* line 265, ../scss/breakpoints/_481up.scss */
+body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .item-venue {
+  clear: right;
+}
+/* line 268, ../scss/breakpoints/_481up.scss */
+body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .item-body {
+  clear: left;
+}
+/* line 271, ../scss/breakpoints/_481up.scss */
+body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .btn {
+  bottom: 15px;
+}
+
+/******************************************
 BLOG PAGE (index of blog posts)
 ******************************************/
-/* line 250, ../scss/breakpoints/_481up.scss */
+/* line 284, ../scss/breakpoints/_481up.scss */
 body.blog .entry-content img {
   margin: 0 20px 15px 0;
   float: left;
@@ -922,9 +958,17 @@ body.film-festival-page .content-primary .overview, body.film-festival-page .con
 }
 
 /******************************************
+FILM GUIDE PAGE
+******************************************/
+/* line 606, ../scss/breakpoints/_768up.scss */
+body.page-template-page-film-guide .films-list .row-index-inner > ul > li img {
+  float: none;
+}
+
+/******************************************
 PROGRAMS TEMPLATE PAGE
 ******************************************/
-/* line 604, ../scss/breakpoints/_768up.scss */
+/* line 617, ../scss/breakpoints/_768up.scss */
 body.page-template-page-program .content-primary {
   float: none;
   width: auto;
@@ -938,7 +982,7 @@ body.page-template-page-program .content-primary:after {
   visibility: hidden;
   clear: both;
 }
-/* line 609, ../scss/breakpoints/_768up.scss */
+/* line 622, ../scss/breakpoints/_768up.scss */
 body.page-template-page-program .content-primary .overview {
   padding-right: 20px;
   -webkit-box-sizing: border-box;
@@ -947,12 +991,12 @@ body.page-template-page-program .content-primary .overview {
   -o-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 613, ../scss/breakpoints/_768up.scss */
+/* line 626, ../scss/breakpoints/_768up.scss */
 body.page-template-page-program .content-primary .overview, body.page-template-page-program .content-primary .events-lists {
   float: left;
   width: 50%;
 }
-/* line 618, ../scss/breakpoints/_768up.scss */
+/* line 631, ../scss/breakpoints/_768up.scss */
 body.page-template-page-program .content-secondary {
   float: none;
   width: auto;
@@ -1336,7 +1380,7 @@ POSTS & CONTENT STYLES
 }
 
 /* line 335, ../scss/breakpoints/_1030up.scss */
-.page-template-page-film-guide .row-index .row-index-inner {
+.page-template-page-film-guide .row-index .row-index-inner, .page-template-page-festival-schedule .row-index .row-index-inner {
   margin: 0 auto;
 }
 
@@ -1479,6 +1523,18 @@ SIDEBARS & ASIDES
 /******************************************
 PAGE SPECIFIC STYLES
 ******************************************/
+/******************************************
+FESTIVAL SCHEDULE PAGE
+******************************************/
+/* line 486, ../scss/breakpoints/_1030up.scss */
+body.page-template-page-festival-schedule h1 {
+  font-size: 36px;
+}
+/* line 492, ../scss/breakpoints/_1030up.scss */
+body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .item-body {
+  clear: none;
+}
+
 /*
 you can call the larger styles if you want, but there's really no need
 */

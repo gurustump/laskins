@@ -81,6 +81,13 @@ tweeners.
 
 } // end of media query
 
+@media only screen and (min-width: 540px) {
+
+	// styles in 540up.scss
+	@import "breakpoints/540up";
+
+} // end of media query
+
 /*********************
 TABLET & SMALLER LAPTOPS
 This is the average viewing window. So Desktops, Laptops, and
@@ -91,6 +98,13 @@ you can add resource intensive styles.
 
 	// styles in 768up.scss
 	@import "breakpoints/768up";
+
+} // end of media query
+
+@media only screen and (min-width: 840px) {
+
+	// styles in 840up.scss
+	@import "breakpoints/840up";
 
 } // end of media query
 

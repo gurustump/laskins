@@ -2138,6 +2138,73 @@ body.film-festival-page {
 }
 
 /******************************************
+FILM GUIDE PAGE
+******************************************/
+body.page-template-page-film-guide {
+	.films-list {
+		.row-index-inner > ul > li {
+			img {
+				float:none;
+			}
+		}
+	}
+}
+
+/******************************************
+FESTIVAL SCHEDULE PAGE
+******************************************/
+body.page-template-page-festival-schedule {
+	h1 {
+		font-size:28px;
+	}
+	.films-list {
+		.row-index-inner > ul > li {
+			position:relative;
+			@include clearfix;
+			.img-link {
+				margin:0 15px 5px 0;
+				img {
+					display:block;
+					float:none;
+					margin:0;
+				}
+			}
+			.item-content {
+				a {
+					text-decoration:none;
+				}
+				.item-head {
+					font-family:$heading;
+				}
+				.subhead {
+					display:block;
+					height:auto;
+					margin-bottom:.5em;
+					text-transform:uppercase;
+					font-size:.8em;
+					line-height:1.3em;
+				}
+				.item-venue {
+					display:block;
+					font-size:.8em;
+					line-height:1.3em;
+					margin-bottom:.5em;
+					.item-venue-title {
+						display:block;
+					}
+					.adr {
+						display:block;
+					}
+				}
+				.btn {
+					bottom:15px;
+				}
+			}
+		}
+	}
+}
+
+/******************************************
 VENUES PAGE
 ******************************************/
 body.page-template-page-venues {

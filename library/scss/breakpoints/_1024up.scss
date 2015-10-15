@@ -224,3 +224,16 @@ body.film-festival-page {
 	.content-primary {
 	}
 }
+
+/******************************************
+FILM GUIDE PAGE
+******************************************/
+body.page-template-page-film-guide {
+	.films-list {
+		.row-index-inner > ul > li {
+			img {
+				float:left;
+			}
+		}
+	}
+}
