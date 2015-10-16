@@ -171,7 +171,7 @@ function laskins_register_media_item_metabox() {
 
 	$cmb_media_item_box->add_field( array(
 		'name'		=> __( 'Duration', 'cmb2' ),
-		'desc'       => __( 'Enter the duration in minutes', 'cmb2' ),
+		'desc'       => __( 'Enter the duration in minutes. Do not include the word "min" or "minutes." It will be added automatically.', 'cmb2' ),
 		'id' 			=> $prefix . 'duration',
 		'type'		=> 'text_small',
 	) );
