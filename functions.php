@@ -605,15 +605,20 @@ function sort_by_title($a, $b) {
 	$bTitle = removeArticle($b->post_title);
 	return strcasecmp($aTitle, $bTitle);
 }
+// Removes articles from a string for sorting. Also removes non-alphanumeric characters if they are in the first word.
 function removeArticle($string) {
 	$stringArray = explode(' ',trim($string));
 	$firstWord = $stringArray[0];
+	$firstWord = stripNonAlphanumeric($firstWord);
 	if (in_array(strtolower($firstWord), array('the','a','an'))) {
 		array_shift($stringArray);
-		return implode(' ', $stringArray);
+		return stripNonAlphanumeric(implode(' ', $stringArray));
 	} else {
-		return $string;
+		return stripNonAlphanumeric($string);
 	}
+}
+function stripNonAlphanumeric($string) {
+	return preg_replace('~[^\p{L}\p{N}]++~u', '', $string);
 }
 
 // modifies the "tribe_venue" post type so that its pages can be viewed on the website
