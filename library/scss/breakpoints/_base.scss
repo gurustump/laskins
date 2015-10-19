@@ -935,6 +935,16 @@ POSTS & CONTENT STYLES
 					text-decoration:none;
 					position:relative;
 				}
+				.item-category {
+					display:block;
+					text-align:center;
+					color:$white;
+					background-color:darken($orange, 10%);
+					font-size:11px;
+					line-height:18px;
+					letter-spacing:1px;
+					text-transform:uppercase;
+				}
 				img {
 					float:left;
 					margin:0 15px 15px 0;
@@ -2161,47 +2171,52 @@ body.page-template-page-festival-schedule {
 		font-size:28px;
 	}
 	.films-list {
-		.row-index-inner > ul > li {
-			position:relative;
-			@include clearfix;
-			.img-link {
-				margin:0 15px 5px 0;
-				img {
-					display:block;
-					float:none;
-					margin:0;
-				}
+		.row-index-inner {
+			.index-section-head {
+				font-weight:normal;
 			}
-			.item-content {
-				a {
-					text-decoration:none;
-				}
-				.item-head {
-					font-family:$heading;
-					line-height:1.2em;
-				}
-				.subhead {
-					display:block;
-					height:auto;
-					margin-bottom:.5em;
-					text-transform:uppercase;
-					font-size:.8em;
-					line-height:1.3em;
-				}
-				.item-venue {
-					display:block;
-					font-size:.8em;
-					line-height:1.3em;
-					margin-bottom:.5em;
-					.item-venue-title {
+			& > ul > li {
+				position:relative;
+				@include clearfix;
+				.img-link {
+					margin:0 15px 5px 0;
+					img {
 						display:block;
-					}
-					.adr {
-						display:block;
+						float:none;
+						margin:0;
 					}
 				}
-				.btn {
-					bottom:15px;
+				.item-content {
+					a {
+						text-decoration:none;
+					}
+					.item-head {
+						font-family:$heading;
+						line-height:1.2em;
+					}
+					.subhead {
+						display:block;
+						height:auto;
+						margin-bottom:.5em;
+						text-transform:uppercase;
+						font-size:.8em;
+						line-height:1.3em;
+					}
+					.item-venue {
+						display:block;
+						font-size:.8em;
+						line-height:1.3em;
+						margin-bottom:.5em;
+						.item-venue-title {
+							display:block;
+						}
+						.adr {
+							display:block;
+						}
+					}
+					.btn {
+						bottom:15px;
+					}
 				}
 			}
 		}

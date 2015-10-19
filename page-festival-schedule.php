@@ -65,20 +65,25 @@
 											
 										));
 										
-										$screenings = tribe_get_events(array(
+										$festivalEvents = tribe_get_events(array(
 											'eventDisplay' => 'custom',
 											'start_date' =>  tribe_get_start_date($currentFestival[0]->ID, false, 'Y-m-d').' 00:01',
-											'end_date' =>  tribe_get_end_date($currentFestival[0]->ID, false, 'Y-m-d').' 23:59',
-											'tribe_events_cat' => 'screening',
+											'end_date' =>  tribe_get_end_date($currentFestival[0]->ID, false, 'Y-m-d').' 23:59',    
+											'tax_query' => array(array(
+												'taxonomy' => 'tribe_events_cat',
+												'field' => 'slug',
+												'terms' => 'film-festival',
+												'operator' => 'NOT IN'
+											)),
 											'posts_per_page' => -1
 										));
 										// resort this to remove articles
-										if (count($screenings) > 0) { ?>
+										if (count($festivalEvents) > 0) { ?>
 										<div class="films-list row-index">
 											<div class="row-index-inner wrap">
-												<ul>
 												<?php global $post;
-												foreach($screenings as $key => $item) {
+												$currentDate = '';
+												foreach($festivalEvents as $key => $item) {
 													$post = $item;
 													setup_postdata($post);
 													$itemThumbArray = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'medium');
@@ -97,48 +102,57 @@
 														$filmPost = get_post($filmMeta);
 														$itemExcerpt = string_limit_words($filmPost->post_content, 60);
 													}
-													/*$filmPost = get_post($filmMeta);
-													$filmContent = $filmPost->post_content;
-													$filmExcerpt = get_post_field('post_excerpt', $filmMeta);
-													$itemExcerpt = get_the_excerpt() ? get_the_excerpt() : $filmExcerpt ? $filmExcerpt : $filmContent;
-													*/
-													
-													echo '<pre style="display:none;">';
-													print_r(get_the_excerpt());
-													echo '</pre>';
-													/*			
+													$is_screening = false;
+													$eventCats = get_the_terms($post->ID, 'tribe_events_cat');
+													foreach($eventCats as $cat) {
+														if ($cat->slug == 'screening') {
+															$is_screening = true;
+															break;
+														}
+													}
+													/*
 													echo '<pre>';
-													print_r(get_the_excerpt()  ? 'yes' : 'no');
-													print_r($filmExcerpt ? 'yes' : 'no');
-													echo '</pre>';*/
-													// print_r($item); 
+													print_r(get_the_terms($post->ID, 'tribe_events_cat'));
+													echo '</pre>';
+													*/
+													$thisDate = tribe_get_start_date(get_the_ID(), false, 'l, F j');
 													?>
-													<li>
-														<a class="img-link" href="<?php the_permalink(); ?>">
-															<img class="item-thumb" src="<?php echo $itemThumbSrc; ?>" />
-														</a>
-														<span class="item-content">
-															<a href="<?php the_permalink(); ?>" class="item-head"><?php the_title(); ?></a>
-															<span class="tribe-events-schedule subhead">
-																<?php echo tribe_events_event_schedule_details( $item->ID, '<span>', '</span>' ); ?>
-																<?php /* if ( tribe_get_cost() ) : ?>
-																	<span class="tribe-events-divider">|</span>
-																	<span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
-																<?php endif; */ ?>
+													<?php echo $key == 0 ? '<ul>' : '' ?>
+													<?php if ($thisDate != $currentDate) {
+														echo $currentDate == '' ? '' : '</ul>'; ?>
+														<h2 class="index-section-head"><?php echo $thisDate; ?></h2>
+														<?php echo $currentDate == '' ? '' : '<ul>';
+														$currentDate = $thisDate;
+													} ?>
+														<li>
+															<a class="img-link" href="<?php the_permalink(); ?>">
+																<img class="item-thumb" src="<?php echo $itemThumbSrc; ?>" />
+																<?php if ($is_screening) { ?>
+																<span class="item-category">Screening</span>
+																<?php } ?>
+															</a>
+															<span class="item-content">
+																<a href="<?php the_permalink(); ?>" class="item-head"><?php the_title(); ?></a>
+																<span class="tribe-events-schedule subhead">
+																	<?php echo tribe_events_event_schedule_details( $item->ID, '<span>', '</span>' ); ?>
+																	<?php /* if ( tribe_get_cost() ) : ?>
+																		<span class="tribe-events-divider">|</span>
+																		<span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
+																	<?php endif; */ ?>
+																</span>
+																<span class="item-venue">
+																	<a class="item-venue-title" href="<?php echo tribe_get_venue_link($item->ID, false); ?>"><?php echo tribe_get_venue($item->ID); ?></a>
+																	<?php echo tribe_get_full_address($item->ID); ?>
+																	<?php if ( tribe_show_google_map_link($item->ID) && tribe_get_venue_id($item->ID)) : ?>
+																		<?php echo tribe_get_map_link_html($item->ID); ?>
+																	<?php endif; ?>
+																</span>
+																<span class="item-body"><?php echo $itemExcerpt; ?></span>
+																<a href="<?php the_permalink(); ?>" class="btn btn-orange">See Details</a>
 															</span>
-															<span class="item-venue">
-																<a class="item-venue-title" href="<?php echo tribe_get_venue_link($item->ID, false); ?>"><?php echo tribe_get_venue($item->ID); ?></a>
-																<?php echo tribe_get_full_address($item->ID); ?>
-																<?php if ( tribe_show_google_map_link($item->ID) && tribe_get_venue_id($item->ID)) : ?>
-																	<?php echo tribe_get_map_link_html($item->ID); ?>
-																<?php endif; ?>
-															</span>
-															<span class="item-body"><?php echo $itemExcerpt; ?></span>
-															<a href="<?php the_permalink(); ?>" class="btn btn-orange">See Details</a>
-														</span>
-													</li>
+														</li>
+													<?php echo $key == count($festivalEvents) - 1 ? '</ul>' : '' ?>
 												<?php } ?>
-												</ul>
 											</div>
 										</div>
 										
