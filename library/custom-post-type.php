@@ -22,6 +22,28 @@ function bones_flush_rewrite_rules() {
 	flush_rewrite_rules();
 }
 
+register_taxonomy( 'screenings_cat', 
+	array('tribe_events'),
+	array('hierarchical' => true,
+		'labels' => array(
+			'name' => __( 'Screening Categories', 'bonestheme' ),
+			'singular_name' => __( 'Screening Category', 'bonestheme' ),
+			'search_items' =>  __( 'Search Screening Categories', 'bonestheme' ),
+			'all_items' => __( 'All Screening Categories', 'bonestheme' ),
+			'parent_item' => __( 'Parent Screening Category', 'bonestheme' ),
+			'parent_item_colon' => __( 'Parent Screening Category:', 'bonestheme' ),
+			'edit_item' => __( 'Edit Screening Category', 'bonestheme' ),
+			'update_item' => __( 'Update Screening Category', 'bonestheme' ),
+			'add_new_item' => __( 'Add New Screening Category', 'bonestheme' ),
+			'new_item_name' => __( 'New Screening Category Name', 'bonestheme' )
+		),
+		'show_admin_column' => true, 
+		'show_ui' => true,
+		'query_var' => true,
+		'rewrite' => array( 'slug' => 'screening-cat' ),
+	)
+);
+
 // Film custom post type
 function media_item_custom_type() { 
 	// creating (registering) the custom type 

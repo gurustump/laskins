@@ -83,6 +83,7 @@
 											<div class="row-index-inner wrap">
 												<?php global $post;
 												$currentDate = '';
+												$currentSubsection = '';
 												foreach($festivalEvents as $key => $item) {
 													$post = $item;
 													setup_postdata($post);
@@ -103,18 +104,16 @@
 														$itemExcerpt = string_limit_words($filmPost->post_content, 60);
 													}
 													$is_screening = false;
+													$thisSubsection = '';
 													$eventCats = get_the_terms($post->ID, 'tribe_events_cat');
+													$screeningCats = get_the_terms($post->ID, 'screenings_cat');
 													foreach($eventCats as $cat) {
 														if ($cat->slug == 'screening') {
 															$is_screening = true;
+															$thisSubsection = $screeningCats[0]->name;
 															break;
 														}
 													}
-													/*
-													echo '<pre>';
-													print_r(get_the_terms($post->ID, 'tribe_events_cat'));
-													echo '</pre>';
-													*/
 													$thisDate = tribe_get_start_date(get_the_ID(), false, 'l, F j');
 													?>
 													<?php echo $key == 0 ? '<ul>' : '' ?>
@@ -124,7 +123,11 @@
 														<?php echo $currentDate == '' ? '' : '<ul>';
 														$currentDate = $thisDate;
 													} ?>
-														<li>
+													<?php if ($thisSubsection && $thisSubsection != $currentSubsection) { ?>
+														<h3 class="index-section-subhead"><?php echo $thisSubsection; ?></h3>
+														<?php $currentSubsection = $thisSubsection;
+													} ?>
+														<li<?php echo $thisSubsection ? ' class="subsection-list-item"' : ''; ?>>
 															<a class="img-link" href="<?php the_permalink(); ?>">
 																<img class="item-thumb" src="<?php echo $itemThumbSrc; ?>" />
 																<?php if ($is_screening) { ?>

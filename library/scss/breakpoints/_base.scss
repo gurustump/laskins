@@ -924,11 +924,26 @@ POSTS & CONTENT STYLES
 			font-size:16px;
 			padding:2px 10px;
 		}
+		.index-section-subhead {
+			background:$red;
+			font-size:14px;
+			color:$white;
+			font-weight:normal;
+			padding:2px 10px;
+			margin:20px 0 0 20px;
+			margin-bottom:0;
+		}
 		& > ul {
 			& > li {
 				border-bottom:1px solid $orange;
 				padding-bottom:20px;
 				margin-bottom:20px;
+				&.subsection-list-item {
+					margin:0 0 0 20px;
+					border-left:2px solid $red;
+					padding-left:10px;
+					padding-top:15px;
+				}
 				& > a {
 					@include clearfix;
 					display:block;

@@ -68,7 +68,7 @@
 											'eventDisplay' => 'custom',
 											'start_date' =>  tribe_get_start_date($thisFestival[0]->ID, false, 'Y-m-d').' 00:01',
 											'end_date' =>  tribe_get_end_date($thisFestival[0]->ID, false, 'Y-m-d').' 23:59',
-											'tribe_events_cat' => 'screening',
+											//'tribe_events_cat' => 'screening',
 											'posts_per_page' => -1
 										));
 										//print_r($festivalFilms);

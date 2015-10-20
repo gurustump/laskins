@@ -116,12 +116,12 @@ function laskins_register_media_item_metabox() {
 		'type'		=> 'text',
 	) );
 
-	$cmb_media_item_box->add_field( array(
+	/*$cmb_media_item_box->add_field( array(
 		'name'		=> __( 'Cast', 'cmb2' ),
 		'desc'       => __( 'Enter the names of the actors here', 'cmb2' ),
 		'id' 			=> $prefix . 'cast',
 		'type'		=> 'textarea_small',
-	) );
+	) );*/
 	
 	$cast_group_field_id = $cmb_media_item_box->add_field( array(
 		'id'          => $prefix . 'cast',
