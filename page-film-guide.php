@@ -67,7 +67,6 @@
 												$firstLetter = substr(removeArticle(get_the_title()), 0, 1);
 												// print_r($item); 
 												?>
-												<?php echo $key == 0 ? '<ul>' : '' ?>
 												<?php if (!is_numeric($firstLetter) && $firstLetter != $currentLetter) {
 													echo $currentLetter != '' ? '</ul>' : '';
 													if (!is_numeric($firstLetter)) { ?>
@@ -76,6 +75,7 @@
 													echo $currentLetter != '' ? '<ul>' : '';
 													$currentLetter = $firstLetter;
 												} ?>
+												<?php echo $key == 0 ? '<ul>' : '' ?>
 													<li>
 														<a href="<?php the_permalink(); ?>">
 															<img class="item-thumb" src="<?php echo $itemThumbArray[0]; ?>" />

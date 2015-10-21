@@ -107,26 +107,33 @@
 													$thisSubsection = '';
 													$eventCats = get_the_terms($post->ID, 'tribe_events_cat');
 													$screeningCats = get_the_terms($post->ID, 'screenings_cat');
-													foreach($eventCats as $cat) {
-														if ($cat->slug == 'screening') {
-															$is_screening = true;
-															$thisSubsection = $screeningCats[0]->name;
-															break;
+													/*echo '<pre>';
+													print_r($eventCats);
+													echo '</pre>';*/
+													if ($eventCats) {
+														foreach($eventCats as $cat) {
+															if ($cat->slug == 'screening') {
+																$is_screening = true;
+																$thisSubsection = $screeningCats[0]->name;
+																break;
+															}
 														}
 													}
 													$thisDate = tribe_get_start_date(get_the_ID(), false, 'l, F j');
 													?>
-													<?php echo $key == 0 ? '<ul>' : '' ?>
 													<?php if ($thisDate != $currentDate) {
 														echo $currentDate == '' ? '' : '</ul>'; ?>
 														<h2 class="index-section-head"><?php echo $thisDate; ?></h2>
-														<?php echo $currentDate == '' ? '' : '<ul>';
+														<?php echo ($currentDate == '' && $currentSubsection == '') ? '' : '<ul>';
 														$currentDate = $thisDate;
 													} ?>
-													<?php if ($thisSubsection && $thisSubsection != $currentSubsection) { ?>
+													<?php if ($thisSubsection && $thisSubsection != $currentSubsection) { 
+														echo $currentSubsection == '' && $currentDate == '' ? '' : '</ul>'; ?>
 														<h3 class="index-section-subhead"><?php echo $thisSubsection; ?></h3>
-														<?php $currentSubsection = $thisSubsection;
+														<?php echo $currentSubsection == '' && $currentDate == '' ? '' : '<ul>';
+														$currentSubsection = $thisSubsection;
 													} ?>
+													<?php echo $key == 0 ? '<ul>' : '' ?>
 														<li<?php echo $thisSubsection ? ' class="subsection-list-item"' : ''; ?>>
 															<a class="img-link" href="<?php the_permalink(); ?>">
 																<img class="item-thumb" src="<?php echo $itemThumbSrc; ?>" />

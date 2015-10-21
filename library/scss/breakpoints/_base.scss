@@ -934,6 +934,7 @@ POSTS & CONTENT STYLES
 			margin-bottom:0;
 		}
 		& > ul {
+			margin-bottom:20px;
 			& > li {
 				border-bottom:1px solid $orange;
 				padding-bottom:20px;
@@ -943,6 +944,11 @@ POSTS & CONTENT STYLES
 					border-left:2px solid $red;
 					padding-left:10px;
 					padding-top:15px;
+					.item-content {
+						.btn {
+							margin-left:10px;
+						}
+					}
 				}
 				& > a {
 					@include clearfix;
