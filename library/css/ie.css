@@ -694,7 +694,7 @@ POSTS & CONTENT STYLES
 }
 /* line 261, ../scss/breakpoints/_768up.scss */
 .screening-lists .films-list .item-content, .screening-lists .events-list .item-content, .events-lists .films-list .item-content, .events-lists .events-list .item-content {
-  padding-top: 8px;
+  line-height: 1.3em;
 }
 
 /******************************************************************

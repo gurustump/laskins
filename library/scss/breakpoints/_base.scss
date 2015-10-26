@@ -1067,7 +1067,9 @@ POSTS & CONTENT STYLES
 		.item-content {
 			margin-left:15px;
 			display:block;
-			padding-top:6px;
+			font-size:12px;
+			line-height:1.2em;
+			@include v-center;
 		}
 		.item-sched {
 			text-transform:uppercase;
