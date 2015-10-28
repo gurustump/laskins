@@ -75,6 +75,35 @@ function laskins_register_festival_page_metabox() {
 	) );
 }
 
+add_action( 'cmb2_init', 'laskins_register_festival_archive_metabox' );
+
+function laskins_register_festival_archive_metabox() {
+	$prefix = '_laskins_festival_archive_';
+	
+	$cmb_festival_archive_box = new_cmb2_box( array(
+		'id'            => $prefix . 'metabox',
+		'title'         => __( 'Festival Archive Options', 'cmb2' ),
+		'object_types'  => array( 'page', ), // Post type
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true, // Show field names on the left
+		// 'cmb_styles' => false, // false to disable the CMB stylesheet
+		// 'closed'     => true, // true to keep the metabox closed by default
+	) );
+
+	$cmb_festival_archive_box->add_field( array(
+		'name'             => __( 'Festival Type', 'cmb2' ),
+		'desc'             => __( 'Select the type of festival that will be listed on this archive page', 'cmb2' ),
+		'id'               => $prefix . 'type',
+		'type'             => 'select',
+		'show_option_none' => false,
+		'options'          => array(
+			'film-festival' => __( 'Film Festival', 'cmb2' ),
+			'music-festival'   => __( 'Music Festival', 'cmb2' ),
+		),
+	) );
+}
+
 add_action( 'cmb2_init', 'laskins_register_media_item_metabox' );
 
 function laskins_register_media_item_metabox() {

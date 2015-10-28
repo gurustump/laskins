@@ -20,4 +20,9 @@ function toggleMetaboxes($) {
 	} else {
 		$('#_laskins_festival_page_custom_index_metabox').hide();
 	}
+	if (pageTemplate == 'page-festival-archive.php' ) {
+		$('#_laskins_festival_archive_metabox').show();
+	} else {
+		$('#_laskins_festival_archive_metabox').hide();
+	}
 }

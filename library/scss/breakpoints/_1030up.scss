@@ -483,17 +483,21 @@ PAGE SPECIFIC STYLES
 ******************************************/
 
 /******************************************
-FESTIVAL SCHEDULE PAGE
+FESTIVAL SCHEDULE PAGE,
+FESTIVAL ARCHIVE PAGE
 ******************************************/
-body.page-template-page-festival-schedule {
+body.page-template-page-festival-schedule, body.page-template-page-festival-archive {
 	h1 {
 		font-size:36px;
 	}
-	.films-list {
-		.row-index-inner > ul > li {
-			.item-content {
-				.item-body {
-					clear:none;
+	.row-index {
+		.row-index-inner {
+			margin:0 auto;
+			& > ul > li {
+				.item-content {
+					.item-body {
+						clear:none;
+					}
 				}
 			}
 		}

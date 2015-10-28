@@ -2184,16 +2184,17 @@ body.page-template-page-film-guide {
 }
 
 /******************************************
-FESTIVAL SCHEDULE PAGE
+FESTIVAL SCHEDULE PAGE,
+FESTIVAL ARCHIVE PAGE
 ******************************************/
-body.page-template-page-festival-schedule {
+body.page-template-page-festival-schedule, body.page-template-page-festival-archive {
 	.article-header {
 		padding-top:0;
 	}
 	h1 {
 		font-size:28px;
 	}
-	.films-list {
+	.row-index {
 		.row-index-inner {
 			.index-section-head {
 				font-weight:normal;

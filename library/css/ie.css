@@ -408,18 +408,19 @@ body.film-festival-page .entry-header .heading-mobile p {
 }
 
 /******************************************
-FESTIVAL SCHEDULE PAGE
+FESTIVAL SCHEDULE PAGE,
+FESTIVAL ARCHIVE PAGE
 ******************************************/
-/* line 251, ../scss/breakpoints/_481up.scss */
-body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .img-link {
+/* line 252, ../scss/breakpoints/_481up.scss */
+body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .img-link, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .img-link {
   float: left;
 }
-/* line 253, ../scss/breakpoints/_481up.scss */
-body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .img-link img {
+/* line 254, ../scss/breakpoints/_481up.scss */
+body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .img-link img, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .img-link img {
   max-width: 200px;
 }
-/* line 258, ../scss/breakpoints/_481up.scss */
-body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .subhead {
+/* line 259, ../scss/breakpoints/_481up.scss */
+body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .item-content .subhead, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .item-content .subhead {
   float: right;
   width: 100%;
   padding-left: 215px;
@@ -430,23 +431,41 @@ body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li
   box-sizing: border-box;
   margin-left: -100%;
 }
-/* line 265, ../scss/breakpoints/_481up.scss */
-body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .item-venue {
+/* line 266, ../scss/breakpoints/_481up.scss */
+body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .item-content .item-venue, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .item-content .item-venue {
   clear: right;
 }
-/* line 268, ../scss/breakpoints/_481up.scss */
-body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .item-body {
+/* line 269, ../scss/breakpoints/_481up.scss */
+body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .item-content .item-body, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .item-content .item-body {
   clear: left;
 }
-/* line 271, ../scss/breakpoints/_481up.scss */
-body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .btn {
+/* line 272, ../scss/breakpoints/_481up.scss */
+body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .item-content .btn, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .item-content .btn {
   bottom: 15px;
+}
+
+/******************************************
+FESTIVAL ARCHIVE PAGE
+******************************************/
+/* line 287, ../scss/breakpoints/_481up.scss */
+body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .img-link {
+  float: none;
+}
+/* line 289, ../scss/breakpoints/_481up.scss */
+body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .img-link img {
+  max-width: none;
+}
+/* line 294, ../scss/breakpoints/_481up.scss */
+body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .item-content .subhead {
+  float: none;
+  padding: 0;
+  margin: 0;
 }
 
 /******************************************
 BLOG PAGE (index of blog posts)
 ******************************************/
-/* line 284, ../scss/breakpoints/_481up.scss */
+/* line 310, ../scss/breakpoints/_481up.scss */
 body.blog .entry-content img {
   margin: 0 20px 15px 0;
   float: left;
@@ -1528,14 +1547,19 @@ SIDEBARS & ASIDES
 PAGE SPECIFIC STYLES
 ******************************************/
 /******************************************
-FESTIVAL SCHEDULE PAGE
+FESTIVAL SCHEDULE PAGE,
+FESTIVAL ARCHIVE PAGE
 ******************************************/
-/* line 489, ../scss/breakpoints/_1030up.scss */
-body.page-template-page-festival-schedule h1 {
+/* line 490, ../scss/breakpoints/_1030up.scss */
+body.page-template-page-festival-schedule h1, body.page-template-page-festival-archive h1 {
   font-size: 36px;
 }
-/* line 495, ../scss/breakpoints/_1030up.scss */
-body.page-template-page-festival-schedule .films-list .row-index-inner > ul > li .item-content .item-body {
+/* line 494, ../scss/breakpoints/_1030up.scss */
+body.page-template-page-festival-schedule .row-index .row-index-inner, body.page-template-page-festival-archive .row-index .row-index-inner {
+  margin: 0 auto;
+}
+/* line 498, ../scss/breakpoints/_1030up.scss */
+body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .item-content .item-body, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .item-content .item-body {
   clear: none;
 }
 

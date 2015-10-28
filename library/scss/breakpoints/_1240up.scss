@@ -171,13 +171,14 @@ body.film-festival-page {
 }
 
 /******************************************
-FESTIVAL SCHEDULE PAGE
+FESTIVAL SCHEDULE PAGE,
+FESTIVAL ARCHIVE PAGE
 ******************************************/
-body.page-template-page-festival-schedule {
+body.page-template-page-festival-schedule, body.page-template-page-festival-archive {
 	h1 {
 		font-size:40px;
 	}
-	.films-list {
+	.row-index {
 		.row-index-inner > ul > li {
 			.img-link {
 				padding-bottom:40px;
@@ -202,6 +203,32 @@ body.page-template-page-festival-schedule {
 					right:auto;
 					left:100px;
 					@include transform(translateX(-50%));
+				}
+			}
+		}
+	}
+}
+
+/******************************************
+FESTIVAL ARCHIVE PAGE
+******************************************/
+body.page-template-page-festival-archive {
+	.row-index {
+		.row-index-inner {
+			& > ul > li {
+				.img-link {
+					float:left;
+				}
+				.item-content {
+					padding-left:375px;
+					.btn {
+						left:180px;
+					}
+					.item-body {
+						*:last-child {
+							margin-bottom:0;
+						}
+					}
 				}
 			}
 		}
