@@ -126,6 +126,7 @@
 															<?php /*<div class="item-map" style="max-width:500px">
 																<?php echo tribe_get_embedded_map($id, 500); ?>
 															</div> */ ?>
+															<p><a class="venue-details" href="<?php echo tribe_get_venue_link($id, false); ?>">Parking information and other details</a></p>
 														</div>
 													</li>
 													<?php } } ?>

@@ -2260,6 +2260,9 @@ body.page-template-page-venues {
 					&:last-child {
 						border-bottom:0;
 					}
+					.venue-details {
+						@include tri(right, 5px, 5px, $orange, 0 0 -5px 4px)
+					}
 				}
 			}
 		}
@@ -2269,6 +2272,9 @@ body.single-tribe_venue {
 	.item-map {
 		@extend %gray-grunge;
 		padding:20px;
+	}
+	.venue-content {
+		margin-top:1.5em;
 	}
 }
 

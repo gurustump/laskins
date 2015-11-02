@@ -102,6 +102,12 @@ FALSE
 								<div class="item-map" style="max-width:500px">
 									<?php echo tribe_get_embedded_map(get_the_ID(), 500); ?>
 								</div>
+								<div class="venue-content">
+									<?php
+									$thisVenuePost = get_post(get_the_ID());
+									echo wpautop($thisVenuePost->post_content); 
+									?>
+								</div>
 							</article>
 							<?php get_sidebar(); ?>
 							
