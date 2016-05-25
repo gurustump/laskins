@@ -5,7 +5,10 @@
 				<div id="inner-content" class="wrap cf">
 
 						<main id="main" class="content-primary cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-
+						
+							<?php /* $press_release_cat_ID = get_category_by_slug('press')->cat_ID;
+							$query = new WP_Query( 'cat=-32'.$press_release_cat_ID ); ?>
+							<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();*/ ?>
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 							<?php // if (get_post_type() != 'tribe_events' || !in_category('latest')) { ?>

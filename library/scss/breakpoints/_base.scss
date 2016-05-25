@@ -2282,6 +2282,9 @@ body.single-tribe_venue {
 BLOG PAGE (index of blog posts)
 ******************************************/
 body.blog {
+	#main > article {
+		margin-bottom:20px;
+	}
 	.hentry header {
 		padding-bottom:15px;
 	}
@@ -2292,6 +2295,17 @@ body.blog {
 		}
 		*:last-child {
 			margin-bottom:0;
+		}
+	}
+}
+
+/******************************************
+ARCHIVE PAGE 
+******************************************/
+body.archive {
+	#main {
+		& > h1, & > article {
+			margin-bottom:20px;
 		}
 	}
 }

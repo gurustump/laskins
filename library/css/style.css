@@ -4412,31 +4412,43 @@ body.single-tribe_venue .venue-content {
 BLOG PAGE (index of blog posts)
 ******************************************/
 /* line 2285, ../scss/breakpoints/_base.scss */
+body.blog #main > article {
+  margin-bottom: 20px;
+}
+/* line 2288, ../scss/breakpoints/_base.scss */
 body.blog .hentry header {
   padding-bottom: 15px;
 }
-/* line 2289, ../scss/breakpoints/_base.scss */
+/* line 2292, ../scss/breakpoints/_base.scss */
 body.blog .entry-content img {
   margin: 0 0 15px 0;
   float: none;
 }
-/* line 2293, ../scss/breakpoints/_base.scss */
+/* line 2296, ../scss/breakpoints/_base.scss */
 body.blog .entry-content *:last-child {
   margin-bottom: 0;
 }
 
 /******************************************
+ARCHIVE PAGE 
+******************************************/
+/* line 2307, ../scss/breakpoints/_base.scss */
+body.archive #main > h1, body.archive #main > article {
+  margin-bottom: 20px;
+}
+
+/******************************************
 404 PAGE
 ******************************************/
-/* line 2304, ../scss/breakpoints/_base.scss */
+/* line 2318, ../scss/breakpoints/_base.scss */
 body.error404 #searchform .searchform-inner {
   padding: 20px;
 }
-/* line 2307, ../scss/breakpoints/_base.scss */
+/* line 2321, ../scss/breakpoints/_base.scss */
 body.error404 #searchform .searchform-inner input {
   margin-bottom: 0;
 }
-/* line 2310, ../scss/breakpoints/_base.scss */
+/* line 2324, ../scss/breakpoints/_base.scss */
 body.error404 #searchform .searchform-inner #searchsubmit {
   top: 20px;
   right: 20px;
@@ -5286,6 +5298,22 @@ you can add resource intensive styles.
   body.page-template-page-program .content-secondary {
     float: none;
     width: auto;
+  }
+
+  /******************************************
+  BLOG PAGE (index of blog posts)
+  ******************************************/
+  /* line 641, ../scss/breakpoints/_768up.scss */
+  body.blog #main > article {
+    margin-bottom: 30px;
+  }
+
+  /******************************************
+  ARCHIVE PAGE 
+  ******************************************/
+  /* line 651, ../scss/breakpoints/_768up.scss */
+  body.archive #main > h1, body.archive #main > article {
+    margin-bottom: 30px;
   }
 }
 @media only screen and (min-width: 840px) {

@@ -633,3 +633,23 @@ body.page-template-page-program {
 		width:auto;
 	}
 }
+
+/******************************************
+BLOG PAGE (index of blog posts)
+******************************************/
+body.blog {
+	#main > article {
+		margin-bottom:30px;
+	}
+}
+
+/******************************************
+ARCHIVE PAGE 
+******************************************/
+body.archive {
+	#main {
+		& > h1, & > article {
+			margin-bottom:30px;
+		}
+	}
+}

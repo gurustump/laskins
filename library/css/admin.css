@@ -45,3 +45,8 @@ start customizing. All admin functions are located in lib/admin/
 #adminmenu .menu-icon-ad_spaces.wp-menu-open a div.wp-menu-image:after {
   background-position: 8px -21px;
 }
+
+/* line 78, ../scss/admin.scss */
+body.wp-admin.events-cal .fixed .column-categories, body.wp-admin.events-cal .fixed .column-rel, body.wp-admin.events-cal .fixed .column-response, body.wp-admin.events-cal .fixed .column-role, body.wp-admin.events-cal .fixed .column-tags, body.wp-admin.events-cal .fixed .column-author, body.wp-admin.events-cal .fixed .column-date, body.wp-admin.events-cal .fixed .column-format, body.wp-admin.events-cal .fixed .column-links, body.wp-admin.events-cal .fixed .column-parent, body.wp-admin.events-cal .fixed .column-posts, body.wp-admin.events-cal .fixed .column-end-date, body.wp-admin.events-cal .fixed .column-events-cats, body.wp-admin.events-cal .fixed .column-start-date {
+  width: auto;
+}

@@ -72,3 +72,12 @@ start customizing. All admin functions are located in lib/admin/
 		}
 	}
 }
+body.wp-admin {
+	&.events-cal {
+		.fixed {
+			.column-categories, .column-rel, .column-response, .column-role, .column-tags, .column-author, .column-date, .column-format, .column-links, .column-parent, .column-posts, .column-end-date, .column-events-cats, .column-start-date {
+				width:auto;
+			}
+		}
+	}
+}

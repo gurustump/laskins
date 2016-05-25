@@ -1021,6 +1021,22 @@ body.page-template-page-program .content-secondary {
   width: auto;
 }
 
+/******************************************
+BLOG PAGE (index of blog posts)
+******************************************/
+/* line 641, ../scss/breakpoints/_768up.scss */
+body.blog #main > article {
+  margin-bottom: 30px;
+}
+
+/******************************************
+ARCHIVE PAGE 
+******************************************/
+/* line 651, ../scss/breakpoints/_768up.scss */
+body.archive #main > h1, body.archive #main > article {
+  margin-bottom: 30px;
+}
+
 /******************************************************************
 Site Name:
 Author:
