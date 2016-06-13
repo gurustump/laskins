@@ -1136,10 +1136,11 @@ TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN)
 				float:left;
 				clear:left;
 				margin-right:5px;
+				line-height:1.4 !important;
 			}
 			dd {
 				float:left;
-				line-height:1 !important;
+				line-height:1.4 !important;
 				font-size:1em;
 				.dtstart, .dtend {
 					font-weight:bold;
