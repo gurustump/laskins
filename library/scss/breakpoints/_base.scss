@@ -1920,6 +1920,20 @@ SIDEBARS & ASIDES
 	border-radius: 2px;
 	margin-bottom: 1.5em;
 }
+.kebo_twitter_feed_widget {
+	.kebo-tweets {
+		&.list {
+			.ktweet {
+				border-color:rgba(0,0,0,.1);
+			}
+		}
+		.ktweet {
+			.kmeta {
+				font-size:.8em;
+			}
+		}
+	}
+}
 
 /*********************
 FOOTER STYLES

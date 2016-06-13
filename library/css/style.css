@@ -4007,10 +4007,19 @@ SIDEBARS & ASIDES
   margin-bottom: 1.5em;
 }
 
+/* line 1926, ../scss/breakpoints/_base.scss */
+.kebo_twitter_feed_widget .kebo-tweets.list .ktweet {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+/* line 1931, ../scss/breakpoints/_base.scss */
+.kebo_twitter_feed_widget .kebo-tweets .ktweet .kmeta {
+  font-size: .8em;
+}
+
 /*********************
 FOOTER STYLES
 *********************/
-/* line 1928, ../scss/breakpoints/_base.scss */
+/* line 1942, ../scss/breakpoints/_base.scss */
 .footer {
   clear: both;
   background-color: rgba(0, 0, 0, 0.8);
@@ -4023,14 +4032,14 @@ FOOTER STYLES
   color: #db7907;
   overflow: hidden;
 }
-/* line 1935, ../scss/breakpoints/_base.scss */
+/* line 1949, ../scss/breakpoints/_base.scss */
 .footer #inner-footer nav a {
   font-size: 12px;
   color: #f8931d;
   text-transform: uppercase;
 }
 
-/* line 1943, ../scss/breakpoints/_base.scss */
+/* line 1957, ../scss/breakpoints/_base.scss */
 .inner-footer {
   margin: 0 10px;
 }
@@ -4045,7 +4054,7 @@ override these styles for the desktop
 view.
 */
 /* end .footer-links */
-/* line 1967, ../scss/breakpoints/_base.scss */
+/* line 1981, ../scss/breakpoints/_base.scss */
 .copyright {
   margin: 0;
   font-size: 10px;
@@ -4057,12 +4066,12 @@ view.
 /******************************************
 ADMIN BAR CUSTOMIZATION
 ******************************************/
-/* line 1980, ../scss/breakpoints/_base.scss */
+/* line 1994, ../scss/breakpoints/_base.scss */
 html body div#wpadminbar {
   border-bottom: 1px solid #444;
   z-index: 9999 !important;
 }
-/* line 1983, ../scss/breakpoints/_base.scss */
+/* line 1997, ../scss/breakpoints/_base.scss */
 html body div#wpadminbar > .wpadminbar-activator {
   display: block;
   position: absolute;
@@ -4091,7 +4100,7 @@ html body div#wpadminbar > .wpadminbar-activator {
   border-top: 0;
   cursor: pointer;
 }
-/* line 1997, ../scss/breakpoints/_base.scss */
+/* line 2011, ../scss/breakpoints/_base.scss */
 html body div#wpadminbar > .wpadminbar-activator:after {
   content: "";
   border-style: solid;
@@ -4102,11 +4111,11 @@ html body div#wpadminbar > .wpadminbar-activator:after {
   left: 50%;
   top: 5px;
 }
-/* line 2009, ../scss/breakpoints/_base.scss */
+/* line 2023, ../scss/breakpoints/_base.scss */
 html body div#wpadminbar.wpadminbar-shown > .wpadminbar-activator {
   display: none;
 }
-/* line 2015, ../scss/breakpoints/_base.scss */
+/* line 2029, ../scss/breakpoints/_base.scss */
 html body.hide-admin-bar div#wpadminbar {
   display: none;
 }
@@ -4117,7 +4126,7 @@ PAGE SPECIFIC
 /******************************************
 HOME PAGE
 ******************************************/
-/* line 2028, ../scss/breakpoints/_base.scss */
+/* line 2042, ../scss/breakpoints/_base.scss */
 body.home .home-banner {
   color: #f8931d;
   text-transform: uppercase;
@@ -4125,21 +4134,21 @@ body.home .home-banner {
   background: #fff;
   padding: 20px;
 }
-/* line 2034, ../scss/breakpoints/_base.scss */
+/* line 2048, ../scss/breakpoints/_base.scss */
 body.home .home-banner > ul {
   border: 1px solid rgba(248, 147, 29, 0.2);
   border-width: 1px 0;
   padding: 12px 0;
 }
-/* line 2039, ../scss/breakpoints/_base.scss */
+/* line 2053, ../scss/breakpoints/_base.scss */
 body.home .home-banner p {
   margin-bottom: 3px;
 }
-/* line 2042, ../scss/breakpoints/_base.scss */
+/* line 2056, ../scss/breakpoints/_base.scss */
 body.home .home-banner *:last-child {
   margin-bottom: 0;
 }
-/* line 2046, ../scss/breakpoints/_base.scss */
+/* line 2060, ../scss/breakpoints/_base.scss */
 body.home .thumb-index {
   margin-left: 0;
   margin-right: 0;
@@ -4148,12 +4157,12 @@ body.home .thumb-index {
 /******************************************
 EVENTS PAGE
 ******************************************/
-/* line 2058, ../scss/breakpoints/_base.scss */
+/* line 2072, ../scss/breakpoints/_base.scss */
 body.tribe-events-style-full .content-primary, body.tribe-events-style-full .content-secondary, body.tribe-events-style-full .entry-content {
   width: auto;
   float: none;
 }
-/* line 2062, ../scss/breakpoints/_base.scss */
+/* line 2076, ../scss/breakpoints/_base.scss */
 body.tribe-events-style-full .entry-title {
   border-bottom: 0;
 }
@@ -4161,60 +4170,60 @@ body.tribe-events-style-full .entry-title {
 /******************************************
 FILMS PAGE
 ******************************************/
-/* line 2071, ../scss/breakpoints/_base.scss */
+/* line 2085, ../scss/breakpoints/_base.scss */
 body.single-media_items .article-header {
   padding-left: 0;
   padding-right: 0;
 }
-/* line 2074, ../scss/breakpoints/_base.scss */
+/* line 2088, ../scss/breakpoints/_base.scss */
 body.single-media_items .article-header img {
   max-width: 100%;
 }
-/* line 2077, ../scss/breakpoints/_base.scss */
+/* line 2091, ../scss/breakpoints/_base.scss */
 body.single-media_items .article-header .media-item-info {
   font-size: 12px;
   padding: 5px 0;
   border: solid #eeeeee;
   border-width: 1px 0;
 }
-/* line 2082, ../scss/breakpoints/_base.scss */
+/* line 2096, ../scss/breakpoints/_base.scss */
 body.single-media_items .article-header .media-item-info td {
   padding: 0 10px 0 0;
 }
-/* line 2086, ../scss/breakpoints/_base.scss */
+/* line 2100, ../scss/breakpoints/_base.scss */
 body.single-media_items .article-header .description {
   margin-top: 10px;
 }
-/* line 2088, ../scss/breakpoints/_base.scss */
+/* line 2102, ../scss/breakpoints/_base.scss */
 body.single-media_items .article-header .description > *:last-child {
   margin: 0;
 }
-/* line 2094, ../scss/breakpoints/_base.scss */
+/* line 2108, ../scss/breakpoints/_base.scss */
 body.single-media_items .cast-crew table {
   border: 0;
 }
-/* line 2096, ../scss/breakpoints/_base.scss */
+/* line 2110, ../scss/breakpoints/_base.scss */
 body.single-media_items .cast-crew table tr {
   border: 0;
   background: transparent;
 }
-/* line 2100, ../scss/breakpoints/_base.scss */
+/* line 2114, ../scss/breakpoints/_base.scss */
 body.single-media_items .cast-crew table td {
   border: 0;
 }
-/* line 2102, ../scss/breakpoints/_base.scss */
+/* line 2116, ../scss/breakpoints/_base.scss */
 body.single-media_items .cast-crew table td:first-child {
   border-right: 1px solid #eeeeee;
 }
-/* line 2105, ../scss/breakpoints/_base.scss */
+/* line 2119, ../scss/breakpoints/_base.scss */
 body.single-media_items .cast-crew table td:last-child {
   font-weight: bold;
 }
-/* line 2109, ../scss/breakpoints/_base.scss */
+/* line 2123, ../scss/breakpoints/_base.scss */
 body.single-media_items .cast-crew table .subheading {
   background: #eee;
 }
-/* line 2111, ../scss/breakpoints/_base.scss */
+/* line 2125, ../scss/breakpoints/_base.scss */
 body.single-media_items .cast-crew table .subheading td {
   font-weight: normal;
   border: 0;
@@ -4223,7 +4232,7 @@ body.single-media_items .cast-crew table .subheading td {
 /******************************************
 FILM FESTIVAL TEMPLATE PAGE
 ******************************************/
-/* line 2124, ../scss/breakpoints/_base.scss */
+/* line 2138, ../scss/breakpoints/_base.scss */
 body.film-festival-page .entry-header {
   display: block;
   border-top: 3px solid #5e030a;
@@ -4232,53 +4241,53 @@ body.film-festival-page .entry-header {
   position: relative;
   overflow: hidden;
 }
-/* line 2131, ../scss/breakpoints/_base.scss */
+/* line 2145, ../scss/breakpoints/_base.scss */
 body.film-festival-page .entry-header img {
   display: block;
   width: 100%;
 }
-/* line 2134, ../scss/breakpoints/_base.scss */
+/* line 2148, ../scss/breakpoints/_base.scss */
 body.film-festival-page .entry-header img.bg {
   display: none;
 }
-/* line 2138, ../scss/breakpoints/_base.scss */
+/* line 2152, ../scss/breakpoints/_base.scss */
 body.film-festival-page .entry-header .heading-desktop {
   display: none;
   position: absolute;
 }
-/* line 2142, ../scss/breakpoints/_base.scss */
+/* line 2156, ../scss/breakpoints/_base.scss */
 body.film-festival-page .entry-header h2, body.film-festival-page .entry-header h3, body.film-festival-page .entry-header p {
   margin-bottom: 0;
 }
-/* line 2145, ../scss/breakpoints/_base.scss */
+/* line 2159, ../scss/breakpoints/_base.scss */
 body.film-festival-page .entry-header .heading-mobile {
   background: black;
   color: #f8931d;
   padding: 10px;
 }
-/* line 2149, ../scss/breakpoints/_base.scss */
+/* line 2163, ../scss/breakpoints/_base.scss */
 body.film-festival-page .entry-header .heading-mobile * {
   line-height: 1.2em;
 }
-/* line 2152, ../scss/breakpoints/_base.scss */
+/* line 2166, ../scss/breakpoints/_base.scss */
 body.film-festival-page .entry-header .heading-mobile h2 {
   font-size: 24px;
 }
-/* line 2155, ../scss/breakpoints/_base.scss */
+/* line 2169, ../scss/breakpoints/_base.scss */
 body.film-festival-page .entry-header .heading-mobile h3 {
   font-weight: 300;
   text-transform: uppercase;
   font-size: 18px;
 }
-/* line 2160, ../scss/breakpoints/_base.scss */
+/* line 2174, ../scss/breakpoints/_base.scss */
 body.film-festival-page .entry-header .heading-mobile p {
   font-size: 13px;
 }
-/* line 2165, ../scss/breakpoints/_base.scss */
+/* line 2179, ../scss/breakpoints/_base.scss */
 body.film-festival-page .content-primary {
   padding-top: 0;
 }
-/* line 2167, ../scss/breakpoints/_base.scss */
+/* line 2181, ../scss/breakpoints/_base.scss */
 body.film-festival-page .content-primary .overview {
   margin-top: 20px;
 }
@@ -4286,7 +4295,7 @@ body.film-festival-page .content-primary .overview {
 /******************************************
 FILM GUIDE PAGE
 ******************************************/
-/* line 2179, ../scss/breakpoints/_base.scss */
+/* line 2193, ../scss/breakpoints/_base.scss */
 body.page-template-page-film-guide .films-list .row-index-inner > ul > li img {
   float: none;
 }
@@ -4295,19 +4304,19 @@ body.page-template-page-film-guide .films-list .row-index-inner > ul > li img {
 FESTIVAL SCHEDULE PAGE,
 FESTIVAL ARCHIVE PAGE
 ******************************************/
-/* line 2191, ../scss/breakpoints/_base.scss */
+/* line 2205, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .article-header, body.page-template-page-festival-archive .article-header {
   padding-top: 0;
 }
-/* line 2194, ../scss/breakpoints/_base.scss */
+/* line 2208, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule h1, body.page-template-page-festival-archive h1 {
   font-size: 28px;
 }
-/* line 2199, ../scss/breakpoints/_base.scss */
+/* line 2213, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .row-index .row-index-inner .index-section-head, body.page-template-page-festival-archive .row-index .row-index-inner .index-section-head {
   font-weight: normal;
 }
-/* line 2202, ../scss/breakpoints/_base.scss */
+/* line 2216, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li {
   position: relative;
 }
@@ -4319,26 +4328,26 @@ body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li:
   visibility: hidden;
   clear: both;
 }
-/* line 2205, ../scss/breakpoints/_base.scss */
+/* line 2219, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .img-link, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .img-link {
   margin: 0 15px 5px 0;
 }
-/* line 2207, ../scss/breakpoints/_base.scss */
+/* line 2221, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .img-link img, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .img-link img {
   display: block;
   float: none;
   margin: 0;
 }
-/* line 2214, ../scss/breakpoints/_base.scss */
+/* line 2228, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .item-content a, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .item-content a {
   text-decoration: none;
 }
-/* line 2217, ../scss/breakpoints/_base.scss */
+/* line 2231, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .item-content .item-head, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .item-content .item-head {
   font-family: "Oswald", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.2em;
 }
-/* line 2221, ../scss/breakpoints/_base.scss */
+/* line 2235, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .item-content .subhead, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .item-content .subhead {
   display: block;
   height: auto;
@@ -4347,22 +4356,22 @@ body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li 
   font-size: .8em;
   line-height: 1.3em;
 }
-/* line 2229, ../scss/breakpoints/_base.scss */
+/* line 2243, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .item-content .item-venue, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .item-content .item-venue {
   display: block;
   font-size: .8em;
   line-height: 1.3em;
   margin-bottom: .5em;
 }
-/* line 2234, ../scss/breakpoints/_base.scss */
+/* line 2248, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .item-content .item-venue .item-venue-title, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .item-content .item-venue .item-venue-title {
   display: block;
 }
-/* line 2237, ../scss/breakpoints/_base.scss */
+/* line 2251, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .item-content .item-venue .adr, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .item-content .item-venue .adr {
   display: block;
 }
-/* line 2241, ../scss/breakpoints/_base.scss */
+/* line 2255, ../scss/breakpoints/_base.scss */
 body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .item-content .btn, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .item-content .btn {
   bottom: 15px;
 }
@@ -4370,12 +4379,12 @@ body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li 
 /******************************************
 VENUES PAGE
 ******************************************/
-/* line 2257, ../scss/breakpoints/_base.scss */
+/* line 2271, ../scss/breakpoints/_base.scss */
 body.page-template-page-venues .venue-list .venue-list-inner > ul > li {
   border-bottom: 1px solid #eeeeee;
   margin-bottom: 1.4em;
 }
-/* line 2260, ../scss/breakpoints/_base.scss */
+/* line 2274, ../scss/breakpoints/_base.scss */
 body.page-template-page-venues .venue-list .venue-list-inner > ul > li:last-child {
   border-bottom: 0;
 }
@@ -4399,11 +4408,11 @@ body.page-template-page-venues .venue-list .venue-list-inner > ul > li .venue-de
   border-left: 5px solid #f8931d;
 }
 
-/* line 2272, ../scss/breakpoints/_base.scss */
+/* line 2286, ../scss/breakpoints/_base.scss */
 body.single-tribe_venue .item-map {
   padding: 20px;
 }
-/* line 2276, ../scss/breakpoints/_base.scss */
+/* line 2290, ../scss/breakpoints/_base.scss */
 body.single-tribe_venue .venue-content {
   margin-top: 1.5em;
 }
@@ -4411,20 +4420,20 @@ body.single-tribe_venue .venue-content {
 /******************************************
 BLOG PAGE (index of blog posts)
 ******************************************/
-/* line 2285, ../scss/breakpoints/_base.scss */
+/* line 2299, ../scss/breakpoints/_base.scss */
 body.blog #main > article {
   margin-bottom: 20px;
 }
-/* line 2288, ../scss/breakpoints/_base.scss */
+/* line 2302, ../scss/breakpoints/_base.scss */
 body.blog .hentry header {
   padding-bottom: 15px;
 }
-/* line 2292, ../scss/breakpoints/_base.scss */
+/* line 2306, ../scss/breakpoints/_base.scss */
 body.blog .entry-content img {
   margin: 0 0 15px 0;
   float: none;
 }
-/* line 2296, ../scss/breakpoints/_base.scss */
+/* line 2310, ../scss/breakpoints/_base.scss */
 body.blog .entry-content *:last-child {
   margin-bottom: 0;
 }
@@ -4432,7 +4441,7 @@ body.blog .entry-content *:last-child {
 /******************************************
 ARCHIVE PAGE 
 ******************************************/
-/* line 2307, ../scss/breakpoints/_base.scss */
+/* line 2321, ../scss/breakpoints/_base.scss */
 body.archive #main > h1, body.archive #main > article {
   margin-bottom: 20px;
 }
@@ -4440,15 +4449,15 @@ body.archive #main > h1, body.archive #main > article {
 /******************************************
 404 PAGE
 ******************************************/
-/* line 2318, ../scss/breakpoints/_base.scss */
+/* line 2332, ../scss/breakpoints/_base.scss */
 body.error404 #searchform .searchform-inner {
   padding: 20px;
 }
-/* line 2321, ../scss/breakpoints/_base.scss */
+/* line 2335, ../scss/breakpoints/_base.scss */
 body.error404 #searchform .searchform-inner input {
   margin-bottom: 0;
 }
-/* line 2324, ../scss/breakpoints/_base.scss */
+/* line 2338, ../scss/breakpoints/_base.scss */
 body.error404 #searchform .searchform-inner #searchsubmit {
   top: 20px;
   right: 20px;
