@@ -2275,6 +2275,14 @@ body.page-template-page-venues {
 					&:last-child {
 						border-bottom:0;
 					}
+					.featured-thumb-container {
+						margin-bottom:10px;
+						& > img {
+							max-width:100%;
+							margin:0;
+							display:block;
+						}
+					}
 					.venue-details {
 						@include tri(right, 5px, 5px, $orange, 0 0 -5px 4px)
 					}
@@ -2290,6 +2298,14 @@ body.single-tribe_venue {
 	}
 	.venue-content {
 		margin-top:1.5em;
+	}
+	.featured-thumb-container {
+		margin-bottom:10px;
+		& > img {
+			max-width:100%;
+			margin:0;
+			display:block;
+		}
 	}
 }
 

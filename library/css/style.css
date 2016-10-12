@@ -4389,6 +4389,16 @@ body.page-template-page-venues .venue-list .venue-list-inner > ul > li {
 body.page-template-page-venues .venue-list .venue-list-inner > ul > li:last-child {
   border-bottom: 0;
 }
+/* line 2278, ../scss/breakpoints/_base.scss */
+body.page-template-page-venues .venue-list .venue-list-inner > ul > li .featured-thumb-container {
+  margin-bottom: 10px;
+}
+/* line 2280, ../scss/breakpoints/_base.scss */
+body.page-template-page-venues .venue-list .venue-list-inner > ul > li .featured-thumb-container > img {
+  max-width: 100%;
+  margin: 0;
+  display: block;
+}
 /* line 147, ../scss/partials/_mixins.scss */
 body.page-template-page-venues .venue-list .venue-list-inner > ul > li .venue-details:after {
   content: "";
@@ -4409,32 +4419,42 @@ body.page-template-page-venues .venue-list .venue-list-inner > ul > li .venue-de
   border-left: 5px solid #f8931d;
 }
 
-/* line 2287, ../scss/breakpoints/_base.scss */
+/* line 2295, ../scss/breakpoints/_base.scss */
 body.single-tribe_venue .item-map {
   padding: 20px;
 }
-/* line 2291, ../scss/breakpoints/_base.scss */
+/* line 2299, ../scss/breakpoints/_base.scss */
 body.single-tribe_venue .venue-content {
   margin-top: 1.5em;
+}
+/* line 2302, ../scss/breakpoints/_base.scss */
+body.single-tribe_venue .featured-thumb-container {
+  margin-bottom: 10px;
+}
+/* line 2304, ../scss/breakpoints/_base.scss */
+body.single-tribe_venue .featured-thumb-container > img {
+  max-width: 100%;
+  margin: 0;
+  display: block;
 }
 
 /******************************************
 BLOG PAGE (index of blog posts)
 ******************************************/
-/* line 2300, ../scss/breakpoints/_base.scss */
+/* line 2316, ../scss/breakpoints/_base.scss */
 body.blog #main > article {
   margin-bottom: 20px;
 }
-/* line 2303, ../scss/breakpoints/_base.scss */
+/* line 2319, ../scss/breakpoints/_base.scss */
 body.blog .hentry header {
   padding-bottom: 15px;
 }
-/* line 2307, ../scss/breakpoints/_base.scss */
+/* line 2323, ../scss/breakpoints/_base.scss */
 body.blog .entry-content img {
   margin: 0 0 15px 0;
   float: none;
 }
-/* line 2311, ../scss/breakpoints/_base.scss */
+/* line 2327, ../scss/breakpoints/_base.scss */
 body.blog .entry-content *:last-child {
   margin-bottom: 0;
 }
@@ -4442,7 +4462,7 @@ body.blog .entry-content *:last-child {
 /******************************************
 ARCHIVE PAGE 
 ******************************************/
-/* line 2322, ../scss/breakpoints/_base.scss */
+/* line 2338, ../scss/breakpoints/_base.scss */
 body.archive #main > h1, body.archive #main > article {
   margin-bottom: 20px;
 }
@@ -4450,15 +4470,15 @@ body.archive #main > h1, body.archive #main > article {
 /******************************************
 404 PAGE
 ******************************************/
-/* line 2333, ../scss/breakpoints/_base.scss */
+/* line 2349, ../scss/breakpoints/_base.scss */
 body.error404 #searchform .searchform-inner {
   padding: 20px;
 }
-/* line 2336, ../scss/breakpoints/_base.scss */
+/* line 2352, ../scss/breakpoints/_base.scss */
 body.error404 #searchform .searchform-inner input {
   margin-bottom: 0;
 }
-/* line 2339, ../scss/breakpoints/_base.scss */
+/* line 2355, ../scss/breakpoints/_base.scss */
 body.error404 #searchform .searchform-inner #searchsubmit {
   top: 20px;
   right: 20px;
@@ -4729,9 +4749,27 @@ tweeners.
   }
 
   /******************************************
+  VENUES PAGE
+  ******************************************/
+  /* line 135, ../scss/partials/_mixins.scss */
+  body.page-template-page-venues .venue-list .venue-list-inner > ul > li:after {
+    content: ".";
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+  }
+  /* line 314, ../scss/breakpoints/_481up.scss */
+  body.page-template-page-venues .venue-list .venue-list-inner > ul > li .featured-thumb-container {
+    float: left;
+    max-width: 280px;
+    margin: 0 20px 20px 0;
+  }
+
+  /******************************************
   BLOG PAGE (index of blog posts)
   ******************************************/
-  /* line 310, ../scss/breakpoints/_481up.scss */
+  /* line 331, ../scss/breakpoints/_481up.scss */
   body.blog .entry-content img {
     margin: 0 20px 15px 0;
     float: left;
@@ -5311,9 +5349,32 @@ you can add resource intensive styles.
   }
 
   /******************************************
+  VENUES PAGE
+  ******************************************/
+  /* line 135, ../scss/partials/_mixins.scss */
+  body.page-template-page-venues .venue-list .venue-list-inner > ul > li:after {
+    content: ".";
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+  }
+  /* line 646, ../scss/breakpoints/_768up.scss */
+  body.page-template-page-venues .venue-list .venue-list-inner > ul > li .featured-thumb-container {
+    float: none;
+    max-width: none;
+    margin: 0 0 10px 0;
+  }
+
+  /* line 657, ../scss/breakpoints/_768up.scss */
+  body.single-tribe_venue .featured-thumb-container {
+    margin: -20px -20px 10px 0;
+  }
+
+  /******************************************
   BLOG PAGE (index of blog posts)
   ******************************************/
-  /* line 641, ../scss/breakpoints/_768up.scss */
+  /* line 666, ../scss/breakpoints/_768up.scss */
   body.blog #main > article {
     margin-bottom: 30px;
   }
@@ -5321,7 +5382,7 @@ you can add resource intensive styles.
   /******************************************
   ARCHIVE PAGE 
   ******************************************/
-  /* line 651, ../scss/breakpoints/_768up.scss */
+  /* line 676, ../scss/breakpoints/_768up.scss */
   body.archive #main > h1, body.archive #main > article {
     margin-bottom: 30px;
   }
@@ -5585,6 +5646,24 @@ you can add resource intensive styles.
   /* line 234, ../scss/breakpoints/_1024up.scss */
   body.page-template-page-film-guide .films-list .row-index-inner > ul > li img {
     float: left;
+  }
+
+  /******************************************
+  VENUES PAGE
+  ******************************************/
+  /* line 135, ../scss/partials/_mixins.scss */
+  body.page-template-page-venues .venue-list .venue-list-inner > ul > li:after {
+    content: ".";
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+  }
+  /* line 250, ../scss/breakpoints/_1024up.scss */
+  body.page-template-page-venues .venue-list .venue-list-inner > ul > li .featured-thumb-container {
+    float: left;
+    max-width: 280px;
+    margin: 0 20px 20px 0;
   }
 }
 /*********************
@@ -6517,6 +6596,22 @@ This is for the larger monitors and possibly full screen viewers.
   body.page-template-page-program .content-secondary {
     float: left;
     width: 30%;
+  }
+
+  /******************************************
+  VENUES PAGE
+  ******************************************/
+  /* line 135, ../scss/partials/_mixins.scss */
+  body.page-template-page-venues .venue-list .venue-list-inner > ul > li:after {
+    content: ".";
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+  }
+  /* line 147, ../scss/breakpoints/_1560up.scss */
+  body.page-template-page-venues .venue-list .venue-list-inner > ul > li .featured-thumb-container {
+    max-width: 380px;
   }
 }
 /*********************

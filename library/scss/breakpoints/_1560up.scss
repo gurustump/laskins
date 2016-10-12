@@ -134,3 +134,21 @@ body.page-template-page-program {
 		width:30%;
 	}
 }
+
+/******************************************
+VENUES PAGE
+******************************************/
+body.page-template-page-venues {
+	.venue-list {
+		.venue-list-inner {
+			& > ul {
+				& > li {
+					@include clearfix;
+					.featured-thumb-container {
+						max-width:380px;
+					}
+				}
+			}
+		}
+	}
+}

@@ -463,9 +463,27 @@ body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .
 }
 
 /******************************************
+VENUES PAGE
+******************************************/
+/* line 135, ../scss/partials/_mixins.scss */
+body.page-template-page-venues .venue-list .venue-list-inner > ul > li:after {
+  content: ".";
+  height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+/* line 314, ../scss/breakpoints/_481up.scss */
+body.page-template-page-venues .venue-list .venue-list-inner > ul > li .featured-thumb-container {
+  float: left;
+  max-width: 280px;
+  margin: 0 20px 20px 0;
+}
+
+/******************************************
 BLOG PAGE (index of blog posts)
 ******************************************/
-/* line 310, ../scss/breakpoints/_481up.scss */
+/* line 331, ../scss/breakpoints/_481up.scss */
 body.blog .entry-content img {
   margin: 0 20px 15px 0;
   float: left;
@@ -1022,9 +1040,32 @@ body.page-template-page-program .content-secondary {
 }
 
 /******************************************
+VENUES PAGE
+******************************************/
+/* line 135, ../scss/partials/_mixins.scss */
+body.page-template-page-venues .venue-list .venue-list-inner > ul > li:after {
+  content: ".";
+  height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+/* line 646, ../scss/breakpoints/_768up.scss */
+body.page-template-page-venues .venue-list .venue-list-inner > ul > li .featured-thumb-container {
+  float: none;
+  max-width: none;
+  margin: 0 0 10px 0;
+}
+
+/* line 657, ../scss/breakpoints/_768up.scss */
+body.single-tribe_venue .featured-thumb-container {
+  margin: -20px -20px 10px 0;
+}
+
+/******************************************
 BLOG PAGE (index of blog posts)
 ******************************************/
-/* line 641, ../scss/breakpoints/_768up.scss */
+/* line 666, ../scss/breakpoints/_768up.scss */
 body.blog #main > article {
   margin-bottom: 30px;
 }
@@ -1032,7 +1073,7 @@ body.blog #main > article {
 /******************************************
 ARCHIVE PAGE 
 ******************************************/
-/* line 651, ../scss/breakpoints/_768up.scss */
+/* line 676, ../scss/breakpoints/_768up.scss */
 body.archive #main > h1, body.archive #main > article {
   margin-bottom: 30px;
 }

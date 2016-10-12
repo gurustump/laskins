@@ -102,6 +102,12 @@
 													?>
 													<li>
 														<div class="item-content">
+															<?php $featuredThumb = wp_get_attachment_image_src(get_post_thumbnail_id($id), 'med-wide'); 
+															if ($featuredThumb) { ?>
+															<div class="featured-thumb-container">
+																<img src="<?php echo $featuredThumb[0]; ?>" />
+															</div>
+															<?php } ?>
 															<h2><a href="<?php echo tribe_get_venue_link($id, false); ?>"><?php echo tribe_get_venue($id); ?></a></h2>
 															<p>
 															<?php echo tribe_get_full_address($id); ?>

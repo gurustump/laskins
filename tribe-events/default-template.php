@@ -79,6 +79,12 @@ FALSE
 								$website = tribe_get_venue_website_link();
 							?>
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'content-primary cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+								<?php if (has_post_thumbnail()) { 
+								$featuredThumb = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'carousel'); ?>
+								<div class="featured-thumb-container">
+									<img src="<?php echo $featuredThumb[0]; ?>" />
+								</div>
+								<?php } ?>
 								<h2><?php echo tribe_get_venue(); ?></h2>
 								<p>
 								<?php echo tribe_get_full_address(); ?>

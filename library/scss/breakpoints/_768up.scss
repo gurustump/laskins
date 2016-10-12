@@ -635,6 +635,31 @@ body.page-template-page-program {
 }
 
 /******************************************
+VENUES PAGE
+******************************************/
+body.page-template-page-venues {
+	.venue-list {
+		.venue-list-inner {
+			& > ul {
+				& > li {
+					@include clearfix;
+					.featured-thumb-container {
+						float:none;
+						max-width:none;
+						margin:0 0 10px 0;
+					}
+				}
+			}
+		}
+	}
+}
+body.single-tribe_venue {
+	.featured-thumb-container {
+		margin:-20px -20px 10px 0;
+	}
+}
+
+/******************************************
 BLOG PAGE (index of blog posts)
 ******************************************/
 body.blog {

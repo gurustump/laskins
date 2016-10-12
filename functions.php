@@ -625,7 +625,7 @@ function stripNonAlphanumeric($string) {
 function modifyTribeVenuePostType($post_type, $args) {
 	if ($post_type != 'tribe_venue') { return; }
 	$args->public = true;
-	$args->exclude_from_search = true;
+	$args->exclude_from_search = false;
 	$args->publicly_queryable = true;
 	
 	$wp_post_type[$post_type] = $args;

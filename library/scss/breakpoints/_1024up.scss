@@ -237,3 +237,23 @@ body.page-template-page-film-guide {
 		}
 	}
 }
+
+/******************************************
+VENUES PAGE
+******************************************/
+body.page-template-page-venues {
+	.venue-list {
+		.venue-list-inner {
+			& > ul {
+				& > li {
+					@include clearfix;
+					.featured-thumb-container {
+						float:left;
+						max-width:280px;
+						margin:0 20px 20px 0;
+					}
+				}
+			}
+		}
+	}
+}
