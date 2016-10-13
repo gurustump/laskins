@@ -57,6 +57,10 @@
 											'link_after'  => '</span>',
 										) );
 										$festivalYear = get_post_meta(get_the_ID(), '_laskins_festival_page_year', true);
+										/* ?>
+										<pre style="display:none;">$festivalYear:
+										<?php print_r($festivalYear); ?></pre>
+										<?php */
 										$thisFestival = tribe_get_events(array(
 											'eventDisplay' => 'custom',
 											'start_date' =>  $festivalYear.'-01-01 00:01',
@@ -64,6 +68,10 @@
 											'tribe_events_cat' => 'film-festival',
 											'posts_per_page' => 1
 										));
+										/* ?>
+										<pre style="display:none;">$thisFestival:
+										<?php print_r($thisFestival); ?></pre>
+										<?php */
 										$festivalFilms = tribe_get_events(array(
 											'eventDisplay' => 'custom',
 											'start_date' =>  tribe_get_start_date($thisFestival[0]->ID, false, 'Y-m-d').' 00:01',
@@ -71,23 +79,49 @@
 											//'tribe_events_cat' => 'screening',
 											'posts_per_page' => -1
 										));
+										/* ?>
+										<pre style="display:none;">$festivalFilms: 
+										<?php print_r($festivalFilms); ?>
+										
+										start_date:
+										<?php print_r(tribe_get_start_date($thisFestival[0]->ID, false, 'Y-m-d')); ?>
+										end_date:
+										<?php print_r(tribe_get_end_date($thisFestival[0]->ID, false, 'Y-m-d')); ?>
+										</pre>
+										<?php */
 										//print_r($festivalFilms);
 										//echo '<br>';
 										//print_r($thisFestival[0]->ID);
+										/* ?>
+										<pre style="display:none;">$thisFestival[0]->ID: 
+										<?php print_r($thisFestival[0]->ID); ?></pre>
+										<?php */
 										$festivalEventsArray = array($thisFestival[0]->ID);
 										foreach($festivalFilms as $film) {
 											array_push($festivalEventsArray, $film->ID);
 										}
 										//print_r($festivalEventsArray);
+										/* ?>
+										<pre style="display:none;">$festivalEventsArray:
+										<?php print_r($festivalEventsArray); ?></pre>
+										<?php */
 										$venueIDs = array();
 										foreach ($festivalEventsArray as $id) {
 											if (!in_array(tribe_get_venue_id($id), $venueIDs)) {
 												array_push($venueIDs, tribe_get_venue_id($id));
 											}
 										}
+										/* ?>
+										<pre style="display:none;">$venueIDs:
+										<?php print_r($venueIDs); ?></pre>
+										<?php */
 										
 										//print_r($venueIDs);
 										$venues = get_posts(array('post_type' => 'tribe_venue', 'numberposts' => -1, 'orderby' => 'title', 'order' => 'ASC')); 
+										/* ?>
+										<pre style="display:none;">$venues:
+										<?php print_r($venues); ?></pre>
+										<?php */
 										if (count($venueIDs) > 0) { ?>
 										<div class="venue-list">
 											<div class="venue-list-inner wrap">
@@ -98,9 +132,18 @@
 													$phone   = tribe_get_phone($id);
 													$website = tribe_get_venue_website_link($id);
 													// print_r($item); 
+													?>
+													<pre style="display:none;">(tribe_is_venue($id):
+													<?php print_r(tribe_is_venue($id)); ?>
+													$id:
+													<?php print_r($id);?></pre>
+													<?php
 													if (tribe_is_venue($id)) {
 													?>
 													<li>
+														
+														<pre style="display:none;">$id:
+														<?php print_r($id); ?></pre>
 														<div class="item-content">
 															<?php $featuredThumb = wp_get_attachment_image_src(get_post_thumbnail_id($id), 'med-wide'); 
 															if ($featuredThumb) { ?>

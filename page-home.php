@@ -124,6 +124,33 @@
 							</div>
 							<?php } ?>
 							
+							<?php $homePartners = get_posts(array('post_type' => 'module', 'numberposts' => 1, 'module_cat' => 'home-partners')); 
+							if (count($homePartners) > 0) { ?>
+							<div class="home-partners skins-grunge">
+								<?php 
+								$partner_gallery = get_post_gallery($homePartners[0]->ID, false);
+								$partner_gallery_ids = explode(',',$partner_gallery['ids']);
+								//print_r($partner_gallery);
+								//print_r($partner_gallery_ids);
+								?>
+								<div class="scroll-carousel SCROLL_CAROUSEL">
+									<ul>
+										<?php foreach($partner_gallery['src'] as $key => $src) {
+										$alt = get_post_meta($partner_gallery_ids[$key], '_wp_attachment_image_alt', true);
+										$link = get_post_meta($partner_gallery_ids[$key], '_gallery_link_url', true);
+										$target = get_post_meta($partner_gallery_ids[$key], '_gallery_link_target', true);
+										$cssclass = get_post_meta($partner_gallery_ids[$key], '_gallery_link_additional_css_classes', true); ?>
+										<li>
+											<?php echo $link ? '<a '.($cssclass ? 'class="'.$cssclass.'" ' : '').'href="'.$link.'" target="'.$target.'">' : ''; ?>
+											<img src="<?php echo $src; ?>" alt="<?php echo get_post_meta($partner_gallery_ids[$key], '_wp_attachment_image_alt', true); ?>" />
+											<?php echo $link ? '</a>' : ''; ?>
+										</li>
+										<?php } ?>
+									</ul>
+								</div>
+							</div>
+							<?php } ?>
+							
 							<?php $homeLatest = get_posts(array('post_type' => array('post','page','module','tribe_events','media_items'), 'numberposts' => 8, 'category_name' => 'latest')); 
 							if (count($homeLatest) > 0) { ?>
 							<div class="home-latest thumb-index skins-grunge BG_PARALLAX">
@@ -187,33 +214,6 @@
 													<span class="btn btn-orange">View Gallery</span>
 												</span>
 											</a>
-										</li>
-										<?php } ?>
-									</ul>
-								</div>
-							</div>
-							<?php } ?>
-							
-							<?php $homePartners = get_posts(array('post_type' => 'module', 'numberposts' => 1, 'module_cat' => 'home-partners')); 
-							if (count($homePartners) > 0) { ?>
-							<div class="home-partners skins-grunge">
-								<?php 
-								$partner_gallery = get_post_gallery($homePartners[0]->ID, false);
-								$partner_gallery_ids = explode(',',$partner_gallery['ids']);
-								//print_r($partner_gallery);
-								//print_r($partner_gallery_ids);
-								?>
-								<div class="scroll-carousel SCROLL_CAROUSEL">
-									<ul>
-										<?php foreach($partner_gallery['src'] as $key => $src) {
-										$alt = get_post_meta($partner_gallery_ids[$key], '_wp_attachment_image_alt', true);
-										$link = get_post_meta($partner_gallery_ids[$key], '_gallery_link_url', true);
-										$target = get_post_meta($partner_gallery_ids[$key], '_gallery_link_target', true);
-										$cssclass = get_post_meta($partner_gallery_ids[$key], '_gallery_link_additional_css_classes', true); ?>
-										<li>
-											<?php echo $link ? '<a '.($cssclass ? 'class="'.$cssclass.'" ' : '').'href="'.$link.'" target="'.$target.'">' : ''; ?>
-											<img src="<?php echo $src; ?>" alt="<?php echo get_post_meta($partner_gallery_ids[$key], '_wp_attachment_image_alt', true); ?>" />
-											<?php echo $link ? '</a>' : ''; ?>
 										</li>
 										<?php } ?>
 									</ul>
