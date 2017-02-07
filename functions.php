@@ -570,6 +570,27 @@ function stylesheet_path_shortcode() {
 }
 add_shortcode('stylesheet_path', 'stylesheet_path_shortcode');
 
+// Video embed shortcode: adds container for variable width and height
+function video_embed_shortcode($atts) {
+	$a = shortcode_atts( array(
+		'embed' => '',
+		'width' => '',
+		'align' => 'alignnone'
+	), $atts);
+	return '<div class="video-embed-container'.($a['align'] ?  ' '.$a['align'] : '').'"'.($a['width'] ?  ' style="width:'.$a['width'].'px"' : '').'><div class="video-embed">'.$a['embed'].'</div></div>';
+}
+add_shortcode('video_embed','video_embed_shortcode');
+
+// Image embed code: adds container to set width
+function image_embed_shortcode($atts, $content) {
+	$a = shortcode_atts( array(
+		'width' => '',
+		'align' => 'alignnone'
+	), $atts);
+	return '<div class="image-embed '.$a['align'].'"'.($a['width'] ? ' style="width:'.$a['width'].'px"' : '').'>'.$content.'</div>';
+}
+add_shortcode('image_embed','image_embed_shortcode');
+
 // modifying the title that events calendar (tribe events) puts in the <title> tag of the document
 function change_tribe_title( $title, $sep, $seplocation ) {
 	if (tribe_event_in_category('screening')  && is_single()) {
