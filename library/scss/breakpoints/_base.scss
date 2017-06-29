@@ -870,6 +870,9 @@ POSTS & CONTENT STYLES
 						}
 					}
 				}
+				.no-lightbox + .item-content {
+					display:none;
+				}
 				&:hover {
 					.item-content {
 						background-color:rgba($black, .8);

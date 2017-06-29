@@ -274,45 +274,47 @@ jQuery(document).ready(function($) {
 		//setGalleryOvSize();
 	});
 	$('.GALLERY').on('click', '.gallery-item', function(e) {
-		e.preventDefault();
-		var galOv = $('#gallery_item_ov');
-		galOv.removeClass('ready');
-		readyCount = 0;
-		var thisItem = $(this);
-		var imgSrc = thisItem.find('.IMG_SRC').val();
-		$.imgpreload(imgSrc, function() {			
-			showImageWhenReady(galOv);
-		});
-		var imgPreloadArray = [];
-		if (thisItem.prev().length > 0) {
-			imgPreloadArray.push(thisItem.prev().find('.IMG_SRC').val());
-		}
-		if (thisItem.next().length > 0) {
-			imgPreloadArray.push(thisItem.next().find('.IMG_SRC').val());
-		}
-		$.imgpreload(imgPreloadArray);
-		setTimeout(function() {
-			galOv.find('img').attr({
-				'src':imgSrc,
-				'alt':$(this).find('img').attr('alt')
-			})
-			galOv.data({
-				'width':thisItem.find('.IMG_WIDTH').val(),
-				'height':thisItem.find('.IMG_HEIGHT').val(),
-				'current':thisItem
-			}).dialog('open')
-			if (thisItem.is(':first-child')) {
-				$('#gallery_item_ov .PREV').addClass('disabled');
-			} else {
-				$('#gallery_item_ov .PREV').removeClass('disabled');
+		if (!$(this).children('a').hasClass('no-lightbox')) {
+			e.preventDefault();
+			var galOv = $('#gallery_item_ov');
+			galOv.removeClass('ready');
+			readyCount = 0;
+			var thisItem = $(this);
+			var imgSrc = thisItem.find('.IMG_SRC').val();
+			$.imgpreload(imgSrc, function() {			
+				showImageWhenReady(galOv);
+			});
+			var imgPreloadArray = [];
+			if (thisItem.prev().length > 0) {
+				imgPreloadArray.push(thisItem.prev().find('.IMG_SRC').val());
 			}
-			if (thisItem.is(':last-child')) {
-				$('#gallery_item_ov .NEXT').addClass('disabled');
-			} else {
-				$('#gallery_item_ov .NEXT').removeClass('disabled');
+			if (thisItem.next().length > 0) {
+				imgPreloadArray.push(thisItem.next().find('.IMG_SRC').val());
 			}
-			showImageWhenReady(galOv);
-		}, 500);
+			$.imgpreload(imgPreloadArray);
+			setTimeout(function() {
+				galOv.find('img').attr({
+					'src':imgSrc,
+					'alt':$(this).find('img').attr('alt')
+				})
+				galOv.data({
+					'width':thisItem.find('.IMG_WIDTH').val(),
+					'height':thisItem.find('.IMG_HEIGHT').val(),
+					'current':thisItem
+				}).dialog('open')
+				if (thisItem.is(':first-child')) {
+					$('#gallery_item_ov .PREV').addClass('disabled');
+				} else {
+					$('#gallery_item_ov .PREV').removeClass('disabled');
+				}
+				if (thisItem.is(':last-child')) {
+					$('#gallery_item_ov .NEXT').addClass('disabled');
+				} else {
+					$('#gallery_item_ov .NEXT').removeClass('disabled');
+				}
+				showImageWhenReady(galOv);
+			}, 500);
+		}
 	});
 	function showImageWhenReady(galOv) {
 		readyCount ++;

@@ -454,11 +454,11 @@ function skins_gallery_shortcode( $attr ) {
 
 		$output .= "<{$itemtag} class='gallery-item {$orientation}'>";
 		$output .= "
-			$image_output
 			<input class='IMG_SRC' type='hidden' value='{$large_image[0]}' />
 			<input class='IMG_WIDTH' type='hidden' value='{$large_image[1]}' />
 			<input class='IMG_HEIGHT' type='hidden' value='{$large_image[2]}' />
-			<input class='IMG_RESIZED' type='hidden' value='{$large_image[3]}' />";
+			<input class='IMG_RESIZED' type='hidden' value='{$large_image[3]}' />
+			$image_output";
 			$itemContent = "<span class='item-content'><span class='view-item'>View Image</span>";
 				if ( $captiontag && trim($attachment->post_excerpt) ) {
 					$itemContent .= "
