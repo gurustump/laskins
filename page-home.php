@@ -20,92 +20,114 @@
 				<div id="inner-content">
 
 						<main id="main" class="cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-							<?php $homeCarousel = get_posts(array('post_type' => array('post','page','module','tribe_events','media_items'), 'numberposts' => -1, 'category_name' => 'home-carousel')); 
-							if (count($homeCarousel) > 0) { ?>
-							<div class="carousel CAROUSEL">
-								<ul class="PANES">
-									<?php foreach($homeCarousel as $key => $item) {
-									// print_r($item); 
-									$itemMeta = get_post_meta($item->ID); 
-									$itemPostImageArray = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'carousel');
-									$itemOverrideImageArray = wp_get_attachment_image_src( get_attachment_id_from_src($itemMeta['_laskins_carousel_override_image'][0]), 'carousel');
-									$itemPostImageMobileArray = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'carousel-mobile');
-									$itemOverrideImageMobileArray = wp_get_attachment_image_src( get_attachment_id_from_src($itemMeta['_laskins_carousel_override_image'][0]), 'carousel-mobile');
-									/*
-									echo '<!--';
-									echo $key;
-									echo '<br>';
-									print_r($item);
-									echo '-->';
-									*/
-									/*
-									echo '<pre>';
-									echo $key;
-									print_r($itemPostImageArray);
-									echo '</pre>';
-									*/
-									$itemImage = $itemMeta['_laskins_carousel_override_image'][0] ? $itemOverrideImageArray[0] :$itemPostImageArray[0];
-									$itemImageMobile = $itemMeta['_laskins_carousel_override_image'][0] ? $itemOverrideImageMobileArray[0] :$itemPostImageMobileArray[0];
-									/*
-									echo '<pre style="background:blue">';
-									print_r(get_attachment_id_from_src($itemMeta['_laskins_carousel_override_image'][0]));
-									print_r($itemMeta['_laskins_carousel_override_image'][0]);
-									echo '</pre>';
-									echo '<pre style="background:red">';
-									print_r($itemImage);
-									if ( !$itemImage ) {
-										echo 'FALSE';
-									} else {
-										echo 'TRUE';
-									}
-									echo '</pre>';
-									*/
-									if (!$itemImage) { continue; }
-									?>
-									<li id="carouselItem_<?php echo $key; ?>" class="carousel-item<?php if ($key==0) {echo ' active';} ?>"<?php /* echo $itemImage ? ' style="background-image:url('.$itemImage.');"' : ''; */ ?>>
-										<?php if (get_post_type($item->ID) != 'module') { ?>
-										<a href="<?php echo get_permalink($item->ID); ?>">
+							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+								<?php 
+								$homeCarousel = get_post_meta(get_the_ID(), '_laskins_slider_slider',true);
+								if (count($homeCarousel[0]) > 0 && $homeCarousel[0] != '') { ?>
+								<div class="carousel CAROUSEL">
+									<ul class="PANES">
+										<?php foreach($homeCarousel as $key => $item) {
+										
+										unset($itemImage);
+										unset($itemImageArray);
+										$hasLinkedItem = $item[page_event_link] ? true : false;
+										$itemTitle;
+										$itemImageArray;
+										$itemImageMobileArray;
+										$linkedItemID;
+										if ($hasLinkedItem) {
+											$linkedItemID = $item[page_event_link][0];
+											$itemTitle = get_the_title($linkedItemID);
+											$itemImageArray = wp_get_attachment_image_src( get_post_thumbnail_id($linkedItemID), 'carousel');
+											$itemImageMobileArray = wp_get_attachment_image_src( get_post_thumbnail_id($linkedItemID), 'carousel-mobile');
+										}
+										if ($item[background_image]) {
+											$itemImageArray = wp_get_attachment_image_src( $item[background_image_id], 'carousel');
+											$itemImageMobileArray = wp_get_attachment_image_src( $item[background_image_id], 'carousel-mobile');
+										}
+										$itemImage = $itemImageArray[0];
+										$itemImageMobile = $itemImageMobileArray[0];
+										
+										$itemVidMP4 = $item[background_video_mp4];
+										$itemVidWEBM = $item[background_video_webm];
+										$itemVid = $itemVidMP4 || $itemVidWEBM ? true : false;
+										
+										// setting horizontal position, and switching from left to right if it goes over 50
+										$horPos = $item[hor_pos] ? $item[hor_pos] : 0;
+										$horDirection = $horPos > 50 ? 'right' : 'left';
+										$horPos = $horDirection == 'right' ? 100 - $horPos : $horPos;
+										$horPolarity = $horDirection == 'left' ? '-' : '';
+										
+										// setting vertical position, and switching from top to bottom if it is over 50
+										$verPos = $item[ver_pos] ? $item[ver_pos] : 0;
+										$verDirection = $verPos > 50 ? 'bottom' : 'top';
+										$verPos = $verDirection == 'bottom' ? 100 - $verPos : $verPos;
+										$verPolarity = $verDirection == 'top' ? '-' : '';
+										
+										$headingWidth = $item[width] ? $item[width] : false;
+										$headingColor = $item[text_color] ? $item[text_color] : false;
+										$headingBGColor = $item[bgcolor] ? $item[bgcolor] : false;
+										
+										$itemLink = $item[page_event_link] ? get_permalink($item[page_event_link][0]) : $item[link_url];
+										
+										if (!$itemImage) { continue; }
+										?>
+										<li id="carouselItem_<?php echo $key; ?>" class="carousel-item<?php if ($key==0) {echo ' active';} ?>"<?php /* echo $itemImage ? ' style="background-image:url('.$itemImage.');"' : ''; */ ?>>
+											<?php /*<pre><?php print_r($linkedItemID); ?></pre>
+											<pre><?php print_r($item); ?></pre>
+											<pre><?php echo $hasLinkedItem; ?></pre> */ ?>
+											<?php if (get_post_type($item->ID) != 'module') { ?>
+											<a href="<?php echo $itemLink; ?>"<?php if ($item[link_external]) {echo ' target="_blank"'; } ?>>
+											<?php } ?>
+												<span class="carousel-item-heading-mobile">
+													<?php if ($item[superheading]) { ?>
+														<span class="h3"><?php echo $item[superheading]; ?></span>
+													<?php } ?>
+													<?php if ($item[heading]) { ?>
+													<span class="h2"><?php echo $item[heading]; ?></span>
+													<?php } ?>
+													<?php if ($item[body_text]) { ?>
+														<span class="excerpt"><?php echo $item[body_text]; ?></span>
+													<?php } ?>
+												</span>
+												<span class="carousel-item-heading-desktop" style="<?php echo $horDirection; ?>:<?php echo $horPos; ?>%;<?php echo $verDirection; ?>:<?php echo $verPos; ?>%;transform:translate(<?php echo $horPolarity; ?><?php echo $horPos; ?>%, <?php echo $verPolarity; ?><?php echo $verPos; ?>%);<?php if ($headingWidth) { echo 'width:'.$headingWidth.'%;'; }?><?php if ($headingColor) { echo 'color:'.$headingColor.';'; } ?><?php if ($headingBGColor) { echo 'background-color:'.$headingBGColor.';'; } ?>">
+													<?php if ($item[superheading]) { ?>
+														<span class="h3"<?php echo $item[superheading_size] ? ' style="font-size:'.($item[superheading_size]/10).'em"' : ''; ?>><?php echo $item[superheading]; ?></span>
+													<?php } ?>
+													<?php if ($item[heading]) { ?>
+													<span class="h2"<?php echo $item[heading_size] ? ' style="font-size:'.($item[heading_size]/10).'em"' : ''; ?>><?php echo $item[heading]; ?></span>
+													<?php } ?>
+													<?php if ($item[body_text]) { ?>
+														<span class="excerpt"<?php echo $item[body_size] ? ' style="font-size:'.($item[body_size]/10).'em"' : ''; ?>><?php echo $item[body_text]; ?></span>
+													<?php } ?>
+												</span>
+												<?php if ($itemVid) { ?>
+												<video class="bg-video" autoplay loop>
+													<?php if ($itemVidMP4) { ?>
+													<source src="<?php echo $itemVidMP4; ?>" type="video/mp4">
+													<?php } ?>
+													<?php if ($itemVidWEBM) { ?>
+													<source src="<?php echo $itemVidWEBM; ?>" type="video/webm">
+													<?php } ?>
+												</video>
+												<?php } ?>
+												<img class="bg-mobile" src="<?php echo $itemImageMobile; ?>" alt="<?php $item->post_title; ?>" />
+												<img class="bg" src="<?php echo $itemImage; ?>" alt="<?php $item->post_title; ?>" />
+											<?php if (get_post_type($item->ID) != 'module') { ?>
+											</a>
+											<?php } ?>
+										</li>
 										<?php } ?>
-											<span class="carousel-item-heading-mobile">
-												<?php if ($itemMeta['_laskins_carousel_super_title'][0]) { ?>
-													<span class="h3"><?php echo $itemMeta['_laskins_carousel_super_title'][0]; ?></span>
-												<?php } ?>
-												<span class="h2"><?php echo $item->post_title; ?></span>
-												<?php if ($item->post_excerpt) { ?>
-													<span class="excerpt"><?php echo $item->post_excerpt; ?></span>
-												<?php } ?>
-											</span>
-											<span class="carousel-item-heading-desktop"<?php echo ($itemMeta['_laskins_carousel_exceprt_text_color'][0] || $itemMeta['_laskins_carousel_exceprt_background_color'][0] || $itemMeta['_laskins_carousel_exceprt_position_left'][0] || $itemMeta['_laskins_carousel_exceprt_position_top'][0] || $itemMeta['_laskins_carousel_exceprt_position_right'][0] === '0' || $itemMeta['_laskins_carousel_exceprt_position_right'][0] || $itemMeta['_laskins_carousel_exceprt_position_bottom'][0] || $itemMeta['_laskins_carousel_exceprt_position_bottom'][0] === '0') ? 'style="'.($itemMeta['_laskins_carousel_exceprt_text_color'][0] ? 'color:'.$itemMeta['_laskins_carousel_exceprt_text_color'][0].'; ' : '').($itemMeta['_laskins_carousel_exceprt_background_color'][0] ? 'background-color:'.$itemMeta['_laskins_carousel_exceprt_background_color'][0].'; ' : '').($itemMeta['_laskins_carousel_exceprt_position_left'][0] && !$itemMeta['_laskins_carousel_exceprt_position_right'][0] ? 'left:'.$itemMeta['_laskins_carousel_exceprt_position_left'][0].'%; ' : '').($itemMeta['_laskins_carousel_exceprt_position_top'][0] && !$itemMeta['_laskins_carousel_exceprt_position_bottom'][0] ? 'top:'.$itemMeta['_laskins_carousel_exceprt_position_top'][0].'%; ' : '').($itemMeta['_laskins_carousel_exceprt_position_right'][0] || $itemMeta['_laskins_carousel_exceprt_position_right'][0] === '0' ? 'left:auto;right:'.$itemMeta['_laskins_carousel_exceprt_position_right'][0].'%; ' : '').($itemMeta['_laskins_carousel_exceprt_position_bottom'][0] || $itemMeta['_laskins_carousel_exceprt_position_bottom'][0] === '0' ? 'top:auto;bottom:'.$itemMeta['_laskins_carousel_exceprt_position_bottom'][0].'%; ' : '').'"' : ''; ?>>
-												<?php if ($itemMeta['_laskins_carousel_super_title'][0]) { ?>
-													<span class="h3"<?php echo $itemMeta['_laskins_carousel_super_title_size'][0] ? ' style="font-size:'.($itemMeta['_laskins_carousel_super_title_size'][0]/10).'em"' : ''; ?>><?php echo $itemMeta['_laskins_carousel_super_title'][0]; ?></span>
-												<?php } ?>
-												<span class="h2"<?php echo $itemMeta['_laskins_carousel_title_size'][0] ? ' style="font-size:'.($itemMeta['_laskins_carousel_title_size'][0]/10).'em"' : ''; ?>><?php echo $item->post_title; ?></span>
-												<?php if ($item->post_excerpt) { ?>
-													<span class="excerpt"<?php echo $itemMeta['_laskins_carousel_excerpt_size'][0] ? ' style="font-size:'.($itemMeta['_laskins_carousel_excerpt_size'][0]/10).'em"' : ''; ?>><?php echo $item->post_excerpt; ?></span>
-												<?php } ?>
-											</span>
-											<img class="bg-mobile" src="<?php echo $itemImageMobile; ?>" alt="<?php $item->post_title; ?>" />
-											<img class="bg" src="<?php echo $itemImage; ?>" alt="<?php $item->post_title; ?>" />
-											<?php /*
-											<pre>
-												<?php print_r($item); ?>
-											</pre>
-											<pre>
-												<?php print_r($itemMeta); ?>
-											</pre>
-											*/ ?>
-										<?php if (get_post_type($item->ID) != 'module') { ?>
-										</a>
-										<?php } ?>
-									</li>
-									<?php } ?>
-								</ul>
-								<div class="carousel-nav CAROUSEL_NAV">
-									<a class="prev PREV" href="#">Previous</a>
-									<a class="next NEXT" href="#">Next</a>
+									</ul>
+									<div class="carousel-nav CAROUSEL_NAV">
+										<a class="prev PREV" href="#">Previous</a>
+										<a class="next NEXT" href="#">Next</a>
+									</div>
 								</div>
-							</div>
-							<?php } ?>
+								<?php } ?>
+							
+
+							<?php endwhile; endif; ?>
 							
 							<?php $homeBanners = get_posts(array('post_type' => 'module', 'numberposts' => -1, 'module_cat' => 'home-banner')); 
 							if (count($homeBanners) > 0) { ?>

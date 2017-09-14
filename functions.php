@@ -521,8 +521,10 @@ function bones_fonts() {
 
 add_action('wp_enqueue_scripts', 'bones_fonts');
 
+/*
 require_once( 'cmb-functions.php' );
 require_once( 'cmb2-extra-functions/cmb2_post_search_field.php' );
+*/
 
 function page_cats_tags() {  
 	// Add tag metabox to page

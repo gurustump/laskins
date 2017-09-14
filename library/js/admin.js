@@ -15,6 +15,11 @@ jQuery(document).ready(function($) {
 
 function toggleMetaboxes($) {
 	var pageTemplate = $('#page_template').val()
+	if (pageTemplate == 'page-home.php') {
+		$('#_laskins_slider_metabox').show();
+	} else {
+		$('#_laskins_slider_metabox').hide();
+	}
 	if (pageTemplate == 'page-film-guide.php' || pageTemplate == 'page-venues.php' || pageTemplate == 'page-festival-schedule.php' ) {
 		$('#_laskins_festival_page_custom_index_metabox').show();
 	} else {

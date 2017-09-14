@@ -323,6 +323,7 @@ CAROUSEL STYLES
 				display:block;
 				font-size:5px;
 				position:absolute;
+				z-index:1;
 				span {
 					line-height:1em;
 					margin-bottom:.3em;
@@ -347,6 +348,11 @@ CAROUSEL STYLES
 				&.bg-mobile {
 					display:none;
 				}
+			}
+			.bg-video {
+				display:block;
+				width:100%;
+				position:absolute;
 			}
 		}
 	}

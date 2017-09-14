@@ -131,13 +131,13 @@ I've edited it a bit, but it's a nice starting point.
 some nice typographical defaults
 more here: http://www.newnet-soft.com/blog/csstypography
 */
-/* line 67, ../scss/partials/_typography.scss */
 p {
   -ms-word-wrap: break-word;
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
+  -ms-hyphens: auto;
   hyphens: auto;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
@@ -146,8 +146,7 @@ p {
   -moz-font-feature-settings: "liga=1, dlig=1";
   -ms-font-feature-settings: "liga", "dlig";
   -o-font-feature-settings: "liga", "dlig";
-  font-feature-settings: "liga", "dlig";
-}
+  font-feature-settings: "liga", "dlig"; }
 
 /******************************************************************
 Site Name:
@@ -227,150 +226,105 @@ You can't use @extend within media queries
 anymore, so just be aware that if you drop
 them in here, they won't work.
 */
-/* line 25, ../scss/breakpoints/_481up.scss */
 #container #content {
-  padding-top: 80px;
-}
+  padding-top: 80px; }
 
-/* line 30, ../scss/breakpoints/_481up.scss */
 #logo a {
-  height: 80px;
-}
+  height: 80px; }
 
-/* line 35, ../scss/breakpoints/_481up.scss */
 h1, .h1 {
-  font-size: 44px;
-}
+  font-size: 44px; }
 
-/* line 39, ../scss/breakpoints/_481up.scss */
 h2, .h2 {
-  font-size: 32px;
-}
+  font-size: 32px; }
 
-/* line 43, ../scss/breakpoints/_481up.scss */
 h3, .h3 {
-  font-size: 28px;
-}
+  font-size: 28px; }
 
-/* line 47, ../scss/breakpoints/_481up.scss */
 h4, .h4 {
-  font-size: 24px;
-}
+  font-size: 24px; }
 
-/* line 51, ../scss/breakpoints/_481up.scss */
 h5, .h5 {
-  font-size: 16px;
-}
+  font-size: 16px; }
 
 /*********************
 NAVIGATION STYLES
 *********************/
 /* .menu is clearfixed inside mixins.scss */
-/* line 62, ../scss/breakpoints/_481up.scss */
 .menu {
-  /* end .menu ul */
-}
-/* line 63, ../scss/breakpoints/_481up.scss */
-.menu ul {
-  /* end .menu ul li */
-  /* highlight current page */
-  /* end current highlighters */
-}
-/* line 64, ../scss/breakpoints/_481up.scss */
-.menu ul li {
-  /*
-  plan your menus and drop-downs wisely.
-  */
-}
-/* line 65, ../scss/breakpoints/_481up.scss */
-.menu ul li a {
-  /*
-  you can use hover styles here even though this size
-  has the possibility of being a mobile device.
-  */
-}
+  /* end .menu ul */ }
+  .menu ul {
+    /* end .menu ul li */
+    /* highlight current page */
+    /* end current highlighters */ }
+    .menu ul li {
+      /*
+			plan your menus and drop-downs wisely.
+			*/ }
+      .menu ul li a {
+        /*
+				you can use hover styles here even though this size
+				has the possibility of being a mobile device.
+				*/ }
 
 /* end .menu */
-/* line 105, ../scss/breakpoints/_481up.scss */
 .trigger-nav {
   padding: 17px;
-  right: -12px;
-}
+  right: -12px; }
 
-/* line 110, ../scss/breakpoints/_481up.scss */
 .social-follow > a {
   padding-top: 18px;
-  padding-bottom: 18px;
-}
+  padding-bottom: 18px; }
 
 /*********************
 POSTS & CONTENT STYLES
 *********************/
 /* entry content */
-/* line 121, ../scss/breakpoints/_481up.scss */
 .entry-content {
-  /* at this larger size, we can start to align images */
-}
-/* line 125, ../scss/breakpoints/_481up.scss */
-.entry-content .alignleft, .entry-content img.alignleft {
-  margin-right: 1.5em;
-  display: inline;
-  float: left;
-}
-/* line 130, ../scss/breakpoints/_481up.scss */
-.entry-content .alignright, .entry-content img.alignright {
-  margin-left: 1.5em;
-  display: inline;
-  float: right;
-}
-/* line 135, ../scss/breakpoints/_481up.scss */
-.entry-content .aligncenter, .entry-content img.aligncenter {
-  margin-right: auto;
-  margin-left: auto;
-  display: block;
-  clear: both;
-}
+  /* at this larger size, we can start to align images */ }
+  .entry-content .alignleft, .entry-content img.alignleft {
+    margin-right: 1.5em;
+    display: inline;
+    float: left; }
+  .entry-content .alignright, .entry-content img.alignright {
+    margin-left: 1.5em;
+    display: inline;
+    float: right; }
+  .entry-content .aligncenter, .entry-content img.aligncenter {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    clear: both; }
 
 /* end .entry-content */
-/* line 146, ../scss/breakpoints/_481up.scss */
 .thumb-index .thumb-index-inner h2 {
   padding-top: 6px;
-  padding-bottom: 6px;
-}
+  padding-bottom: 6px; }
 
 /******************************************************************
 TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN)
 ******************************************************************/
-/* line 158, ../scss/breakpoints/_481up.scss */
 .single-tribe_events .tribe-events-schedule h3 {
-  font-size: 14px;
-}
+  font-size: 14px; }
 
 /******************************************************************
 CAROUSEL STYLES
 ******************************************************************/
-/* line 170, ../scss/breakpoints/_481up.scss */
 .carousel > ul > li.deactivating {
-  opacity: 0;
-}
-/* line 174, ../scss/breakpoints/_481up.scss */
-.carousel > ul > li .carousel-item-heading-mobile .h2 {
-  font-size: 36px;
-}
-/* line 177, ../scss/breakpoints/_481up.scss */
-.carousel > ul > li .carousel-item-heading-mobile .h3 {
-  font-size: 20px;
-}
-/* line 180, ../scss/breakpoints/_481up.scss */
-.carousel > ul > li .carousel-item-heading-mobile .excerpt {
-  font-size: 14px;
-}
+  opacity: 0; }
 
-/* line 190, ../scss/breakpoints/_481up.scss */
+.carousel > ul > li .carousel-item-heading-mobile .h2 {
+  font-size: 36px; }
+
+.carousel > ul > li .carousel-item-heading-mobile .h3 {
+  font-size: 20px; }
+
+.carousel > ul > li .carousel-item-heading-mobile .excerpt {
+  font-size: 14px; }
+
 .scroll-carousel > ul > li {
   width: 145px;
-  padding: 25px;
-}
+  padding: 25px; }
 
 /*********************
 FOOTER STYLES
@@ -386,40 +340,30 @@ PAGE SPECIFIC
 /******************************************
 HOME PAGE
 ******************************************/
-/* line 220, ../scss/breakpoints/_481up.scss */
 body.home .home-banner p {
-  margin-bottom: 3px;
-}
+  margin-bottom: 3px; }
 
 /******************************************
 FILM FESTIVAL TEMPLATE PAGE
 ******************************************/
-/* line 232, ../scss/breakpoints/_481up.scss */
 body.film-festival-page .entry-header .heading-mobile h2 {
-  font-size: 36px;
-}
-/* line 235, ../scss/breakpoints/_481up.scss */
+  font-size: 36px; }
+
 body.film-festival-page .entry-header .heading-mobile h3 {
-  font-size: 20px;
-}
-/* line 238, ../scss/breakpoints/_481up.scss */
+  font-size: 20px; }
+
 body.film-festival-page .entry-header .heading-mobile p {
-  font-size: 14px;
-}
+  font-size: 14px; }
 
 /******************************************
 FESTIVAL SCHEDULE PAGE,
 FESTIVAL ARCHIVE PAGE
 ******************************************/
-/* line 252, ../scss/breakpoints/_481up.scss */
 body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .img-link, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .img-link {
-  float: left;
-}
-/* line 254, ../scss/breakpoints/_481up.scss */
-body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .img-link img, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .img-link img {
-  max-width: 200px;
-}
-/* line 259, ../scss/breakpoints/_481up.scss */
+  float: left; }
+  body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .img-link img, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .img-link img {
+    max-width: 200px; }
+
 body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .item-content .subhead, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .item-content .subhead {
   float: right;
   width: 100%;
@@ -429,65 +373,51 @@ body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li 
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
-  margin-left: -100%;
-}
-/* line 266, ../scss/breakpoints/_481up.scss */
+  margin-left: -100%; }
+
 body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .item-content .item-venue, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .item-content .item-venue {
-  clear: right;
-}
-/* line 269, ../scss/breakpoints/_481up.scss */
+  clear: right; }
+
 body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .item-content .item-body, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .item-content .item-body {
-  clear: left;
-}
-/* line 272, ../scss/breakpoints/_481up.scss */
+  clear: left; }
+
 body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .item-content .btn, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .item-content .btn {
-  bottom: 15px;
-}
+  bottom: 15px; }
 
 /******************************************
 FESTIVAL ARCHIVE PAGE
 ******************************************/
-/* line 287, ../scss/breakpoints/_481up.scss */
 body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .img-link {
-  float: none;
-}
-/* line 289, ../scss/breakpoints/_481up.scss */
-body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .img-link img {
-  max-width: none;
-}
-/* line 294, ../scss/breakpoints/_481up.scss */
+  float: none; }
+  body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .img-link img {
+    max-width: none; }
+
 body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .item-content .subhead {
   float: none;
   padding: 0;
-  margin: 0;
-}
+  margin: 0; }
 
 /******************************************
 VENUES PAGE
 ******************************************/
-/* line 135, ../scss/partials/_mixins.scss */
 body.page-template-page-venues .venue-list .venue-list-inner > ul > li:after {
   content: ".";
   height: 0;
   display: block;
   visibility: hidden;
-  clear: both;
-}
-/* line 314, ../scss/breakpoints/_481up.scss */
+  clear: both; }
+
 body.page-template-page-venues .venue-list .venue-list-inner > ul > li .featured-thumb-container {
   float: left;
   max-width: 280px;
-  margin: 0 20px 20px 0;
-}
+  margin: 0 20px 20px 0; }
 
 /******************************************
 BLOG PAGE (index of blog posts)
 ******************************************/
-/* line 331, ../scss/breakpoints/_481up.scss */
 body.blog .entry-content img {
   margin: 0 20px 15px 0;
-  float: left;
-}
+  float: left; }
 
 /******************************************************************
 Site Name:
@@ -505,107 +435,76 @@ come into play. Have fun!
 /*********************
 GENERAL STYLES
 *********************/
-/* line 20, ../scss/breakpoints/_768up.scss */
 body {
-  font-size: 16px;
-}
+  font-size: 16px; }
 
-/* line 24, ../scss/breakpoints/_768up.scss */
 h1, .h1 {
-  font-size: 48px;
-}
+  font-size: 48px; }
 
-/* line 28, ../scss/breakpoints/_768up.scss */
 h2, .h2 {
-  font-size: 36px;
-}
+  font-size: 36px; }
 
-/* line 32, ../scss/breakpoints/_768up.scss */
 h3, .h3 {
-  font-size: 32px;
-}
+  font-size: 32px; }
 
-/* line 36, ../scss/breakpoints/_768up.scss */
 h4, .h4 {
-  font-size: 28px;
-}
+  font-size: 28px; }
 
-/* line 40, ../scss/breakpoints/_768up.scss */
 h5, .h5 {
-  font-size: 18px;
-}
+  font-size: 18px; }
 
 /*********************
 LAYOUT & GRID STYLES
 *********************/
-/* line 47, ../scss/breakpoints/_768up.scss */
 .wrap {
-  max-width: 1104px;
-}
+  max-width: 1104px; }
 
 /*********************
 HEADER STYLES
 *********************/
-/* line 57, ../scss/breakpoints/_768up.scss */
 #logo {
-  padding-left: 20px;
-}
+  padding-left: 20px; }
 
 /*********************
 NAVIGATION STYLES
 *********************/
-/* line 65, ../scss/breakpoints/_768up.scss */
 .nav {
   border: 0;
   /* end .menu ul li */
   /* highlight current page */
-  /* end current highlighters */
-}
-/* line 67, ../scss/breakpoints/_768up.scss */
-.nav ul {
-  background: black;
-  margin-top: 0;
-}
-/* line 71, ../scss/breakpoints/_768up.scss */
-.nav li {
-  /*
-  plan your menus and drop-downs wisely.
-  */
-  /* showing sub-menus */
-}
-/* line 73, ../scss/breakpoints/_768up.scss */
-.nav li a {
-  border-bottom: 0;
-  /*
-  you can use hover styles here even though this size
-  has the possibility of being a mobile device.
-  */
-}
-/* line 90, ../scss/breakpoints/_768up.scss */
-.nav li ul.sub-menu,
-.nav li ul.children {
-  /* highlight sub-menu current page */
-}
-/* line 93, ../scss/breakpoints/_768up.scss */
-.nav li ul.sub-menu li,
-.nav li ul.children li {
-  /*
-  if you need to go deeper, go nuts
-  just remember deeper menus suck
-  for usability. k, bai.
-  */
-}
+  /* end current highlighters */ }
+  .nav ul {
+    background: #000;
+    margin-top: 0; }
+  .nav li {
+    /*
+		plan your menus and drop-downs wisely.
+		*/
+    /* showing sub-menus */ }
+    .nav li a {
+      border-bottom: 0;
+      /*
+			you can use hover styles here even though this size
+			has the possibility of being a mobile device.
+			*/ }
+    .nav li ul.sub-menu,
+    .nav li ul.children {
+      /* highlight sub-menu current page */ }
+      .nav li ul.sub-menu li,
+      .nav li ul.children li {
+        /*
+				if you need to go deeper, go nuts
+				just remember deeper menus suck
+				for usability. k, bai.
+				*/ }
 
 /* end .nav */
-/* line 143, ../scss/breakpoints/_768up.scss */
 .trigger-nav {
-  right: 0;
-}
+  right: 0; }
 
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-/* line 151, ../scss/breakpoints/_768up.scss */
 .content-primary {
   float: left;
   width: 65%;
@@ -614,16 +513,12 @@ POSTS & CONTENT STYLES
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
-/* line 158, ../scss/breakpoints/_768up.scss */
 .single-format-gallery .content-primary {
   width: auto;
-  float: none;
-}
+  float: none; }
 
-/* line 163, ../scss/breakpoints/_768up.scss */
 .content-secondary {
   float: left;
   float: left;
@@ -633,256 +528,166 @@ POSTS & CONTENT STYLES
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
-/* line 171, ../scss/breakpoints/_768up.scss */
 .byline span {
-  display: inline;
-}
+  display: inline; }
 
-/* line 176, ../scss/breakpoints/_768up.scss */
 .thumb-index {
   margin-left: 0;
-  margin-right: 0;
-}
-/* line 180, ../scss/breakpoints/_768up.scss */
-.thumb-index .thumb-index-inner h2 {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-/* line 185, ../scss/breakpoints/_768up.scss */
-.thumb-index .thumb-index-inner > ul > li {
-  width: 32%;
-  margin: 0 1% 1% 0;
-}
-/* line 188, ../scss/breakpoints/_768up.scss */
-.thumb-index .thumb-index-inner > ul > li.hide-2col {
-  display: block;
-}
-/* line 193, ../scss/breakpoints/_768up.scss */
-.thumb-index .thumb-index-inner > ul > li .item-content > *.item-head, .thumb-index .thumb-index-inner > ul > li .item-content > *.item-body {
-  padding: 0 15px;
-}
-/* line 196, ../scss/breakpoints/_768up.scss */
-.thumb-index .thumb-index-inner > ul > li .item-content > *.item-head {
-  font-size: 22px;
-}
-/* line 199, ../scss/breakpoints/_768up.scss */
-.thumb-index .thumb-index-inner > ul > li .item-content > *.item-body {
-  display: block;
-  font-size: 14px;
-}
-/* line 203, ../scss/breakpoints/_768up.scss */
-.thumb-index .thumb-index-inner > ul > li .item-content > *.btn {
-  margin: 0 15px;
-  bottom: 10px;
-}
+  margin-right: 0; }
+  .thumb-index .thumb-index-inner h2 {
+    padding-top: 10px;
+    padding-bottom: 10px; }
+  .thumb-index .thumb-index-inner > ul > li {
+    width: 32%;
+    margin: 0 1% 1% 0; }
+    .thumb-index .thumb-index-inner > ul > li.hide-2col {
+      display: block; }
+    .thumb-index .thumb-index-inner > ul > li .item-content > *.item-head, .thumb-index .thumb-index-inner > ul > li .item-content > *.item-body {
+      padding: 0 15px; }
+    .thumb-index .thumb-index-inner > ul > li .item-content > *.item-head {
+      font-size: 22px; }
+    .thumb-index .thumb-index-inner > ul > li .item-content > *.item-body {
+      display: block;
+      font-size: 14px; }
+    .thumb-index .thumb-index-inner > ul > li .item-content > *.btn {
+      margin: 0 15px;
+      bottom: 10px; }
 
-/* line 215, ../scss/breakpoints/_768up.scss */
 .row-index .row-index-inner .index-section-head {
   font-size: 18px;
   padding-left: 15px;
-  padding-right: 15px;
-}
-/* line 224, ../scss/breakpoints/_768up.scss */
-.row-index .row-index-inner > ul > li img {
-  float: none;
-}
-/* line 228, ../scss/breakpoints/_768up.scss */
-.row-index .row-index-inner > ul > li .item-content .item-head {
-  font-size: 24px;
-}
+  padding-right: 15px; }
 
-/* line 236, ../scss/breakpoints/_768up.scss */
+.row-index .row-index-inner > ul > li img {
+  float: none; }
+
+.row-index .row-index-inner > ul > li .item-content .item-head {
+  font-size: 24px; }
+
 .screening-lists, .events-lists {
-  margin: 0;
-}
-/* line 238, ../scss/breakpoints/_768up.scss */
-.screening-lists .tabs, .events-lists .tabs {
-  height: 48px;
-}
-/* line 240, ../scss/breakpoints/_768up.scss */
-.screening-lists .tabs li, .events-lists .tabs li {
-  height: 48px;
-  line-height: 48px;
-  font-size: 18px;
-  padding: 0 10px 0 0;
-}
-/* line 245, ../scss/breakpoints/_768up.scss */
-.screening-lists .tabs li.active, .events-lists .tabs li.active {
-  padding: 0 0 0 10px;
-}
-/* line 248, ../scss/breakpoints/_768up.scss */
-.screening-lists .tabs li:after, .events-lists .tabs li:after {
-  margin-bottom: 20px;
-}
-/* line 253, ../scss/breakpoints/_768up.scss */
-.screening-lists .films-list, .screening-lists .events-list, .events-lists .films-list, .events-lists .events-list {
-  top: 74px;
-}
-/* line 255, ../scss/breakpoints/_768up.scss */
-.screening-lists .films-list a, .screening-lists .events-list a, .events-lists .films-list a, .events-lists .events-list a {
-  height: 62px;
-}
-/* line 258, ../scss/breakpoints/_768up.scss */
-.screening-lists .films-list img, .screening-lists .events-list img, .events-lists .films-list img, .events-lists .events-list img {
-  width: 100px;
-}
-/* line 261, ../scss/breakpoints/_768up.scss */
-.screening-lists .films-list .item-content, .screening-lists .events-list .item-content, .events-lists .films-list .item-content, .events-lists .events-list .item-content {
-  line-height: 1.3em;
-}
+  margin: 0; }
+  .screening-lists .tabs, .events-lists .tabs {
+    height: 48px; }
+    .screening-lists .tabs li, .events-lists .tabs li {
+      height: 48px;
+      line-height: 48px;
+      font-size: 18px;
+      padding: 0 10px 0 0; }
+      .screening-lists .tabs li.active, .events-lists .tabs li.active {
+        padding: 0 0 0 10px; }
+      .screening-lists .tabs li:after, .events-lists .tabs li:after {
+        margin-bottom: 20px; }
+  .screening-lists .films-list, .screening-lists .events-list, .events-lists .films-list, .events-lists .events-list {
+    top: 74px; }
+    .screening-lists .films-list a, .screening-lists .events-list a, .events-lists .films-list a, .events-lists .events-list a {
+      height: 62px; }
+    .screening-lists .films-list img, .screening-lists .events-list img, .events-lists .films-list img, .events-lists .events-list img {
+      width: 100px; }
+    .screening-lists .films-list .item-content, .screening-lists .events-list .item-content, .events-lists .films-list .item-content, .events-lists .events-list .item-content {
+      line-height: 1.3em; }
 
 /******************************************************************
 TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN)
 ******************************************************************/
-/* line 272, ../scss/breakpoints/_768up.scss */
 .single-tribe_events .tribe-events-schedule h3 {
-  font-size: 18px;
-}
-/* line 277, ../scss/breakpoints/_768up.scss */
+  font-size: 18px; }
+
 .single-tribe_events .tribe-events-event-meta h3 {
-  font-size: 16px;
-}
-/* line 280, ../scss/breakpoints/_768up.scss */
+  font-size: 16px; }
+
 .single-tribe_events .tribe-events-event-meta .tribe-events-meta-group {
   float: none;
-  width: auto;
-}
+  width: auto; }
 
-/* line 287, ../scss/breakpoints/_768up.scss */
 body.music-festival-page .tribe-events-event-meta {
   padding: 20px 0;
   position: relative;
-  min-height: 362px;
-}
-/* line 291, ../scss/breakpoints/_768up.scss */
-body.music-festival-page .tribe-events-event-meta .tribe-events-meta-group {
-  padding: 0 25px;
-  width: 33%;
-}
-/* line 295, ../scss/breakpoints/_768up.scss */
-body.music-festival-page .tribe-events-event-meta .tribe-events-meta-group-gmap {
-  position: absolute;
-  top: 20px;
-  right: 0;
-  width: 66%;
-  height: 362px;
-}
-/* line 301, ../scss/breakpoints/_768up.scss */
-body.music-festival-page .tribe-events-event-meta .tribe-events-meta-group-gmap .tribe-events-venue-map {
-  margin: 0;
-}
+  min-height: 362px; }
+  body.music-festival-page .tribe-events-event-meta .tribe-events-meta-group {
+    padding: 0 25px;
+    width: 33%; }
+  body.music-festival-page .tribe-events-event-meta .tribe-events-meta-group-gmap {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 66%;
+    height: 362px; }
+    body.music-festival-page .tribe-events-event-meta .tribe-events-meta-group-gmap .tribe-events-venue-map {
+      margin: 0; }
 
 /******************************************************************
 CAROUSEL STYLES
 ******************************************************************/
-/* line 311, ../scss/breakpoints/_768up.scss */
 .carousel {
-  border: 0;
-}
-/* line 315, ../scss/breakpoints/_768up.scss */
-.carousel > ul > li.deactivating {
-  opacity: 0;
-}
-/* line 318, ../scss/breakpoints/_768up.scss */
-.carousel > ul > li .carousel-item-heading-mobile {
-  display: none;
-}
-/* line 321, ../scss/breakpoints/_768up.scss */
-.carousel > ul > li .carousel-item-heading-desktop {
-  padding: 10px 15px;
-  display: block;
-  font-size: 5px;
-  position: absolute;
-}
-/* line 326, ../scss/breakpoints/_768up.scss */
-.carousel > ul > li .carousel-item-heading-desktop span {
-  line-height: 1em;
-  margin-bottom: .3em;
-}
-/* line 330, ../scss/breakpoints/_768up.scss */
-.carousel > ul > li .carousel-item-heading-desktop .h2 {
-  font-size: 5.6em;
-}
-/* line 333, ../scss/breakpoints/_768up.scss */
-.carousel > ul > li .carousel-item-heading-desktop .h3 {
-  font-size: 2.8em;
-}
-/* line 336, ../scss/breakpoints/_768up.scss */
-.carousel > ul > li .carousel-item-heading-desktop .excerpt {
-  font-size: 2.4em;
-}
-/* line 339, ../scss/breakpoints/_768up.scss */
-.carousel > ul > li .carousel-item-heading-desktop *:last-child {
-  margin-bottom: 0;
-}
-/* line 344, ../scss/breakpoints/_768up.scss */
-.carousel > ul > li img.bg {
-  display: block;
-}
-/* line 347, ../scss/breakpoints/_768up.scss */
-.carousel > ul > li img.bg-mobile {
-  display: none;
-}
+  border: 0; }
+  .carousel > ul > li.deactivating {
+    opacity: 0; }
+  .carousel > ul > li .carousel-item-heading-mobile {
+    display: none; }
+  .carousel > ul > li .carousel-item-heading-desktop {
+    padding: 10px 15px;
+    display: block;
+    font-size: 5px;
+    position: absolute;
+    z-index: 1; }
+    .carousel > ul > li .carousel-item-heading-desktop span {
+      line-height: 1em;
+      margin-bottom: .3em; }
+    .carousel > ul > li .carousel-item-heading-desktop .h2 {
+      font-size: 5.6em; }
+    .carousel > ul > li .carousel-item-heading-desktop .h3 {
+      font-size: 2.8em; }
+    .carousel > ul > li .carousel-item-heading-desktop .excerpt {
+      font-size: 2.4em; }
+    .carousel > ul > li .carousel-item-heading-desktop *:last-child {
+      margin-bottom: 0; }
+  .carousel > ul > li img.bg {
+    display: block; }
+  .carousel > ul > li img.bg-mobile {
+    display: none; }
+  .carousel > ul > li .bg-video {
+    display: block;
+    width: 100%;
+    position: absolute; }
 
 /*********************
 OV STYLES
 *********************/
-/* line 361, ../scss/breakpoints/_768up.scss */
 .ov-wrap .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon {
   background-position: 50% 10px;
   width: 38px;
-  height: 38px;
-}
+  height: 38px; }
 
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 374, ../scss/breakpoints/_768up.scss */
 .sidebar {
-  border: 0;
-}
-/* line 376, ../scss/breakpoints/_768up.scss */
-.sidebar h4 {
-  margin-bottom: 10px;
-}
+  border: 0; }
+  .sidebar h4 {
+    margin-bottom: 10px; }
 
-/* line 381, ../scss/breakpoints/_768up.scss */
 .widgettitle {
   border-bottom: 2px solid #444;
-  margin-bottom: 0.75em;
-}
+  margin-bottom: 0.75em; }
 
-/* line 386, ../scss/breakpoints/_768up.scss */
 .widget {
-  margin: 0 0 20px;
-}
-/* line 390, ../scss/breakpoints/_768up.scss */
-.widget ul li {
-  margin-bottom: 0.75em;
-  /* deep nesting */
-}
-/* line 398, ../scss/breakpoints/_768up.scss */
-.widget ul li ul {
-  margin-top: 0.75em;
-  padding-left: 1em;
-}
+  margin: 0 0 20px; }
+  .widget ul li {
+    margin-bottom: 0.75em;
+    /* deep nesting */ }
+    .widget ul li ul {
+      margin-top: 0.75em;
+      padding-left: 1em; }
 
-/* line 406, ../scss/breakpoints/_768up.scss */
 .tribe-events-list-widget ol {
-  padding: 0 0 15px;
-}
-/* line 408, ../scss/breakpoints/_768up.scss */
-.tribe-events-list-widget ol li {
-  padding-bottom: 15px;
-  margin-bottom: 15x;
-}
-/* line 412, ../scss/breakpoints/_768up.scss */
-.tribe-events-list-widget ol h4 {
-  font-size: 20px;
-}
+  padding: 0 0 15px; }
+  .tribe-events-list-widget ol li {
+    padding-bottom: 15px;
+    margin-bottom: 15x; }
+  .tribe-events-list-widget ol h4 {
+    font-size: 20px; }
 
 /* links widget */
 /* meta widget */
@@ -903,14 +708,12 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
-/* line 518, ../scss/breakpoints/_768up.scss */
 .footer-links ul li {
   /*
-  be careful with the depth of your menus.
-  it's very rare to have multi-depth menus in
-  the footer.
-  */
-}
+			be careful with the depth of your menus.
+			it's very rare to have multi-depth menus in
+			the footer.
+			*/ }
 
 /* end .footer-links */
 /******************************************
@@ -919,164 +722,117 @@ PAGE SPECIFIC
 /******************************************
 FILMS PAGE
 ******************************************/
-/* line 543, ../scss/breakpoints/_768up.scss */
 body.single-media_items .article-header .description {
-  margin-top: 20px;
-}
+  margin-top: 20px; }
 
 /******************************************
 FILM FESTIVAL TEMPLATE PAGE
 ******************************************/
-/* line 553, ../scss/breakpoints/_768up.scss */
 body.film-festival-page .entry-header {
-  border: 0;
-}
-/* line 555, ../scss/breakpoints/_768up.scss */
-body.film-festival-page .entry-header .heading-mobile {
-  display: none;
-}
-/* line 558, ../scss/breakpoints/_768up.scss */
-body.film-festival-page .entry-header .heading-desktop {
-  padding: 10px 15px;
-  display: block;
-  font-size: 5px;
-  position: absolute;
-}
-/* line 563, ../scss/breakpoints/_768up.scss */
-body.film-festival-page .entry-header .heading-desktop h2, body.film-festival-page .entry-header .heading-desktop h3, body.film-festival-page .entry-header .heading-desktop p {
-  line-height: 1em;
-  margin-bottom: .3em;
-}
-/* line 567, ../scss/breakpoints/_768up.scss */
-body.film-festival-page .entry-header .heading-desktop h2 {
-  font-size: 5.6em;
-}
-/* line 570, ../scss/breakpoints/_768up.scss */
-body.film-festival-page .entry-header .heading-desktop h3 {
-  font-size: 2.8em;
-}
-/* line 573, ../scss/breakpoints/_768up.scss */
-body.film-festival-page .entry-header .heading-desktop p {
-  font-size: 2.4em;
-}
-/* line 578, ../scss/breakpoints/_768up.scss */
-body.film-festival-page .entry-header img.bg {
-  display: block;
-}
-/* line 581, ../scss/breakpoints/_768up.scss */
-body.film-festival-page .entry-header img.bg-mobile {
-  display: none;
-}
-/* line 586, ../scss/breakpoints/_768up.scss */
+  border: 0; }
+  body.film-festival-page .entry-header .heading-mobile {
+    display: none; }
+  body.film-festival-page .entry-header .heading-desktop {
+    padding: 10px 15px;
+    display: block;
+    font-size: 5px;
+    position: absolute; }
+    body.film-festival-page .entry-header .heading-desktop h2, body.film-festival-page .entry-header .heading-desktop h3, body.film-festival-page .entry-header .heading-desktop p {
+      line-height: 1em;
+      margin-bottom: .3em; }
+    body.film-festival-page .entry-header .heading-desktop h2 {
+      font-size: 5.6em; }
+    body.film-festival-page .entry-header .heading-desktop h3 {
+      font-size: 2.8em; }
+    body.film-festival-page .entry-header .heading-desktop p {
+      font-size: 2.4em; }
+  body.film-festival-page .entry-header img.bg {
+    display: block; }
+  body.film-festival-page .entry-header img.bg-mobile {
+    display: none; }
+
 body.film-festival-page .content-primary {
-  padding-right: 0;
-}
-/* line 135, ../scss/partials/_mixins.scss */
-body.film-festival-page .content-primary:after {
-  content: ".";
-  height: 0;
-  display: block;
-  visibility: hidden;
-  clear: both;
-}
-/* line 589, ../scss/breakpoints/_768up.scss */
-body.film-festival-page .content-primary .overview {
-  padding-right: 20px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-}
-/* line 593, ../scss/breakpoints/_768up.scss */
-body.film-festival-page .content-primary .overview, body.film-festival-page .content-primary .screening-lists {
-  float: left;
-  width: 50%;
-}
+  padding-right: 0; }
+  body.film-festival-page .content-primary:after {
+    content: ".";
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both; }
+  body.film-festival-page .content-primary .overview {
+    padding-right: 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box; }
+  body.film-festival-page .content-primary .overview, body.film-festival-page .content-primary .screening-lists {
+    float: left;
+    width: 50%; }
 
 /******************************************
 FILM GUIDE PAGE
 ******************************************/
-/* line 606, ../scss/breakpoints/_768up.scss */
 body.page-template-page-film-guide .films-list .row-index-inner > ul > li img {
-  float: none;
-}
+  float: none; }
 
 /******************************************
 PROGRAMS TEMPLATE PAGE
 ******************************************/
-/* line 617, ../scss/breakpoints/_768up.scss */
 body.page-template-page-program .content-primary {
   float: none;
   width: auto;
-  padding-right: 0;
-}
-/* line 135, ../scss/partials/_mixins.scss */
-body.page-template-page-program .content-primary:after {
-  content: ".";
-  height: 0;
-  display: block;
-  visibility: hidden;
-  clear: both;
-}
-/* line 622, ../scss/breakpoints/_768up.scss */
-body.page-template-page-program .content-primary .overview {
-  padding-right: 20px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-}
-/* line 626, ../scss/breakpoints/_768up.scss */
-body.page-template-page-program .content-primary .overview, body.page-template-page-program .content-primary .events-lists {
-  float: left;
-  width: 50%;
-}
-/* line 631, ../scss/breakpoints/_768up.scss */
+  padding-right: 0; }
+  body.page-template-page-program .content-primary:after {
+    content: ".";
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both; }
+  body.page-template-page-program .content-primary .overview {
+    padding-right: 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box; }
+  body.page-template-page-program .content-primary .overview, body.page-template-page-program .content-primary .events-lists {
+    float: left;
+    width: 50%; }
+
 body.page-template-page-program .content-secondary {
   float: none;
-  width: auto;
-}
+  width: auto; }
 
 /******************************************
 VENUES PAGE
 ******************************************/
-/* line 135, ../scss/partials/_mixins.scss */
 body.page-template-page-venues .venue-list .venue-list-inner > ul > li:after {
   content: ".";
   height: 0;
   display: block;
   visibility: hidden;
-  clear: both;
-}
-/* line 646, ../scss/breakpoints/_768up.scss */
+  clear: both; }
+
 body.page-template-page-venues .venue-list .venue-list-inner > ul > li .featured-thumb-container {
   float: none;
   max-width: none;
-  margin: 0 0 10px 0;
-}
+  margin: 0 0 10px 0; }
 
-/* line 657, ../scss/breakpoints/_768up.scss */
 body.single-tribe_venue .featured-thumb-container {
-  margin: -20px -20px 10px 0;
-}
+  margin: -20px -20px 10px 0; }
 
 /******************************************
 BLOG PAGE (index of blog posts)
 ******************************************/
-/* line 666, ../scss/breakpoints/_768up.scss */
 body.blog #main > article {
-  margin-bottom: 30px;
-}
+  margin-bottom: 30px; }
 
 /******************************************
 ARCHIVE PAGE 
 ******************************************/
-/* line 676, ../scss/breakpoints/_768up.scss */
 body.archive #main > h1, body.archive #main > article {
-  margin-bottom: 30px;
-}
+  margin-bottom: 30px; }
 
 /******************************************************************
 Site Name:
@@ -1088,40 +844,34 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop.
 
 ******************************************************************/
-/* line 13, ../scss/breakpoints/_1030up.scss */
 #container #content {
   padding-top: 90px;
   -webkit-transition: padding 0.35s;
   -moz-transition: padding 0.35s;
   -ms-transition: padding 0.35s;
   -o-transition: padding 0.35s;
-  transition: padding 0.35s;
-}
+  transition: padding 0.35s; }
 
-/* line 18, ../scss/breakpoints/_1030up.scss */
 .wrap {
-  margin: 0 80px;
-}
+  margin: 0 80px; }
 
-/* line 21, ../scss/breakpoints/_1030up.scss */
 .narrow-wrap {
   max-width: 1000px;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
-/* line 26, ../scss/breakpoints/_1030up.scss */
 header.header {
   background-color: rgba(0, 0, 0, 0.1);
   background-image: -webkit-gradient(linear,  top,  bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.1))), url("../images/skins-gray-light-grunge.jpg");
   background-image: -webkit-linear-gradient( top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), url("../images/skins-gray-light-grunge.jpg");
   background-image: -moz-linear-gradient( top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), url("../images/skins-gray-light-grunge.jpg");
   background-image: -o-linear-gradient( top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), url("../images/skins-gray-light-grunge.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.1))), url("../images/skins-gray-light-grunge.jpg");
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), url("../images/skins-gray-light-grunge.jpg");
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), url("../images/skins-gray-light-grunge.jpg");
   background-image: linear-gradient(to  bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), url("../images/skins-gray-light-grunge.jpg");
   background-repeat: repeat repeat;
-  border-bottom: 1px solid rgba(248, 27, 45, 0.15);
-}
+  border-bottom: 1px solid rgba(248, 27, 45, 0.15); }
 
-/* line 30, ../scss/breakpoints/_1030up.scss */
 #logo {
   position: absolute;
   width: 420px;
@@ -1131,265 +881,195 @@ header.header {
   -moz-transition: height 0.35s;
   -ms-transition: height 0.35s;
   -o-transition: height 0.35s;
-  transition: height 0.35s;
-}
-/* line 36, ../scss/breakpoints/_1030up.scss */
-#logo a {
-  margin: 0;
-  height: 100%;
-}
+  transition: height 0.35s; }
+  #logo a {
+    margin: 0;
+    height: 100%; }
 
-/* line 42, ../scss/breakpoints/_1030up.scss */
 body.scrolled #container #content {
-  padding-top: 70px;
-}
-/* line 45, ../scss/breakpoints/_1030up.scss */
+  padding-top: 70px; }
+
 body.scrolled #logo {
-  height: 70px;
-}
-/* line 49, ../scss/breakpoints/_1030up.scss */
+  height: 70px; }
+
 body.scrolled .main-nav .top-nav > li > a {
   height: 70px;
-  line-height: 70px;
-}
-/* line 54, ../scss/breakpoints/_1030up.scss */
-body.scrolled .main-nav .top-nav > li.mega-menu > .sub-menu {
-  top: 70px;
-}
+  line-height: 70px; }
 
-/* line 60, ../scss/breakpoints/_1030up.scss */
+body.scrolled .main-nav .top-nav > li.mega-menu > .sub-menu {
+  top: 70px; }
+
 .nav {
   border: 0;
   /* end .menu ul li */
   /* highlight current page */
-  /* end current highlighters */
-}
-/* line 62, ../scss/breakpoints/_1030up.scss */
-.nav > ul {
-  background: black;
-  margin-top: 0;
-}
-/* line 66, ../scss/breakpoints/_1030up.scss */
-.nav > li {
-  float: left;
-  position: relative;
-  /*
-  plan your menus and drop-downs wisely.
-  */
-  /* showing sub-menus */
-}
-/* line 70, ../scss/breakpoints/_1030up.scss */
-.nav > li a {
-  border-bottom: 0;
-  /*
-  you can use hover styles here even though this size
-  has the possibility of being a mobile device.
-  */
-}
-/* line 87, ../scss/breakpoints/_1030up.scss */
-.nav > li > ul.sub-menu,
-.nav > li ul.children {
-  margin-top: 0;
-  border: 1px solid #ccc;
-  border-top: 0;
-  position: absolute;
-  opacity: 0;
-  visibility: hidden;
-  overflow: hidden;
-  z-index: 8999;
-  -webkit-transition: opacity 0.35s;
-  -moz-transition: opacity 0.35s;
-  -ms-transition: opacity 0.35s;
-  -o-transition: opacity 0.35s;
-  transition: opacity 0.35s;
-  /* highlight sub-menu current page */
-}
-/* line 98, ../scss/breakpoints/_1030up.scss */
-.nav > li > ul.sub-menu li,
-.nav > li ul.children li {
-  /*
-  if you need to go deeper, go nuts
-  just remember deeper menus suck
-  for usability. k, bai.
-  */
-}
-/* line 100, ../scss/breakpoints/_1030up.scss */
-.nav > li > ul.sub-menu li a,
-.nav > li ul.children li a {
-  padding-left: 10px;
-  border-right: 0;
-  display: block;
-}
-/* line 115, ../scss/breakpoints/_1030up.scss */
-.nav > li > ul.sub-menu li:last-child a,
-.nav > li ul.children li:last-child a {
-  border-bottom: 0;
-}
-/* line 125, ../scss/breakpoints/_1030up.scss */
-.nav > li > ul.sub-menu li ul,
-.nav > li ul.children li ul {
-  top: 0;
-  left: 100%;
-}
-/* line 140, ../scss/breakpoints/_1030up.scss */
-.nav > li:hover > ul {
-  top: auto;
-  opacity: 1;
-  visibility: visible;
-  overflow: visible;
-}
+  /* end current highlighters */ }
+  .nav > ul {
+    background: #000;
+    margin-top: 0; }
+  .nav > li {
+    float: left;
+    position: relative;
+    /*
+		plan your menus and drop-downs wisely.
+		*/
+    /* showing sub-menus */ }
+    .nav > li a {
+      border-bottom: 0;
+      /*
+			you can use hover styles here even though this size
+			has the possibility of being a mobile device.
+			*/ }
+    .nav > li > ul.sub-menu,
+    .nav > li ul.children {
+      margin-top: 0;
+      border: 1px solid #ccc;
+      border-top: 0;
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+      overflow: hidden;
+      z-index: 8999;
+      -webkit-transition: opacity 0.35s;
+      -moz-transition: opacity 0.35s;
+      -ms-transition: opacity 0.35s;
+      -o-transition: opacity 0.35s;
+      transition: opacity 0.35s;
+      /* highlight sub-menu current page */ }
+      .nav > li > ul.sub-menu li,
+      .nav > li ul.children li {
+        /*
+				if you need to go deeper, go nuts
+				just remember deeper menus suck
+				for usability. k, bai.
+				*/ }
+        .nav > li > ul.sub-menu li a,
+        .nav > li ul.children li a {
+          padding-left: 10px;
+          border-right: 0;
+          display: block; }
+        .nav > li > ul.sub-menu li:last-child a,
+        .nav > li ul.children li:last-child a {
+          border-bottom: 0; }
+        .nav > li > ul.sub-menu li ul,
+        .nav > li ul.children li ul {
+          top: 0;
+          left: 100%; }
+    .nav > li:hover > ul {
+      top: auto;
+      opacity: 1;
+      visibility: visible;
+      overflow: visible; }
 
 /* end .nav */
-/* line 156, ../scss/breakpoints/_1030up.scss */
 .main-nav {
   float: right;
   height: auto;
   width: auto;
   position: static;
-  background: transparent;
-}
-/* line 162, ../scss/breakpoints/_1030up.scss */
-.main-nav .top-nav {
-  position: static;
-  background: transparent;
-  overflow: visible;
-  float: left;
-}
-/* line 168, ../scss/breakpoints/_1030up.scss */
-.main-nav .top-nav > li > a {
-  padding: 0 8px;
-  font-size: 12px;
-  margin-top: 0;
-  border: 0;
-  height: 90px;
-  line-height: 90px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: height 0.35s, line-height 0.35s, color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-  -moz-transition: height 0.35s, line-height 0.35s, color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-  -ms-transition: height 0.35s, line-height 0.35s, color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-  -o-transition: height 0.35s, line-height 0.35s, color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-  transition: height 0.35s, line-height 0.35s, color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-}
-/* line 179, ../scss/breakpoints/_1030up.scss */
-.main-nav .top-nav > li.menu-item-search > a, .main-nav .top-nav > li.menu-item-login > a, .main-nav .top-nav > li.menu-item-logout > a {
-  text-indent: -9999px;
-  width: 18px;
-  padding-left: 12px;
-}
-/* line 186, ../scss/breakpoints/_1030up.scss */
-.main-nav .top-nav > li.menu-item-search > a {
-  background-position: 50% -282px;
-}
-/* line 191, ../scss/breakpoints/_1030up.scss */
-.main-nav .top-nav > li.menu-item-login > a {
-  background-position: 50% -82px;
-}
-/* line 196, ../scss/breakpoints/_1030up.scss */
-.main-nav .top-nav > li.menu-item-logout > a {
-  background-position: 50% -182px;
-}
-/* line 200, ../scss/breakpoints/_1030up.scss */
-.main-nav .top-nav > li .sub-menu {
-  border: 0;
-}
-/* line 202, ../scss/breakpoints/_1030up.scss */
-.main-nav .top-nav > li .sub-menu > li {
-  float: none;
-}
-/* line 204, ../scss/breakpoints/_1030up.scss */
-.main-nav .top-nav > li .sub-menu > li a {
-  /*background:#333;
-  @include css-gradient-plus-img($from: rgba($black, .1), $to: rgba($black, 0), $vstart:"top", $vend:"bottom", $url:"../images/skins-gray-light-grunge.jpg");*/
-  background: transparent;
-  border-color: #3e3e3e;
-  border-top: 0;
-  margin-top: 0;
-  padding: 10px 25px;
-}
-/* line 213, ../scss/breakpoints/_1030up.scss */
-.main-nav .top-nav > li .sub-menu > li .sub-menu {
-  background: transparent;
-}
-/* line 215, ../scss/breakpoints/_1030up.scss */
-.main-nav .top-nav > li .sub-menu > li .sub-menu > li a {
-  /*background:#333;
-  @include css-gradient-plus-img($from: rgba($black, .1), $to: rgba($black, 0), $vstart:"top", $vend:"bottom", $url:"../images/skins-gray-light-grunge.jpg");*/
-  background: transparent;
-}
-/* line 224, ../scss/breakpoints/_1030up.scss */
-.main-nav .top-nav > li.mega-menu > .sub-menu {
-  text-align: center;
-  position: fixed;
-  top: 90px;
-  left: 0;
-  width: 100%;
-  padding: 0 80px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-  background: #333;
-  background-color: rgba(0, 0, 0, 0.4);
-  background-image: -webkit-gradient(linear,  top,  bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.4))), url("../images/skins-gray-light-grunge.jpg");
-  background-image: -webkit-linear-gradient( top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url("../images/skins-gray-light-grunge.jpg");
-  background-image: -moz-linear-gradient( top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url("../images/skins-gray-light-grunge.jpg");
-  background-image: -o-linear-gradient( top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url("../images/skins-gray-light-grunge.jpg");
-  background-image: linear-gradient(to  bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url("../images/skins-gray-light-grunge.jpg");
-  background-repeat: repeat repeat;
-  -webkit-transition: top 0.35s, opacity 0.35s;
-  -moz-transition: top 0.35s, opacity 0.35s;
-  -ms-transition: top 0.35s, opacity 0.35s;
-  -o-transition: top 0.35s, opacity 0.35s;
-  transition: top 0.35s, opacity 0.35s;
-}
-/* line 235, ../scss/breakpoints/_1030up.scss */
-.main-nav .top-nav > li.mega-menu > .sub-menu > li {
-  float: left;
-  width: 50%;
-}
-/* line 238, ../scss/breakpoints/_1030up.scss */
-.main-nav .top-nav > li.mega-menu > .sub-menu > li a {
-  height: 50px;
-  line-height: 50px;
-}
-/* line 242, ../scss/breakpoints/_1030up.scss */
-.main-nav .top-nav > li.mega-menu > .sub-menu > li > a {
-  font-size: 13px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(255, 255, 255, 0.02);
-}
-/* line 247, ../scss/breakpoints/_1030up.scss */
-.main-nav .top-nav > li.mega-menu > .sub-menu > li .sub-menu {
-  position: static;
-}
-/* line 249, ../scss/breakpoints/_1030up.scss */
-.main-nav .top-nav > li.mega-menu > .sub-menu > li .sub-menu a {
-  border: 0;
-}
-/* line 257, ../scss/breakpoints/_1030up.scss */
-.main-nav .top-nav > li.mega-menu.items-3 > .sub-menu > li {
-  width: 33.3%;
-}
-/* line 264, ../scss/breakpoints/_1030up.scss */
-.main-nav .top-nav > li.mega-menu.items-4 > .sub-menu > li {
-  width: 25%;
-}
-/* line 271, ../scss/breakpoints/_1030up.scss */
-.main-nav .top-nav > li.mega-menu.items-5 > .sub-menu > li {
-  width: 20%;
-}
+  background: transparent; }
+  .main-nav .top-nav {
+    position: static;
+    background: transparent;
+    overflow: visible;
+    float: left; }
+    .main-nav .top-nav > li > a {
+      padding: 0 8px;
+      font-size: 12px;
+      margin-top: 0;
+      border: 0;
+      height: 90px;
+      line-height: 90px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-transition: height 0.35s, line-height 0.35s, color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+      -moz-transition: height 0.35s, line-height 0.35s, color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+      -ms-transition: height 0.35s, line-height 0.35s, color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+      -o-transition: height 0.35s, line-height 0.35s, color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+      transition: height 0.35s, line-height 0.35s, color 0.35s ease-in-out, background-color 0.35s ease-in-out; }
+    .main-nav .top-nav > li.menu-item-search > a, .main-nav .top-nav > li.menu-item-login > a, .main-nav .top-nav > li.menu-item-logout > a {
+      text-indent: -9999px;
+      width: 18px;
+      padding-left: 12px; }
+    .main-nav .top-nav > li.menu-item-search > a {
+      background-position: 50% -282px; }
+    .main-nav .top-nav > li.menu-item-login > a {
+      background-position: 50% -82px; }
+    .main-nav .top-nav > li.menu-item-logout > a {
+      background-position: 50% -182px; }
+    .main-nav .top-nav > li .sub-menu {
+      border: 0; }
+      .main-nav .top-nav > li .sub-menu > li {
+        float: none; }
+        .main-nav .top-nav > li .sub-menu > li a {
+          /*background:#333;
+						@include css-gradient-plus-img($from: rgba($black, .1), $to: rgba($black, 0), $vstart:"top", $vend:"bottom", $url:"../images/skins-gray-light-grunge.jpg");*/
+          background: transparent;
+          border-color: #3e3e3e;
+          border-top: 0;
+          margin-top: 0;
+          padding: 10px 25px; }
+        .main-nav .top-nav > li .sub-menu > li .sub-menu {
+          background: transparent; }
+          .main-nav .top-nav > li .sub-menu > li .sub-menu > li a {
+            /*background:#333;
+							@include css-gradient-plus-img($from: rgba($black, .1), $to: rgba($black, 0), $vstart:"top", $vend:"bottom", $url:"../images/skins-gray-light-grunge.jpg");*/
+            background: transparent; }
+    .main-nav .top-nav > li.mega-menu > .sub-menu {
+      text-align: center;
+      position: fixed;
+      top: 90px;
+      left: 0;
+      width: 100%;
+      padding: 0 80px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      box-sizing: border-box;
+      background: #333;
+      background-color: rgba(0, 0, 0, 0.4);
+      background-image: -webkit-gradient(linear,  top,  bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.4))), url("../images/skins-gray-light-grunge.jpg");
+      background-image: -webkit-linear-gradient( top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url("../images/skins-gray-light-grunge.jpg");
+      background-image: -moz-linear-gradient( top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url("../images/skins-gray-light-grunge.jpg");
+      background-image: -o-linear-gradient( top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url("../images/skins-gray-light-grunge.jpg");
+      background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.4))), url("../images/skins-gray-light-grunge.jpg");
+      background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url("../images/skins-gray-light-grunge.jpg");
+      background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url("../images/skins-gray-light-grunge.jpg");
+      background-image: linear-gradient(to  bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url("../images/skins-gray-light-grunge.jpg");
+      background-repeat: repeat repeat;
+      -webkit-transition: top 0.35s, opacity 0.35s;
+      -moz-transition: top 0.35s, opacity 0.35s;
+      -ms-transition: top 0.35s, opacity 0.35s;
+      -o-transition: top 0.35s, opacity 0.35s;
+      transition: top 0.35s, opacity 0.35s; }
+      .main-nav .top-nav > li.mega-menu > .sub-menu > li {
+        float: left;
+        width: 50%; }
+        .main-nav .top-nav > li.mega-menu > .sub-menu > li a {
+          height: 50px;
+          line-height: 50px; }
+        .main-nav .top-nav > li.mega-menu > .sub-menu > li > a {
+          font-size: 13px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          background-color: rgba(255, 255, 255, 0.02); }
+        .main-nav .top-nav > li.mega-menu > .sub-menu > li .sub-menu {
+          position: static; }
+          .main-nav .top-nav > li.mega-menu > .sub-menu > li .sub-menu a {
+            border: 0; }
+    .main-nav .top-nav > li.mega-menu.items-3 > .sub-menu > li {
+      width: 33.3%; }
+    .main-nav .top-nav > li.mega-menu.items-4 > .sub-menu > li {
+      width: 25%; }
+    .main-nav .top-nav > li.mega-menu.items-5 > .sub-menu > li {
+      width: 20%; }
 
-/* line 280, ../scss/breakpoints/_1030up.scss */
 .trigger-nav {
-  display: none;
-}
+  display: none; }
 
-/* line 283, ../scss/breakpoints/_1030up.scss */
 .social-follow {
   float: right;
   padding: 28px 0;
@@ -1398,207 +1078,145 @@ body.scrolled .main-nav .top-nav > li.mega-menu > .sub-menu {
   -moz-transition: padding 0.35s;
   -ms-transition: padding 0.35s;
   -o-transition: padding 0.35s;
-  transition: padding 0.35s;
-}
-/* line 288, ../scss/breakpoints/_1030up.scss */
-.social-follow > a {
-  width: 28px;
-  height: 28px;
-  float: left;
-  opacity: .8;
-  padding: 3px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
-  -webkit-transition: background-color 0.35s, opacity 0.35s;
-  -moz-transition: background-color 0.35s, opacity 0.35s;
-  -ms-transition: background-color 0.35s, opacity 0.35s;
-  -o-transition: background-color 0.35s, opacity 0.35s;
-  transition: background-color 0.35s, opacity 0.35s;
-}
-/* line 296, ../scss/breakpoints/_1030up.scss */
-.social-follow > a:hover {
-  opacity: 1;
-  background-color: #f8931d;
-}
-/* line 300, ../scss/breakpoints/_1030up.scss */
-.social-follow > a.fb:hover {
-  background-color: #3b579d;
-}
-/* line 303, ../scss/breakpoints/_1030up.scss */
-.social-follow > a.tw:hover {
-  background-color: #55acee;
-}
-/* line 306, ../scss/breakpoints/_1030up.scss */
-.social-follow > a.youtube:hover {
-  background-color: #e32a29;
-}
-/* line 309, ../scss/breakpoints/_1030up.scss */
-.social-follow > a > img {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
+  transition: padding 0.35s; }
+  .social-follow > a {
+    width: 28px;
+    height: 28px;
+    float: left;
+    opacity: .8;
+    padding: 3px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-transition: background-color 0.35s, opacity 0.35s;
+    -moz-transition: background-color 0.35s, opacity 0.35s;
+    -ms-transition: background-color 0.35s, opacity 0.35s;
+    -o-transition: background-color 0.35s, opacity 0.35s;
+    transition: background-color 0.35s, opacity 0.35s; }
+    .social-follow > a:hover {
+      opacity: 1;
+      background-color: #f8931d; }
+    .social-follow > a.fb:hover {
+      background-color: #3b579d; }
+    .social-follow > a.tw:hover {
+      background-color: #55acee; }
+    .social-follow > a.youtube:hover {
+      background-color: #e32a29; }
+    .social-follow > a > img {
+      display: block;
+      width: 100%;
+      height: 100%; }
 
-/* line 317, ../scss/breakpoints/_1030up.scss */
 body.scrolled .social-follow {
-  padding: 18px 0;
-}
+  padding: 18px 0; }
 
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-/* line 328, ../scss/breakpoints/_1030up.scss */
 .format-standard .thumb-index .thumb-index-inner, .tribe_events .thumb-index .thumb-index-inner, .page-template_default .thumb-index .thumb-index-inner {
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
-/* line 335, ../scss/breakpoints/_1030up.scss */
 .page-template-page-film-guide .row-index .row-index-inner, .page-template-page-festival-schedule .row-index .row-index-inner {
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
-/* line 341, ../scss/breakpoints/_1030up.scss */
 .venue-list .venue-list-inner {
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
-/* line 352, ../scss/breakpoints/_1030up.scss */
 .thumb-index .thumb-index-inner > ul > li .item-content > *.btn {
-  display: inline-block;
-}
-/* line 358, ../scss/breakpoints/_1030up.scss */
+  display: inline-block; }
+
 .thumb-index .thumb-index-inner > ul.sponsor-gallery {
   margin-right: -2px;
-  border-top: 4px solid #eeeeee;
-}
-/* line 361, ../scss/breakpoints/_1030up.scss */
-.thumb-index .thumb-index-inner > ul.sponsor-gallery > li {
-  width: 33.3%;
-}
-/* line 364, ../scss/breakpoints/_1030up.scss */
-.thumb-index .thumb-index-inner > ul.sponsor-gallery > li .item-content .gallery-caption, .thumb-index .thumb-index-inner > ul.sponsor-gallery > li .item-content .item-link {
-  font-size: 13px;
-}
+  border-top: 4px solid #eee; }
+  .thumb-index .thumb-index-inner > ul.sponsor-gallery > li {
+    width: 33.3%; }
+    .thumb-index .thumb-index-inner > ul.sponsor-gallery > li .item-content .gallery-caption, .thumb-index .thumb-index-inner > ul.sponsor-gallery > li .item-content .item-link {
+      font-size: 13px; }
 
-/* line 375, ../scss/breakpoints/_1030up.scss */
 .row-index .row-index-inner .index-section-head {
-  font-size: 20px;
-}
-/* line 378, ../scss/breakpoints/_1030up.scss */
+  font-size: 20px; }
+
 .row-index .row-index-inner .index-section-subhead {
-  font-size: 18px;
-}
-/* line 385, ../scss/breakpoints/_1030up.scss */
+  font-size: 18px; }
+
 .row-index .row-index-inner > ul > li img {
   float: left;
   margin-bottom: 5px;
-  max-width: 300px;
-}
+  max-width: 300px; }
 
-/* line 397, ../scss/breakpoints/_1030up.scss */
 .screening-lists .tabs li:after, .events-lists .tabs li:after {
   margin-bottom: 16px;
-  border-width: 10px 0 10px 10px;
-}
+  border-width: 10px 0 10px 10px; }
 
 /******************************************************************
 CAROUSEL STYLES
 ******************************************************************/
-/* line 409, ../scss/breakpoints/_1030up.scss */
 .carousel {
-  position: relative;
-}
-/* line 411, ../scss/breakpoints/_1030up.scss */
-.carousel .carousel-nav {
-  position: static;
-}
-/* line 413, ../scss/breakpoints/_1030up.scss */
-.carousel .carousel-nav a {
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  position: absolute;
-  top: 50%;
-  text-indent: -9999px;
-  z-index: 3;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  width: 30px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
-  opacity: 0;
-  -webkit-transition: opacity 0.35s;
-  -moz-transition: opacity 0.35s;
-  -ms-transition: opacity 0.35s;
-  -o-transition: opacity 0.35s;
-  transition: opacity 0.35s;
-}
-/* line 425, ../scss/breakpoints/_1030up.scss */
-.carousel .carousel-nav a:after {
-  border-top-width: 12px;
-  border-bottom-width: 12px;
-  float: none;
-  margin: 0;
-}
-/* line 431, ../scss/breakpoints/_1030up.scss */
-.carousel .carousel-nav a.active {
-  opacity: 1;
-}
-/* line 434, ../scss/breakpoints/_1030up.scss */
-.carousel .carousel-nav a.prev {
-  left: 10px;
-}
-/* line 436, ../scss/breakpoints/_1030up.scss */
-.carousel .carousel-nav a.prev:after {
-  border-right-width: 20px;
-  margin-left: 2px;
-}
-/* line 441, ../scss/breakpoints/_1030up.scss */
-.carousel .carousel-nav a.next {
-  right: 10px;
-}
-/* line 443, ../scss/breakpoints/_1030up.scss */
-.carousel .carousel-nav a.next:after {
-  border-left-width: 20px;
-  margin-right: 2px;
-}
+  position: relative; }
+  .carousel .carousel-nav {
+    position: static; }
+    .carousel .carousel-nav a {
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+      position: absolute;
+      top: 50%;
+      text-indent: -9999px;
+      z-index: 3;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      width: 30px;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      border-radius: 50%;
+      opacity: 0;
+      -webkit-transition: opacity 0.35s;
+      -moz-transition: opacity 0.35s;
+      -ms-transition: opacity 0.35s;
+      -o-transition: opacity 0.35s;
+      transition: opacity 0.35s; }
+      .carousel .carousel-nav a:after {
+        border-top-width: 12px;
+        border-bottom-width: 12px;
+        float: none;
+        margin: 0; }
+      .carousel .carousel-nav a.active {
+        opacity: 1; }
+      .carousel .carousel-nav a.prev {
+        left: 10px; }
+        .carousel .carousel-nav a.prev:after {
+          border-right-width: 20px;
+          margin-left: 2px; }
+      .carousel .carousel-nav a.next {
+        right: 10px; }
+        .carousel .carousel-nav a.next:after {
+          border-left-width: 20px;
+          margin-right: 2px; }
 
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 457, ../scss/breakpoints/_1030up.scss */
 .sidebar h4 {
-  margin-bottom: 15px;
-}
+  margin-bottom: 15px; }
 
-/* line 463, ../scss/breakpoints/_1030up.scss */
 .footer #inner-footer {
   height: 69px;
-  border-top: 1px solid #303030;
-}
-/* line 466, ../scss/breakpoints/_1030up.scss */
-.footer #inner-footer nav {
-  float: right;
-}
-/* line 468, ../scss/breakpoints/_1030up.scss */
-.footer #inner-footer nav a {
-  height: 69px;
-  line-height: 69px;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-/* line 473, ../scss/breakpoints/_1030up.scss */
-.footer #inner-footer nav a:hover {
-  color: #e07c07;
-}
+  border-top: 1px solid #303030; }
+  .footer #inner-footer nav {
+    float: right; }
+    .footer #inner-footer nav a {
+      height: 69px;
+      line-height: 69px;
+      padding-top: 0;
+      padding-bottom: 0; }
+      .footer #inner-footer nav a:hover {
+        color: #e07c07; }
 
 /******************************************
 PAGE SPECIFIC STYLES
@@ -1607,18 +1225,13 @@ PAGE SPECIFIC STYLES
 FESTIVAL SCHEDULE PAGE,
 FESTIVAL ARCHIVE PAGE
 ******************************************/
-/* line 490, ../scss/breakpoints/_1030up.scss */
 body.page-template-page-festival-schedule h1, body.page-template-page-festival-archive h1 {
-  font-size: 36px;
-}
-/* line 494, ../scss/breakpoints/_1030up.scss */
+  font-size: 36px; }
+
 body.page-template-page-festival-schedule .row-index .row-index-inner, body.page-template-page-festival-archive .row-index .row-index-inner {
-  margin: 0 auto;
-}
-/* line 498, ../scss/breakpoints/_1030up.scss */
-body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .item-content .item-body, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .item-content .item-body {
-  clear: none;
-}
+  margin: 0 auto; }
+  body.page-template-page-festival-schedule .row-index .row-index-inner > ul > li .item-content .item-body, body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .item-content .item-body {
+    clear: none; }
 
 /*
 you can call the larger styles if you want, but there's really no need
