@@ -18,7 +18,8 @@ $events_label_singular = tribe_get_event_label_singular();
 $events_label_plural = tribe_get_event_label_plural();
 
 $event_id = get_the_ID();
-$filmMeta = get_post_meta($event_id, '_laskins_events_film', true);
+$filmMetaArray = get_post_meta($event_id, '_laskins_events_film', true);
+$filmMeta = is_array($filmMetaArray) ? $filmMetaArray[0] : $filmMetaArray;
 ?>
 
 <div id="tribe-events-content" class="tribe-events-single vevent hentry<?php echo $filmMeta ? ' screening' : ''; ?>">

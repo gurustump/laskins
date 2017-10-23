@@ -84,7 +84,7 @@ if ( ! isset( $content_width ) ) {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'carousel', 1280, 384, true );
+add_image_size( 'carousel', 1920, 576, true );
 add_image_size( 'carousel-mobile', 1024, 512, true );
 add_image_size( 'large-thumb', 360, 360, true );
 add_image_size( 'small', 145, 90, true );
