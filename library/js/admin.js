@@ -4,9 +4,10 @@
  *
  * Just any extra javascript to run in the admin area.
 */
-
+var isEvent;
 
 jQuery(document).ready(function($) {
+	isEvent = $('#taxonomy-tribe_events_cat').length > 0;
 	toggleMetaboxes($);
 	$('#page_template').change(function() {
 		toggleMetaboxes($);
@@ -14,7 +15,7 @@ jQuery(document).ready(function($) {
 });
 
 function toggleMetaboxes($) {
-	var pageTemplate = $('#page_template').val()
+	var pageTemplate = $('#page_template').val();
 	if (pageTemplate == 'page-home.php') {
 		$('#_laskins_slider_metabox').show();
 	} else {
@@ -29,5 +30,7 @@ function toggleMetaboxes($) {
 		$('#_laskins_festival_archive_metabox').show();
 	} else {
 		$('#_laskins_festival_archive_metabox').hide();
+	}
+	if (isEvent) {
 	}
 }

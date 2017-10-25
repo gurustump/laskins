@@ -144,7 +144,28 @@ FALSE
 											<p><?php echo get_the_excerpt(); ?></p>
 										<?php } ?>
 									</div>
-									<div class="heading-desktop"<?php echo ($festivalMeta['_laskins_carousel_exceprt_text_color'][0] || $festivalMeta['_laskins_carousel_exceprt_background_color'][0] || $festivalMeta['_laskins_carousel_exceprt_position_left'][0] || $festivalMeta['_laskins_carousel_exceprt_position_top'][0] || $festivalMeta['_laskins_carousel_exceprt_position_right'][0] === '0' || $festivalMeta['_laskins_carousel_exceprt_position_right'][0] || $festivalMeta['_laskins_carousel_exceprt_position_bottom'][0] || $festivalMeta['_laskins_carousel_exceprt_position_bottom'][0] ==='0') ? 'style="'.($festivalMeta['_laskins_carousel_exceprt_text_color'][0] ? 'color:'.$festivalMeta['_laskins_carousel_exceprt_text_color'][0].'; ' : '').($festivalMeta['_laskins_carousel_exceprt_background_color'][0] ? 'background-color:'.$festivalMeta['_laskins_carousel_exceprt_background_color'][0].'; ' : '').($festivalMeta['_laskins_carousel_exceprt_position_left'][0] && !$festivalMeta['_laskins_carousel_exceprt_position_right'][0] ? 'left:'.$festivalMeta['_laskins_carousel_exceprt_position_left'][0].'%; ' : '').($festivalMeta['_laskins_carousel_exceprt_position_top'][0] && !$festivalMeta['_laskins_carousel_exceprt_position_bottom'][0] ? 'top:'.$festivalMeta['_laskins_carousel_exceprt_position_top'][0].'%; ' : '').($festivalMeta['_laskins_carousel_exceprt_position_right'][0] || $festivalMeta['_laskins_carousel_exceprt_position_right'][0] ==='0' ? 'left:auto;right:'.$festivalMeta['_laskins_carousel_exceprt_position_right'][0].'%; ' : '').($festivalMeta['_laskins_carousel_exceprt_position_bottom'][0] || $festivalMeta['_laskins_carousel_exceprt_position_bottom'][0] ==='0' ? 'top:auto;bottom:'.$festivalMeta['_laskins_carousel_exceprt_position_bottom'][0].'%; ' : '').'"' : ''; ?>>
+									<?php
+									$headingLeft = $festivalMeta['_laskins_carousel_hor_pos'][0] || $festivalMeta['_laskins_carousel_hor_pos'][0] === '0';
+									$headingTop = $festivalMeta['_laskins_carousel_ver_pos'][0] || $festivalMeta['_laskins_carousel_ver_pos'][0] ==='0';
+									$headingNeedsStyle = $festivalMeta['_laskins_carousel_exceprt_text_color'][0] || $festivalMeta['_laskins_carousel_exceprt_background_color'][0] || $headingLeft || $headingTop; 
+									
+									
+									// setting horizontal position, and switching from left to right if it goes over 50
+									$horPos = $headingLeft ? $festivalMeta['_laskins_carousel_hor_pos'][0] : 0;
+									$horDirection = $horPos > 50 ? 'right' : 'left';
+									$horPos = $horDirection == 'right' ? 100 - $horPos : $horPos;
+									$horPolarity = $horDirection == 'left' ? '-' : '';
+									
+									// setting vertical position, and switching from top to bottom if it is over 50
+									$verPos = $headingTop ? $festivalMeta['_laskins_carousel_ver_pos'][0] : 0;
+									$verDirection = $verPos > 50 ? 'bottom' : 'top';
+									$verPos = $verDirection == 'bottom' ? 100 - $verPos : $verPos;
+									$verPolarity = $verDirection == 'top' ? '-' : '';
+									
+									$headingColor = $festivalMeta['_laskins_carousel_exceprt_text_color'][0] ? $festivalMeta['_laskins_carousel_exceprt_text_color'][0] : false;
+									$headingBGColor = $festivalMeta['_laskins_carousel_exceprt_background_color'][0] ? $festivalMeta['_laskins_carousel_exceprt_background_color'][0] : false;
+									?>
+									<div class="heading-desktop" style="<?php echo $horDirection; ?>:<?php echo $horPos; ?>%;<?php echo $verDirection; ?>:<?php echo $verPos; ?>%;transform:translate(<?php echo $horPolarity; ?><?php echo $horPos; ?>%, <?php echo $verPolarity; ?><?php echo $verPos; ?>%);<?php if ($headingWidth) { echo 'width:'.$headingWidth.'%;'; }?><?php if ($headingColor) { echo 'color:'.$headingColor.';'; } ?><?php if ($headingBGColor) { echo 'background-color:'.$headingBGColor.';'; } ?>">
 										<?php if ($festivalMeta['_laskins_carousel_super_title'][0]) { ?>
 											<h3<?php echo $festivalMeta['_laskins_carousel_super_title_size'][0] ? ' style="font-size:'.($festivalMeta['_laskins_carousel_super_title_size'][0]/10).'em"' : ''; ?>><?php echo $festivalMeta['_laskins_carousel_super_title'][0]; ?></h3>
 										<?php } ?>

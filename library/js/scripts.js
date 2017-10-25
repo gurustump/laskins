@@ -195,7 +195,7 @@ jQuery(document).ready(function($) {
 	function carouselAutoSwitch(container) {
 		carouselInterval = setInterval(function() {
 			carouselGoToPane(container, 'next');
-		}, 8000); // 8 seconds per pane
+		}, 15000); // 8 seconds per pane
 	}
 	function carouselGoToPane(container, pane) {
 		var currentPane = container.find('.PANES > .active');
