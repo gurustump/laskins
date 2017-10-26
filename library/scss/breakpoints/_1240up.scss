@@ -20,7 +20,7 @@ on larger screens.
 }
 #logo {
 	height:100px;
-	width:461px;
+	width:380px;
 	a {
 		margin:0;
 		height:100%;
@@ -30,6 +30,13 @@ on larger screens.
 .main-nav {
 	.top-nav {
 		position:static;
+		.cta {
+			height:100px;
+			& > a {
+				margin-top:34px;
+				margin-bottom:34px;
+			}
+		}
 		& > li {
 			& > a {
 				padding:0 12px;

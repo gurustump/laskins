@@ -29,7 +29,7 @@ header.header {
 }
 #logo {
 	position:absolute;
-	width:420px;
+	width:310px;
 	height:90px;
 	background:none;
 	@include transition(height .35s);
@@ -45,14 +45,25 @@ body.scrolled {
 	#logo {
 		height:70px;
 	}
-	.main-nav .top-nav > li {
-		& > a {
+	.main-nav .top-nav {
+		.cta {
 			height:70px;
-			line-height:70px;
+			& > a {
+				margin-top:19px;
+				margin-bottom:19px;
+				height:32px;
+				line-height:32px;
+			}
 		}
-		&.mega-menu {
-			& > .sub-menu {
-				top:70px;
+		& > li {
+			& > a {
+				height:70px;
+				line-height:70px;
+			}
+			&.mega-menu {
+				& > .sub-menu {
+					top:70px;
+				}
 			}
 		}
 	}
@@ -164,6 +175,26 @@ body.scrolled {
 		background:transparent;
 		overflow:visible;
 		float:left;
+		.cta {
+			position:relative;
+			height:90px;
+			@include transition(height .35s ease-in-out);
+			& > a {
+				padding-left:12px;
+				padding-right:12px;
+				font-weight:bold;
+				height:32px;
+				line-height:32px;
+				margin-top:29px;
+				margin-bottom:29px;
+				margin-right:10px;
+				@include border-radius(16px);
+				@include transition(background-color .35s, color .35s, margin .35s);
+				&:hover {
+					background-color:lighten($orange, 10%) !important;
+				}
+			}
+		}
 		& > li {
 			& > a {
 				padding:0 8px;

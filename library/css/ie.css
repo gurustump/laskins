@@ -874,7 +874,7 @@ header.header {
 
 #logo {
   position: absolute;
-  width: 420px;
+  width: 310px;
   height: 90px;
   background: none;
   -webkit-transition: height 0.35s;
@@ -891,6 +891,14 @@ body.scrolled #container #content {
 
 body.scrolled #logo {
   height: 70px; }
+
+body.scrolled .main-nav .top-nav .cta {
+  height: 70px; }
+  body.scrolled .main-nav .top-nav .cta > a {
+    margin-top: 19px;
+    margin-bottom: 19px;
+    height: 32px;
+    line-height: 32px; }
 
 body.scrolled .main-nav .top-nav > li > a {
   height: 70px;
@@ -973,6 +981,35 @@ body.scrolled .main-nav .top-nav > li.mega-menu > .sub-menu {
     background: transparent;
     overflow: visible;
     float: left; }
+    .main-nav .top-nav .cta {
+      position: relative;
+      height: 90px;
+      -webkit-transition: height 0.35s ease-in-out;
+      -moz-transition: height 0.35s ease-in-out;
+      -ms-transition: height 0.35s ease-in-out;
+      -o-transition: height 0.35s ease-in-out;
+      transition: height 0.35s ease-in-out; }
+      .main-nav .top-nav .cta > a {
+        padding-left: 12px;
+        padding-right: 12px;
+        font-weight: bold;
+        height: 32px;
+        line-height: 32px;
+        margin-top: 29px;
+        margin-bottom: 29px;
+        margin-right: 10px;
+        -webkit-border-radius: 16px;
+        -moz-border-radius: 16px;
+        -ms-border-radius: 16px;
+        -o-border-radius: 16px;
+        border-radius: 16px;
+        -webkit-transition: background-color 0.35s, color 0.35s, margin 0.35s;
+        -moz-transition: background-color 0.35s, color 0.35s, margin 0.35s;
+        -ms-transition: background-color 0.35s, color 0.35s, margin 0.35s;
+        -o-transition: background-color 0.35s, color 0.35s, margin 0.35s;
+        transition: background-color 0.35s, color 0.35s, margin 0.35s; }
+        .main-nav .top-nav .cta > a:hover {
+          background-color: #faab4e !important; }
     .main-nav .top-nav > li > a {
       padding: 0 8px;
       font-size: 12px;

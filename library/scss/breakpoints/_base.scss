@@ -333,6 +333,10 @@ and more scalable.
 				text-decoration:none;
 			}
 		}
+		.cta > a {
+			background:$orange;
+			color:$skins-gray;
+		}
 		& > li {
 			& > a {
 				outline:none;
@@ -1879,6 +1883,17 @@ SIDEBARS & ASIDES
 
 		}
 
+	}
+	.full-width {
+		width:100%;
+		text-align:center;
+		@include box-sizing;
+	}
+	.cta-btn {
+		.small {
+			display:block;
+			font-size:70%;
+		}
 	}
 }
 /* social media widget block */

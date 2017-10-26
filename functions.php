@@ -672,4 +672,118 @@ function modify_archive_title($title) {
 @ini_set( 'post_max_size', '64M');
 @ini_set( 'max_execution_time', '300' );
 
+
+
+// Creating a call to action button widget
+class laskins_button_widget extends WP_Widget {
+	function __construct() {
+		parent::__construct(
+			// Base ID of your widget
+			'laskins_button_widget', 
+
+			// Widget name will appear in UI
+			__('Call to Action Button', 'laskins_widgets'), 
+
+			// Widget description
+			array( 'description' => __( 'Widget for displaying a call to action button', 'laskins_widgets' ), ) 
+		);
+	}
+
+	// Creating widget front-end
+	// This is where the action happens
+	public function widget( $args, $instance ) {
+		$title = empty($instance['title']) ? '' : apply_filters( 'widget_title', $instance['title'] );
+		$button_class = $instance['button_class'];
+		$full_width = $instance['full_width'] ? true : false;
+		$button_text = apply_filters( 'widget_text', $instance['button_text'] );
+		$button_link = $instance['button_link'];
+		$open_external = $instance['open_external'] ? true : false;
+		
+		// before and after widget arguments are defined by themes
+		echo $args['before_widget'];
+		if ( ! empty( $title ) ) {
+			echo $args['before_title'] . $title . $args['after_title'];
+		}
+		/*
+		echo '<pre>';
+		print_r($instance);
+		echo '</pre>';
+		*/
+		echo '<a class="btn cta-btn'.(!empty($button_class) ? ' '.$button_class : '').($full_width ? ' full-width' : '').'" href="'.$button_link.'"'.($open_external ? ' target="_blank"' : '').'>'.$button_text.'</a>';
+		
+		echo $args['after_widget'];
+	}
+			
+	// Widget Backend 
+	public function form( $instance ) {
+		$instance = wp_parse_args(
+			(array) $instance, array(
+				'title' => '',
+				'button_class' => '',
+				'full_width' => 'on',
+				'button_text' => '',
+				'button_link' => '',
+				'open_external' => 'on'
+			)
+		);
+		
+		
+		/* if ( isset( $instance[ 'title' ] ) ) {
+			$title = $instance['title'];
+		} else {
+			$title = '';
+		} */
+		 
+		// Widget admin form
+		?>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'button_class' ); ?>"><?php _e( 'Button Class:' ); ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'button_class' ); ?>" name="<?php echo $this->get_field_name( 'button_class' ); ?>" type="text" value="<?php echo esc_attr( $instance['button_class'] ); ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'full_width' ); ?>">Full Width</label>
+			<input class="checkbox" type="checkbox" <?php checked( $instance[ 'full_width' ], 'on' ); ?> id="<?php echo $this->get_field_id( 'full_width' ); ?>" name="<?php echo $this->get_field_name( 'full_width' ); ?>" /> 
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'button_text' ); ?>"><?php _e( 'Button Text:' ); ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'button_text' ); ?>" name="<?php echo $this->get_field_name( 'button_text' ); ?>" type="text" value="<?php echo esc_attr( $instance['button_text'] ); ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'button_link' ); ?>"><?php _e( 'Button Link:' ); ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'button_link' ); ?>" name="<?php echo $this->get_field_name( 'button_link' ); ?>" type="text" value="<?php echo esc_attr( $instance['button_link'] ); ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'open_external' ); ?>">Open Link in New Tab</label>
+			<input class="checkbox" type="checkbox" <?php checked( $instance[ 'open_external' ], 'on' ); ?> id="<?php echo $this->get_field_id( 'open_external' ); ?>" name="<?php echo $this->get_field_name( 'open_external' ); ?>" /> 
+		</p>
+	<?php 
+}
+	
+	// Updating widget replacing old instances with new
+	public function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		$instance[ 'button_class' ] = strip_tags( $new_instance[ 'button_class' ] );
+		$instance[ 'full_width' ] = $new_instance[ 'full_width' ];
+		if ( current_user_can( 'unfiltered_html' ) ) {
+			$instance[ 'button_text' ] = $new_instance[ 'button_text' ];
+		} else {
+			$instance[ 'button_text' ] = wp_kses_post( $new_instance[ 'button_text' ] );
+		}
+		$instance[ 'button_link' ] = strip_tags( $new_instance[ 'button_link' ] );
+		$instance[ 'open_external' ] = $new_instance[ 'open_external' ];
+		return $instance;
+	}
+} // Class laskins_button_widget ends here
+
+// Register and load the widget
+function wpb_load_widget() {
+	register_widget( 'laskins_button_widget' );
+}
+add_action( 'widgets_init', 'wpb_load_widget' );
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>

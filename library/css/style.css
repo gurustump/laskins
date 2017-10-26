@@ -1789,6 +1789,9 @@ and more scalable.
         color: #242021;
         background-color: #f8931d !important;
         text-decoration: none; }
+    .main-nav .top-nav .cta > a {
+      background: #f8931d;
+      color: #242021; }
     .main-nav .top-nav > li > a {
       outline: none;
       font-size: 13px;
@@ -3099,6 +3102,17 @@ SIDEBARS & ASIDES
     padding: 0; }
   .widget ul li {
     /* deep nesting */ }
+  .widget .full-width {
+    width: 100%;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box; }
+  .widget .cta-btn .small {
+    display: block;
+    font-size: 70%; }
 
 /* social media widget block */
 .ssba img {
@@ -4359,7 +4373,7 @@ be seen on the Desktop.
     border-bottom: 1px solid rgba(248, 27, 45, 0.15); }
   #logo {
     position: absolute;
-    width: 420px;
+    width: 310px;
     height: 90px;
     background: none;
     -webkit-transition: height 0.35s;
@@ -4374,6 +4388,13 @@ be seen on the Desktop.
     padding-top: 70px; }
   body.scrolled #logo {
     height: 70px; }
+  body.scrolled .main-nav .top-nav .cta {
+    height: 70px; }
+    body.scrolled .main-nav .top-nav .cta > a {
+      margin-top: 19px;
+      margin-bottom: 19px;
+      height: 32px;
+      line-height: 32px; }
   body.scrolled .main-nav .top-nav > li > a {
     height: 70px;
     line-height: 70px; }
@@ -4452,6 +4473,35 @@ be seen on the Desktop.
       background: transparent;
       overflow: visible;
       float: left; }
+      .main-nav .top-nav .cta {
+        position: relative;
+        height: 90px;
+        -webkit-transition: height 0.35s ease-in-out;
+        -moz-transition: height 0.35s ease-in-out;
+        -ms-transition: height 0.35s ease-in-out;
+        -o-transition: height 0.35s ease-in-out;
+        transition: height 0.35s ease-in-out; }
+        .main-nav .top-nav .cta > a {
+          padding-left: 12px;
+          padding-right: 12px;
+          font-weight: bold;
+          height: 32px;
+          line-height: 32px;
+          margin-top: 29px;
+          margin-bottom: 29px;
+          margin-right: 10px;
+          -webkit-border-radius: 16px;
+          -moz-border-radius: 16px;
+          -ms-border-radius: 16px;
+          -o-border-radius: 16px;
+          border-radius: 16px;
+          -webkit-transition: background-color 0.35s, color 0.35s, margin 0.35s;
+          -moz-transition: background-color 0.35s, color 0.35s, margin 0.35s;
+          -ms-transition: background-color 0.35s, color 0.35s, margin 0.35s;
+          -o-transition: background-color 0.35s, color 0.35s, margin 0.35s;
+          transition: background-color 0.35s, color 0.35s, margin 0.35s; }
+          .main-nav .top-nav .cta > a:hover {
+            background-color: #faab4e !important; }
       .main-nav .top-nav > li > a {
         padding: 0 8px;
         font-size: 12px;
@@ -4717,12 +4767,17 @@ on larger screens.
     max-width: 1472px; }
   #logo {
     height: 100px;
-    width: 461px; }
+    width: 380px; }
     #logo a {
       margin: 0;
       height: 100%; }
   .main-nav .top-nav {
     position: static; }
+    .main-nav .top-nav .cta {
+      height: 100px; }
+      .main-nav .top-nav .cta > a {
+        margin-top: 34px;
+        margin-bottom: 34px; }
     .main-nav .top-nav > li > a {
       padding: 0 12px;
       font-size: 13px;
@@ -4838,6 +4893,10 @@ FESTIVAL ARCHIVE PAGE
       left: 180px; }
     body.page-template-page-festival-archive .row-index .row-index-inner > ul > li .item-content .item-body *:last-child {
       margin-bottom: 0; } }
+
+@media only screen and (min-width: 1340px) {
+  #logo {
+    width: 461px; } }
 
 @media only screen and (min-width: 1560px) {
   /******************************************************************
