@@ -594,6 +594,9 @@ TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN)
 .single-tribe_events .tribe-events-schedule h3 {
   font-size: 18px; }
 
+.single-tribe_events .buy-tickets-cta {
+  float: right; }
+
 .single-tribe_events .tribe-events-event-meta h3 {
   font-size: 16px; }
 

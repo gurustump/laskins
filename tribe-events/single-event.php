@@ -68,6 +68,11 @@ $filmMeta = is_array($filmMetaArray) ? $filmMetaArray[0] : $filmMetaArray;
 			<!-- Event content -->
 			<?php do_action( 'tribe_events_single_event_before_the_content' ) ?>
 			<div class="tribe-events-single-event-description tribe-events-content entry-content description">
+				<?php if ($filmMeta && is_active_sidebar('screening_event_header') && !tribe_is_past_event( $event_id )) { ?>
+					<div class="buy-tickets-cta">
+						<?php dynamic_sidebar('screening_event_header'); ?>
+					</div>
+				<?php } ?>
 				<?php if (get_the_content()) {
 					the_content();
 				} else if ($filmMeta) {

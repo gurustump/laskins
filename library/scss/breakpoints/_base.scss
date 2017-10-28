@@ -1154,6 +1154,12 @@ TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN)
 			margin:0;
 		}
 	}
+	.buy-tickets-cta {
+		text-align:center;
+		.btn-large {
+			text-align:center;
+		}
+	}
 	.tribe-events-event-meta {
 		@extend %gray-grunge;
 		margin:15px 0 20px;

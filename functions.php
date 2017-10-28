@@ -190,6 +190,16 @@ function bones_register_sidebars() {
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	));
+	
+	register_sidebar(array(
+		'id' => 'screening_event_header',
+		'name' => __( 'Screening Event Header', 'bonestheme' ),
+		'description' => __( 'Placed at the top of screening event pages, designed to contain a "Buy Tickets" button or anything else that should appear on all screening pages.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
 
 	/*
 	to add more sidebars or widgetized areas, just copy
@@ -667,6 +677,7 @@ function modify_archive_title($title) {
         } */
     return $title;
 };
+
 // this crap doesn't work -- trying to increase the max upload limit
 @ini_set( 'upload_max_size' , '64M' );
 @ini_set( 'post_max_size', '64M');

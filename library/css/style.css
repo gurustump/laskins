@@ -2535,6 +2535,11 @@ TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN)
 .single-tribe_events .tribe-events-event-image img {
   margin: 0; }
 
+.single-tribe_events .buy-tickets-cta {
+  text-align: center; }
+  .single-tribe_events .buy-tickets-cta .btn-large {
+    text-align: center; }
+
 .single-tribe_events .tribe-events-event-meta {
   margin: 15px 0 20px;
   padding: 4% 0; }
@@ -3925,6 +3930,8 @@ TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN)
 ******************************************************************/
   .single-tribe_events .tribe-events-schedule h3 {
     font-size: 18px; }
+  .single-tribe_events .buy-tickets-cta {
+    float: right; }
   .single-tribe_events .tribe-events-event-meta h3 {
     font-size: 16px; }
   .single-tribe_events .tribe-events-event-meta .tribe-events-meta-group {
