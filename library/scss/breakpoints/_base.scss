@@ -121,7 +121,7 @@ a, a:visited {
 	@include transition(color, .25s);
 
 	/* on hover */
-	&:hover, &:focus {
+	&:hover {
 		color: $link-hover;
 	}
 
@@ -1132,6 +1132,15 @@ POSTS & CONTENT STYLES
 		}
 		h3 {
 			margin-bottom:0;
+		}
+	}
+}
+.cta-container {
+	margin:20px 0;
+	.cta-btn {
+		text-align:center;
+		.small {
+			white-space:nowrap;
 		}
 	}
 }

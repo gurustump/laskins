@@ -1618,7 +1618,7 @@ a, a:visited {
   /* on hover */
   /* on click */
   /* mobile tap color */ }
-  a:hover, a:focus, a:visited:hover, a:visited:focus {
+  a:hover, a:visited:hover {
     color: #e07c07; }
   a:link, a:visited:link {
     /*
@@ -2521,6 +2521,13 @@ POSTS & CONTENT STYLES
     display: none; }
   .board-members > li h3 {
     margin-bottom: 0; }
+
+.cta-container {
+  margin: 20px 0; }
+  .cta-container .cta-btn {
+    text-align: center; }
+    .cta-container .cta-btn .small {
+      white-space: nowrap; }
 
 /******************************************************************
 TRIBE EVENTS STYLES (THE EVENT CALENDAR PLUGIN)

@@ -603,6 +603,18 @@ function image_embed_shortcode($atts, $content) {
 }
 add_shortcode('image_embed','image_embed_shortcode');
 
+// Call to action button shortcode
+function cta_btn_shortcode($atts) {
+	$a = shortcode_atts( array(
+		'text'			=> '',
+		'url'			=> '',
+		'class'		=> '',
+		'external'	=> ''
+	), $atts);
+	return '<div class="cta-container"><a class="cta-btn '.$a['class'].'" href="'.$a['url'].'"'.($a['external'] == 'true' ? ' target="_blank"' : '').'>'.$a['text'].'</a></div>';
+}
+add_shortcode('cta_btn','cta_btn_shortcode');
+
 // modifying the title that events calendar (tribe events) puts in the <title> tag of the document
 function change_tribe_title( $title, $sep, $seplocation ) {
 	if (tribe_event_in_category('screening')  && is_single()) {
