@@ -30,45 +30,45 @@
 										
 										unset($itemImage);
 										unset($itemImageArray);
-										$hasLinkedItem = $item[page_event_link] ? true : false;
+										$hasLinkedItem = $item['page_event_link'] ? true : false;
 										$itemTitle;
 										$itemImageArray;
 										$itemImageMobileArray;
 										$linkedItemID;
 										if ($hasLinkedItem) {
-											$linkedItemID = $item[page_event_link][0];
+											$linkedItemID = $item['page_event_link'][0];
 											$itemTitle = get_the_title($linkedItemID);
 											$itemImageArray = wp_get_attachment_image_src( get_post_thumbnail_id($linkedItemID), 'carousel');
 											$itemImageMobileArray = wp_get_attachment_image_src( get_post_thumbnail_id($linkedItemID), 'carousel-mobile');
 										}
-										if ($item[background_image]) {
-											$itemImageArray = wp_get_attachment_image_src( $item[background_image_id], 'carousel');
-											$itemImageMobileArray = wp_get_attachment_image_src( $item[background_image_id], 'carousel-mobile');
+										if ($item['background_image']) {
+											$itemImageArray = wp_get_attachment_image_src( $item['background_image_id'], 'carousel');
+											$itemImageMobileArray = wp_get_attachment_image_src( $item['background_image_id'], 'carousel-mobile');
 										}
 										$itemImage = $itemImageArray[0];
 										$itemImageMobile = $itemImageMobileArray[0];
 										
-										$itemVidMP4 = $item[background_video_mp4];
-										$itemVidWEBM = $item[background_video_webm];
+										$itemVidMP4 = $item['background_video_mp4'];
+										$itemVidWEBM = $item['background_video_webm'];
 										$itemVid = $itemVidMP4 || $itemVidWEBM ? true : false;
 										
 										// setting horizontal position, and switching from left to right if it goes over 50
-										$horPos = $item[hor_pos] ? $item[hor_pos] : 0;
+										$horPos = $item['hor_pos'] ? $item['hor_pos'] : 0;
 										$horDirection = $horPos > 50 ? 'right' : 'left';
 										$horPos = $horDirection == 'right' ? 100 - $horPos : $horPos;
 										$horPolarity = $horDirection == 'left' ? '-' : '';
 										
 										// setting vertical position, and switching from top to bottom if it is over 50
-										$verPos = $item[ver_pos] ? $item[ver_pos] : 0;
+										$verPos = $item['ver_pos'] ? $item['ver_pos'] : 0;
 										$verDirection = $verPos > 50 ? 'bottom' : 'top';
 										$verPos = $verDirection == 'bottom' ? 100 - $verPos : $verPos;
 										$verPolarity = $verDirection == 'top' ? '-' : '';
 										
-										$headingWidth = $item[width] ? $item[width] : false;
-										$headingColor = $item[text_color] ? $item[text_color] : false;
-										$headingBGColor = $item[bgcolor] ? $item[bgcolor] : false;
+										$headingWidth = $item['width'] ? $item['width'] : false;
+										$headingColor = $item['text_color'] ? $item['text_color'] : false;
+										$headingBGColor = $item['bgcolor'] ? $item['bgcolor'] : false;
 										
-										$itemLink = $item[page_event_link] ? get_permalink($item[page_event_link][0]) : $item[link_url];
+										$itemLink = $item['page_event_link'] ? get_permalink($item['page_event_link'][0]) : $item['link_url'];
 										
 										if (!$itemImage) { continue; }
 										?>
@@ -77,28 +77,28 @@
 											<pre><?php print_r($item); ?></pre>
 											<pre><?php echo $hasLinkedItem; ?></pre> */ ?>
 											<?php if (get_post_type($item->ID) != 'module') { ?>
-											<a href="<?php echo $itemLink; ?>"<?php if ($item[link_external]) {echo ' target="_blank"'; } ?>>
+											<a href="<?php echo $itemLink; ?>"<?php if ($item['link_external']) {echo ' target="_blank"'; } ?>>
 											<?php } ?>
 												<span class="carousel-item-heading-mobile">
-													<?php if ($item[superheading]) { ?>
-														<span class="h3"><?php echo $item[superheading]; ?></span>
+													<?php if ($item['superheading']) { ?>
+														<span class="h3"><?php echo $item['superheading']; ?></span>
 													<?php } ?>
-													<?php if ($item[heading]) { ?>
-													<span class="h2"><?php echo $item[heading]; ?></span>
+													<?php if ($item['heading']) { ?>
+													<span class="h2"><?php echo $item['heading']; ?></span>
 													<?php } ?>
-													<?php if ($item[body_text]) { ?>
-														<span class="excerpt"><?php echo $item[body_text]; ?></span>
+													<?php if ($item['body_text']) { ?>
+														<span class="excerpt"><?php echo $item['body_text']; ?></span>
 													<?php } ?>
 												</span>
 												<span class="carousel-item-heading-desktop" style="<?php echo $horDirection; ?>:<?php echo $horPos; ?>%;<?php echo $verDirection; ?>:<?php echo $verPos; ?>%;transform:translate(<?php echo $horPolarity; ?><?php echo $horPos; ?>%, <?php echo $verPolarity; ?><?php echo $verPos; ?>%);<?php if ($headingWidth) { echo 'width:'.$headingWidth.'%;'; }?><?php if ($headingColor) { echo 'color:'.$headingColor.';'; } ?><?php if ($headingBGColor) { echo 'background-color:'.$headingBGColor.';'; } ?>">
-													<?php if ($item[superheading]) { ?>
-														<span class="h3"<?php echo $item[superheading_size] ? ' style="font-size:'.($item[superheading_size]/10).'em"' : ''; ?>><?php echo $item[superheading]; ?></span>
+													<?php if ($item['superheading']) { ?>
+														<span class="h3"<?php echo $item['superheading_size'] ? ' style="font-size:'.($item['superheading_size']/10).'em"' : ''; ?>><?php echo $item['superheading']; ?></span>
 													<?php } ?>
-													<?php if ($item[heading]) { ?>
-													<span class="h2"<?php echo $item[heading_size] ? ' style="font-size:'.($item[heading_size]/10).'em"' : ''; ?>><?php echo $item[heading]; ?></span>
+													<?php if ($item['heading']) { ?>
+													<span class="h2"<?php echo $item['heading_size'] ? ' style="font-size:'.($item['heading_size']/10).'em"' : ''; ?>><?php echo $item['heading']; ?></span>
 													<?php } ?>
-													<?php if ($item[body_text]) { ?>
-														<span class="excerpt"<?php echo $item[body_size] ? ' style="font-size:'.($item[body_size]/10).'em"' : ''; ?>><?php echo $item[body_text]; ?></span>
+													<?php if ($item['body_text']) { ?>
+														<span class="excerpt"<?php echo $item['body_size'] ? ' style="font-size:'.($item['body_size']/10).'em"' : ''; ?>><?php echo $item['body_text']; ?></span>
 													<?php } ?>
 												</span>
 												<?php if ($itemVid) { ?>

@@ -2356,6 +2356,7 @@ body.page-template-page-venues {
 }
 body.single-tribe_venue {
 	.item-map {
+		display:none; // Google changed their map API, and I'm done trying to keep up.
 		@extend %gray-grunge;
 		padding:20px;
 	}

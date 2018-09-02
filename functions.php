@@ -675,7 +675,7 @@ function modifyTribeVenuePostType($post_type, $args) {
 	
 	$wp_post_type[$post_type] = $args;
 }
-add_action('registered_post_type', modifyTribeVenuePostType, 10, 2);
+add_action('registered_post_type', 'modifyTribeVenuePostType', 10, 2);
 
 // modifies title of Category Archive so the word "Category" no longer appears. Can be used for Tags and Authors as well
 add_filter( 'get_the_archive_title', 'modify_archive_title');
