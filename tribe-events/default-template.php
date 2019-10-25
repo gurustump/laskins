@@ -140,7 +140,7 @@ FALSE
 											<h3><?php echo $festivalMeta['_laskins_carousel_super_title'][0]; ?></h3>
 										<?php } ?>
 										<h2><?php the_title(); ?></h2>
-										<?php if (get_the_excerpt()) { ?>
+										<?php if (has_excerpt()) { ?>
 											<p><?php echo get_the_excerpt(); ?></p>
 										<?php } ?>
 									</div>
@@ -170,7 +170,7 @@ FALSE
 											<h3<?php echo $festivalMeta['_laskins_carousel_super_title_size'][0] ? ' style="font-size:'.($festivalMeta['_laskins_carousel_super_title_size'][0]/10).'em"' : ''; ?>><?php echo $festivalMeta['_laskins_carousel_super_title'][0]; ?></h3>
 										<?php } ?>
 										<h2<?php echo $festivalMeta['_laskins_carousel_title_size'][0] ? ' style="font-size:'.($festivalMeta['_laskins_carousel_title_size'][0]/10).'em"' : ''; ?>><?php the_title(); ?></h2>
-										<?php if (get_the_excerpt()) { ?>
+										<?php if (has_excerpt()) { ?>
 											<p<?php echo $festivalMeta['_laskins_carousel_excerpt_size'][0] ? ' style="font-size:'.($festivalMeta['_laskins_carousel_excerpt_size'][0]/10).'em"' : ''; ?>><?php echo get_the_excerpt(); ?></p>
 										<?php } ?>
 									</div>

@@ -1984,18 +1984,19 @@ SIDEBARS & ASIDES
 	border-radius: 2px;
 	margin-bottom: 1.5em;
 }
-.kebo_twitter_feed_widget {
-	.kebo-tweets {
-		&.list {
-			.ktweet {
-				border-color:rgba(0,0,0,.1);
-			}
+.widget.TwitterTweets {
+	.fetched_tweets {
+		& > li {
+			border:0;
+			box-shadow:none;
+			font-family:inherit;
 		}
-		.ktweet {
-			.kmeta {
-				font-size:.8em;
-			}
-		}
+	}
+	.tweet_wrap {
+		padding-bottom:10px;
+	}
+	.tweet_data {
+		font-family:inherit;
 	}
 }
 

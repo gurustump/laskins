@@ -3224,11 +3224,17 @@ SIDEBARS & ASIDES
   border-radius: 2px;
   margin-bottom: 1.5em; }
 
-.kebo_twitter_feed_widget .kebo-tweets.list .ktweet {
-  border-color: rgba(0, 0, 0, 0.1); }
+.widget.TwitterTweets .fetched_tweets > li {
+  border: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-family: inherit; }
 
-.kebo_twitter_feed_widget .kebo-tweets .ktweet .kmeta {
-  font-size: .8em; }
+.widget.TwitterTweets .tweet_wrap {
+  padding-bottom: 10px; }
+
+.widget.TwitterTweets .tweet_data {
+  font-family: inherit; }
 
 /*********************
 FOOTER STYLES
