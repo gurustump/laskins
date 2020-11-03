@@ -16,8 +16,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header();
 
-$wrap_off = tribe_event_in_category('film-festival') && is_single();
+$is_film_festival = tribe_event_in_category('film-festival') && is_single();
+$is_virtual = tribe_event_in_category('virtual');
 $is_venue = tribe_is_venue() && is_single();
+$is_virtual_film_festival = $is_film_festival && $is_virtual;
 ?>
 <?php /* $isSingleEvent = in_array('single-tribe_events', get_body_class()); ?>
 <pre>
@@ -38,12 +40,12 @@ TRUE
 FALSE
 <?php } */ ?>
 
-			<div id="content"<?php echo $wrap_off ? ' class="festival-event-page"':''; ?>>
-				<div id="inner-content" class="<?php echo $wrap_off ? '' : 'wrap '; ?>cf">
+			<div id="content"<?php echo $is_film_festival ? ' class="festival-event-page"':''; ?>>
+				<div id="inner-content" class="<?php echo $is_film_festival ? '' : 'wrap '; ?>cf">
 						<main id="main" class="cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 							
 							<?php // TEMPLATE FOR MOST EVENTS
-							if (!$wrap_off && !$is_venue) { ?>
+							if (!$is_film_festival && !$is_venue) { ?>
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'content-primary cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 								<?php /* if (1 == 2) { ?>
 								<header class="article-header">
@@ -73,7 +75,7 @@ FALSE
 							<?php get_sidebar(); ?>
 							
 							<?php // template for venues ?>
-							<?php } else if ($is_venue) { 
+							<?php } else if ($is_venue) {
 							
 								$phone   = tribe_get_phone();
 								$website = tribe_get_venue_website_link();
@@ -179,7 +181,8 @@ FALSE
 									<img class="bg-mobile" src="<?php echo $festivalImageMobile; ?>" alt="<?php the_title(); ?>" />
 								</header>
 								<?php
-								$festivalFilmsByTime = tribe_get_events(array(
+								$festivalFilmsArray = array();
+								$festivalFilmsArray['time'] = tribe_get_events(array(
 									'eventDisplay' => 'custom',
 									'start_date' =>  tribe_get_start_date(get_the_ID(), false, 'Y-m-d').' 00:01',
 									'end_date' =>  tribe_get_end_date(get_the_ID(), false, 'Y-m-d').' 23:59',
@@ -191,7 +194,7 @@ FALSE
 									// see http://codex.wordpress.org/Class_Reference/WP_Query#Order_.26_Orderby_Parameters for the orderby meta_value thing
 									// and https://theeventscalendar.com/support/forums/topic/tribe_get_events-sort-order/ 
 								));
-								$festivalFilmsByTitle = tribe_get_events(array(
+								$festivalFilmsArray['title'] = tribe_get_events(array(
 									'eventDisplay' => 'custom',
 									'start_date' =>  tribe_get_start_date(get_the_ID(), false, 'Y-m-d').' 00:01',
 									'end_date' =>  tribe_get_end_date(get_the_ID(), false, 'Y-m-d').' 23:59',
@@ -200,8 +203,15 @@ FALSE
 									'orderby' => 'title',
 									'order' => 'ASC'
 								));
+								$festivalEvents = tribe_get_events(array(
+									'eventDisplay' => 'custom',
+									'start_date' =>  tribe_get_start_date(get_the_ID(), false, 'Y-m-d').' 00:01',
+									'end_date' =>  tribe_get_end_date(get_the_ID(), false, 'Y-m-d').' 23:59',
+									'tribe_events_cat' => 'sub-event',
+									'posts_per_page' => -1,
+								));
 								// resort this to remove articles
-								usort($festivalFilmsByTitle, 'sort_by_title');
+								usort($festivalFilmsArray['title'], 'sort_by_title');
 								?>
 								<div class="wrap">
 									<div class="content-primary">
@@ -229,46 +239,68 @@ FALSE
 											<?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
 										</div>
 										<?php endwhile; ?>
-										<?php if (count($festivalFilmsByTitle) > 0) { ?>
+										<?php if (count($festivalFilmsArray['title']) > 0 || (count($festivalEvents) > 0)) { ?>
 										<div class="screening-lists SWITCH_LISTS">
 											<ul class="tabs TABS">
-											<?php foreach (array($festivalFilmsByTime,$festivalFilmsByTitle) as $key => $tab) { 
-												$tabClass = $tab == $festivalFilmsByTime ? 'TIME' : 'TITLE'; ?>
-												<li class="FILMS_LIST_<?php echo $tabClass; echo $key == 0 ? ' active' : ''; ?>"><?php echo $tabClass == 'TIME' ? 'Screening Schedule' : 'Alphabetical List'; ?></li>
-											<?php } ?>
+												<?php foreach ($festivalFilmsArray as $key => $tab) {
+												if ($is_virtual && $key == 'time') {continue;} ?>
+												<li class="FILMS_LIST_<?php echo strtoupper($key); echo ($key == 'time' || ($is_virtual && $key == 'title')) ? ' active' : ''; ?>"><?php echo $key == 'time' ? 'Screening Schedule' : ($is_virtual ? 'Screenings' : 'Alphabetical List'); ?></li>
+												<?php } ?>
+												<?php if (count($festivalEvents) > 0) { ?>
+												<li class="EVENTS_LIST">Other Events</li>
+												<?php } ?>
 											</ul>
-											<?php foreach (array($festivalFilmsByTime,$festivalFilmsByTitle) as $k => $list) { 
-												$listClass = $list == $festivalFilmsByTime ? 'time' : 'title'; ?>
-												<ul class="films-list films-list-<?php echo $listClass; echo $k == 0 ? ' active' : ''; ?> SWITCH_LIST">
-													<?php global $post;
-													foreach($list as $key => $item) {
-													$post = $item;
-													setup_postdata($post);
-													$itemThumbArray = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'small');
-													$itemThumbSrc = $itemThumbArray[0];
-													$filmMeta = get_post_meta($item->ID, '_laskins_events_film', true);
-													$filmThumbArray =  wp_get_attachment_image_src( get_post_thumbnail_id($filmMeta), 'small');
-													if (!$itemThumbSrc) {
-														$itemThumbSrc = $filmThumbArray[0];
-													}
-													// print_r($item); 
-													?>
-													<li>
-														<a href="<?php the_permalink(); ?>">
-															<?php if ($itemThumbSrc) { ?>
-															<img class="item-thumb" src="<?php echo $itemThumbSrc; ?>" />
-															<?php } ?>
-															<span class="item-content">
-																<span class="item-head"><?php the_title(); ?></span>
-																<span class="item-sched mobile-hide"><?php echo tribe_events_event_schedule_details($item->ID); ?></span>
-																<span class="item-sched desktop-hide"><?php echo tribe_get_start_date($item->ID, true, 'M j @ g:i a'); ?></span>
-																<span class="item-body"><?php echo string_limit_words(get_the_excerpt(), 30); ?></span>
-																<span class="btn btn-orange">Film Details</span>
-															</span>
-														</a>
-													</li>
-													<?php } ?>
-												</ul>
+											<?php foreach ($festivalFilmsArray as $k => $list) {
+											if ($is_virtual && $k == 'time') {continue;} ?>
+											<ul class="films-list films-list-<?php echo $k; echo ($k == 'time' || ($is_virtual && $k == 'title')) ? ' active' : ''; ?> SWITCH_LIST">
+												<?php foreach($list as $key => $item) {
+												$itemThumbArray = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'small');
+												$itemThumbSrc = $itemThumbArray[0];
+												$filmMeta = get_post_meta($item->ID, '_laskins_events_film', true);
+												$filmThumbArray =  wp_get_attachment_image_src( get_post_thumbnail_id($filmMeta), 'small');
+												if (!$itemThumbSrc) {
+													$itemThumbSrc = $filmThumbArray[0];
+												}
+												// print_r($item); 
+												?>
+												<li>
+													<a href="<?php the_permalink($item->ID); ?>">
+														<?php if ($itemThumbSrc) { ?>
+														<img class="item-thumb" src="<?php echo $itemThumbSrc; ?>" />
+														<?php } ?>
+														<span class="item-content">
+															<span class="item-head"><?php echo get_the_title($item->ID); ?></span>
+															<span class="item-sched mobile-hide"><?php echo tribe_events_event_schedule_details($item->ID); ?></span>
+															<span class="item-sched desktop-hide"><?php echo tribe_get_start_date($item->ID, true, 'M j @ g:i a'); ?></span>
+															<span class="item-body"><?php echo string_limit_words(get_the_excerpt(), 30); ?></span>
+															<span class="btn btn-orange">Film Details</span>
+														</span>
+													</a>
+												</li>
+												<?php } ?>
+											</ul>
+											<?php } ?>
+											<?php if (count($festivalEvents) > 0) { ?>
+											<ul class="events-list films-list-events SWITCH_LIST">
+												<?php foreach($festivalEvents as $key => $item) { 
+												$itemThumbArray = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'small');
+												$itemThumbSrc = $itemThumbArray[0]; ?>
+												<li>
+													<a href="<?php the_permalink($item->ID); ?>">
+														<?php if ($itemThumbSrc) { ?>
+														<img class="item-thumb" src="<?php echo $itemThumbSrc; ?>" />
+														<?php } ?>
+														<span class="item-content">
+															<span class="item-head"><?php echo get_the_title($item->ID); ?></span>
+															<span class="item-sched mobile-hide"><?php echo tribe_events_event_schedule_details($item->ID); ?></span>
+															<span class="item-sched desktop-hide"><?php echo tribe_get_start_date($item->ID, true, 'M j @ g:i a'); ?></span>
+															<span class="item-body"><?php echo string_limit_words(get_the_excerpt(), 30); ?></span>
+															<span class="btn btn-orange">Event Details</span>
+														</span>
+													</a>
+												</li>
+												<?php } ?>
+											</ul>
 											<?php } ?>
 										</div>
 										<?php } ?>
