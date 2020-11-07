@@ -56,6 +56,7 @@ $filmMeta = is_array($filmMetaArray) ? $filmMetaArray[0] : $filmMetaArray;
 	<!-- #tribe-events-header -->
 
 	<?php while ( have_posts() ) :  the_post(); ?>
+		<?php $is_virtual = tribe_event_in_category('virtual'); ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<!-- Event featured image, but exclude link -->
 			<?php 
@@ -69,9 +70,20 @@ $filmMeta = is_array($filmMetaArray) ? $filmMetaArray[0] : $filmMetaArray;
 			<?php do_action( 'tribe_events_single_event_before_the_content' ) ?>
 			<div class="tribe-events-single-event-description tribe-events-content entry-content description">
 				<?php if ($filmMeta && is_active_sidebar('screening_event_header') && !tribe_is_past_event( $event_id )) { ?>
-					<div class="buy-tickets-cta">
-						<?php dynamic_sidebar('screening_event_header'); ?>
+				<div class="buy-tickets-cta">
+					<?php $screeningBtnTextMeta = get_post_meta($event_id, '_laskins_events_btn_text', true);
+					$screeningBtnURLMeta = get_post_meta($event_id, '_laskins_events_btn_url', true);
+					$screeningBtnTargetMeta = get_post_meta($event_id, '_laskins_events_btn_target', true);
+					if ($screeningBtnTextMeta) { ?>
+					<div class="widget">
+						<a class="btn cta-btn btn-orange btn-large" href="<?php echo $screeningBtnURLMeta; ?>"<?php echo $screeningBtnTargetMeta ? ' _target="blank"' : ''; ?>>
+							<?php echo $screeningBtnTextMeta; ?>
+						</a>
 					</div>
+					<?php } else { ?>
+					<?php dynamic_sidebar('screening_event_header'); ?>
+					<?php } ?>
+				</div>
 				<?php } ?>
 				<?php if (get_the_content()) {
 					the_content();
@@ -86,6 +98,7 @@ $filmMeta = is_array($filmMetaArray) ? $filmMetaArray[0] : $filmMetaArray;
 					<a class="btn-orange more-link" href="<?php echo get_permalink($filmMeta); ?>">Read More about this Film</a>
 				<?php } ?>
 			</div>
+			<?php if (!$is_virtual) { ?>
 			<!-- .tribe-events-single-event-description -->
 			<?php do_action( 'tribe_events_single_event_after_the_content' ) ?>
 
@@ -93,6 +106,7 @@ $filmMeta = is_array($filmMetaArray) ? $filmMetaArray[0] : $filmMetaArray;
 			<?php do_action( 'tribe_events_single_event_before_the_meta' ) ?>
 			<?php tribe_get_template_part( 'modules/meta' ); ?>
 			<?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
+			<?php } ?>
 		</div> <!-- #post-x -->
 		<?php if ( get_post_type() == Tribe__Events__Main::POSTTYPE && tribe_get_option( 'showComments', false ) ) comments_template() ?>
 	<?php endwhile; ?>
