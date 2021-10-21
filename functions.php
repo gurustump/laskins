@@ -603,6 +603,33 @@ function image_embed_shortcode($atts, $content) {
 }
 add_shortcode('image_embed','image_embed_shortcode');
 
+// Button shortcode
+function btn_shortcode($atts) {
+	extract(shortcode_atts( array(
+		'text'			=> '',
+		'url'			=> '',
+		'class'		=> '',
+		'external'	=> '',
+		'center' => '',
+		'block' => 'true'
+	), $atts));
+	// making booleans of these
+	if ($external === 'true') {$external = true;}
+	$external = (bool) $external;
+	if ($center === 'true') {$center = true;}
+	$center = (bool) $center;
+	if ($block === 'true') {$block = true;}
+	$block = (bool) $block;
+	
+	$containerTag = $block ? 'div' : 'span';
+	$btnhtml = '<'.$containerTag.' class="btn-container'.($center ? ' center':'').'">';
+	print_r($html);
+	$btnhtml .= '<a class="btn '.$class.'" href="'.$url.'"'.($external ? ' target="_blank"' : '').'>'.$text.'</a>';
+	$btnhtml .= '</'.$containerTag.'>';
+	return $btnhtml;
+}
+add_shortcode('button','btn_shortcode');
+
 // Call to action button shortcode
 function cta_btn_shortcode($atts) {
 	$a = shortcode_atts( array(

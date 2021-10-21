@@ -72,11 +72,11 @@ $filmMeta = is_array($filmMetaArray) ? $filmMetaArray[0] : $filmMetaArray;
 				<?php if ($filmMeta && is_active_sidebar('screening_event_header') && !tribe_is_past_event( $event_id )) { ?>
 				<div class="buy-tickets-cta">
 					<?php $screeningBtnTextMeta = get_post_meta($event_id, '_laskins_events_btn_text', true);
-					$screeningBtnURLMeta = get_post_meta($event_id, '_laskins_events_btn_url', true);
+					$screeningBtnURLMeta = get_post_meta($event_id, '_laskins_events_btn_link', true);
 					$screeningBtnTargetMeta = get_post_meta($event_id, '_laskins_events_btn_target', true);
 					if ($screeningBtnTextMeta) { ?>
 					<div class="widget">
-						<a class="btn cta-btn btn-orange btn-large" href="<?php echo $screeningBtnURLMeta; ?>"<?php echo $screeningBtnTargetMeta ? ' _target="blank"' : ''; ?>>
+						<a class="btn cta-btn btn-orange btn-large" href="<?php echo $screeningBtnURLMeta; ?>"<?php echo $screeningBtnTargetMeta ? ' target="_blank"' : ''; ?>>
 							<?php echo $screeningBtnTextMeta; ?>
 						</a>
 					</div>
